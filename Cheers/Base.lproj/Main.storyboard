@@ -87,7 +87,7 @@
         <!--Favorites-->
         <scene sceneID="bwF-R7-QK5">
             <objects>
-                <viewController id="HRF-Jm-ecs" sceneMemberID="viewController">
+                <viewController id="HRF-Jm-ecs" customClass="FavoritesViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bjH-K5-s3i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +112,7 @@
         <!--Settings-->
         <scene sceneID="qfO-g7-bRG">
             <objects>
-                <viewController id="nk7-AD-B33" sceneMemberID="viewController">
+                <viewController id="nk7-AD-B33" customClass="SettingsViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o7j-ku-K1e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
