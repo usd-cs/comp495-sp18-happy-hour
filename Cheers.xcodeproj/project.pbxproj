@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A224B205081CE00C099FA /* FavoritesViewController.swift */; };
+		339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A224D205081DD00C099FA /* SettingsViewController.swift */; };
 		BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B460204F34AF00136463 /* AppDelegate.swift */; };
 		BEA1B463204F34AF00136463 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B462204F34AF00136463 /* FirstViewController.swift */; };
 		BEA1B465204F34AF00136463 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B464204F34AF00136463 /* SecondViewController.swift */; };
@@ -15,6 +17,7 @@
 		BEA1B46D204F34AF00136463 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA1B46B204F34AF00136463 /* LaunchScreen.storyboard */; };
 		BEA1B478204F34B000136463 /* CheersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B477204F34B000136463 /* CheersTests.swift */; };
 		BEA1B483204F34B000136463 /* CheersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B482204F34B000136463 /* CheersUITests.swift */; };
+		BEC473AD20510B7C00FC5702 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC473AC20510B7C00FC5702 /* Place.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		339A224B205081CE00C099FA /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		339A224D205081DD00C099FA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BEA1B45D204F34AF00136463 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA1B460204F34AF00136463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA1B462204F34AF00136463 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 		BEA1B47E204F34B000136463 /* CheersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA1B482204F34B000136463 /* CheersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersUITests.swift; sourceTree = "<group>"; };
 		BEA1B484204F34B000136463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEC473AC20510B7C00FC5702 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +109,12 @@
 				BEA1B462204F34AF00136463 /* FirstViewController.swift */,
 				BEA1B464204F34AF00136463 /* SecondViewController.swift */,
 				BEA1B466204F34AF00136463 /* Main.storyboard */,
+				339A224B205081CE00C099FA /* FavoritesViewController.swift */,
+				339A224D205081DD00C099FA /* SettingsViewController.swift */,
 				BEA1B469204F34AF00136463 /* Assets.xcassets */,
 				BEA1B46B204F34AF00136463 /* LaunchScreen.storyboard */,
 				BEA1B46E204F34AF00136463 /* Info.plist */,
+				BEC473AC20510B7C00FC5702 /* Place.swift */,
 			);
 			path = Cheers;
 			sourceTree = "<group>";
@@ -264,6 +273,9 @@
 			files = (
 				BEA1B465204F34AF00136463 /* SecondViewController.swift in Sources */,
 				BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */,
+				339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */,
+				BEC473AD20510B7C00FC5702 /* Place.swift in Sources */,
+				339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
