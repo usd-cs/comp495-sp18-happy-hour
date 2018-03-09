@@ -25,6 +25,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "bar", for: indexPath) as! BarTableViewCell
         
         cell.barImage.image = UIImage(named : "shout.jpg")
+        cell.barImage.alpha = 0.90
         
         cell.nameLabel.text = "The Shout House"
         cell.nameLabel.textColor = UIColor.white
