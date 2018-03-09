@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A224B205081CE00C099FA /* FavoritesViewController.swift */; };
 		339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A224D205081DD00C099FA /* SettingsViewController.swift */; };
+		B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */; };
+		B1C20A612051EF6500ECB998 /* shout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1C20A602051EF6500ECB998 /* shout.jpg */; };
 		BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B460204F34AF00136463 /* AppDelegate.swift */; };
 		BEA1B463204F34AF00136463 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B462204F34AF00136463 /* FirstViewController.swift */; };
 		BEA1B465204F34AF00136463 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B464204F34AF00136463 /* SecondViewController.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		339A224B205081CE00C099FA /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		339A224D205081DD00C099FA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTableViewCell.swift; sourceTree = "<group>"; };
+		B1C20A602051EF6500ECB998 /* shout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shout.jpg; sourceTree = "<group>"; };
 		BEA1B45D204F34AF00136463 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA1B460204F34AF00136463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA1B462204F34AF00136463 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1C20A572051E3F700ECB998 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BEA1B460204F34AF00136463 /* AppDelegate.swift */,
+				BEA1B462204F34AF00136463 /* FirstViewController.swift */,
+				BEA1B464204F34AF00136463 /* SecondViewController.swift */,
+				339A224B205081CE00C099FA /* FavoritesViewController.swift */,
+				339A224D205081DD00C099FA /* SettingsViewController.swift */,
+				B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B1C20A582051E3FB00ECB998 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEA1B466204F34AF00136463 /* Main.storyboard */,
+				BEA1B46B204F34AF00136463 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1C20A592051E3FE00ECB998 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEC473AC20510B7C00FC5702 /* Place.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BEA1B454204F34AF00136463 = {
 			isa = PBXGroup;
 			children = (
@@ -105,16 +139,12 @@
 		BEA1B45F204F34AF00136463 /* Cheers */ = {
 			isa = PBXGroup;
 			children = (
-				BEA1B460204F34AF00136463 /* AppDelegate.swift */,
-				BEA1B462204F34AF00136463 /* FirstViewController.swift */,
-				BEA1B464204F34AF00136463 /* SecondViewController.swift */,
-				BEA1B466204F34AF00136463 /* Main.storyboard */,
-				339A224B205081CE00C099FA /* FavoritesViewController.swift */,
-				339A224D205081DD00C099FA /* SettingsViewController.swift */,
+				B1C20A592051E3FE00ECB998 /* Model */,
+				B1C20A582051E3FB00ECB998 /* View */,
+				B1C20A572051E3F700ECB998 /* Controller */,
 				BEA1B469204F34AF00136463 /* Assets.xcassets */,
-				BEA1B46B204F34AF00136463 /* LaunchScreen.storyboard */,
+				B1C20A602051EF6500ECB998 /* shout.jpg */,
 				BEA1B46E204F34AF00136463 /* Info.plist */,
-				BEC473AC20510B7C00FC5702 /* Place.swift */,
 			);
 			path = Cheers;
 			sourceTree = "<group>";
@@ -247,6 +277,7 @@
 				BEA1B46D204F34AF00136463 /* LaunchScreen.storyboard in Resources */,
 				BEA1B46A204F34AF00136463 /* Assets.xcassets in Resources */,
 				BEA1B468204F34AF00136463 /* Main.storyboard in Resources */,
+				B1C20A612051EF6500ECB998 /* shout.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +306,7 @@
 				BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */,
 				339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */,
 				BEC473AD20510B7C00FC5702 /* Place.swift in Sources */,
+				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
 				339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* FirstViewController.swift in Sources */,
 			);
@@ -442,12 +474,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E255S56V67;
+				DEVELOPMENT_TEAM = NKB7H7KVZ8;
 				INFOPLIST_FILE = Cheers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sandiego.comp495.Cheers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -457,12 +491,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E255S56V67;
+				DEVELOPMENT_TEAM = NKB7H7KVZ8;
 				INFOPLIST_FILE = Cheers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sandiego.comp495.Cheers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
