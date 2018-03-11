@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A224B205081CE00C099FA /* FavoritesViewController.swift */; };
 		339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A224D205081DD00C099FA /* SettingsViewController.swift */; };
+		B10E20BA2054AF88005E37BE /* BarInfoCheersApp.txt in Resources */ = {isa = PBXBuildFile; fileRef = B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */; };
 		B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */; };
 		B1C20A612051EF6500ECB998 /* shout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1C20A602051EF6500ECB998 /* shout.jpg */; };
 		BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B460204F34AF00136463 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		339A224B205081CE00C099FA /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		339A224D205081DD00C099FA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BarInfoCheersApp.txt; sourceTree = "<group>"; };
 		B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTableViewCell.swift; sourceTree = "<group>"; };
 		B1C20A602051EF6500ECB998 /* shout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shout.jpg; sourceTree = "<group>"; };
 		BEA1B45D204F34AF00136463 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 				B1C20A582051E3FB00ECB998 /* View */,
 				B1C20A572051E3F700ECB998 /* Controller */,
 				BEA1B469204F34AF00136463 /* Assets.xcassets */,
+				B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */,
 				B1C20A602051EF6500ECB998 /* shout.jpg */,
 				BEA1B46E204F34AF00136463 /* Info.plist */,
 			);
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA1B46D204F34AF00136463 /* LaunchScreen.storyboard in Resources */,
+				B10E20BA2054AF88005E37BE /* BarInfoCheersApp.txt in Resources */,
 				BEA1B46A204F34AF00136463 /* Assets.xcassets in Resources */,
 				BEA1B468204F34AF00136463 /* Main.storyboard in Resources */,
 				B1C20A612051EF6500ECB998 /* shout.jpg in Resources */,
