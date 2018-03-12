@@ -53,6 +53,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
         tableView.delegate = self
+        Place.readFromTextFile()
     }
 
     override func didReceiveMemoryWarning() {

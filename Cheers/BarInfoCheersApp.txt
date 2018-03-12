@@ -15,10 +15,10 @@ True
 
 Pacific Beach Ale House
 721 Grand Avenue, San Diego, CA 92109
-32.794325,
+32.794325
 -117.255349
 Monday, Tuesday, Wednesday, Thursday, Friday
-[(3,6)]
+[(3, 6)]
 False
 1
 
@@ -42,7 +42,7 @@ Gaslamp Tavern
 32.714459
 -117.160382
 Monday, Tuesday, Wednesday, Thursday, Friday
-[(4,7)]
+[(4, 7)]
 False
 2
 
@@ -51,7 +51,7 @@ Whiskey Girl
 32.712754
 -117.160311
 Monday, Tuesday, Wednesday, Thursday, Friday
-[(3,7)]
+[(3, 7)]
 False
 1
 
@@ -60,7 +60,7 @@ barleymash
 32.711697
 -117.160420
 Monday, Tuesday, Wednesday, Thursday, Friday
-[(3,6)]
+[(3, 6)]
 False
 2
 
@@ -69,8 +69,8 @@ Bar Pink
 32.747960
 -117.129830
 Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
-[(4,8)]
-False 
+[(4, 8)]
+False
 2
 
 Seven Grand SD
@@ -78,7 +78,7 @@ Seven Grand SD
 32.748650
 -117.128688
 Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
-[(4,8)]
+[(4, 8)]
 False
 2
 
@@ -87,9 +87,6 @@ The Office
 32.749237
 -117.130404
 Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
-[(4,9)]
+[(4, 9)]
 False
 2
-
-
-
