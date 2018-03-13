@@ -67,8 +67,11 @@ struct Place {
         for array in placeStrings {
             let name = array[0]
             let address = array[1]
-            let longitude = Double(array[2])!
-            let latitude = Double(array[3])!
+            
+            // DEBUG: had to switch these two b/c they were read in in the inverse order (lat instead of long and vice versa)
+            let longitude = Double(array[3])!
+            let latitude = Double(array[2])!
+            
             var favorited: Bool = false
             var priciness: Int = 1
             let averageUserRating = 4.0
@@ -95,7 +98,8 @@ struct Place {
             //add to array of structs
             placeArray.append(newPlace)
         }
-        print(placeArray) //test to show place array works
+        
+        //print(placeArray) //test to show place array works
         return placeArray
     }
 }
