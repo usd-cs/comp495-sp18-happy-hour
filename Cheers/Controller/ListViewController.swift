@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     
@@ -41,7 +41,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         cell.priceLabel.text = "$$$"
         cell.priceLabel.textColor = UIColor.white
-        print("Got here")
+        //print("Got here")
         
         
         return cell
@@ -53,7 +53,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
         tableView.delegate = self
-        Place.readFromTextFile()
+        
+        //Place.readFromTextFile()
     }
 
     override func didReceiveMemoryWarning() {
