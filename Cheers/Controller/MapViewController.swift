@@ -10,30 +10,52 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var Map: MKMapView!
     
     var barList: [Place] = []
     var myLocation: CLLocationCoordinate2D?
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: need to change static location (set to USD's address) to user's location from core data
-        //  Make sure to leave the current location in the variable 'myLocation', as it is used later to calculate
-        //  the span of the map's region
-        
+        //Current Location required set-up
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.startUpdatingLocation()
+
         // set up my location
         myLocation = CLLocationCoordinate2DMake(32.774063, -117.185914)
-        let myAnnotation = MKPointAnnotation()
-        myAnnotation.coordinate = myLocation!
-        myAnnotation.title = "I am here"
-        myAnnotation.subtitle = "(This is my location)"
-        Map.addAnnotation(myAnnotation)
-        
+
         // load in bars
         populateMap()
+
+        
     }
+    
+    
+    //Reads the location manager for latest coordinate and displays it on map.
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations[0]
+        
+        
+        myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude , location.coordinate.longitude)
+
+        
+        let center = location.coordinate
+        let span = MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)
+        let reigon = MKCoordinateRegion(center: center, span: span)
+        
+        Map.setRegion(reigon, animated: true)
+        Map.showsUserLocation = true
+        
+        locationManager.stopUpdatingLocation()
+        
+    }
+  
     
     func populateMap() {
         // this call will be replaced by API call once core features are functioning
@@ -54,7 +76,7 @@ class MapViewController: UIViewController {
             Map.addAnnotation(annotation)
             
             // for DEBUG only
-            print("Adding \(annotation.title!) to the map")
+            //print("Adding \(annotation.title!) to the map")
             
             // need to check to see if maxDist for region needs to be updated
             let deltaLat = abs(Double(location.latitude) - Double(myLocation!.latitude))
@@ -75,7 +97,6 @@ class MapViewController: UIViewController {
     }
     
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
