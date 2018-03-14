@@ -129,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="-322"/>
+            <point key="canvasLocation" x="750" y="-322"/>
         </scene>
         <!--Map-->
         <scene sceneID="wg7-f3-ORb">
@@ -274,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="raQ-U0-Rz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871.2" y="-321.58920539730138"/>
+            <point key="canvasLocation" x="1634" y="-322"/>
         </scene>
         <!--Settings-->
         <scene sceneID="qfO-g7-bRG">
@@ -299,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npy-tv-SAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="359"/>
+            <point key="canvasLocation" x="1633" y="359"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
