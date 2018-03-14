@@ -14,8 +14,8 @@
 		B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */; };
 		B1C20A612051EF6500ECB998 /* shout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1C20A602051EF6500ECB998 /* shout.jpg */; };
 		BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B460204F34AF00136463 /* AppDelegate.swift */; };
-		BEA1B463204F34AF00136463 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B462204F34AF00136463 /* FirstViewController.swift */; };
-		BEA1B465204F34AF00136463 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B464204F34AF00136463 /* SecondViewController.swift */; };
+		BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B462204F34AF00136463 /* ListViewController.swift */; };
+		BEA1B465204F34AF00136463 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B464204F34AF00136463 /* MapViewController.swift */; };
 		BEA1B468204F34AF00136463 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA1B466204F34AF00136463 /* Main.storyboard */; };
 		BEA1B46A204F34AF00136463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA1B469204F34AF00136463 /* Assets.xcassets */; };
 		BEA1B46D204F34AF00136463 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA1B46B204F34AF00136463 /* LaunchScreen.storyboard */; };
@@ -50,8 +50,8 @@
 		B1C20A602051EF6500ECB998 /* shout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shout.jpg; sourceTree = "<group>"; };
 		BEA1B45D204F34AF00136463 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA1B460204F34AF00136463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BEA1B462204F34AF00136463 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		BEA1B464204F34AF00136463 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		BEA1B462204F34AF00136463 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		BEA1B464204F34AF00136463 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BEA1B467204F34AF00136463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEA1B469204F34AF00136463 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA1B46C204F34AF00136463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,9 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				BEA1B460204F34AF00136463 /* AppDelegate.swift */,
-				BEA1B462204F34AF00136463 /* FirstViewController.swift */,
+				BEA1B462204F34AF00136463 /* ListViewController.swift */,
 				666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */,
-				BEA1B464204F34AF00136463 /* SecondViewController.swift */,
+				BEA1B464204F34AF00136463 /* MapViewController.swift */,
 				339A224B205081CE00C099FA /* FavoritesViewController.swift */,
 				339A224D205081DD00C099FA /* SettingsViewController.swift */,
 				B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */,
@@ -309,13 +309,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA1B465204F34AF00136463 /* SecondViewController.swift in Sources */,
+				BEA1B465204F34AF00136463 /* MapViewController.swift in Sources */,
 				BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */,
 				339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */,
 				BEC473AD20510B7C00FC5702 /* Place.swift in Sources */,
 				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
 				339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */,
-				BEA1B463204F34AF00136463 /* FirstViewController.swift in Sources */,
+				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
 				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

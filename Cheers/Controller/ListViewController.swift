@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     
@@ -53,8 +53,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
         tableView.delegate = self
-        
-        //Place.readFromTextFile()
+        places = Place.readFromTextFile()
     }
 
     override func didReceiveMemoryWarning() {

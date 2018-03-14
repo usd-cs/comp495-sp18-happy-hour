@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class SecondViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var Map: MKMapView!
     
     var barList: [Place] = []
