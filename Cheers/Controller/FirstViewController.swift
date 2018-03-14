@@ -13,7 +13,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var tableView: UITableView!
     
     let arr = ["House"]
-    
+    var places: [Place] = []
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,7 +61,20 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        self.performSegue(withIdentifier: "showSelected", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSelected"{
+            let selectedVC = segue.destination as! SelectedBarViewController
+            let indexPath = tableView.indexPathForSelectedRow!
+            let selectedPlace = places[indexPath.row]
+            selectedVC.place = selectedPlace
+        }
+    }
 
 }
 
