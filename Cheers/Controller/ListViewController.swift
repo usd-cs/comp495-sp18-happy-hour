@@ -12,22 +12,24 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet var tableView: UITableView!
     
-    let arr = ["House"]
     var places: [Place] = []
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "bar", for: indexPath) as! BarTableViewCell
         
+        let bar = places[indexPath.row]
+        
+        
         cell.barImage.image = UIImage(named : "shout.jpg")
         cell.barImage.alpha = 0.90
         
-        cell.nameLabel.text = "The Shout House"
+        cell.nameLabel.text = bar.name
         cell.nameLabel.textColor = UIColor.white
         
         cell.distanceLabel.text = "0.5 mi"
@@ -39,7 +41,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.happyHourLabel.text = "5 - 7pm"
         cell.happyHourLabel.textColor = UIColor.white
         
-        cell.priceLabel.text = "$$$"
+        cell.priceLabel.text = String(bar.priciness)
         cell.priceLabel.textColor = UIColor.white
         //print("Got here")
         
