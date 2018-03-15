@@ -13,6 +13,7 @@
 		B10E20BA2054AF88005E37BE /* BarInfoCheersApp.txt in Resources */ = {isa = PBXBuildFile; fileRef = B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */; };
 		B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */; };
 		B1C20A612051EF6500ECB998 /* shout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1C20A602051EF6500ECB998 /* shout.jpg */; };
+		BE3F559C205A3C4D008DB1ED /* filterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F559B205A3C4D008DB1ED /* filterSettings.swift */; };
 		BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B460204F34AF00136463 /* AppDelegate.swift */; };
 		BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B462204F34AF00136463 /* ListViewController.swift */; };
 		BEA1B465204F34AF00136463 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B464204F34AF00136463 /* MapViewController.swift */; };
@@ -48,6 +49,7 @@
 		B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BarInfoCheersApp.txt; sourceTree = "<group>"; };
 		B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTableViewCell.swift; sourceTree = "<group>"; };
 		B1C20A602051EF6500ECB998 /* shout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shout.jpg; sourceTree = "<group>"; };
+		BE3F559B205A3C4D008DB1ED /* filterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterSettings.swift; sourceTree = "<group>"; };
 		BEA1B45D204F34AF00136463 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA1B460204F34AF00136463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA1B462204F34AF00136463 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				BEC473AC20510B7C00FC5702 /* Place.swift */,
+				BE3F559B205A3C4D008DB1ED /* filterSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3F559C205A3C4D008DB1ED /* filterSettings.swift in Sources */,
 				BEA1B465204F34AF00136463 /* MapViewController.swift in Sources */,
 				BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */,
 				339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */,
