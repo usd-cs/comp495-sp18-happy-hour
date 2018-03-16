@@ -11,38 +11,30 @@ import Firebase
 
 class DatabaseController {
     
-    //var barList = [Place]()
-    var barList: [Place] = []
+    static func upload() {
+        let barList = Place.readFromTextFile()
         
-    //barList = Place.readFromTextFile()
-    
-    for bar in barList {
-
-        let barsDB =  Database.database().reference().child("Place")
+        for bar in barList {
+            let barToUpload = Database.database().reference().child(bar.neighborhood.rawValue)
+            let barRecord: [String: Any] = ["Name": bar.name,
+                             "Address": bar.address,
+                             "Latitude": bar.latitude,
+                             "Longitude": bar.longitude,
+                             /*"Happy Hours": bar.happyHours,*/
+                             "Favorited": bar.favorited,
+                             "Priciness": bar.priciness,
+                             "AverageUserRating": bar.averageUserRating,
+                             "Neighborhood": bar.neighborhood.rawValue]
+            barToUpload.child(bar.name).setValue(barRecord) { (error, reference) in
+                if error != nil {
+                    print("error")
+                    print(error!)
+                } else {
+                    print("Message saved successfully")
+                }
+            }
+        }
+        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-//    let messageDictionary = ["Bar":bar.name ,
-//                             "Address":bar.address]
-//
-//    barsDB.childByAutoId().setValue(messageDictionary) {
-//    (error, reference) in
-//
-//    if error != nil{
-//    print(error!)
-//    } else {
-//    print("Message Saved successfully")
-//    }
-//    }
-    
-    
-    
-    
     
 }

@@ -59,6 +59,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         tableView.delegate = self
         places = Place.readFromTextFile()
+        DatabaseController.upload()
     }
 
     override func didReceiveMemoryWarning() {
