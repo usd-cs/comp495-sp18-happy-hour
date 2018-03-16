@@ -2,6 +2,7 @@ Firehouse
 722 Grand Avenue, San Diego, CA 92109
 32.796508
 -117.258181
+Pacific Beach
 Monday, Tuesday, Wednesday
 [(5, 12)]
 Thursday
@@ -17,6 +18,7 @@ Pacific Beach Ale House
 721 Grand Avenue, San Diego, CA 92109
 32.794325
 -117.255349
+Pacific Beach
 Monday, Tuesday, Wednesday, Thursday, Friday
 [(3, 6)]
 False
@@ -26,6 +28,7 @@ Backyard Kitchen & Tap
 832 Garnet Ave, San Diego, CA 92109
 32.796960
 -117.254889
+Pacific Beach
 Tuesday
 [(11, 2)]
 Wednesday
@@ -41,6 +44,7 @@ Gaslamp Tavern
 868 Fifth Avenue, San Diego, CA 92101
 32.714459
 -117.160382
+Gaslamp Quarter
 Monday, Tuesday, Wednesday, Thursday, Friday
 [(4, 7)]
 False
@@ -50,6 +54,7 @@ Whiskey Girl
 702 Fifth Avenue, San Diego, CA 92101
 32.712754
 -117.160311
+Gaslamp Quarter
 Monday, Tuesday, Wednesday, Thursday, Friday
 [(3, 7)]
 False
@@ -59,6 +64,7 @@ barleymash
 6916, 600 Fifth Ave, San Diego, CA 92101
 32.711697
 -117.160420
+Gaslamp Quarter
 Monday, Tuesday, Wednesday, Thursday, Friday
 [(3, 6)]
 False
@@ -68,6 +74,7 @@ Bar Pink
 3609, 3829 30th St, San Diego, CA 92104
 32.747960
 -117.129830
+North Park
 Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
 [(4, 8)]
 False
@@ -77,6 +84,7 @@ Seven Grand SD
 3054 University Ave, San Diego, CA 92104
 32.748650
 -117.128688
+North Park
 Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
 [(4, 8)]
 False
@@ -86,6 +94,7 @@ The Office
 3936 30th St, San Diego, CA 92104
 32.749237
 -117.130404
+North Park
 Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
 [(4, 9)]
 False

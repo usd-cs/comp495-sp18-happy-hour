@@ -27,7 +27,7 @@ class MapViewController: UIViewController {
         Map.showsUserLocation = true
 
         // load in bars
-        populateMap()
+        //populateMap()
 
         
     }

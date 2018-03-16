@@ -8,6 +8,14 @@
 
 import Foundation
 
+extension String {
+    var lines: [String] {
+        var result: [String] = []
+        enumerateLines { line, _ in result.append(line) }
+        return result
+    }
+}
+
 struct Place {
     // name of bar/restaurant/location
     var name: String
@@ -34,7 +42,11 @@ struct Place {
     // star rating, in [0, 5]
     var averageUserRating: Double
     
+    // neighborhood that bar is in
+    var neighborhood: Neighborhood
     
+    
+
     //Reads from BarInfoCheersApp.txt and returns an array of Place structs
     static func readFromTextFile() -> [Place] {
         //Read file into single string
@@ -45,14 +57,23 @@ struct Place {
         var end = 0
         var placeStrings = [[String]]()
         var placeArray = [Place]()
+        
         do {
             fileToString = try String(contentsOfFile: file!, encoding: .utf8)
         } catch let error as NSError {
             print("failed to read from text file")
             print(error)
         }
+        
+        var stringArray: [String] = []
+        fileToString.enumerateLines { line, _ in
+            stringArray.append(line)
+        }
+
+        
         //Split single string into array of strings
-        let stringArray = fileToString.components(separatedBy: "\r\n")
+        //let stringArray = fileToString.components(separatedBy: "\r\n")
+        
         //Split into array of strings for each bar
         for line in stringArray {
             if line.count == 0 { //separation between bars
@@ -63,21 +84,27 @@ struct Place {
                 end += 1
             }
         }
+        
         //convert each array of strings into a struct
         for array in placeStrings {
             let name = array[0]
             let address = array[1]
             
-            // DEBUG: had to switch these two b/c they were read in in the inverse order (lat instead of long and vice versa)
+            print(array[3])
             let longitude = Double(array[3])!
             let latitude = Double(array[2])!
+            
+            // changed
+            let area = Neighborhood(rawValue: array[4])
             
             var favorited: Bool = false
             var priciness: Int = 1
             let averageUserRating = 4.0
             var happyHours = [String: (Int, Int)]()
-            for i in 4..<array.count {
-                guard i%2 == 0 else {
+            
+            // changed
+            for i in 5..<array.count {
+                guard i % 2 != 0 else {
                     continue
                 }
                 if let favTry = Bool(array[i].lowercased()) {
@@ -94,7 +121,8 @@ struct Place {
                     }
                 }
             }
-            let newPlace = Place(name: name, address: address, longitude: longitude, latitude: latitude, happyHours: happyHours, favorited: favorited, priciness: priciness, averageUserRating: averageUserRating)
+            
+            let newPlace = Place(name: name, address: address, longitude: longitude, latitude: latitude, happyHours: happyHours, favorited: favorited, priciness: priciness, averageUserRating: averageUserRating, neighborhood: area!)
             //add to array of structs
             placeArray.append(newPlace)
         }
