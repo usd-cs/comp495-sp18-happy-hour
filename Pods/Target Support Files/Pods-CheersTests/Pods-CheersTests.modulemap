@@ -1,0 +1,6 @@
+framework module Pods_CheersTests {
+  umbrella header "Pods-CheersTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
