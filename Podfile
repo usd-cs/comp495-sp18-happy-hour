@@ -6,8 +6,16 @@ target 'Cheers' do
   use_frameworks!
 
   # Pods for Cheers
+  # database
   pod 'Firebase/Database'
   pod 'Firebase/Core'
+  
+  # Yelp
+  pod 'YelpAPI'
+  pod 'CDYelpFusionKit', '1.5.0'
+  
+  # JSON
+  pod 'SwiftyJSON'
   
   target 'CheersTests' do
     inherit! :search_paths

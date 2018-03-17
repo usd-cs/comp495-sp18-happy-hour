@@ -14,6 +14,6 @@ enum Neighborhood : String {
     case LaJolla = "La Jolla"
     case GaslampQuarter = "Gaslamp Quarter"
     case OceanBeach = "Ocean Beach"
-    
+    // add more neighborhoods
     
 }
