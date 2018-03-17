@@ -8,33 +8,32 @@
 
 import Foundation
 import Firebase
-import CDYelpFusionKit
 import Alamofire
 import SwiftyJSON
 
 class DatabaseController {
     
-    let yelpAPIKey = "Mxkbvkgu6VYllYtDz5Oppicd1FiPg2G6QBj2yiKw3nUlIaB1BUCSHAThlEMb_vF4Np5iNpYjNLuC_clWi-2yXAo_WTLzabGmeoAaNHwehd2MTOZwyYRX5fu741WsWnYx"
-    let yelpClientID = "jGMy2UMn7d3FOwtbUPHaVQ"
-    
-    let headers: HTTPHeaders = [
-        "Authorization": "Bearer Mxkbvkgu6VYllYtDz5Oppicd1FiPg2G6QBj2yiKw3nUlIaB1BUCSHAThlEMb_vF4Np5iNpYjNLuC_clWi-2yXAo_WTLzabGmeoAaNHwehd2MTOZwyYRX5fu741WsWnYx"
-    ]
 
-    
     static func getPlaceData(url: String, parameters: [String: String]) {
+        let heada: HTTPHeaders = [
+            "Authorization": "Bearer Mxkbvkgu6VYllYtDz5Oppicd1FiPg2G6QBj2yiKw3nUlIaB1BUCSHAThlEMb_vF4Np5iNpYjNLuC_clWi-2yXAo_WTLzabGmeoAaNHwehd2MTOZwyYRX5fu741WsWnYx"
+        ]
         
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers) {
-            response in
-            if response.result.isSuccess {
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: heada).responseJSON { (response) in
+            if response.result.isSuccess{
                 
-                let barJSON : JSON = JSON(response.result.value!)
-                print(barJSON)
+                
+                let bar : JSON = JSON(response.result.value!)
+                print(bar)
+                
                 
             } else {
-                print("error")
+                print("Error \(String(describing: response.result.error))")
+                
             }
         }
+
+        
     }
     
     static func upload() {

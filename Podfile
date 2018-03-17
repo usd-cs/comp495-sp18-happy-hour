@@ -11,11 +11,13 @@ target 'Cheers' do
   pod 'Firebase/Core'
   
   # Yelp
-  pod 'YelpAPI'
-  pod 'CDYelpFusionKit', '1.5.0'
+  #pod 'YelpAPI'
   
-  # JSON
+  
+
+  # Networking & Parsing
   pod 'SwiftyJSON'
+  pod 'Alamofire'
   
   target 'CheersTests' do
     inherit! :search_paths

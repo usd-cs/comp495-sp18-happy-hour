@@ -1,10 +1,5 @@
 PODS:
   - Alamofire (4.7.0)
-  - AlamofireObjectMapper (5.0.0):
-    - Alamofire (~> 4.1)
-    - ObjectMapper (~> 3.0)
-  - CDYelpFusionKit (1.5.0):
-    - AlamofireObjectMapper (= 5.0.0)
   - Firebase/Core (4.8.0):
     - FirebaseAnalytics (= 4.0.5)
     - FirebaseCore (= 4.0.13)
@@ -33,21 +28,16 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - ObjectMapper (3.1.0)
   - SwiftyJSON (4.0.0)
-  - YelpAPI (3.0.0)
 
 DEPENDENCIES:
-  - CDYelpFusionKit (= 1.5.0)
+  - Alamofire
   - Firebase/Core
   - Firebase/Database
   - SwiftyJSON
-  - YelpAPI
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
-  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
-  CDYelpFusionKit: 665cf3881bff25db3a47ca3a4e3497e3a1ea552a
   Firebase: 710decbbc6d9d48530e9a5dba3209740c3532e05
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
   FirebaseCore: 3c02ec652db3d03fdc8bc6d9154af3e20d64b6f5
@@ -56,10 +46,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  YelpAPI: 9ae0ee45b998d306c1aff9b2d966dc23121f191e
 
-PODFILE CHECKSUM: 5d8a046211a6b20514c51345a7f76c4d720b0fc5
+PODFILE CHECKSUM: 1eca4364ccd3c3cb8e3c59910f18fe9862688c23
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.3.1
