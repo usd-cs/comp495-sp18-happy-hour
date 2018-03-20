@@ -8,12 +8,13 @@
 
 import Foundation
 
-enum Neighborhood : String {
+enum Neighborhood: String {
     case NorthPark = "North Park"
     case PacificBeach = "Pacific Beach"
     case LaJolla = "La Jolla"
     case GaslampQuarter = "Gaslamp Quarter"
     case OceanBeach = "Ocean Beach"
+    case unknown = ""
     // add more neighborhoods
     
 }

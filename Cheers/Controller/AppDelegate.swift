@@ -23,11 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         FirebaseApp.configure()
         
-        let url = "https://api.yelp.com/v3/businesses/search"
-        let parameters: [String: String] = ["term": "Firehouse",
-                                            "location": "San Diego"]
-
-        DatabaseController.getPlaceData(url: url, parameters: parameters)
+        //DatabaseController.getPlaceData(url: url, parameters: parameters)
+        DatabaseRecord.writeToDB()
 
         
         

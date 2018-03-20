@@ -46,8 +46,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.priceLabel.text = String(bar.priciness)
         cell.priceLabel.textColor = UIColor.white
-        //print("Got here")
-        
         
         return cell
     }
@@ -59,7 +57,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         tableView.delegate = self
         places = Place.readFromTextFile()
-        DatabaseController.upload()
     }
 
     override func didReceiveMemoryWarning() {

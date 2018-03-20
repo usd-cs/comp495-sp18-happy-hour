@@ -17,6 +17,7 @@ extension String {
 }
 
 struct Place {
+    
     // name of bar/restaurant/location
     var name: String
     
@@ -47,7 +48,6 @@ struct Place {
     var neighborhood: Neighborhood
     
     
-
     //Reads from BarInfoCheersApp.txt and returns an array of Place structs
     static func readFromTextFile() -> [Place] {
         //Read file into single string
@@ -70,10 +70,6 @@ struct Place {
         fileToString.enumerateLines { line, _ in
             stringArray.append(line)
         }
-
-        
-        //Split single string into array of strings
-        //let stringArray = fileToString.components(separatedBy: "\r\n")
         
         //Split into array of strings for each bar
         for line in stringArray {
@@ -96,21 +92,6 @@ struct Place {
             let longitude = Double(array[3])!
             let latitude = Double(array[2])!
             let area = Neighborhood(rawValue: array[4])
-            
-            /*
-            var favorited: Bool
-            var priciness: Int
-            var averageUserRating: Double
-            var happyHours: [String: String]
-            */
-            
-            
-            
-            
-            
-            
-            
-            
             var favorited: Bool = false
             var priciness: Int = 1
             let averageUserRating = 4.0
@@ -140,12 +121,11 @@ struct Place {
             }
             
             let newPlace = Place(name: name, address: address, longitude: longitude, latitude: latitude, happyHours: happyHours, favorited: favorited, priciness: priciness, averageUserRating: averageUserRating, neighborhood: area!)
+            
             //add to array of structs
-            //print(newPlace.name)
             placeArray.append(newPlace)
         }
         
-        //print(placeArray) //test to show place array works
         return placeArray
     }
 }

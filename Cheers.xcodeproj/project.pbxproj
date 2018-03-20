@@ -18,7 +18,8 @@
 		B1FFE6AB205B69F500531FDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */; };
 		B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */; };
 		B1FFE6AF205B717E00531FDB /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AE205B717E00531FDB /* DatabaseController.swift */; };
-		BE3F559C205A3C4D008DB1ED /* filterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F559B205A3C4D008DB1ED /* filterSettings.swift */; };
+		BE3F559C205A3C4D008DB1ED /* FilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F559B205A3C4D008DB1ED /* FilterSettings.swift */; };
+		BE500C6720619CD1006F4FD0 /* BarNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = BE500C6620619CD1006F4FD0 /* BarNames.txt */; };
 		BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B460204F34AF00136463 /* AppDelegate.swift */; };
 		BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B462204F34AF00136463 /* ListViewController.swift */; };
 		BEA1B465204F34AF00136463 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B464204F34AF00136463 /* MapViewController.swift */; };
@@ -28,6 +29,8 @@
 		BEA1B478204F34B000136463 /* CheersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B477204F34B000136463 /* CheersTests.swift */; };
 		BEA1B483204F34B000136463 /* CheersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B482204F34B000136463 /* CheersUITests.swift */; };
 		BEC473AD20510B7C00FC5702 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC473AC20510B7C00FC5702 /* Place.swift */; };
+		BEF309A62061AA3200022098 /* BarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A52061AA3200022098 /* BarType.swift */; };
+		BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A72061BA0D00022098 /* DatabaseRecord.swift */; };
 		ECBAF1DCFF0D62B667481A7D /* Pods_CheersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F4456248D6140CBDEA45D4 /* Pods_CheersTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +69,8 @@
 		B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neighborhoods.swift; sourceTree = "<group>"; };
 		B1FFE6AE205B717E00531FDB /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
-		BE3F559B205A3C4D008DB1ED /* filterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterSettings.swift; sourceTree = "<group>"; };
+		BE3F559B205A3C4D008DB1ED /* FilterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettings.swift; sourceTree = "<group>"; };
+		BE500C6620619CD1006F4FD0 /* BarNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BarNames.txt; sourceTree = "<group>"; };
 		BEA1B45D204F34AF00136463 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA1B460204F34AF00136463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA1B462204F34AF00136463 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 		BEA1B482204F34B000136463 /* CheersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersUITests.swift; sourceTree = "<group>"; };
 		BEA1B484204F34B000136463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEC473AC20510B7C00FC5702 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		BEF309A52061AA3200022098 /* BarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarType.swift; sourceTree = "<group>"; };
+		BEF309A72061BA0D00022098 /* DatabaseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRecord.swift; sourceTree = "<group>"; };
 		F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cheers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -172,8 +178,10 @@
 			isa = PBXGroup;
 			children = (
 				BEC473AC20510B7C00FC5702 /* Place.swift */,
-				BE3F559B205A3C4D008DB1ED /* filterSettings.swift */,
+				BE3F559B205A3C4D008DB1ED /* FilterSettings.swift */,
 				B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */,
+				BEF309A52061AA3200022098 /* BarType.swift */,
+				BEF309A72061BA0D00022098 /* DatabaseRecord.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +215,7 @@
 				B1C20A582051E3FB00ECB998 /* View */,
 				B1C20A572051E3F700ECB998 /* Controller */,
 				BEA1B469204F34AF00136463 /* Assets.xcassets */,
+				BE500C6620619CD1006F4FD0 /* BarNames.txt */,
 				B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */,
 				B1C20A602051EF6500ECB998 /* shout.jpg */,
 				B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */,
@@ -351,6 +360,7 @@
 			files = (
 				BEA1B46D204F34AF00136463 /* LaunchScreen.storyboard in Resources */,
 				B1FFE6AB205B69F500531FDB /* GoogleService-Info.plist in Resources */,
+				BE500C6720619CD1006F4FD0 /* BarNames.txt in Resources */,
 				B10E20BA2054AF88005E37BE /* BarInfoCheersApp.txt in Resources */,
 				BEA1B46A204F34AF00136463 /* Assets.xcassets in Resources */,
 				BEA1B468204F34AF00136463 /* Main.storyboard in Resources */,
@@ -537,14 +547,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE3F559C205A3C4D008DB1ED /* filterSettings.swift in Sources */,
+				BE3F559C205A3C4D008DB1ED /* FilterSettings.swift in Sources */,
 				BEA1B465204F34AF00136463 /* MapViewController.swift in Sources */,
 				BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */,
 				B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */,
 				B1FFE6AF205B717E00531FDB /* DatabaseController.swift in Sources */,
 				339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */,
 				BEC473AD20510B7C00FC5702 /* Place.swift in Sources */,
+				BEF309A62061AA3200022098 /* BarType.swift in Sources */,
 				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
+				BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */,
 				339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
 				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
