@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct filterSettings: Equatable {
+struct FilterSettings: Equatable {
     // whether or not we are searching for bars in our favorites list
     var favorited: Bool
     
@@ -23,8 +23,9 @@ struct filterSettings: Equatable {
     // distance from my current location
     var distanceFromMe: Double
     
-    static func ==(lhs: filterSettings, rhs: filterSettings) -> Bool {
+    static func ==(lhs: FilterSettings, rhs: FilterSettings) -> Bool {
         return lhs.favorited == rhs.favorited && lhs.ratingMinimum == rhs.ratingMinimum && lhs.priceMaximum == rhs.priceMaximum && lhs.distanceFromMe == rhs.distanceFromMe
     }
     
 }
+
