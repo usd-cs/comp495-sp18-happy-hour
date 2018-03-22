@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -21,11 +22,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "bar", for: indexPath) as! BarTableViewCell
         
         let bar = places[indexPath.row]
         
-        
+
         cell.barImage.image = UIImage(named : "shout.jpg")
         cell.barImage.alpha = 0.90
         
@@ -43,8 +46,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.priceLabel.text = String(bar.priciness)
         cell.priceLabel.textColor = UIColor.white
-        //print("Got here")
-        
         
         return cell
     }

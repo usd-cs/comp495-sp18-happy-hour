@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -20,6 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         getUserLocation(); //Makes a call to determine user location on launch
         
+        FirebaseApp.configure()
+        
+        //DatabaseController.getPlaceData(url: url, parameters: parameters)
+        DatabaseRecord.writeToDB()
+
+        
+        
+
         return true
     }
     
