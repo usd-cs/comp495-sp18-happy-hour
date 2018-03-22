@@ -16,6 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     var userLocation: CLLocationCoordinate2D? //Holds UserLocation Coordinates
     var locationManager: CLLocationManager!
+    
+    var masterList: [Place]? {
+        didSet {
+            filterList()
+        }
+    }
+    var liveList: [Place]? {
+        didSet {
+            print("liveList has been calculated")
+        }
+    }
+    var notLiveList: [Place]? {
+        didSet {
+            print("notLiveList has been calculated")
+        }
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -25,9 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         //DatabaseController.getPlaceData(url: url, parameters: parameters)
         DatabaseRecord.writeToDB()
-
         
-        
+        // TODO: make work with async call to CoreLocations
+        // TODO: need to make 'forNeighborhood' not static
+        //masterList = DatabaseController.readFromDB(fromNeighborhood: "Pacific Beach")
+        DatabaseController.readFromDB(fromNeighborhood: "Pacific Beach")
+        //filterList()
 
         return true
     }
@@ -53,6 +72,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // TODO: Need to finish this
+    func filterList() {
+        
     }
     
     

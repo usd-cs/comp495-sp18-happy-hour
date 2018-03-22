@@ -32,7 +32,7 @@ class MapViewController: UIViewController {
         
     }
     
-    
+    /*
     func populateMap() {
         // this call will be replaced by API call once core features are functioning
         barList = Place.readFromTextFile()
@@ -70,7 +70,7 @@ class MapViewController: UIViewController {
         let region = MKCoordinateRegion(center: myLocation!, span: span)
         Map.setRegion(region, animated: true)
         
-    }
+    } */
     
     
     override func didReceiveMemoryWarning() {

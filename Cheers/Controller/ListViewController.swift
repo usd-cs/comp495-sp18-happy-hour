@@ -15,20 +15,20 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var places: [Place] = []
     
+    //used to pull info from AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var liveList: [Place]?
+    var notLiveList: [Place]?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "bar", for: indexPath) as! BarTableViewCell
-        
         let bar = places[indexPath.row]
         
-
+        /*
         cell.barImage.image = UIImage(named : "shout.jpg")
         cell.barImage.alpha = 0.90
         
@@ -46,6 +46,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.priceLabel.text = String(bar.priciness)
         cell.priceLabel.textColor = UIColor.white
+ */
         
         return cell
     }
@@ -53,24 +54,26 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         tableView.dataSource = self
         tableView.delegate = self
-        places = Place.readFromTextFile()
+        
+        liveList = appDelegate.liveList
+        notLiveList = appDelegate.notLiveList
+        
+        //places = Place.readFromTextFile()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "showSelected", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSelected"{
+        if segue.identifier == "showSelected" {
             let selectedVC = segue.destination as! SelectedBarViewController
             let indexPath = tableView.indexPathForSelectedRow!
             let selectedPlace = places[indexPath.row]
