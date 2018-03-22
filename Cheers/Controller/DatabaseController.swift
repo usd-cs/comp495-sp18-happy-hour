@@ -19,6 +19,7 @@ class DatabaseController {
         let header: HTTPHeaders = [
             "Authorization": "Bearer Mxkbvkgu6VYllYtDz5Oppicd1FiPg2G6QBj2yiKw3nUlIaB1BUCSHAThlEMb_vF4Np5iNpYjNLuC_clWi-2yXAo_WTLzabGmeoAaNHwehd2MTOZwyYRX5fu741WsWnYx"
         ]
+        
         var json: JSON? {
             didSet {
                 DatabaseRecord.continueWriting(bar: json, happyHours: happyHours, neighborhood: neighborhood)
@@ -53,7 +54,7 @@ class DatabaseController {
             "name": record.name,
             "longitude": record.longitude,
             "latitude": record.latitude,
-            "rating:": record.rating,
+            "rating": record.rating,
             "price": record.price,
             "reviewCount": record.reviewCount,
             "phoneNumber": record.phoneNumber,

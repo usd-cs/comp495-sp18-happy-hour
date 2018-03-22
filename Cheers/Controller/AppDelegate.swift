@@ -6,9 +6,11 @@
 //  Copyright © 2018 University of San Diego. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CoreLocation
 import Firebase
+import SwiftDate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -76,20 +78,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     // TODO: Need to finish this
     func filterList() {
+        let current = Date()
+        print("\(current.hour):\(current.minute)")
         
+        for bar in masterList! {
+            // TODO: this doesn't account for happy hours starting/ending not on the hour:
+            // 5 PM -> all good
+            // 5:30 PM -> need to fix
+            if let happyHourString = bar.record.happyHours["\(current.weekdayName)"] {
+                let (dayOffset, startTime, endTime): (Int, String, String) = computeTimes(for: happyHourString)
+                let happyHourStartingDate = "\(current.year)-\(current.month)-\(current.day) \(startTime):00)".date(format: .custom("yyyy-MM-dd HH:MM"))
+                let happyHourEndingDate = "\(current.year)-\(current.month)-\(current.day+dayOffset) \(endTime):00)".date(format: .custom("yyyy-MM-dd HH:MM"))
+                
+                let currentDate = DateInRegion(absoluteDate: current)
+                
+                if currentDate > happyHourStartingDate! && currentDate < happyHourEndingDate! {
+                    liveList!.append(bar)
+                } else {
+                    notLiveList!.append(bar)
+                }
+                
+            } else {
+                notLiveList!.append(bar)
+            }
+        }
+    }
+    
+    func computeTimes(for happyHourString: String) -> (Int, String, String) {
+        let components = happyHourString.components(separatedBy: " ")
+        var dayOffset = 0
+        guard components.count == 5 else {
+            print("ERROR: incompatible time")
+            return (0, "", "")
+        }
+        
+        var startTime = Int(components[0])!
+        if components[1] == "pm" || components[1] == "Pm" || components[1] == "PM" || components[1] == "pM" {
+            startTime += 12
+        }
+        var endTime = Int(components[3])!
+        if components[4] == "am" || components[4] == "Am" || components[4] == "AM" || components[4] == "aM" {
+            endTime += 12
+            if endTime >= 24 {
+                dayOffset += 1
+                endTime -= 24
+            }
+        }
+        
+        return (dayOffset, String(startTime), String(endTime))
     }
     
     
     
-//    //MARK: - Getting User Location
-//    /***************************************************************/
+    // MARK: - Getting User Location
     
-    //Helper function
+    // Helper function
     func getUserLocation() {
         initLocationManager();
     }
     
-    //inits all the required LocationManager settings
+    // inits all the required LocationManager settings
     func initLocationManager() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -99,7 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.startUpdatingLocation()
     }
     
-    //Pulls latest location and stops updating.
+    // Pulls latest location and stops updating.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locationArray = locations as NSArray
         let locationObj = locationArray.lastObject as? CLLocation

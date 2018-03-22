@@ -178,9 +178,9 @@ struct DatabaseRecord {
         var categories = [BarType]()
         for category in categoriesJSON {
             let rawValue = category.1["alias"].rawString()!
-            print("Raw value: ", rawValue)
+            //print("Raw value: ", rawValue)
             if let enumValue = BarType(rawValue: rawValue) {
-                print("Enum value: ", enumValue)
+                //print("Enum value: ", enumValue)
                 categories.append(enumValue)
             }
         }
