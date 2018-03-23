@@ -141,6 +141,7 @@ struct DatabaseRecord {
                     neighborhood = .unknown
                     count = 0
                     stringArray.remove(at: 0)
+                    happyHours = [:]
                     //break
                 } else {
                     let day = stringArray[0]
@@ -178,9 +179,7 @@ struct DatabaseRecord {
         var categories = [BarType]()
         for category in categoriesJSON {
             let rawValue = category.1["alias"].rawString()!
-            //print("Raw value: ", rawValue)
             if let enumValue = BarType(rawValue: rawValue) {
-                //print("Enum value: ", enumValue)
                 categories.append(enumValue)
             }
         }

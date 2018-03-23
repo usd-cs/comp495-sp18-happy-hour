@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class DatabaseController {
     
@@ -79,6 +80,7 @@ class DatabaseController {
         
     }
     
+    /*
     static func readFromDB(fromNeighborhood neighborhood: String) {
         var ref: DatabaseReference!
         ref = Database.database().reference()
@@ -122,13 +124,17 @@ class DatabaseController {
           
             }
             
+            SVProgressHUD.dismiss()
             returnPlaceArray(places: places)
         })
     }
     
     static func returnPlaceArray(places: [Place]) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.masterList = places
+        //let listViewController = ListViewController()
+        //listViewController.places = places
+        //UIApplication.shared.
+        //appDelegate.masterList = places
     }
-    
+    */
 }
