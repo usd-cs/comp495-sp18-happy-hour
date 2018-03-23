@@ -28,10 +28,7 @@ class DatabaseController {
         
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
             if response.result.isSuccess{
-                
                 json = JSON(response.result.value!)
-                //print(json!)
-                
             } else {
                 print("Error \(String(describing: response.result.error))")
                 
@@ -74,6 +71,7 @@ class DatabaseController {
                 print("Error in writing to DB!")
                 print(error!)
             } else {
+                // DEBUG:
                 print("\(record.name) saved successfully to DB")
             }
         }
