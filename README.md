@@ -48,30 +48,30 @@ For example, if I wanted to upload two bars for North Park, it would look like t
 Firehouse
 Pacific Beach
 Monday
-5pm - 12am
+5 pm - 12 am
 Tuesday
-5pm - 12am
+5 pm - 12 am
 Wednesday
-5pm - 12am
+5 pm - 12 am
 Thursday
-5pm - 2am
+5 pm - 2 am
 Friday
-5pm - 10pm
+5 pm - 10 pm
 Sunday
-9am - 3pm
+9 am - 3 pm
 END OF RECORD
 Pacific Beach Ale House
 Pacific Beach
 Monday
-3pm - 6pm
+3 pm - 6 pm
 Tuesday
-3pm - 6pm
+3 pm - 6 pm
 Wednesday
-3pm - 6pm
+3 pm - 6 pm
 Thursday
-3pm - 6pm
+3 pm - 6 pm
 Friday
-3pm - 6pm
+3 pm - 6 pm
 END OF RECORD
 ```
 
