@@ -16,8 +16,15 @@ extension String {
     }
 }
 
-struct Place {
+struct Place: Equatable{
+    var record: DatabaseRecord
+    var favorited: Bool
     
+    static func ==(lhs: Place, rhs: Place) -> Bool {
+        return lhs.record.id == rhs.record.id
+    }
+    
+    /*
     // name of bar/restaurant/location
     var name: String
     
@@ -127,6 +134,6 @@ struct Place {
         }
         
         return placeArray
-    }
+    } */
 }
 

@@ -24,15 +24,17 @@ class SelectedBarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = place.name
+        //navigationItem.title = place.name
         
         // Do any additional setup after loading the view.
+        /*
         imageView.image = UIImage(named: "shout.jpg")
         nameLabel.text  = place.name
         addressLabel.text = place.address
         timeLabel.text = "Happy Hour: 5:30pm - 7:30pm"
         ratingLabel.text = "Rating: \(String(place.averageUserRating))/5"
         menuLabel.text = "Featured Drinks: Moscow Mules!"
+ */
         
     }
     
