@@ -13,7 +13,11 @@ target 'Cheers' do
   # Yelp
   #pod 'YelpAPI'
   
+  # Date/Time Management
+  pod 'SwiftDate', '~> 4.5.1'
   
+  # Progress HUD
+  pod 'SVProgressHUD'
 
   # Networking & Parsing
   pod 'SwiftyJSON'

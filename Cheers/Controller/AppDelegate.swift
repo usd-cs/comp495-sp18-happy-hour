@@ -6,9 +6,11 @@
 //  Copyright © 2018 University of San Diego. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CoreLocation
 import Firebase
+import SwiftDate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -16,23 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     var userLocation: CLLocationCoordinate2D? //Holds UserLocation Coordinates
     var locationManager: CLLocationManager!
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         getUserLocation(); //Makes a call to determine user location on launch
         
         FirebaseApp.configure()
         
-        //DatabaseController.getPlaceData(url: url, parameters: parameters)
-        DatabaseRecord.writeToDB()
-
-        
-        
+        // DEBUG: when reading from DB, comment out this line
+        // DEBUG: when writing to DB, uncomment this line
+        //DatabaseRecord.writeToDB()
 
         return true
     }
     
-
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -55,17 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    // MARK: - Getting User Location
     
-    
-//    //MARK: - Getting User Location
-//    /***************************************************************/
-    
-    //Helper function
+    // Helper function
     func getUserLocation() {
         initLocationManager();
     }
     
-    //inits all the required LocationManager settings
+    // inits all the required LocationManager settings
     func initLocationManager() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -75,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.startUpdatingLocation()
     }
     
-    //Pulls latest location and stops updating.
+    // Pulls latest location and stops updating.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locationArray = locations as NSArray
         let locationObj = locationArray.lastObject as? CLLocation
@@ -85,7 +80,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
     }
     
-
-
 }
 

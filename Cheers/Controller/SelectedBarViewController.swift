@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftDate
 
 class SelectedBarViewController: UIViewController {
     
@@ -24,14 +25,16 @@ class SelectedBarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = place.name
+        navigationItem.title = place.record.name
         
-        // Do any additional setup after loading the view.
+        let current = Date()
         imageView.image = UIImage(named: "shout.jpg")
-        nameLabel.text  = place.name
-        addressLabel.text = place.address
-        timeLabel.text = "Happy Hour: 5:30pm - 7:30pm"
-        ratingLabel.text = "Rating: \(String(place.averageUserRating))/5"
+        nameLabel.text  = place.record.name
+        addressLabel.text = place.record.address
+        timeLabel.text = "Happy Hour: \(place.record.happyHours[current.weekdayName] ?? "no happy hours today")"
+        ratingLabel.text = "Rating: \(String(place.record.rating))/5"
+        
+        // TODO: need to figure out how to show menu information
         menuLabel.text = "Featured Drinks: Moscow Mules!"
         
     }

@@ -10,14 +10,11 @@ import Foundation
 import Firebase
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class DatabaseController {
     
-    var bar: JSON? {
-        didSet {
-            
-        }
-    }
+    static var refHandle: DatabaseHandle?
     
     static func getPlaceData(url: String, parameters: [String: String], happyHours: [String: String], neighborhood: Neighborhood) {
         let header: HTTPHeaders = [
@@ -32,10 +29,7 @@ class DatabaseController {
         
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
             if response.result.isSuccess{
-                
                 json = JSON(response.result.value!)
-                //print(json!)
-                
             } else {
                 print("Error \(String(describing: response.result.error))")
                 
@@ -58,7 +52,7 @@ class DatabaseController {
             "name": record.name,
             "longitude": record.longitude,
             "latitude": record.latitude,
-            "rating:": record.rating,
+            "rating": record.rating,
             "price": record.price,
             "reviewCount": record.reviewCount,
             "phoneNumber": record.phoneNumber,
@@ -78,11 +72,11 @@ class DatabaseController {
                 print("Error in writing to DB!")
                 print(error!)
             } else {
+                // DEBUG:
                 print("\(record.name) saved successfully to DB")
             }
         }
         
         
     }
-    
 }
