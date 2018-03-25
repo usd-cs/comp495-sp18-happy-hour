@@ -213,12 +213,12 @@
 		BEA1B45F204F34AF00136463 /* Cheers */ = {
 			isa = PBXGroup;
 			children = (
-				339DAD5320682DFC0053471C /* PacificBeach.txt */,
 				B1C20A592051E3FE00ECB998 /* Model */,
 				B1C20A582051E3FB00ECB998 /* View */,
 				B1C20A572051E3F700ECB998 /* Controller */,
 				BEA1B469204F34AF00136463 /* Assets.xcassets */,
 				BE500C6620619CD1006F4FD0 /* BarNames.txt */,
+				339DAD5320682DFC0053471C /* PacificBeach.txt */,
 				B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */,
 				B1C20A602051EF6500ECB998 /* shout.jpg */,
 				B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */,
