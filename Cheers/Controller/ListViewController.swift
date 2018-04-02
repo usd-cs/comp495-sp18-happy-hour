@@ -68,9 +68,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bar", for: indexPath) as! BarTableViewCell
-        let bar = places[indexPath.row]
+        var bar = places[indexPath.row]
         
-        cell.barImage.image = UIImage(named : "shout.jpg")
+        let imageUrl =  URL(string: bar.record.images.removeFirst())
+        
+        ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
+            cell.barImage.image = image
+        }
+        
         cell.barImage.alpha = 0.90
         
         cell.nameLabel.text = bar.record.name
@@ -252,7 +257,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             let indexPath = tableView.indexPathForSelectedRow!
             let selectedPlace = places[indexPath.row]
             selectedVC.place = selectedPlace
+            self.navigationController?.isNavigationBarHidden = false
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
 
 }
