@@ -175,7 +175,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             endTimeHours = Int(endComponents[0])!
             endTimeMinutes = Int(endComponents[1])!
         } else {
-            endTimeHours = Int(components[3])!
+            //endTimeHours = Int(components[3])! //This is crashing so Meelad added the next line
+            endTimeHours = 1
             endTimeMinutes = 0
         }
         

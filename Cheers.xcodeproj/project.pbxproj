@@ -15,6 +15,7 @@
 		B10E20BA2054AF88005E37BE /* BarInfoCheersApp.txt in Resources */ = {isa = PBXBuildFile; fileRef = B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */; };
 		B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */; };
 		B1C20A612051EF6500ECB998 /* shout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1C20A602051EF6500ECB998 /* shout.jpg */; };
+		B1FF310F20720A33001DF2DF /* UserLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FF310E20720A33001DF2DF /* UserLocations.swift */; };
 		B1FFE6AB205B69F500531FDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */; };
 		B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */; };
 		B1FFE6AF205B717E00531FDB /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AE205B717E00531FDB /* DatabaseController.swift */; };
@@ -66,6 +67,7 @@
 		B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BarInfoCheersApp.txt; sourceTree = "<group>"; };
 		B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTableViewCell.swift; sourceTree = "<group>"; };
 		B1C20A602051EF6500ECB998 /* shout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shout.jpg; sourceTree = "<group>"; };
+		B1FF310E20720A33001DF2DF /* UserLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocations.swift; sourceTree = "<group>"; };
 		B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neighborhoods.swift; sourceTree = "<group>"; };
 		B1FFE6AE205B717E00531FDB /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
@@ -142,17 +144,11 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B156B92D205CA2F600316ED2 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		B1C20A572051E3F700ECB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B156B92D205CA2F600316ED2 /* API */,
+				B1FF31132072DBDD001DF2DF /* Database Controller Classes */,
+				B1FF310D20720A08001DF2DF /* Location Classes */,
 				BEA1B460204F34AF00136463 /* AppDelegate.swift */,
 				BEA1B462204F34AF00136463 /* ListViewController.swift */,
 				666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */,
@@ -160,7 +156,6 @@
 				339A224B205081CE00C099FA /* FavoritesViewController.swift */,
 				339A224D205081DD00C099FA /* SettingsViewController.swift */,
 				B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */,
-				B1FFE6AE205B717E00531FDB /* DatabaseController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,6 +179,22 @@
 				BEF309A92061D3CE00022098 /* FilterSettings.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B1FF310D20720A08001DF2DF /* Location Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B1FF310E20720A33001DF2DF /* UserLocations.swift */,
+			);
+			path = "Location Classes";
+			sourceTree = "<group>";
+		};
+		B1FF31132072DBDD001DF2DF /* Database Controller Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B1FFE6AE205B717E00531FDB /* DatabaseController.swift */,
+			);
+			path = "Database Controller Classes";
 			sourceTree = "<group>";
 		};
 		BEA1B454204F34AF00136463 = {
@@ -578,6 +589,7 @@
 				339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
 				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
+				B1FF310F20720A33001DF2DF /* UserLocations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,7 +758,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E255S56V67;
+				DEVELOPMENT_TEAM = NKB7H7KVZ8;
 				INFOPLIST_FILE = Cheers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sandiego.comp495.Cheers;
@@ -764,7 +776,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E255S56V67;
+				DEVELOPMENT_TEAM = NKB7H7KVZ8;
 				INFOPLIST_FILE = Cheers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sandiego.comp495.Cheers;
