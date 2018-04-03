@@ -2,7 +2,7 @@ Hennessey's
 La Jolla
 Monday
 4 pm - 7 pm
-Tuesday 
+Tuesday
 4 pm - 7 pm 
 Wednesday
 4 pm - 7 pm
@@ -17,11 +17,11 @@ Sunday
 4 pm - 6 pm
 Monday
 4 pm - 6 pm
-Tuesday 
+Tuesday
 4 pm - 6 pm
 Wednesday
-4 pm - 6 pm 
-Thursday 
+4 pm - 6 pm
+Thursday
 4 pm - 6 pm
 Friday
 4 pm - 6 pm
@@ -36,7 +36,7 @@ Tuesday
 3 pm - 6 pm
 Wednesday
 3 pm - 6 pm
-Thursday 
+Thursday
 3 pm - 6 pm
 Friday
 3 pm - 6 pm
@@ -50,8 +50,8 @@ Monday
 Wednesday
 4 pm - 6 pm
 Thursday
-4 pm - 6 pm 
-Friday 
+4 pm - 6 pm
+Friday
 4 pm - 6 pm
 Saturday
 11 am - 3 pm
@@ -68,7 +68,7 @@ Wednesday
 3 pm - 7 pm
 Thursday
 3 pm - 7 pm
-Friday 
+Friday
 3 pm - 7 pm
 Saturday
 3 pm - 7 pm
@@ -98,7 +98,7 @@ Tuesday
 3 pm - 6 pm
 Wednesday
 3 pm - 6 pm
-Thursday 
+Thursday
 3 pm - 6 pm
 Wednesday
 3 pm - 6 pm
@@ -111,7 +111,7 @@ George's Level2
 La Jolla
 Monday
 3:30 pm - 6:30 pm
-Tuesday 
+Tuesday
 3:30 pm - 6:30 pm
 Wednesday
 3:30 pm - 6:30 pm
@@ -154,4 +154,3 @@ Friday
 Saturday
 3 pm - 6 pm
 END OF RECORD
-
