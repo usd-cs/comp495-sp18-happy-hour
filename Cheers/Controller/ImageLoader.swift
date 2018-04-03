@@ -21,16 +21,19 @@ class ImageLoader {
         
         DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             
+            //check if image is in the imageCache
             if let data = self.imageCache.object(forKey: url.absoluteString as NSString) {
                 DispatchQueue.main.async { completionHandler(UIImage(data: data as Data)) }
                 return
             }
             
+            //if not in cache then download it
             guard let data = NSData(contentsOf: url) else {
                 DispatchQueue.main.async { completionHandler(nil) }
                 return
             }
             
+            //put the image in the cache for future use. 
             self.imageCache.setObject(data, forKey: url.absoluteString as NSString)
             DispatchQueue.main.async { completionHandler(UIImage(data: data as Data)) }
         }

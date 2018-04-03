@@ -11,12 +11,16 @@ import Firebase
 import SVProgressHUD
 import SwiftDate
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    
+    var isSearching = false
     var refHandle: DatabaseHandle?
     
     var places: [Place] = []
+    var searchedData: [Place] = []
     
     // used to pull info from AppDelegate
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -50,6 +54,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.dataSource = self
         tableView.delegate = self
+        searchBar.delegate = self
+        
+        searchBar.returnKeyType = UIReturnKeyType.done
         
         SVProgressHUD.show()
         
@@ -63,38 +70,98 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if isSearching {
+            return searchedData.count
+        }
+        
         return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "bar", for: indexPath) as! BarTableViewCell
-        var bar = places[indexPath.row]
         
-        let imageUrl =  URL(string: bar.record.images.removeFirst())
+        if isSearching {
+            
+            var bar = searchedData[indexPath.row]
+            
+            let imageUrl =  URL(string: bar.record.images.removeFirst())
+            
+            ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
+                cell.barImage.image = image
+            }
+            
+            cell.barImage.alpha = 0.90
+            cell.nameLabel.text = bar.record.name
+            cell.distanceLabel.text = "0.5 mi"
+            cell.ratingsLabel.text = "+ + + +"
+            cell.happyHourLabel.text = "5 - 7pm"
+            cell.priceLabel.text = String(bar.record.price)
+            
+            return cell
+            
+            
+        } else {
+            var bar = places[indexPath.row]
+            
+            let imageUrl =  URL(string: bar.record.images.removeFirst())
+            
+            ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
+                cell.barImage.image = image
+            }
+            
+            cell.barImage.alpha = 0.90
+            
+            cell.nameLabel.text = bar.record.name
+            cell.nameLabel.textColor = UIColor.white
+            
+            cell.distanceLabel.text = "0.5 mi"
+            cell.distanceLabel.textColor = UIColor.white
+            
+            cell.ratingsLabel.text = "+ + + +"
+            cell.ratingsLabel.textColor = UIColor.white
+            
+            cell.happyHourLabel.text = "5 - 7pm"
+            cell.happyHourLabel.textColor = UIColor.white
+            
+            cell.priceLabel.text = String(bar.record.price)
+            cell.priceLabel.textColor = UIColor.white
+            
         
-        ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
-            cell.barImage.image = image
         }
-        
-        cell.barImage.alpha = 0.90
-        
-        cell.nameLabel.text = bar.record.name
-        cell.nameLabel.textColor = UIColor.white
-        
-        cell.distanceLabel.text = "0.5 mi"
-        cell.distanceLabel.textColor = UIColor.white
-        
-        cell.ratingsLabel.text = "+ + + +"
-        cell.ratingsLabel.textColor = UIColor.white
-        
-        cell.happyHourLabel.text = "5 - 7pm"
-        cell.happyHourLabel.textColor = UIColor.white
-        
-        cell.priceLabel.text = String(bar.record.price)
-        cell.priceLabel.textColor = UIColor.white
-        
         return cell
     }
+    
+    
+    // MARK: - Search Functions
+    
+    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+        
+        if searchBar.isHidden {
+            searchBar.isHidden = false
+        } else {
+            searchBar.isHidden = true
+        }
+        
+    }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == nil || searchText == ""{
+            isSearching = false
+            view.endEditing(true)
+            tableView.reloadData()
+        } else {
+            isSearching = true
+            //searchedData = places.filter({$0.record.name.lowercased() == searchBar.text?.lowercased()})
+            searchedData = places.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
+            tableView.reloadData()
+        }
+    }
+    
+    
+    // MARK: - Database Functions
     
     func filterList() {
         let current = Date()
@@ -261,8 +328,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    // MARK: - Start of View Function
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
+        //self.navigationController?.isNavigationBarHidden = true
+        self.searchBar.isHidden = true
     }
 
 }
