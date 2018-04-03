@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // DEBUG: when reading from DB, comment out this line
         // DEBUG: when writing to DB, uncomment this line
-        //DatabaseRecord.writeToDB()
+        DatabaseRecord.writeToDB()
 
         return true
     }
