@@ -10,7 +10,7 @@ import CoreLocation
 
 class UserLocations: CLLocationManager, CLLocationManagerDelegate {
     
-    // MARK: - Public Variables to be accessed.
+    //Singleton variable to be shared.
     public static var shared: UserLocations!
     
     public var currentLatitude: Double?

@@ -15,8 +15,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var searchBarButton: UIBarButtonItem!
     
-    var isSearching = false
+    var isSearching = false //Determines if we are in search mode or not
     var refHandle: DatabaseHandle?
     
     var places: [Place] = []
@@ -54,9 +55,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.dataSource = self
         tableView.delegate = self
-        searchBar.delegate = self
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
+        searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
+        searchBar.searchBarStyle = UISearchBarStyle.minimal
         
         SVProgressHUD.show()
         
@@ -70,11 +73,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        //if searching is toggled then loaded results
         if isSearching {
             return searchedData.count
         }
-        
         return places.count
     }
     
@@ -85,14 +87,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isSearching {
             
             var bar = searchedData[indexPath.row]
-            
             let imageUrl =  URL(string: bar.record.images.removeFirst())
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
                 cell.barImage.image = image
             }
             
-            cell.barImage.alpha = 0.90
+            //cell.barImage.alpha = 0.90
             cell.nameLabel.text = bar.record.name
             cell.distanceLabel.text = "0.5 mi"
             cell.ratingsLabel.text = "+ + + +"
@@ -104,29 +105,18 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         } else {
             var bar = places[indexPath.row]
-            
             let imageUrl =  URL(string: bar.record.images.removeFirst())
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
                 cell.barImage.image = image
             }
             
-            cell.barImage.alpha = 0.90
-            
+            //cell.barImage.alpha = 0.90
             cell.nameLabel.text = bar.record.name
-            cell.nameLabel.textColor = UIColor.white
-            
             cell.distanceLabel.text = "0.5 mi"
-            cell.distanceLabel.textColor = UIColor.white
-            
             cell.ratingsLabel.text = "+ + + +"
-            cell.ratingsLabel.textColor = UIColor.white
-            
             cell.happyHourLabel.text = "5 - 7pm"
-            cell.happyHourLabel.textColor = UIColor.white
-            
             cell.priceLabel.text = String(bar.record.price)
-            cell.priceLabel.textColor = UIColor.white
             
         
         }
@@ -136,25 +126,56 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: - Search Functions
     
+    //Action function when the search button is pressed
     @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
-        
-        if searchBar.isHidden {
-            searchBar.isHidden = false
-        } else {
-            searchBar.isHidden = true
-        }
+        showSearchBar()
         
     }
     
+    //Displays the search bar and hides the bar buttons
+    func showSearchBar() {
+        
+        navigationItem.titleView = searchBar
+        navigationItem.setRightBarButton(nil, animated: true)
+        
+        searchBar.isHidden =  false
+        searchBar.alpha = 0
+        searchBar.showsCancelButton = true
+
+        UIView.animate(withDuration: 0.5, animations: {
+            self.searchBar.alpha = 1
+        }, completion: { finished in
+            self.searchBar.becomeFirstResponder()
+        })
+    }
+    
+    //action function when the cancel button is pressed
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        hideSearchBar()
+    }
+    
+    //func that hides the search bar and bar button
+    func hideSearchBar() {
+        searchBar.isHidden =  true
+        navigationItem.setRightBarButton(searchBarButton, animated: true)
+        self.searchBar.resignFirstResponder()
+        UIView.animate(withDuration: 0.3, animations: {
+        }, completion: { finished in
+            
+        })
+    }
+    
+    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText == nil || searchText == ""{
+        
+        // if nothing is entered then display the original
+        if searchText == nil || searchText == "" {
             isSearching = false
             view.endEditing(true)
             tableView.reloadData()
-        } else {
+        } else { // display searched results
             isSearching = true
-            //searchedData = places.filter({$0.record.name.lowercased() == searchBar.text?.lowercased()})
             searchedData = places.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
             tableView.reloadData()
         }
@@ -210,7 +231,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
-        SVProgressHUD.dismiss()
+        //SVProgressHUD.dismiss()
     }
     
     func computeTimes(for happyHourString: String) -> (Int, String, String, String, String) {
@@ -331,7 +352,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Start of View Function
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = true
-        self.searchBar.isHidden = true
+        //self.searchBar.isHidden = true
     }
 
 }

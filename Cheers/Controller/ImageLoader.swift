@@ -8,11 +8,13 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
 
 class ImageLoader {
     
     private let imageCache = NSCache<NSString, NSData>()
     
+    //Singleton variable to be shared
     static let shared = ImageLoader()
     
     //Downloads image and caches it so each image is only requested once
@@ -22,21 +24,22 @@ class ImageLoader {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             
             //check if image is in the imageCache
-            if let data = self.imageCache.object(forKey: url.absoluteString as NSString) {
-                DispatchQueue.main.async { completionHandler(UIImage(data: data as Data)) }
+            if let cachedImage = self.imageCache.object(forKey: url.absoluteString as NSString) {
+                DispatchQueue.main.async { completionHandler(UIImage(data: cachedImage as Data)) }
                 return
             }
             
-            //if not in cache then download it
-            guard let data = NSData(contentsOf: url) else {
+            //not in cache then download it
+            guard let downloadedImage = NSData(contentsOf: url) else {
                 DispatchQueue.main.async { completionHandler(nil) }
                 return
             }
             
             //put the image in the cache for future use. 
-            self.imageCache.setObject(data, forKey: url.absoluteString as NSString)
-            DispatchQueue.main.async { completionHandler(UIImage(data: data as Data)) }
+            self.imageCache.setObject(downloadedImage, forKey: url.absoluteString as NSString)
+            DispatchQueue.main.async { completionHandler(UIImage(data: downloadedImage as Data)) }
         }
+        SVProgressHUD.dismiss()
     }
     
 }

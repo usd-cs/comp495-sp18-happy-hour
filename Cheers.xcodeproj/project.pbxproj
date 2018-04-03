@@ -149,7 +149,6 @@
 		B1C20A572051E3F700ECB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B1FF31132072DBDD001DF2DF /* Database Controller Classes */,
 				B1FF310D20720A08001DF2DF /* Location Classes */,
 				BEA1B460204F34AF00136463 /* AppDelegate.swift */,
 				BEA1B462204F34AF00136463 /* ListViewController.swift */,
@@ -159,6 +158,7 @@
 				339A224D205081DD00C099FA /* SettingsViewController.swift */,
 				B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */,
 				B1FF31142072DE84001DF2DF /* ImageLoader.swift */,
+				B1FFE6AE205B717E00531FDB /* DatabaseController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,14 +190,6 @@
 				B1FF310E20720A33001DF2DF /* UserLocations.swift */,
 			);
 			path = "Location Classes";
-			sourceTree = "<group>";
-		};
-		B1FF31132072DBDD001DF2DF /* Database Controller Classes */ = {
-			isa = PBXGroup;
-			children = (
-				B1FFE6AE205B717E00531FDB /* DatabaseController.swift */,
-			);
-			path = "Database Controller Classes";
 			sourceTree = "<group>";
 		};
 		BEA1B454204F34AF00136463 = {
