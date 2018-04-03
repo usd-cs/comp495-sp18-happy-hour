@@ -128,6 +128,23 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" id="9En-bq-tGh">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon-filter" id="yZ6-Mr-aHP">
+                            <connections>
+                                <action selector="filterButtonPressed:" destination="9pv-A4-QxB" id="ahW-DE-HIf"/>
+                            </connections>
+                        </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="4zs-2v-Mhg">
+                            <rect key="frame" x="127" y="7" width="121" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Live"/>
+                                <segment title="All"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedButtonChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="YNk-Uu-jMn"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="6qE-b9-gTj">
                             <connections>
                                 <action selector="searchButtonPressed:" destination="9pv-A4-QxB" id="nsD-eu-eDu"/>
@@ -135,8 +152,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterBarButton" destination="yZ6-Mr-aHP" id="3LY-X9-1Ew"/>
                         <outlet property="searchBar" destination="Ael-If-owj" id="aGi-Oh-cmu"/>
                         <outlet property="searchBarButton" destination="6qE-b9-gTj" id="eex-ja-0xx"/>
+                        <outlet property="segmentedControlButton" destination="4zs-2v-Mhg" id="V5C-oG-zKH"/>
                         <outlet property="tableView" destination="zrY-IH-8Kk" id="NNR-4o-mgh"/>
                         <segue destination="9rn-Gq-Zgu" kind="show" identifier="showSelected" id="3pu-Qr-HWe"/>
                     </connections>
@@ -356,6 +375,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon-filter" width="25" height="25"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

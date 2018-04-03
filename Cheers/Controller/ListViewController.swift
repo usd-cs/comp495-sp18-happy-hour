@@ -16,6 +16,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarButton: UIBarButtonItem!
+    @IBOutlet weak var filterBarButton: UIBarButtonItem!
+    @IBOutlet weak var segmentedControlButton: UISegmentedControl!
     
     var isSearching = false //Determines if we are in search mode or not
     var refHandle: DatabaseHandle?
@@ -179,6 +181,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             searchedData = places.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
             tableView.reloadData()
         }
+    }
+    
+    @IBAction func filterButtonPressed(_ sender: Any) {
+        // TODO: present filtering options
+    }
+    
+    @IBAction func segmentedButtonChanged(_ sender: Any) {
+        // TODO: switch between displaying live and all lists
     }
     
     
