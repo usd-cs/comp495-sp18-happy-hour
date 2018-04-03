@@ -14,16 +14,12 @@ class MapViewController: UIViewController {
     
     var barList: [Place] = []
     var myLocation: CLLocationCoordinate2D?
-    
-    //used to pull info from AppDelegate
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //Gets the current location from the caculation in the AppDelegate
-        myLocation = appDelegate.userLocation
+        myLocation = UserLocations.shared.currentLocation?.coordinate
         Map.showsUserLocation = true
 
         // load in bars

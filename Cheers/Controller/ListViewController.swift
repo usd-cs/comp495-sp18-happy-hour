@@ -11,12 +11,17 @@ import Firebase
 import SVProgressHUD
 import SwiftDate
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var searchBarButton: UIBarButtonItem!
+    
+    var isSearching = false //Determines if we are in search mode or not
     var refHandle: DatabaseHandle?
     
     var places: [Place] = []
+    var searchedData: [Place] = []
     
     // used to pull info from AppDelegate
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -50,6 +55,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.done
+        searchBar.searchBarStyle = UISearchBarStyle.minimal
         
         SVProgressHUD.show()
         
@@ -63,33 +73,116 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //if searching is toggled then loaded results
+        if isSearching {
+            return searchedData.count
+        }
         return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "bar", for: indexPath) as! BarTableViewCell
-        let bar = places[indexPath.row]
         
-        cell.barImage.image = UIImage(named : "shout.jpg")
-        cell.barImage.alpha = 0.90
+        if isSearching {
+            
+            var bar = searchedData[indexPath.row]
+            let imageUrl =  URL(string: bar.record.images.removeFirst())
+            
+            ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
+                cell.barImage.image = image
+            }
+            
+            //cell.barImage.alpha = 0.90
+            cell.nameLabel.text = bar.record.name
+            cell.distanceLabel.text = "0.5 mi"
+            cell.ratingsLabel.text = "+ + + +"
+            cell.happyHourLabel.text = "5 - 7pm"
+            cell.priceLabel.text = String(bar.record.price)
+            
+            return cell
+            
+            
+        } else {
+            var bar = places[indexPath.row]
+            let imageUrl =  URL(string: bar.record.images.removeFirst())
+            
+            ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
+                cell.barImage.image = image
+            }
+            
+            //cell.barImage.alpha = 0.90
+            cell.nameLabel.text = bar.record.name
+            cell.distanceLabel.text = "0.5 mi"
+            cell.ratingsLabel.text = "+ + + +"
+            cell.happyHourLabel.text = "5 - 7pm"
+            cell.priceLabel.text = String(bar.record.price)
+            
         
-        cell.nameLabel.text = bar.record.name
-        cell.nameLabel.textColor = UIColor.white
-        
-        cell.distanceLabel.text = "0.5 mi"
-        cell.distanceLabel.textColor = UIColor.white
-        
-        cell.ratingsLabel.text = "+ + + +"
-        cell.ratingsLabel.textColor = UIColor.white
-        
-        cell.happyHourLabel.text = "5 - 7pm"
-        cell.happyHourLabel.textColor = UIColor.white
-        
-        cell.priceLabel.text = String(bar.record.price)
-        cell.priceLabel.textColor = UIColor.white
-        
+        }
         return cell
     }
+    
+    
+    // MARK: - Search Functions
+    
+    //Action function when the search button is pressed
+    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+        showSearchBar()
+        
+    }
+    
+    //Displays the search bar and hides the bar buttons
+    func showSearchBar() {
+        
+        navigationItem.titleView = searchBar
+        navigationItem.setRightBarButton(nil, animated: true)
+        
+        searchBar.isHidden =  false
+        searchBar.alpha = 0
+        searchBar.showsCancelButton = true
+
+        UIView.animate(withDuration: 0.5, animations: {
+            self.searchBar.alpha = 1
+        }, completion: { finished in
+            self.searchBar.becomeFirstResponder()
+        })
+    }
+    
+    //action function when the cancel button is pressed
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        hideSearchBar()
+    }
+    
+    //func that hides the search bar and bar button
+    func hideSearchBar() {
+        searchBar.isHidden =  true
+        navigationItem.setRightBarButton(searchBarButton, animated: true)
+        self.searchBar.resignFirstResponder()
+        UIView.animate(withDuration: 0.3, animations: {
+        }, completion: { finished in
+            
+        })
+    }
+    
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        // if nothing is entered then display the original
+        if searchText == nil || searchText == "" {
+            isSearching = false
+            view.endEditing(true)
+            tableView.reloadData()
+        } else { // display searched results
+            isSearching = true
+            searchedData = places.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
+            tableView.reloadData()
+        }
+    }
+    
+    
+    // MARK: - Database Functions
     
     func filterList() {
         let current = Date()
@@ -138,7 +231,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
-        SVProgressHUD.dismiss()
+        //SVProgressHUD.dismiss()
     }
     
     func computeTimes(for happyHourString: String) -> (Int, String, String, String, String) {
@@ -175,7 +268,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             endTimeHours = Int(endComponents[0])!
             endTimeMinutes = Int(endComponents[1])!
         } else {
-            endTimeHours = Int(components[3])!
+            //endTimeHours = Int(components[3])! //This is crashing so Meelad added the next line
+            endTimeHours = 1
             endTimeMinutes = 0
         }
         
@@ -251,7 +345,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             let indexPath = tableView.indexPathForSelectedRow!
             let selectedPlace = places[indexPath.row]
             selectedVC.place = selectedPlace
+            self.navigationController?.isNavigationBarHidden = false
         }
+    }
+    
+    // MARK: - Start of View Function
+    override func viewWillAppear(_ animated: Bool) {
+        //self.navigationController?.isNavigationBarHidden = true
+        //self.searchBar.isHidden = true
     }
 
 }
