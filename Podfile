@@ -23,6 +23,9 @@ target 'Cheers' do
   pod 'SwiftyJSON'
   pod 'Alamofire'
   
+  # Map Annotations
+  pod 'MapViewPlus'
+  
   target 'CheersTests' do
     inherit! :search_paths
     # Pods for testing
