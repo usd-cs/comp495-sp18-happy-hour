@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A224B205081CE00C099FA /* FavoritesViewController.swift */; };
 		339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A224D205081DD00C099FA /* SettingsViewController.swift */; };
-		339DAD5420682DFD0053471C /* PacificBeach.txt in Resources */ = {isa = PBXBuildFile; fileRef = 339DAD5320682DFC0053471C /* PacificBeach.txt */; };
 		53B8AB51ECE9E0A4AD635A77 /* Pods_CheersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */; };
 		666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */; };
 		66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66D3EDFB20730BC3003A9CB0 /* happyhours.txt */; };
@@ -61,7 +60,6 @@
 		2010BDD9FF669BDD3D11AC9E /* Pods-CheersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		339A224B205081CE00C099FA /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		339A224D205081DD00C099FA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		339DAD5320682DFC0053471C /* PacificBeach.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PacificBeach.txt; path = ../../../Desktop/PacificBeach.txt; sourceTree = "<group>"; };
 		3FFE80B91BF7B44C17B2D247 /* Pods-CheersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests.release.xcconfig"; sourceTree = "<group>"; };
 		666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBarViewController.swift; sourceTree = "<group>"; };
 		66D3EDFB20730BC3003A9CB0 /* happyhours.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = happyhours.txt; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				BEA1B469204F34AF00136463 /* Assets.xcassets */,
 				66D3EDFB20730BC3003A9CB0 /* happyhours.txt */,
 				BE500C6620619CD1006F4FD0 /* BarNames.txt */,
-				339DAD5320682DFC0053471C /* PacificBeach.txt */,
 				B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */,
 				B1C20A602051EF6500ECB998 /* shout.jpg */,
 				B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */,
@@ -371,7 +368,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				339DAD5420682DFD0053471C /* PacificBeach.txt in Resources */,
 				BEA1B46D204F34AF00136463 /* LaunchScreen.storyboard in Resources */,
 				B1FFE6AB205B69F500531FDB /* GoogleService-Info.plist in Resources */,
 				BE500C6720619CD1006F4FD0 /* BarNames.txt in Resources */,
