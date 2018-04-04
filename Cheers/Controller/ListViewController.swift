@@ -32,6 +32,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         didSet {
             liveList = []
             notLiveList = []
+            SharedListsSingleton.shared.masterList = masterList!
             filterList()
         }
     }
@@ -39,16 +40,20 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         didSet {
             guard notLiveList != nil else { return }
             tableView.reloadData()
+            if liveList!.count != 0 {
+                print("places is ready")
+                places = liveList!
+                tableView.reloadData()
+            }
         }
     }
     var notLiveList: [Place]? {
         didSet {
             guard notLiveList != nil else { return }
-            if notLiveList!.count != 0 {
-                print("places is ready")
-                places = notLiveList!
-                tableView.reloadData()
-            }
+            tableView.reloadData()
+            
+            // DEBUG: is this the right place to put this?
+            SVProgressHUD.dismiss()
         }
     }
     
@@ -154,6 +159,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     //action function when the cancel button is pressed
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         hideSearchBar()
+        
+        // TODO: when search bar hides, segmented control is no longer visible
     }
     
     //func that hides the search bar and bar button
@@ -189,6 +196,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func segmentedButtonChanged(_ sender: Any) {
         // TODO: switch between displaying live and all lists
+        if segmentedControlButton.selectedSegmentIndex == 0 {
+            // TODO: need to safely unwrap
+            places = liveList!
+            tableView.reloadData()
+        } else {
+            // TODO: need to safely unwrap
+            places = notLiveList!
+            tableView.reloadData()
+        }
     }
     
     
@@ -225,11 +241,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 if currentDate > happyHourStartingDate! && currentDate < happyHourEndingDate! {
                     liveList!.append(bar)
+                    SharedListsSingleton.shared.liveList.append(bar)
                     
                     // DEBUG:
                     print("\tAdding \(bar.record.name) to live list")
                 } else {
                     notLiveList!.append(bar)
+                    SharedListsSingleton.shared.notLiveList.append(bar)
                     
                     // DEBUG:
                     print("\tAdding \(bar.record.name) to not live list")
@@ -237,6 +255,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
             } else {
                 notLiveList!.append(bar)
+                SharedListsSingleton.shared.notLiveList.append(bar)
                 print("\tAdding \(bar.record.name) to not live list")
             }
         }
@@ -355,6 +374,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             let indexPath = tableView.indexPathForSelectedRow!
             let selectedPlace = places[indexPath.row]
             selectedVC.place = selectedPlace
+            //selectedVC.image = 
             self.navigationController?.isNavigationBarHidden = false
         }
     }

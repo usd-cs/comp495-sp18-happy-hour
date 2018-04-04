@@ -12,6 +12,8 @@ import SwiftDate
 class SelectedBarViewController: UIViewController {
     
     var place: Place!
+    // TODO: update image from ListViewController
+    //var image: UIImage?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
