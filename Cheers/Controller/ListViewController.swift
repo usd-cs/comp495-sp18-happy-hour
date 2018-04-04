@@ -16,6 +16,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarButton: UIBarButtonItem!
+    @IBOutlet weak var filterBarButton: UIBarButtonItem!
+    @IBOutlet weak var segmentedControlButton: UISegmentedControl!
     
     var isSearching = false //Determines if we are in search mode or not
     var refHandle: DatabaseHandle?
@@ -181,6 +183,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    @IBAction func filterButtonPressed(_ sender: Any) {
+        // TODO: present filtering options
+    }
+    
+    @IBAction func segmentedButtonChanged(_ sender: Any) {
+        // TODO: switch between displaying live and all lists
+    }
+    
     
     // MARK: - Database Functions
     
@@ -263,8 +273,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         // compute ending time
-        if components[1].contains(":") {
-            let endComponents = components[1].components(separatedBy: ":")
+        if components[3].contains(":") {
+            let endComponents = components[3].components(separatedBy: ":")
             endTimeHours = Int(endComponents[0])!
             endTimeMinutes = Int(endComponents[1])!
         } else {
