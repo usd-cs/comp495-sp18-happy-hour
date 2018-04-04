@@ -22,6 +22,7 @@
 		B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */; };
 		B1FFE6AF205B717E00531FDB /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AE205B717E00531FDB /* DatabaseController.swift */; };
 		BE500C6720619CD1006F4FD0 /* BarNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = BE500C6620619CD1006F4FD0 /* BarNames.txt */; };
+		BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */; };
 		BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B460204F34AF00136463 /* AppDelegate.swift */; };
 		BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B462204F34AF00136463 /* ListViewController.swift */; };
 		BEA1B465204F34AF00136463 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B464204F34AF00136463 /* MapViewController.swift */; };
@@ -76,6 +77,7 @@
 		B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neighborhoods.swift; sourceTree = "<group>"; };
 		B1FFE6AE205B717E00531FDB /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		BE500C6620619CD1006F4FD0 /* BarNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BarNames.txt; sourceTree = "<group>"; };
+		BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedListsSingleton.swift; sourceTree = "<group>"; };
 		BEA1B45D204F34AF00136463 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA1B460204F34AF00136463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA1B462204F34AF00136463 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				BEF309A52061AA3200022098 /* BarType.swift */,
 				BEF309A72061BA0D00022098 /* DatabaseRecord.swift */,
 				BEF309A92061D3CE00022098 /* FilterSettings.swift */,
+				BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,6 +426,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cheers/Pods-Cheers-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MapViewPlus/MapViewPlus.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -433,6 +438,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapViewPlus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -589,6 +596,7 @@
 				339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
 				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
+				BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */,
 				B1FF310F20720A33001DF2DF /* UserLocations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

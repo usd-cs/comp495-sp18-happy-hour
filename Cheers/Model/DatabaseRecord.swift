@@ -158,6 +158,9 @@ struct DatabaseRecord {
     static func continueWriting(bar: JSON?, happyHours: [String: String], neighborhood: Neighborhood) {
         guard let bar = bar else { return }
         
+        print("Here")
+        print(bar)
+        
         let id = bar["businesses"].arrayValue.map({$0["id"].stringValue})[0]
         let name = bar["businesses"].arrayValue.map({$0["name"].stringValue})[0]
         let longitude = Double(bar["businesses"].arrayValue.map({$0["coordinates"]}).map({$0["longitude"].stringValue})[0])!
