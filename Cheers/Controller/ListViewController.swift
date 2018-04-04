@@ -263,8 +263,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         // compute ending time
-        if components[1].contains(":") {
-            let endComponents = components[1].components(separatedBy: ":")
+        if components[3].contains(":") {
+            let endComponents = components[3].components(separatedBy: ":")
             endTimeHours = Int(endComponents[0])!
             endTimeMinutes = Int(endComponents[1])!
         } else {
