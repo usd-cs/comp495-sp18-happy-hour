@@ -15,13 +15,16 @@ class PlaceMapAnnotationViewModel: CalloutViewModel {
     var happyHours: String
     var favorited: Bool
     
+    var live: Bool
+    
     var place: Place
     
-    init(name: String, image: UIImage, happyHours: String, favorited: Bool, place: Place) {
+    init(name: String, image: UIImage, happyHours: String, favorited: Bool, place: Place, live: Bool) {
         self.name = name
         self.image = image
         self.happyHours = happyHours
         self.favorited = favorited
         self.place = place
+        self.live = live
     }
 }

@@ -16,11 +16,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="338"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdV-l7-odN">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="338"/>
+                    <connections>
+                        <action selector="annotationTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="QbJ-tw-GXS"/>
+                    </connections>
+                </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="k3F-Yc-Uhh">
-                    <rect key="frame" x="67.5" y="40" width="240" height="258"/>
+                    <rect key="frame" x="87" y="40" width="200" height="258"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4c-h6-r99">
-                            <rect key="frame" x="20" y="0.0" width="200" height="30"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4c-h6-r99">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="64"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="oZR-gF-Xcb"/>
                             </constraints>
@@ -28,11 +34,15 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-sF-7wU">
-                            <rect key="frame" x="0.0" y="40" width="240" height="128"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-sF-7wU">
+                            <rect key="frame" x="0.0" y="74" width="200" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="9qr-mJ-VWv"/>
+                                <constraint firstAttribute="width" constant="200" id="XHM-Ry-bdf"/>
+                            </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8W-70-cdT">
-                            <rect key="frame" x="20" y="178" width="200" height="24"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Happy Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8W-70-cdT">
+                            <rect key="frame" x="0.0" y="234" width="200" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="4Zr-9m-gZc"/>
                             </constraints>
@@ -40,12 +50,6 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOA-0p-2hN">
-                            <rect key="frame" x="109" y="212" width="22" height="46"/>
-                            <connections>
-                                <action selector="infoButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="wIE-09-Xzw"/>
-                            </connections>
-                        </button>
                     </subviews>
                 </stackView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="agk-q4-KE2">
@@ -61,13 +65,18 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="k3F-Yc-Uhh" secondAttribute="bottom" constant="40" id="JZy-qz-NQf"/>
                 <constraint firstItem="k3F-Yc-Uhh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MQs-Pj-bGj"/>
                 <constraint firstItem="k3F-Yc-Uhh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="SyR-Dc-3mn"/>
+                <constraint firstItem="WdV-l7-odN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TEb-z4-1C7"/>
                 <constraint firstItem="agk-q4-KE2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ZhO-GW-2rF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WdV-l7-odN" secondAttribute="bottom" id="bEQ-G7-F1C"/>
                 <constraint firstItem="agk-q4-KE2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lPv-q4-MEc"/>
+                <constraint firstItem="WdV-l7-odN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qLA-sa-lz6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WdV-l7-odN" secondAttribute="trailing" id="qfm-oV-48A"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="barImage" destination="XEU-sF-7wU" id="O6X-Gg-o2f"/>
+                <outlet property="button" destination="WdV-l7-odN" id="S9T-h5-nCJ"/>
                 <outlet property="happyHoursLabel" destination="T8W-70-cdT" id="tqZ-rt-DPm"/>
                 <outlet property="titleLabel" destination="p4c-h6-r99" id="pe8-fy-jtM"/>
             </connections>
