@@ -8,57 +8,67 @@
 
 import UIKit
 import MapKit
+import MapViewPlus
+import SwiftDate
 
 class MapViewController: UIViewController {
-    @IBOutlet weak var Map: MKMapView!
+    
+    @IBOutlet weak var mapView: MapViewPlus!
     
     var barList: [Place] = []
     var myLocation: CLLocationCoordinate2D?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("LOADING MAP VIEW NOW")
-
-        //Gets the current location from the caculation in the AppDelegate
-        myLocation = UserLocations.shared.currentLocation?.coordinate
-        Map.showsUserLocation = true
-
-        // load in bars
-        //populateMap()
-
         
+        // prepare map for custom annotations
+        mapView.delegate = self
+
+        // gets the current location from the caculation in the AppDelegate
+        myLocation = UserLocations.shared.currentLocation?.coordinate
+        mapView.showsUserLocation = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("MAP VIEW WILL APPEAR NOW")
         populateMap()
     }
     
     
     func populateMap() {
-        // this call will be replaced by API call once core features are functioning
-        //barList = Place.readFromTextFile()
-        
         barList = SharedListsSingleton.shared.masterList
-        print("\n\nMasterList: \(barList)")
         
-        var mapLocations: [String: MKPointAnnotation] = [:]
+        //var mapLocations: [String: MKPointAnnotation] = [:]
         var maxDist: Double = 0.0
+        var annotations = [AnnotationPlus]()
         
         for place in barList {
             
             // make new location for bar
+            /*
             let annotation = MKPointAnnotation()
             let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
             annotation.coordinate = location
             annotation.title = place.record.name
             annotation.subtitle = place.record.address
             mapLocations[place.record.name] = annotation
-            Map.addAnnotation(annotation)
+            */
             
-            // for DEBUG only
-            print("Adding \(annotation.title!) to the map")
+            let today = Date()
+            let todaysDate = today.weekdayName
+            let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
+            
+            // TODO: get image working
+            let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited)
+            let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
+            let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
+            annotations.append(annotation)
+            
+            
+            //mapView.addAnnotation(annotation)
+            
+            // DEBUG:
+            //print("Adding \(annotation.title!) to the map")
             
             
             // need to check to see if maxDist for region needs to be updated
@@ -70,6 +80,7 @@ class MapViewController: UIViewController {
             
         }
         
+        mapView.setup(withAnnotations: annotations)
         
         // set span of map
         let spanRadius = 2 * maxDist
@@ -77,17 +88,28 @@ class MapViewController: UIViewController {
         // set region of map
         let span = MKCoordinateSpan(latitudeDelta: CLLocationDegrees(spanRadius), longitudeDelta: CLLocationDegrees(spanRadius))
         let region = MKCoordinateRegion(center: (UserLocations.shared.currentLocation?.coordinate)!, span: span)
-        Map.setRegion(region, animated: true)
+        mapView.setRegion(region, animated: true)
         
         
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+}
 
+extension MapViewController: MapViewPlusDelegate {
+    
+    func mapView(_ mapView: MapViewPlus, imageFor annotation: AnnotationPlus) -> UIImage {
+        // TODO: need to update this
+        return UIImage(named: "location")!
+    }
+    
+    func mapView(_ mapView: MapViewPlus, calloutViewFor annotationView: AnnotationViewPlus) -> CalloutViewPlus{
+        let calloutView = Bundle.main.loadNibNamed("PlaceMapAnnotation", owner: nil, options: nil)!.first as! PlaceMapAnnotationView
+        return calloutView
+    }
 }
 

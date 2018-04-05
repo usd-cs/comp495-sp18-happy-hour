@@ -26,6 +26,9 @@ target 'Cheers' do
   # Map Annotations
   pod 'MapViewPlus'
   
+  # Colors
+  # pod 'ChameleonFramework/Swift'
+  
   target 'CheersTests' do
     inherit! :search_paths
     # Pods for testing

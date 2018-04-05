@@ -30,10 +30,14 @@
 		BEA1B46D204F34AF00136463 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA1B46B204F34AF00136463 /* LaunchScreen.storyboard */; };
 		BEA1B478204F34B000136463 /* CheersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B477204F34B000136463 /* CheersTests.swift */; };
 		BEA1B483204F34B000136463 /* CheersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B482204F34B000136463 /* CheersUITests.swift */; };
+		BEADB55D2075D8C300E107B7 /* Credits Page.txt in Resources */ = {isa = PBXBuildFile; fileRef = BEADB55C2075D8C300E107B7 /* Credits Page.txt */; };
 		BEC473AD20510B7C00FC5702 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC473AC20510B7C00FC5702 /* Place.swift */; };
 		BEF309A62061AA3200022098 /* BarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A52061AA3200022098 /* BarType.swift */; };
 		BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A72061BA0D00022098 /* DatabaseRecord.swift */; };
 		BEF309AA2061D3CE00022098 /* FilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A92061D3CE00022098 /* FilterSettings.swift */; };
+		BEF4A5D82075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4A5D72075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift */; };
+		BEF4A5DA2075C53100D7BCE5 /* PlaceMapAnnotation.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotation.xib */; };
+		BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */; };
 		ECBAF1DCFF0D62B667481A7D /* Pods_CheersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F4456248D6140CBDEA45D4 /* Pods_CheersTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,10 +94,14 @@
 		BEA1B47E204F34B000136463 /* CheersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA1B482204F34B000136463 /* CheersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersUITests.swift; sourceTree = "<group>"; };
 		BEA1B484204F34B000136463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEADB55C2075D8C300E107B7 /* Credits Page.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Credits Page.txt"; sourceTree = SOURCE_ROOT; };
 		BEC473AC20510B7C00FC5702 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		BEF309A52061AA3200022098 /* BarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarType.swift; sourceTree = "<group>"; };
 		BEF309A72061BA0D00022098 /* DatabaseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRecord.swift; sourceTree = "<group>"; };
 		BEF309A92061D3CE00022098 /* FilterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettings.swift; sourceTree = "<group>"; };
+		BEF4A5D72075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapAnnotationViewModel.swift; sourceTree = "<group>"; };
+		BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceMapAnnotation.xib; sourceTree = "<group>"; };
+		BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapAnnotationView.swift; sourceTree = "<group>"; };
 		F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cheers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -170,6 +178,8 @@
 			children = (
 				BEA1B466204F34AF00136463 /* Main.storyboard */,
 				BEA1B46B204F34AF00136463 /* LaunchScreen.storyboard */,
+				BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotation.xib */,
+				BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,6 +193,7 @@
 				BEF309A72061BA0D00022098 /* DatabaseRecord.swift */,
 				BEF309A92061D3CE00022098 /* FilterSettings.swift */,
 				BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */,
+				BEF4A5D72075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +235,7 @@
 				B1C20A582051E3FB00ECB998 /* View */,
 				B1C20A572051E3F700ECB998 /* Controller */,
 				BEA1B469204F34AF00136463 /* Assets.xcassets */,
+				BEADB55C2075D8C300E107B7 /* Credits Page.txt */,
 				BE500C6620619CD1006F4FD0 /* BarNames.txt */,
 				B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */,
 				B1C20A602051EF6500ECB998 /* shout.jpg */,
@@ -373,8 +385,10 @@
 				BE500C6720619CD1006F4FD0 /* BarNames.txt in Resources */,
 				B10E20BA2054AF88005E37BE /* BarInfoCheersApp.txt in Resources */,
 				BEA1B46A204F34AF00136463 /* Assets.xcassets in Resources */,
+				BEF4A5DA2075C53100D7BCE5 /* PlaceMapAnnotation.xib in Resources */,
 				BEA1B468204F34AF00136463 /* Main.storyboard in Resources */,
 				B1C20A612051EF6500ECB998 /* shout.jpg in Resources */,
+				BEADB55D2075D8C300E107B7 /* Credits Page.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,11 +602,13 @@
 				BEF309A62061AA3200022098 /* BarType.swift in Sources */,
 				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
 				BEF309AA2061D3CE00022098 /* FilterSettings.swift in Sources */,
+				BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */,
 				BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */,
 				339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
 				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
 				BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */,
+				BEF4A5D82075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift in Sources */,
 				B1FF310F20720A33001DF2DF /* UserLocations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
