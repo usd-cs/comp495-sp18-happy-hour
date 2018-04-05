@@ -27,7 +27,7 @@ target 'Cheers' do
   pod 'MapViewPlus'
   
   # Colors
-  # pod 'ChameleonFramework/Swift'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   
   target 'CheersTests' do
     inherit! :search_paths

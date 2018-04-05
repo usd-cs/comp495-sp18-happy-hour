@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ChameleonFramework
 
 class ColorsSingleton {
     static let shared = ColorsSingleton()
