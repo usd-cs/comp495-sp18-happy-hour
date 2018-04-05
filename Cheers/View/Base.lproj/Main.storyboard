@@ -112,6 +112,7 @@
                                             <outlet property="nameLabel" destination="1Vr-1P-zSD" id="yBn-OG-HuW"/>
                                             <outlet property="priceLabel" destination="Sfh-L4-ZdU" id="sPH-Wr-CdK"/>
                                             <outlet property="ratingsLabel" destination="amz-bj-G2i" id="xyn-Yj-WGy"/>
+                                            <segue destination="9rn-Gq-Zgu" kind="presentation" identifier="showSelected" id="qgs-1j-L7G"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -157,7 +158,6 @@
                         <outlet property="searchBarButton" destination="6qE-b9-gTj" id="eex-ja-0xx"/>
                         <outlet property="segmentedControlButton" destination="4zs-2v-Mhg" id="V5C-oG-zKH"/>
                         <outlet property="tableView" destination="zrY-IH-8Kk" id="NNR-4o-mgh"/>
-                        <segue destination="9rn-Gq-Zgu" kind="show" identifier="showSelected" id="3pu-Qr-HWe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -190,7 +190,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="mapView" destination="b7S-Zl-gGq" id="8n0-eY-Nv5"/>
-                        <segue destination="9rn-Gq-Zgu" kind="show" identifier="AnnotationTapped" id="692-Je-Ijt"/>
+                        <segue destination="9rn-Gq-Zgu" kind="presentation" identifier="AnnotationTapped" id="bOn-O5-bxD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -272,6 +272,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I7M-w1-cyi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="m6n-xW-WbN">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="unt-S6-X5m"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="JTt-WX-iMH" id="WAK-BA-wsR"/>
                         <outlet property="favoriteButton" destination="UAp-wK-hIT" id="u9g-rb-yhx"/>
@@ -285,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1b-Gx-rcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869.5999999999999" y="-1101.4992503748126"/>
+            <point key="canvasLocation" x="3271" y="-1103"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="bwF-R7-QK5">
@@ -384,6 +387,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="24" height="24"/>
         <image name="favorites" width="24" height="24"/>
         <image name="favorites_selected" width="24" height="24"/>
         <image name="icon-filter" width="25" height="25"/>
@@ -395,6 +399,6 @@
         <image name="settings_selected" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="692-Je-Ijt"/>
+        <segue reference="qgs-1j-L7G"/>
     </inferredMetricsTieBreakers>
 </document>
