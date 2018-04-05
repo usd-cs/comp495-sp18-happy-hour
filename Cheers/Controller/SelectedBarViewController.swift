@@ -39,6 +39,14 @@ class SelectedBarViewController: UIViewController {
         // TODO: need to figure out how to show menu information
         menuLabel.text = "Featured Drinks: Moscow Mules!"
         
+        if place.favorited {
+            favoriteButton.setImage(#imageLiteral(resourceName: "icon-HeartFull"), for: UIControlState.normal)
+        }
+        else if place.favorited == false {
+            favoriteButton.setImage(#imageLiteral(resourceName: "icon-HeartEmpty"), for: UIControlState.normal)
+        }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,9 +58,11 @@ class SelectedBarViewController: UIViewController {
         
         if place.favorited == true {
             place.favorited = false
+            favoriteButton.setImage(#imageLiteral(resourceName: "icon-HeartEmpty"), for: UIControlState.normal)
         }
         else if place.favorited == false{
             place.favorited = true
+            favoriteButton.setImage(#imageLiteral(resourceName: "icon-HeartFull"), for: UIControlState.normal)
         }
     }
     

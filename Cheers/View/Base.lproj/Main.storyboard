@@ -227,12 +227,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdG-6x-gM5">
-                                                <rect key="frame" x="220.5" y="0.0" width="58" height="48.5"/>
-                                                <state key="normal" title="map"/>
+                                                <rect key="frame" x="220.5" y="0.0" width="58" height="41.5"/>
+                                                <state key="normal" title="📍"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAp-wK-hIT">
-                                                <rect key="frame" x="278.5" y="0.0" width="96.5" height="48.5"/>
-                                                <state key="normal" title="&lt;3"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAp-wK-hIT">
+                                                <rect key="frame" x="278.5" y="0.0" width="96.5" height="41.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="disabled" image="icon-HeartEmpty"/>
+                                                <connections>
+                                                    <action selector="favoriteButtonPressed:" destination="9rn-Gq-Zgu" eventType="touchUpInside" id="jcc-p6-fJG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
