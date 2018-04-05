@@ -10,12 +10,14 @@ import UIKit
 import MapViewPlus
 
 public protocol PlaceMapAnnotationViewModelDelegate: class {
-    func annotationTapped(withTitle title: String)
+    func beginToTriggerSegue(fromAnnotation title: String)
 }
 
 class PlaceMapAnnotationView: UIView, CalloutViewPlus {
     
     weak var delegate: PlaceMapAnnotationViewModelDelegate?
+    
+    var place: Place?
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var barImage: UIImageView!
@@ -24,7 +26,7 @@ class PlaceMapAnnotationView: UIView, CalloutViewPlus {
     
     @IBAction func annotationTapped(_ sender: Any) {
         print("button pressed")
-        delegate?.annotationTapped(withTitle: titleLabel.text!)
+        delegate?.beginToTriggerSegue(fromAnnotation: titleLabel.text!)
     }
     
     func configureCallout(_ viewModel: CalloutViewModel) {
@@ -34,6 +36,6 @@ class PlaceMapAnnotationView: UIView, CalloutViewPlus {
         barImage.image = viewModel.image
         happyHoursLabel.text = viewModel.happyHours
         
-        
+        place = viewModel.place
     }
 }

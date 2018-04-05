@@ -42,12 +42,6 @@ class MapViewController: UIViewController {
         liveList = SharedListsSingleton.shared.liveList
         notLiveList = SharedListsSingleton.shared.notLiveList
         
-        
-        
-        
-        //barList = SharedListsSingleton.shared.masterList
-        
-        //var mapLocations: [String: MKPointAnnotation] = [:]
         var maxDist: Double = 0.0
         var annotations = [AnnotationPlus]()
         
@@ -101,57 +95,6 @@ class MapViewController: UIViewController {
         let region = MKCoordinateRegion(center: (UserLocations.shared.currentLocation?.coordinate)!, span: span)
         mapView.setRegion(region, animated: true)
         
-        
-        /*
-        for place in barList {
-            
-            // make new location for bar
-            /*
-            let annotation = MKPointAnnotation()
-            let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
-            annotation.coordinate = location
-            annotation.title = place.record.name
-            annotation.subtitle = place.record.address
-            mapLocations[place.record.name] = annotation
-            */
-            
-            let today = Date()
-            let todaysDate = today.weekdayName
-            let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
-            
-            // TODO: get image working
-            let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place)
-            let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
-            let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
-            annotations.append(annotation)
-            
-            
-            //mapView.addAnnotation(annotation)
-            
-            // DEBUG:
-            //print("Adding \(annotation.title!) to the map")
-            
-            
-            // need to check to see if maxDist for region needs to be updated
-            let deltaLat = abs(Double(location.latitude) - Double((UserLocations.shared.currentLocation?.coordinate.latitude)!))
-            let deltaLong = abs(Double(location.longitude) - Double((UserLocations.shared.currentLocation?.coordinate.longitude)!))
-            
-            let newMaxDist = deltaLat > deltaLong ? deltaLat : deltaLong
-            maxDist = newMaxDist > maxDist ? newMaxDist : maxDist
-            
-        }
-        
-        mapView.setup(withAnnotations: annotations)
-        
-        // set span of map
-        let spanRadius = 2 * maxDist
-        
-        // set region of map
-        let span = MKCoordinateSpan(latitudeDelta: CLLocationDegrees(spanRadius), longitudeDelta: CLLocationDegrees(spanRadius))
-        let region = MKCoordinateRegion(center: (UserLocations.shared.currentLocation?.coordinate)!, span: span)
-        mapView.setRegion(region, animated: true)
-        */
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -181,7 +124,12 @@ extension MapViewController: MapViewPlusDelegate {
 
 // set up action for when callout is pressed
 extension MapViewController: PlaceMapAnnotationViewModelDelegate {
-    func annotationTapped(withTitle title: String) {
+    func beginToTriggerSegue(fromAnnotation title: String) {
+        
+        
+        print("GOT HERE BOIIIII")
+        
+        
         let alert = UIAlertController.init(title: "\(title) tapped", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
