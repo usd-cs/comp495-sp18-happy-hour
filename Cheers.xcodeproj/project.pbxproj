@@ -37,7 +37,7 @@
 		BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A72061BA0D00022098 /* DatabaseRecord.swift */; };
 		BEF309AA2061D3CE00022098 /* FilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A92061D3CE00022098 /* FilterSettings.swift */; };
 		BEF4A5D82075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4A5D72075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift */; };
-		BEF4A5DA2075C53100D7BCE5 /* PlaceMapAnnotation.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotation.xib */; };
+		BEF4A5DA2075C53100D7BCE5 /* PlaceMapAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotationView.xib */; };
 		BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */; };
 		ECBAF1DCFF0D62B667481A7D /* Pods_CheersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F4456248D6140CBDEA45D4 /* Pods_CheersTests.framework */; };
 /* End PBXBuildFile section */
@@ -102,7 +102,7 @@
 		BEF309A72061BA0D00022098 /* DatabaseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRecord.swift; sourceTree = "<group>"; };
 		BEF309A92061D3CE00022098 /* FilterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettings.swift; sourceTree = "<group>"; };
 		BEF4A5D72075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapAnnotationViewModel.swift; sourceTree = "<group>"; };
-		BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceMapAnnotation.xib; sourceTree = "<group>"; };
+		BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceMapAnnotationView.xib; sourceTree = "<group>"; };
 		BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapAnnotationView.swift; sourceTree = "<group>"; };
 		F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cheers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -180,7 +180,7 @@
 			children = (
 				BEA1B466204F34AF00136463 /* Main.storyboard */,
 				BEA1B46B204F34AF00136463 /* LaunchScreen.storyboard */,
-				BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotation.xib */,
+				BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotationView.xib */,
 				BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */,
 			);
 			path = View;
@@ -388,7 +388,7 @@
 				BE500C6720619CD1006F4FD0 /* BarNames.txt in Resources */,
 				B10E20BA2054AF88005E37BE /* BarInfoCheersApp.txt in Resources */,
 				BEA1B46A204F34AF00136463 /* Assets.xcassets in Resources */,
-				BEF4A5DA2075C53100D7BCE5 /* PlaceMapAnnotation.xib in Resources */,
+				BEF4A5DA2075C53100D7BCE5 /* PlaceMapAnnotationView.xib in Resources */,
 				BEA1B468204F34AF00136463 /* Main.storyboard in Resources */,
 				B1C20A612051EF6500ECB998 /* shout.jpg in Resources */,
 				BEADB55D2075D8C300E107B7 /* Credits Page.txt in Resources */,

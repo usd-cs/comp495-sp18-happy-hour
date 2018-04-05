@@ -14,6 +14,10 @@ import SwiftDate
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MapViewPlus!
+    weak var currentCalloutView: UIView?
+    
+    // place to be passed via segue to SelectedBarViewController
+    var selectedPlace: Place?
     
     var masterList: [Place] = []
     var liveList: [Place] = []
@@ -45,9 +49,11 @@ class MapViewController: UIViewController {
         var maxDist: Double = 0.0
         var annotations = [AnnotationPlus]()
         
+        // load live bars into map
         for place in liveList {
             let today = Date()
             let todaysDate = today.weekdayName
+            // TODO: need to double check "nil"
             let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
             
             // TODO: get image working
@@ -66,9 +72,11 @@ class MapViewController: UIViewController {
         
         mapView.setup(withAnnotations: annotations)
         
+        // load not live bars into map
         for place in notLiveList {
             let today = Date()
             let todaysDate = today.weekdayName
+            // TODO: need to double check "nil"
             let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
             
             // TODO: get image working
@@ -101,6 +109,20 @@ class MapViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // animate pins dropping on map
+    func mapView(_ mapView: MapViewPlus, didAddAnnotations annotations: [AnnotationPlus]) {
+        // TODO: if you want the map to zoom to fit all visible bars, uncomment this line
+        //mapView.showAnnotations(annotations, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "AnnotationTapped" else { return }
+        guard let selectedPlace = selectedPlace else { return }
+        
+        let destination = segue.destination as! SelectedBarViewController
+        destination.place = selectedPlace
+    }
 
 }
 
@@ -108,7 +130,6 @@ class MapViewController: UIViewController {
 extension MapViewController: MapViewPlusDelegate {
     
     func mapView(_ mapView: MapViewPlus, imageFor annotation: AnnotationPlus) -> UIImage {
-        // TODO: need to update this
         let annotation = annotation.viewModel as! PlaceMapAnnotationViewModel
         if annotation.live {
             return UIImage(named: "live")!
@@ -117,22 +138,19 @@ extension MapViewController: MapViewPlusDelegate {
     }
     
     func mapView(_ mapView: MapViewPlus, calloutViewFor annotationView: AnnotationViewPlus) -> CalloutViewPlus {
-        let calloutView = Bundle.main.loadNibNamed("PlaceMapAnnotation", owner: nil, options: nil)!.first as! PlaceMapAnnotationView
+        let calloutView = Bundle.main.loadNibNamed("PlaceMapAnnotationView", owner: nil, options: nil)!.first as! PlaceMapAnnotationView
+        calloutView.delegate = self
+        currentCalloutView = calloutView
         return calloutView
     }
 }
 
+
 // set up action for when callout is pressed
 extension MapViewController: PlaceMapAnnotationViewModelDelegate {
-    func beginToTriggerSegue(fromAnnotation title: String) {
-        
-        
-        print("GOT HERE BOIIIII")
-        
-        
-        let alert = UIAlertController.init(title: "\(title) tapped", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+    func beginToTriggerSegue(for place: Place) {
+        selectedPlace = place
+        performSegue(withIdentifier: "AnnotationTapped", sender: nil)
     }
 }
 
