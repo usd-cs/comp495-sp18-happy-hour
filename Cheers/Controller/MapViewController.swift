@@ -59,7 +59,7 @@ class MapViewController: UIViewController {
             let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
             
             // TODO: get image working
-            let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited)
+            let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place)
             let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
             let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
             annotations.append(annotation)
@@ -104,7 +104,7 @@ extension MapViewController: MapViewPlusDelegate {
     
     func mapView(_ mapView: MapViewPlus, imageFor annotation: AnnotationPlus) -> UIImage {
         // TODO: need to update this
-        return UIImage(named: "location")!
+        return UIImage(named: "location_full")!
     }
     
     func mapView(_ mapView: MapViewPlus, calloutViewFor annotationView: AnnotationViewPlus) -> CalloutViewPlus{

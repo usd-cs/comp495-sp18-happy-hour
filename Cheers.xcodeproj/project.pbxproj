@@ -31,6 +31,7 @@
 		BEA1B478204F34B000136463 /* CheersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B477204F34B000136463 /* CheersTests.swift */; };
 		BEA1B483204F34B000136463 /* CheersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B482204F34B000136463 /* CheersUITests.swift */; };
 		BEADB55D2075D8C300E107B7 /* Credits Page.txt in Resources */ = {isa = PBXBuildFile; fileRef = BEADB55C2075D8C300E107B7 /* Credits Page.txt */; };
+		BEADB55F2075DB5800E107B7 /* ColorsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADB55E2075DB5800E107B7 /* ColorsSingleton.swift */; };
 		BEC473AD20510B7C00FC5702 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC473AC20510B7C00FC5702 /* Place.swift */; };
 		BEF309A62061AA3200022098 /* BarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A52061AA3200022098 /* BarType.swift */; };
 		BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A72061BA0D00022098 /* DatabaseRecord.swift */; };
@@ -95,6 +96,7 @@
 		BEA1B482204F34B000136463 /* CheersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersUITests.swift; sourceTree = "<group>"; };
 		BEA1B484204F34B000136463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEADB55C2075D8C300E107B7 /* Credits Page.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Credits Page.txt"; sourceTree = SOURCE_ROOT; };
+		BEADB55E2075DB5800E107B7 /* ColorsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsSingleton.swift; sourceTree = "<group>"; };
 		BEC473AC20510B7C00FC5702 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		BEF309A52061AA3200022098 /* BarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarType.swift; sourceTree = "<group>"; };
 		BEF309A72061BA0D00022098 /* DatabaseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRecord.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				BEF309A92061D3CE00022098 /* FilterSettings.swift */,
 				BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */,
 				BEF4A5D72075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift */,
+				BEADB55E2075DB5800E107B7 /* ColorsSingleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */,
 				BEC473AD20510B7C00FC5702 /* Place.swift in Sources */,
 				BEF309A62061AA3200022098 /* BarType.swift in Sources */,
+				BEADB55F2075DB5800E107B7 /* ColorsSingleton.swift in Sources */,
 				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
 				BEF309AA2061D3CE00022098 /* FilterSettings.swift in Sources */,
 				BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */,
