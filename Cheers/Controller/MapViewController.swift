@@ -8,58 +8,59 @@
 
 import UIKit
 import MapKit
+import MapViewPlus
+import SwiftDate
 
 class MapViewController: UIViewController {
-    @IBOutlet weak var Map: MKMapView!
     
-    var barList: [Place] = []
+    @IBOutlet weak var mapView: MapViewPlus!
+    weak var currentCalloutView: UIView?
+    
+    // place to be passed via segue to SelectedBarViewController
+    var selectedPlace: Place?
+    
+    var masterList: [Place] = []
+    var liveList: [Place] = []
+    var notLiveList: [Place] = []
     var myLocation: CLLocationCoordinate2D?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("LOADING MAP VIEW NOW")
-
-        //Gets the current location from the caculation in the AppDelegate
-        myLocation = UserLocations.shared.currentLocation?.coordinate
-        Map.showsUserLocation = true
-
-        // load in bars
-        //populateMap()
-
         
+        // prepare map for custom annotations
+        mapView.delegate = self
+
+        // gets the current location from the caculation in the AppDelegate
+        myLocation = UserLocations.shared.currentLocation?.coordinate
+        mapView.showsUserLocation = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("MAP VIEW WILL APPEAR NOW")
         populateMap()
     }
     
     
     func populateMap() {
-        // this call will be replaced by API call once core features are functioning
-        //barList = Place.readFromTextFile()
+        masterList = SharedListsSingleton.shared.masterList
+        liveList = SharedListsSingleton.shared.liveList
+        notLiveList = SharedListsSingleton.shared.notLiveList
         
-        barList = SharedListsSingleton.shared.masterList
-        print("\n\nMasterList: \(barList)")
-        
-        var mapLocations: [String: MKPointAnnotation] = [:]
         var maxDist: Double = 0.0
+        var annotations = [AnnotationPlus]()
         
-        for place in barList {
+        // load live bars into map
+        for place in liveList {
+            let today = Date()
+            let todaysDate = today.weekdayName
+            // TODO: need to double check "nil"
+            let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
             
-            // make new location for bar
-            let annotation = MKPointAnnotation()
+            // TODO: get image working
+            let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: true)
             let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
-            annotation.coordinate = location
-            annotation.title = place.record.name
-            annotation.subtitle = place.record.address
-            mapLocations[place.record.name] = annotation
-            Map.addAnnotation(annotation)
-            
-            // for DEBUG only
-            print("Adding \(annotation.title!) to the map")
-            
+            let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
+            annotations.append(annotation)
             
             // need to check to see if maxDist for region needs to be updated
             let deltaLat = abs(Double(location.latitude) - Double((UserLocations.shared.currentLocation?.coordinate.latitude)!))
@@ -67,9 +68,32 @@ class MapViewController: UIViewController {
             
             let newMaxDist = deltaLat > deltaLong ? deltaLat : deltaLong
             maxDist = newMaxDist > maxDist ? newMaxDist : maxDist
-            
         }
         
+        mapView.setup(withAnnotations: annotations)
+        
+        // load not live bars into map
+        for place in notLiveList {
+            let today = Date()
+            let todaysDate = today.weekdayName
+            // TODO: need to double check "nil"
+            let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
+            
+            // TODO: get image working
+            let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: false)
+            let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
+            let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
+            annotations.append(annotation)
+            
+            // need to check to see if maxDist for region needs to be updated
+            let deltaLat = abs(Double(location.latitude) - Double((UserLocations.shared.currentLocation?.coordinate.latitude)!))
+            let deltaLong = abs(Double(location.longitude) - Double((UserLocations.shared.currentLocation?.coordinate.longitude)!))
+            
+            let newMaxDist = deltaLat > deltaLong ? deltaLat : deltaLong
+            maxDist = newMaxDist > maxDist ? newMaxDist : maxDist
+        }
+        
+        mapView.setup(withAnnotations: annotations)
         
         // set span of map
         let spanRadius = 2 * maxDist
@@ -77,17 +101,62 @@ class MapViewController: UIViewController {
         // set region of map
         let span = MKCoordinateSpan(latitudeDelta: CLLocationDegrees(spanRadius), longitudeDelta: CLLocationDegrees(spanRadius))
         let region = MKCoordinateRegion(center: (UserLocations.shared.currentLocation?.coordinate)!, span: span)
-        Map.setRegion(region, animated: true)
-        
+        mapView.setRegion(region, animated: true)
         
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // animate pins dropping on map
+    func mapView(_ mapView: MapViewPlus, didAddAnnotations annotations: [AnnotationPlus]) {
+        // TODO: if you want the map to zoom to fit all visible bars, uncomment this line
+        //mapView.showAnnotations(annotations, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "AnnotationTapped" else { return }
+        guard let selectedPlace = selectedPlace else { return }
+        
+        //let destination = segue.destination as! UINavigationController
+        let destination = segue.destination as! SelectedBarViewController
+        
+        destination.place = selectedPlace
+    }
+    
+    @IBAction func unwindToMap() {
+    
+    }
+
+}
+
+// set up delegate for callout
+extension MapViewController: MapViewPlusDelegate {
+    
+    func mapView(_ mapView: MapViewPlus, imageFor annotation: AnnotationPlus) -> UIImage {
+        let annotation = annotation.viewModel as! PlaceMapAnnotationViewModel
+        if annotation.live {
+            return UIImage(named: "live")!
+        }
+        return UIImage(named: "notLive")!
+    }
+    
+    func mapView(_ mapView: MapViewPlus, calloutViewFor annotationView: AnnotationViewPlus) -> CalloutViewPlus {
+        let calloutView = Bundle.main.loadNibNamed("PlaceMapAnnotationView", owner: nil, options: nil)!.first as! PlaceMapAnnotationView
+        calloutView.delegate = self
+        currentCalloutView = calloutView
+        return calloutView
+    }
+}
 
 
+// set up action for when callout is pressed
+extension MapViewController: PlaceMapAnnotationViewModelDelegate {
+    func beginToTriggerSegue(for place: Place) {
+        selectedPlace = place
+        performSegue(withIdentifier: "AnnotationTapped", sender: nil)
+    }
 }
 

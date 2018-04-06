@@ -16,11 +16,11 @@ extension String {
     }
 }
 
-struct Place: Equatable{
+public struct Place: Equatable{
     var record: DatabaseRecord
     var favorited: Bool
     
-    static func ==(lhs: Place, rhs: Place) -> Bool {
+    public static func ==(lhs: Place, rhs: Place) -> Bool {
         return lhs.record.id == rhs.record.id
     }
 

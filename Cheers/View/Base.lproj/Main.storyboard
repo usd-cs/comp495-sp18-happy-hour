@@ -112,6 +112,7 @@
                                             <outlet property="nameLabel" destination="1Vr-1P-zSD" id="yBn-OG-HuW"/>
                                             <outlet property="priceLabel" destination="Sfh-L4-ZdU" id="sPH-Wr-CdK"/>
                                             <outlet property="ratingsLabel" destination="amz-bj-G2i" id="xyn-Yj-WGy"/>
+                                            <segue destination="9rn-Gq-Zgu" kind="presentation" identifier="showSelected" id="qgs-1j-L7G"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -157,14 +158,13 @@
                         <outlet property="searchBarButton" destination="6qE-b9-gTj" id="eex-ja-0xx"/>
                         <outlet property="segmentedControlButton" destination="4zs-2v-Mhg" id="V5C-oG-zKH"/>
                         <outlet property="tableView" destination="zrY-IH-8Kk" id="NNR-4o-mgh"/>
-                        <segue destination="9rn-Gq-Zgu" kind="show" identifier="showSelected" id="3pu-Qr-HWe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-322"/>
         </scene>
-        <!--Map-->
+        <!--Map View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="MapViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,7 +172,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b7S-Zl-gGq">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b7S-Zl-gGq" customClass="MapViewPlus" customModule="MapViewPlus">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                             </mapView>
                         </subviews>
@@ -185,9 +185,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="" image="map" selectedImage="map_selected" id="cPa-gy-q4n">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
                     <connections>
-                        <outlet property="Map" destination="b7S-Zl-gGq" id="8se-PS-gBg"/>
+                        <outlet property="mapView" destination="b7S-Zl-gGq" id="8n0-eY-Nv5"/>
+                        <segue destination="9rn-Gq-Zgu" kind="presentation" identifier="AnnotationTapped" id="bOn-O5-bxD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -203,7 +206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="P1m-yB-FKH">
-                                <rect key="frame" x="0.0" y="74" width="375" height="544"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="637"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="irI-48-raU">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
@@ -212,10 +215,10 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U6W-f1-1HL">
-                                        <rect key="frame" x="0.0" y="200" width="375" height="41.5"/>
+                                        <rect key="frame" x="0.0" y="200" width="375" height="48.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PQ-ZT-DDR">
-                                                <rect key="frame" x="0.0" y="0.0" width="220.5" height="41.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="220.5" height="48.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="otR-tz-qRu"/>
                                                 </constraints>
@@ -238,25 +241,25 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="addressLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTt-WX-iMH">
-                                        <rect key="frame" x="0.0" y="261.5" width="375" height="28"/>
+                                        <rect key="frame" x="0.0" y="268.5" width="375" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFD-Us-oOT">
-                                        <rect key="frame" x="0.0" y="309.5" width="375" height="33"/>
+                                        <rect key="frame" x="0.0" y="321.5" width="375" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ratingLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deK-MP-0Od">
-                                        <rect key="frame" x="0.0" y="362.5" width="375" height="28"/>
+                                        <rect key="frame" x="0.0" y="380" width="375" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menuLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSM-Sz-mXX">
-                                        <rect key="frame" x="0.0" y="410.5" width="375" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="433" width="375" height="204"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -273,6 +276,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I7M-w1-cyi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="m6n-xW-WbN">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="unt-S6-X5m"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="JTt-WX-iMH" id="WAK-BA-wsR"/>
                         <outlet property="favoriteButton" destination="UAp-wK-hIT" id="u9g-rb-yhx"/>
@@ -286,9 +292,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1b-Gx-rcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869.5999999999999" y="-1101.4992503748126"/>
+            <point key="canvasLocation" x="3271" y="-1103"/>
         </scene>
-        <!--Favorites-->
+        <!--Favorites View Controller-->
         <scene sceneID="bwF-R7-QK5">
             <objects>
                 <viewController id="HRF-Jm-ecs" customClass="FavoritesViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
@@ -307,13 +313,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="aFi-Tx-OUa"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="Dqo-UF-zKy"/>
+                    <tabBarItem key="tabBarItem" title="" image="favorites" selectedImage="favorites_selected" id="Dqo-UF-zKy">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="raQ-U0-Rz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1634" y="-322"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="qfO-g7-bRG">
             <objects>
                 <viewController id="nk7-AD-B33" customClass="SettingsViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
@@ -332,7 +340,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cnc-i7-Ka4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="m8i-lw-WFM"/>
+                    <tabBarItem key="tabBarItem" title="" image="settings" selectedImage="settings_selected" id="m8i-lw-WFM">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npy-tv-SAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -358,11 +368,13 @@
             </objects>
             <point key="canvasLocation" x="-290" y="-42"/>
         </scene>
-        <!--List-->
+        <!--Navigation Controller-->
         <scene sceneID="arZ-KV-vuG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UaC-UE-NUh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="second" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" image="list" selectedImage="list_selected" id="acW-dT-cKf">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" id="k2x-ga-yRH">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -379,8 +391,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon-HeartEmpty" width="50" height="50"/>
+        <image name="back" width="24" height="24"/>
+        <image name="favorites" width="24" height="24"/>
+        <image name="favorites_selected" width="24" height="24"/>
         <image name="icon-filter" width="25" height="25"/>
-        <image name="second" width="30" height="30"/>
+        <image name="list" width="24" height="24"/>
+        <image name="list_selected" width="24" height="24"/>
+        <image name="map" width="24" height="24"/>
+        <image name="map_selected" width="24" height="24"/>
+        <image name="settings" width="24" height="24"/>
+        <image name="settings_selected" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qgs-1j-L7G"/>
+    </inferredMetricsTieBreakers>
 </document>

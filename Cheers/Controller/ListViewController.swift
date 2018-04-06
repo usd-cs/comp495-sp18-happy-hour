@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import SVProgressHUD
 import SwiftDate
+import Foundation
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
@@ -102,9 +103,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             //cell.barImage.alpha = 0.90
             cell.nameLabel.text = bar.record.name
-            cell.distanceLabel.text = "0.5 mi"
-            cell.ratingsLabel.text = "+ + + +"
-            cell.happyHourLabel.text = "5 - 7pm"
+            // TODO: update distance from me
+            let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
+            cell.distanceLabel.text = "\(dist) mi"
+            cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
+            let today = Date()
+            let todaysDate = today.weekdayName
+            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? "nil"
+            cell.happyHourLabel.text = todaysHappyHours
             cell.priceLabel.text = String(bar.record.price)
             
             return cell
@@ -120,14 +126,38 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             //cell.barImage.alpha = 0.90
             cell.nameLabel.text = bar.record.name
-            cell.distanceLabel.text = "0.5 mi"
-            cell.ratingsLabel.text = "+ + + +"
-            cell.happyHourLabel.text = "5 - 7pm"
+            // TODO: update distance from me
+            let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
+            cell.distanceLabel.text = "\(dist) mi"
+            cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
+            let today = Date()
+            let todaysDate = today.weekdayName
+            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? "nil"
+            cell.happyHourLabel.text = todaysHappyHours
             cell.priceLabel.text = String(bar.record.price)
             
         
         }
         return cell
+    }
+    
+    func calculateDistance(myLat: Double, myLong: Double, placeLat: Double, placeLong: Double) -> String {
+        let radius: Double = 6371.0
+        let deltaLat: Double = toRadians(placeLat - myLat)
+        let deltaLong: Double = toRadians(placeLong - myLong)
+        
+        let a: Double =
+            sin(deltaLat / 2.0) * sin(deltaLat / 2.0) +
+            cos(toRadians(myLat)) * cos(toRadians(placeLat)) *
+            sin(deltaLong / 2.0) * sin(deltaLong / 2.0)
+        
+        let c: Double = 2.0 * atan2(sqrt(a), sqrt(1.0 - a))
+        let d: Double = radius * c
+        return String(format: "%.2f", d)
+    }
+    
+    func toRadians(_ degrees: Double) -> Double {
+        return degrees * (Double.pi / 180.0)
     }
     
     
