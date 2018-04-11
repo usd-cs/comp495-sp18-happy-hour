@@ -21,6 +21,7 @@
 		B1FFE6AB205B69F500531FDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */; };
 		B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */; };
 		B1FFE6AF205B717E00531FDB /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AE205B717E00531FDB /* DatabaseController.swift */; };
+		B2D34FA7207C56E500065932 /* NorthParkBars.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2D34FA6207C56E400065932 /* NorthParkBars.txt */; };
 		BE500C6720619CD1006F4FD0 /* BarNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = BE500C6620619CD1006F4FD0 /* BarNames.txt */; };
 		BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */; };
 		BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B460204F34AF00136463 /* AppDelegate.swift */; };
@@ -81,6 +82,7 @@
 		B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neighborhoods.swift; sourceTree = "<group>"; };
 		B1FFE6AE205B717E00531FDB /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		B2D34FA6207C56E400065932 /* NorthParkBars.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = NorthParkBars.txt; path = ../../../Documents/NorthParkBars.txt; sourceTree = "<group>"; };
 		BE500C6620619CD1006F4FD0 /* BarNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BarNames.txt; sourceTree = "<group>"; };
 		BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedListsSingleton.swift; sourceTree = "<group>"; };
 		BEA1B45D204F34AF00136463 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +238,7 @@
 		BEA1B45F204F34AF00136463 /* Cheers */ = {
 			isa = PBXGroup;
 			children = (
+				B2D34FA6207C56E400065932 /* NorthParkBars.txt */,
 				B1C20A592051E3FE00ECB998 /* Model */,
 				B1C20A582051E3FB00ECB998 /* View */,
 				B1C20A572051E3F700ECB998 /* Controller */,
@@ -396,6 +399,7 @@
 				B1C20A612051EF6500ECB998 /* shout.jpg in Resources */,
 				BEADB55D2075D8C300E107B7 /* Credits Page.txt in Resources */,
 				66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */,
+				B2D34FA7207C56E500065932 /* NorthParkBars.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
