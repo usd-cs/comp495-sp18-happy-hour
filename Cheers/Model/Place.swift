@@ -36,16 +36,19 @@ public struct Place: Equatable, Codable{
         self.record = record
         self.favorited = favorited
     }
-    public init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: Place.CodingKeys.self)
-        record = try values.decode(DatabaseRecord.self, forKey: .record)
-        favorited = try values.decode(Bool.self, forKey: .favorited)
-    }
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: Place.CodingKeys.self)
-        try container.encode(favorited, forKey: .favorited)
-        try container.encode(record, forKey: .record)
-    }
+    
+    
+//    public init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: Place.CodingKeys.self)
+//        record = try values.decode(DatabaseRecord.self, forKey: .record)
+//        favorited = try values.decode(Bool.self, forKey: .favorited)
+//    }
+//    public func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: Place.CodingKeys.self)
+//        try container.encode(favorited, forKey: .favorited)
+//        try container.encode(record, forKey: .record)
+//    }
+    
 }
 
 public func saveToFile(favoritedPlaces: Place) {
