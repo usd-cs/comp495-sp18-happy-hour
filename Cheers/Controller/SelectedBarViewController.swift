@@ -8,12 +8,19 @@
 
 import UIKit
 import SwiftDate
+import ChameleonFramework
 
 class SelectedBarViewController: UIViewController {
     
     var place: Place!
     // TODO: update image from ListViewController
     //var image: UIImage?
+    
+    let colors:[UIColor] = [
+        UIColor.flatSand,
+        UIColor.flatWhite,
+    ]
+    
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -24,7 +31,6 @@ class SelectedBarViewController: UIViewController {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var menuLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = place.record.name
@@ -32,19 +38,24 @@ class SelectedBarViewController: UIViewController {
         let current = Date()
         imageView.image = UIImage(named: "shout.jpg")
         nameLabel.text  = place.record.name
+        nameLabel.sizeToFit()
         addressLabel.text = place.record.address
+        addressLabel.sizeToFit()
         timeLabel.text = "Happy Hour: \(place.record.happyHours[current.weekdayName] ?? "no happy hours today")"
-        ratingLabel.text = "Rating: \(String(place.record.rating))/5"
+        timeLabel.sizeToFit()
+        ratingLabel.text = "Rating: " + String(repeating: "👍", count: Int(round(place.record.rating)))
+        ratingLabel.sizeToFit()
         
         // TODO: need to figure out how to show menu information
-        menuLabel.text = "Featured Drinks: Moscow Mules!"
+        menuLabel.text = "Yelp Reviews"
         
         if place.favorited {
-            favoriteButton.setImage(#imageLiteral(resourceName: "icon-HeartFull"), for: UIControlState.normal)
+            favoriteButton.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
         }
         else if place.favorited == false {
-            favoriteButton.setImage(#imageLiteral(resourceName: "icon-HeartEmpty"), for: UIControlState.normal)
+            favoriteButton.setImage(#imageLiteral(resourceName: "favorites"), for: UIControlState.normal)
         }
+        view.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
         
         
     }
@@ -58,11 +69,11 @@ class SelectedBarViewController: UIViewController {
         
         if place.favorited == true {
             place.favorited = false
-            favoriteButton.setImage(#imageLiteral(resourceName: "icon-HeartEmpty"), for: UIControlState.normal)
+            favoriteButton.setImage(#imageLiteral(resourceName: "favorites"), for: UIControlState.normal)
         }
         else if place.favorited == false{
             place.favorited = true
-            favoriteButton.setImage(#imageLiteral(resourceName: "icon-HeartFull"), for: UIControlState.normal)
+            favoriteButton.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
         }
     }
     
