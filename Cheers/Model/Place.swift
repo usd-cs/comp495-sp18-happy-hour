@@ -36,16 +36,25 @@ public struct Place: Equatable, Codable{
     
     static func saveToFile(favoritedPlace: Place) {
         let encoder = PropertyListEncoder()
-        let encodedPlaces = try? encoder.encode(favoritedPlace)
+        favoriteList.append(favoritedPlace)
+        
+        let encodedPlaces = try? encoder.encode(favoriteList)
         try? encodedPlaces?.write(to: ArchiveURL, options: .noFileProtection)
-        print("\n saving to file: \n \(favoritedPlace) \n")
+        
     }
     
     static func loadFromFile() -> [Place]?  {
         guard let decodedPlaces = try? Data(contentsOf: ArchiveURL) else {return nil}
         let decoder = PropertyListDecoder()
        
-        return try? decoder.decode(Array<Place>.self, from: decodedPlaces)
+        do{
+            let decodedArray = try decoder.decode(Array<Place>.self, from: decodedPlaces)
+            return decodedArray
+        }
+        catch {
+            print(error)
+            return nil
+        }
     }
     
     static func saveToList(favoritedPlace: Place) {
