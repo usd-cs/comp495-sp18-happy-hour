@@ -19,6 +19,10 @@ class MapViewController: UIViewController {
     // place to be passed via segue to SelectedBarViewController
     var selectedPlace: Place?
     
+    // TODO: replace this static placeholder after settings page is done
+    // this is in meters
+    var searchDistance: Double? = 1000
+    
     var masterList: [Place] = []
     var liveList: [Place] = []
     var notLiveList: [Place] = []
@@ -38,9 +42,26 @@ class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         populateMap()
+        addRangeOverlay()
     }
     
+    // add circle overlay based on how big the search radius is
+    func addRangeOverlay() {
+        var overlays = [MKCircle]()
+        // TODO: need to safely unwrap searchDistance
+        overlays.append(MKCircle(center: (UserLocations.shared.currentLocation?.coordinate)!, radius: searchDistance!))
+        mapView.addOverlays(overlays)
+    }
     
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKCircleRenderer(overlay: overlay)
+        renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
+        renderer.strokeColor = UIColor.blue
+        renderer.lineWidth = 1
+        return renderer
+    }
+    
+    // populate map with live and non-live bars
     func populateMap() {
         masterList = SharedListsSingleton.shared.masterList
         liveList = SharedListsSingleton.shared.liveList
