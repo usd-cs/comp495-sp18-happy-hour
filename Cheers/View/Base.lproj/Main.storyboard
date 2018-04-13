@@ -172,8 +172,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b7S-Zl-gGq" customClass="MapViewPlus" customModule="MapViewPlus">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b7S-Zl-gGq" customClass="MapViewPlus" customModule="MapViewPlus">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -227,11 +227,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdG-6x-gM5">
-                                                <rect key="frame" x="220.5" y="0.0" width="58" height="41.5"/>
+                                                <rect key="frame" x="220.5" y="0.0" width="58" height="48.5"/>
                                                 <state key="normal" title="📍"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAp-wK-hIT">
-                                                <rect key="frame" x="278.5" y="0.0" width="96.5" height="41.5"/>
+                                                <rect key="frame" x="278.5" y="0.0" width="96.5" height="48.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="disabled" image="icon-HeartEmpty"/>
                                                 <connections>
@@ -319,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="raQ-U0-Rz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="-322"/>
+            <point key="canvasLocation" x="1632.8" y="-322.48875562218893"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="qfO-g7-bRG">
@@ -394,6 +394,7 @@
         <image name="back" width="24" height="24"/>
         <image name="favorites" width="24" height="24"/>
         <image name="favorites_selected" width="24" height="24"/>
+        <image name="icon-HeartEmpty" width="50" height="50"/>
         <image name="icon-filter" width="25" height="25"/>
         <image name="list" width="24" height="24"/>
         <image name="list_selected" width="24" height="24"/>
@@ -403,6 +404,6 @@
         <image name="settings_selected" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qgs-1j-L7G"/>
+        <segue reference="bOn-O5-bxD"/>
     </inferredMetricsTieBreakers>
 </document>

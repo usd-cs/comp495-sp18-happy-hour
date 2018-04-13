@@ -11,6 +11,8 @@ import Foundation
 let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 let ArchiveURL = DocumentsDirectory.appendingPathComponent("places").appendingPathExtension("plist")
 
+var favoriteList = [Place]()
+
 extension String {
     var lines: [String] {
         var result: [String] = []
@@ -46,6 +48,13 @@ public struct Place: Equatable, Codable{
         return try? decoder.decode(Array<Place>.self, from: decodedPlaces)
     }
     
+    static func saveToList(favoritedPlace: Place) {
+        favoriteList.append(favoritedPlace)
+    }
+    
+    static func loadFromList() -> [Place]? {
+        return favoriteList
+    }
 }
 
 

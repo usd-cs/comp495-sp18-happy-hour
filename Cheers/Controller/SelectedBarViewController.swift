@@ -15,6 +15,7 @@ class SelectedBarViewController: UIViewController {
     // TODO: update image from ListViewController
     //var image: UIImage?
     
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mapButton: UIButton!
@@ -65,8 +66,12 @@ class SelectedBarViewController: UIViewController {
             favoriteButton.setImage(#imageLiteral(resourceName: "icon-HeartFull"), for: UIControlState.normal)
             
             Place.saveToFile(favoritedPlace: place)
+            Place.saveToList(favoritedPlace: place)
 
-            print(Place.loadFromFile() ?? "No Places Favorited")
+            print(Place.loadFromFile() ?? "No Places Favorited in File\n")
+            
+            print("Favorited List: \n")
+            print(Place.loadFromList() ?? "No places favorited in list")
         }
     }
     
