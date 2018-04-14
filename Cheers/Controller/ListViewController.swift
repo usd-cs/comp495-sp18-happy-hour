@@ -220,9 +220,24 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    let filterMenu = FilterMenu()
     @IBAction func filterButtonPressed(_ sender: Any) {
         // TODO: present filtering options
+        //filterMore()
+        filterMenu.showFilterMenu()
     }
+    
+
+    
+    func filterMore() {
+        
+        
+    }
+    
+    @objc func handleDismiss() {
+        
+    }
+    
     
     @IBAction func segmentedButtonChanged(_ sender: Any) {
         // TODO: switch between displaying live and all lists
