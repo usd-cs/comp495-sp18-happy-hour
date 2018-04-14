@@ -25,26 +25,40 @@ class FilterMenu: NSObject {
             
             blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
             
-            blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
+            blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideFilterMenu)))
             
             window.addSubview(blackView)
             window.addSubview(collectionView)
-            collectionView.frame = CGRect(x: 0, y: 0, width: window.frame.width, height: 200)
+            
+            let height : CGFloat = 200
+            let theY = window.frame.height - height
+            
+            collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
             
             blackView.frame = window.frame
             blackView.alpha = 0
             
-            UIView.animate(withDuration: 0.5, animations: {
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.blackView.alpha = 1
-            })
+                self.collectionView.frame = CGRect(x: 0, y: theY, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+                
+            }, completion: nil)
+            
             
         }
         
     }
     
-    @objc func handleDismiss() {
+    @objc func hideFilterMenu() {
         UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 0
+            
+            if let window = UIApplication.shared.keyWindow {
+                self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+                
+            }
+            
         }
         
         
