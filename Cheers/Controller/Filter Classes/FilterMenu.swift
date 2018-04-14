@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FilterMenu: NSObject {
+class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let blackView = UIView()
     let collectionView: UICollectionView = {
@@ -18,6 +18,8 @@ class FilterMenu: NSObject {
         cv.backgroundColor = UIColor.white
         return cv
     }()
+    
+    let cellId = "cellId"
     
     func showFilterMenu() {
         
@@ -65,7 +67,22 @@ class FilterMenu: NSObject {
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        return cell
+    }
+    
+    
     override init() {
         super.init()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(FilterOptionCell.self, forCellWithReuseIdentifier: cellId)
     }
 }
