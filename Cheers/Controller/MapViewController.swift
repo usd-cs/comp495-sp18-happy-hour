@@ -19,10 +19,6 @@ class MapViewController: UIViewController {
     // place to be passed via segue to SelectedBarViewController
     var selectedPlace: Place?
     
-    // TODO: replace this static placeholder after settings page is done
-    // this is in meters
-    var searchDistance: Double? = 1000
-    
     var masterList: [Place] = []
     var liveList: [Place] = []
     var notLiveList: [Place] = []
@@ -45,11 +41,10 @@ class MapViewController: UIViewController {
         addRangeOverlay()
     }
     
-    // add circle overlay based on how big the search radius is
+    // adds circle overlay based on how big the search radius is
     func addRangeOverlay() {
         var overlays = [MKCircle]()
-        // TODO: need to safely unwrap searchDistance
-        overlays.append(MKCircle(center: (UserLocations.shared.currentLocation?.coordinate)!, radius: searchDistance!))
+        overlays.append(MKCircle(center: (UserLocations.shared.currentLocation?.coordinate)!, radius: FilterSettingsSingleton.shared.distanceFromMe))
         mapView.addOverlays(overlays)
     }
     
@@ -59,6 +54,26 @@ class MapViewController: UIViewController {
         renderer.strokeColor = UIColor.blue
         renderer.lineWidth = 1
         return renderer
+    }
+    
+    func calculateDistance(myLat: Double, myLong: Double, placeLat: Double, placeLong: Double) -> Double {
+        let radius: Double = 6371.0
+        let deltaLat: Double = toRadians(placeLat - myLat)
+        let deltaLong: Double = toRadians(placeLong - myLong)
+        
+        let a: Double =
+            sin(deltaLat / 2.0) * sin(deltaLat / 2.0) +
+                cos(toRadians(myLat)) * cos(toRadians(placeLat)) *
+                sin(deltaLong / 2.0) * sin(deltaLong / 2.0)
+        
+        let c: Double = 2.0 * atan2(sqrt(a), sqrt(1.0 - a))
+        let d: Double = radius * c  // in miles
+        let inMeters = d * 1609.34
+        return inMeters
+    }
+    
+    func toRadians(_ degrees: Double) -> Double {
+        return degrees * (Double.pi / 180.0)
     }
     
     // populate map with live and non-live bars
@@ -72,46 +87,54 @@ class MapViewController: UIViewController {
         
         // load live bars into map
         for place in liveList {
-            let today = Date()
-            let todaysDate = today.weekdayName
-            // TODO: need to double check "nil"
-            let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
+            let distanceFromMe = calculateDistance(myLat: Double((UserLocations.shared.currentLocation?.coordinate.latitude)!), myLong: Double((UserLocations.shared.currentLocation?.coordinate.longitude)!), placeLat: place.record.latitude, placeLong: place.record.longitude)
             
-            // TODO: get image working
-            let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: true)
-            let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
-            let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
-            annotations.append(annotation)
-            
-            // need to check to see if maxDist for region needs to be updated
-            let deltaLat = abs(Double(location.latitude) - Double((UserLocations.shared.currentLocation?.coordinate.latitude)!))
-            let deltaLong = abs(Double(location.longitude) - Double((UserLocations.shared.currentLocation?.coordinate.longitude)!))
-            
-            let newMaxDist = deltaLat > deltaLong ? deltaLat : deltaLong
-            maxDist = newMaxDist > maxDist ? newMaxDist : maxDist
+            if distanceFromMe <= FilterSettingsSingleton.shared.distanceFromMe {
+                let today = Date()
+                let todaysDate = today.weekdayName
+                // TODO: need to double check "nil"
+                let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
+                
+                // TODO: get image working
+                let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: true)
+                let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
+                let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
+                annotations.append(annotation)
+                
+                // need to check to see if maxDist for region needs to be updated
+                let deltaLat = abs(Double(location.latitude) - Double((UserLocations.shared.currentLocation?.coordinate.latitude)!))
+                let deltaLong = abs(Double(location.longitude) - Double((UserLocations.shared.currentLocation?.coordinate.longitude)!))
+                
+                let newMaxDist = deltaLat > deltaLong ? deltaLat : deltaLong
+                maxDist = newMaxDist > maxDist ? newMaxDist : maxDist
+            }
         }
         
         mapView.setup(withAnnotations: annotations)
         
         // load not live bars into map
         for place in notLiveList {
-            let today = Date()
-            let todaysDate = today.weekdayName
-            // TODO: need to double check "nil"
-            let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
+            let distanceFromMe = calculateDistance(myLat: Double((UserLocations.shared.currentLocation?.coordinate.latitude)!), myLong: Double((UserLocations.shared.currentLocation?.coordinate.longitude)!), placeLat: place.record.latitude, placeLong: place.record.longitude)
             
-            // TODO: get image working
-            let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: false)
-            let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
-            let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
-            annotations.append(annotation)
-            
-            // need to check to see if maxDist for region needs to be updated
-            let deltaLat = abs(Double(location.latitude) - Double((UserLocations.shared.currentLocation?.coordinate.latitude)!))
-            let deltaLong = abs(Double(location.longitude) - Double((UserLocations.shared.currentLocation?.coordinate.longitude)!))
-            
-            let newMaxDist = deltaLat > deltaLong ? deltaLat : deltaLong
-            maxDist = newMaxDist > maxDist ? newMaxDist : maxDist
+            if distanceFromMe <= FilterSettingsSingleton.shared.distanceFromMe {
+                let today = Date()
+                let todaysDate = today.weekdayName
+                // TODO: need to double check "nil"
+                let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
+                
+                // TODO: get image working
+                let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: false)
+                let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
+                let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
+                annotations.append(annotation)
+                
+                // need to check to see if maxDist for region needs to be updated
+                let deltaLat = abs(Double(location.latitude) - Double((UserLocations.shared.currentLocation?.coordinate.latitude)!))
+                let deltaLong = abs(Double(location.longitude) - Double((UserLocations.shared.currentLocation?.coordinate.longitude)!))
+                
+                let newMaxDist = deltaLat > deltaLong ? deltaLat : deltaLong
+                maxDist = newMaxDist > maxDist ? newMaxDist : maxDist
+            }
         }
         
         mapView.setup(withAnnotations: annotations)

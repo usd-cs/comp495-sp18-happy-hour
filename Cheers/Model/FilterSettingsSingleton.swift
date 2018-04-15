@@ -8,24 +8,27 @@
 
 import Foundation
 
-struct FilterSettings: Equatable {
+class FilterSettingsSingleton {
+    static let shared = FilterSettingsSingleton()
+    
     // whether or not we are searching for bars in our favorites list
-    var favorited: Bool
+    // default is false
+    var favorited: Bool = false
     
     // minimum user rating for search (i.e. more than 3 stars)
     // discrete element of [1,5]
-    var ratingMinimum: Int
+    // default is 0
+    var ratingMinimum: Int = 0
     
     // maximum price for search (i.e. less than two dollar signs)
     // discrete element of [1,5]
-    var priceMaximum: Int
+    // default is 5
+    var priceMaximum: Int = 5
     
     // distance from my current location
-    var distanceFromMe: Double
-    
-    static func ==(lhs: FilterSettings, rhs: FilterSettings) -> Bool {
-        return lhs.favorited == rhs.favorited && lhs.ratingMinimum == rhs.ratingMinimum && lhs.priceMaximum == rhs.priceMaximum && lhs.distanceFromMe == rhs.distanceFromMe
-    }
+    // default is 1.0 mile 1609.34
+    //var distanceFromMe: Double = 1609.34
+    var distanceFromMe: Double = 1609.34 * 5
     
 }
 
