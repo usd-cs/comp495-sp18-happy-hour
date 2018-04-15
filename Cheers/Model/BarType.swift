@@ -35,6 +35,7 @@ enum BarType: String {
     case karaoke = "karaoke"
     case pianobars = "pianobars"
     case breweries = "breweries"
+    case unknown = "unknown"
 }
 
 
