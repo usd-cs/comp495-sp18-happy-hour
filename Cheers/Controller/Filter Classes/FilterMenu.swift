@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
+class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     let blackView = UIView()
     let collectionView: UICollectionView = {
@@ -67,6 +67,10 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 50)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }
@@ -76,6 +80,7 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         return cell
     }
+    
     
     
     override init() {
