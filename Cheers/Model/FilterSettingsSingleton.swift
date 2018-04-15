@@ -26,9 +26,9 @@ class FilterSettingsSingleton {
     var priceMaximum: Int = 5
     
     // distance from my current location
-    // default is 1.0 mile 1609.34
-    //var distanceFromMe: Double = 1609.34
-    var distanceFromMe: Double = 1609.34 * 5
+    // default is 1 mile
+    //var distanceFromMe: Double = 1.0
+    var distanceFromMe: Double = 5.0
     
 }
 

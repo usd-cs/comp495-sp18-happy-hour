@@ -44,7 +44,7 @@ class MapViewController: UIViewController {
     // adds circle overlay based on how big the search radius is
     func addRangeOverlay() {
         var overlays = [MKCircle]()
-        overlays.append(MKCircle(center: (UserLocations.shared.currentLocation?.coordinate)!, radius: FilterSettingsSingleton.shared.distanceFromMe))
+        overlays.append(MKCircle(center: (UserLocations.shared.currentLocation?.coordinate)!, radius: FilterSettingsSingleton.shared.distanceFromMe*1609.34))
         mapView.addOverlays(overlays)
     }
     
@@ -57,7 +57,9 @@ class MapViewController: UIViewController {
     }
     
     func calculateDistance(myLat: Double, myLong: Double, placeLat: Double, placeLong: Double) -> Double {
-        let radius: Double = 6371.0
+        // radius of the earth in meters
+        let radius: Double = 6371
+        
         let deltaLat: Double = toRadians(placeLat - myLat)
         let deltaLong: Double = toRadians(placeLong - myLong)
         
@@ -67,9 +69,10 @@ class MapViewController: UIViewController {
                 sin(deltaLong / 2.0) * sin(deltaLong / 2.0)
         
         let c: Double = 2.0 * atan2(sqrt(a), sqrt(1.0 - a))
-        let d: Double = radius * c  // in miles
-        let inMeters = d * 1609.34
-        return inMeters
+        let d: Double = radius * c
+        
+        // convert km to mi
+        return d * 0.621371
     }
     
     func toRadians(_ degrees: Double) -> Double {
@@ -92,8 +95,7 @@ class MapViewController: UIViewController {
             if distanceFromMe <= FilterSettingsSingleton.shared.distanceFromMe {
                 let today = Date()
                 let todaysDate = today.weekdayName
-                // TODO: need to double check "nil"
-                let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
+                let todaysHappyHours = place.record.happyHours[todaysDate] ?? "No happy hours today."
                 
                 // TODO: get image working
                 let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: true)
@@ -115,12 +117,11 @@ class MapViewController: UIViewController {
         // load not live bars into map
         for place in notLiveList {
             let distanceFromMe = calculateDistance(myLat: Double((UserLocations.shared.currentLocation?.coordinate.latitude)!), myLong: Double((UserLocations.shared.currentLocation?.coordinate.longitude)!), placeLat: place.record.latitude, placeLong: place.record.longitude)
-            
+
             if distanceFromMe <= FilterSettingsSingleton.shared.distanceFromMe {
                 let today = Date()
                 let todaysDate = today.weekdayName
-                // TODO: need to double check "nil"
-                let todaysHappyHours = place.record.happyHours[todaysDate] ?? "nil"
+                let todaysHappyHours = place.record.happyHours[todaysDate] ?? "No happy hours today."
                 
                 // TODO: get image working
                 let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: false)
@@ -140,7 +141,7 @@ class MapViewController: UIViewController {
         mapView.setup(withAnnotations: annotations)
         
         // set span of map
-        let spanRadius = 2 * maxDist
+        let spanRadius = 2.5 * maxDist
         
         // set region of map
         let span = MKCoordinateSpan(latitudeDelta: CLLocationDegrees(spanRadius), longitudeDelta: CLLocationDegrees(spanRadius))

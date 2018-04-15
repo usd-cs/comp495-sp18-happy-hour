@@ -93,7 +93,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isSearching {
             
             var bar = searchedData[indexPath.row]
-            let imageUrl =  URL(string: bar.record.images.removeFirst())
+            let imageUrl =  URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
                 cell.barImage.image = image
@@ -107,7 +107,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
             let today = Date()
             let todaysDate = today.weekdayName
-            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? "nil"
+            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? ""
             cell.happyHourLabel.text = todaysHappyHours
             cell.priceLabel.text = String(bar.record.price)
             
@@ -116,15 +116,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         } else {
             var bar = places[indexPath.row]
-            let imageUrl =  URL(string: bar.record.images.removeFirst())
+            let imageUrl =  URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
                 cell.barImage.image = image
             }
             
-            //cell.barImage.alpha = 0.90
             cell.nameLabel.text = bar.record.name
-            // TODO: update distance from me
             let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
             cell.distanceLabel.text = "\(dist) mi"
             cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
@@ -270,21 +268,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if currentDate > happyHourStartingDate! && currentDate < happyHourEndingDate! {
                     liveList!.append(bar)
                     SharedListsSingleton.shared.liveList.append(bar)
-                    
-                    // DEBUG:
-                    print("\tAdding \(bar.record.name) to live list")
                 } else {
                     notLiveList!.append(bar)
                     SharedListsSingleton.shared.notLiveList.append(bar)
-                    
-                    // DEBUG:
-                    print("\tAdding \(bar.record.name) to not live list")
                 }
                 
             } else {
                 notLiveList!.append(bar)
                 SharedListsSingleton.shared.notLiveList.append(bar)
-                print("\tAdding \(bar.record.name) to not live list")
             }
         }
         
