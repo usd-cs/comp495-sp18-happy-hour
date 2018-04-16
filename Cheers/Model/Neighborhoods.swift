@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Neighborhood: String {
+enum Neighborhood: String, Codable {
     case NorthPark = "North Park"
     case PacificBeach = "Pacific Beach"
     case LaJolla = "La Jolla"
