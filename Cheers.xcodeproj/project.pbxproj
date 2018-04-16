@@ -14,6 +14,8 @@
 		66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66D3EDFB20730BC3003A9CB0 /* happyhours.txt */; };
 		9A0A86FE11A77BD7A74EBA63 /* Pods_Cheers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */; };
 		B10E20BA2054AF88005E37BE /* BarInfoCheersApp.txt in Resources */ = {isa = PBXBuildFile; fileRef = B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */; };
+		B15ACF5D208197320052C4CB /* FilterMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15ACF5C208197320052C4CB /* FilterMenu.swift */; };
+		B15ACF632081A9C90052C4CB /* FilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15ACF622081A9C90052C4CB /* FilterOptionCell.swift */; };
 		B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */; };
 		B1C20A612051EF6500ECB998 /* shout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1C20A602051EF6500ECB998 /* shout.jpg */; };
 		B1FF310F20720A33001DF2DF /* UserLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FF310E20720A33001DF2DF /* UserLocations.swift */; };
@@ -74,6 +76,8 @@
 		972A4A435F45ED4976ED9E9E /* Pods-CheersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0F4456248D6140CBDEA45D4 /* Pods_CheersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BarInfoCheersApp.txt; sourceTree = "<group>"; };
+		B15ACF5C208197320052C4CB /* FilterMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMenu.swift; sourceTree = "<group>"; };
+		B15ACF622081A9C90052C4CB /* FilterOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionCell.swift; sourceTree = "<group>"; };
 		B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTableViewCell.swift; sourceTree = "<group>"; };
 		B1C20A602051EF6500ECB998 /* shout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shout.jpg; sourceTree = "<group>"; };
 		B1FF310E20720A33001DF2DF /* UserLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocations.swift; sourceTree = "<group>"; };
@@ -160,9 +164,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B15ACF5F2081A8F30052C4CB /* Filter Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B15ACF5C208197320052C4CB /* FilterMenu.swift */,
+				B15ACF622081A9C90052C4CB /* FilterOptionCell.swift */,
+			);
+			path = "Filter Classes";
+			sourceTree = "<group>";
+		};
 		B1C20A572051E3F700ECB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B15ACF5F2081A8F30052C4CB /* Filter Classes */,
 				B1FF310D20720A08001DF2DF /* Location Classes */,
 				BEA1B460204F34AF00136463 /* AppDelegate.swift */,
 				BEA1B462204F34AF00136463 /* ListViewController.swift */,
@@ -527,6 +541,7 @@
 				B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */,
 				B1FFE6AF205B717E00531FDB /* DatabaseController.swift in Sources */,
 				339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */,
+				B15ACF5D208197320052C4CB /* FilterMenu.swift in Sources */,
 				BEC473AD20510B7C00FC5702 /* Place.swift in Sources */,
 				BEF309A62061AA3200022098 /* BarType.swift in Sources */,
 				BEADB55F2075DB5800E107B7 /* ColorsSingleton.swift in Sources */,
@@ -539,6 +554,7 @@
 				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
 				BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */,
 				BEF4A5D82075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift in Sources */,
+				B15ACF632081A9C90052C4CB /* FilterOptionCell.swift in Sources */,
 				B1FF310F20720A33001DF2DF /* UserLocations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
