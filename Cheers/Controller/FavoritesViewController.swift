@@ -9,11 +9,13 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
-
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +23,7 @@ class FavoritesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+  
 
     /*
     // MARK: - Navigation

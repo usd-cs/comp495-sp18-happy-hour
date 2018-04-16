@@ -366,6 +366,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         refHandle = ref.child("\(neighborhood)").observe(.value, with: { (snapshot) in
             
+            let favorited = false
             let records = snapshot.value as? [String: AnyObject]
             for record in records! {
                 let recordInfo = record.value as! [String: Any]
@@ -396,8 +397,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let neighborhoodName = Neighborhood(rawValue: neighborhood)!
                 
                 let newRecord = DatabaseRecord(id: id, name: name, longitude: longitude, latitude: latitude, rating: rating, price: price, reviewCount: reviewCount, phoneNumber: phoneNumber, address: address, city: city, state: state, zipCode: zipCode, country: country, images: images, categories: categories, happyHours: happyHours, neighborhood: neighborhoodName)
-                
-                places.append(Place(record: newRecord, favorited: false))
+               
+                let newPlace = Place(record: newRecord, favorited: favorited)
+                places.append(newPlace)
                 
             }
             
