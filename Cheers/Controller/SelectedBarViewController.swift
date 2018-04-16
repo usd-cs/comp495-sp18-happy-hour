@@ -74,6 +74,11 @@ class SelectedBarViewController: UIViewController {
         else if place.favorited == false{
             place.favorited = true
             favoriteButton.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
+            //favoriteButton.setImage(#imageLiteral(resourceName: "icon-HeartFull"), for: UIControlState.normal)
+            
+            Place.saveToFile(favoritedPlace: place)
+
+            //print(Place.loadFromFile() ?? "No Places Favorited in File\n")
         }
     }
     

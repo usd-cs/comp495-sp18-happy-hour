@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct DatabaseRecord {
+struct DatabaseRecord: Codable {
     var id: String
     var name: String
     var longitude: Double
@@ -76,7 +76,10 @@ struct DatabaseRecord {
         }
         
         self = DatabaseRecord(id: id, name: name, longitude: longitude, latitude: latitude, rating: rating, price: price, reviewCount: reviewCount, phoneNumber: phoneNumber, addressLine1: addressLine1, addressLine2: addressLine2, addressLine3: addressLine3, city: city, state: state, zipCode: zipCode, country: country, images: images, categories: categories, happyHours: happyHours, neighborhood: neighborhood)
+    
     }
+    
+    
     
     init(id: String, name: String, longitude: Double, latitude: Double, rating: Double, price: String, reviewCount: Int, phoneNumber: String, addressLine1: String, addressLine2: String, addressLine3: String, city: String, state: String, zipCode: String, country: String, images: [String], categories: [BarType], happyHours: [String: String], neighborhood: Neighborhood) {
         self.id = id

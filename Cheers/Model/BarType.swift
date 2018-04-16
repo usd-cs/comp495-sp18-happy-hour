@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BarType: String {
+enum BarType: String, Codable {
     // need to add more types, add from: https://www.yelp.com/developers/documentation/v3/category_list
     case barcrawl = "barcrawl"
     case bars = "bars"
