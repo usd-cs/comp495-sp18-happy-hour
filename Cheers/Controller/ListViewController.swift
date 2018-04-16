@@ -99,9 +99,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 cell.barImage.image = image
             }
             
-            //cell.barImage.alpha = 0.90
             cell.nameLabel.text = bar.record.name
-            // TODO: update distance from me
             let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
             cell.distanceLabel.text = "\(dist) mi"
             cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
@@ -148,7 +146,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             sin(deltaLong / 2.0) * sin(deltaLong / 2.0)
         
         let c: Double = 2.0 * atan2(sqrt(a), sqrt(1.0 - a))
-        let d: Double = radius * c
+        let d: Double = radius * c * 0.621371
         return String(format: "%.2f", d)
     }
     

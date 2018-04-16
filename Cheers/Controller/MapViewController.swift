@@ -48,6 +48,7 @@ class MapViewController: UIViewController {
         mapView.addOverlays(overlays)
     }
     
+    // renderer for map view overlay
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKCircleRenderer(overlay: overlay)
         renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
