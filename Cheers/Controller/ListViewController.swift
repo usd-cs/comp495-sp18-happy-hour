@@ -42,6 +42,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             guard notLiveList != nil else { return }
             tableView.reloadData()
             if liveList!.count != 0 {
+                // DEBUG: 
                 print("places is ready")
                 places = liveList!
                 tableView.reloadData()
@@ -71,12 +72,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         SVProgressHUD.show()
         
-        // TODO: make work with async call to CoreLocations
-        // TODO: need to make 'forNeighborhood' not static
-        
         // DEBUG: when writing to DB, comment out this line
         // DEBUG: when reading from DB, uncomment this line
-        readFromDB(fromNeighborhood: "Pacific Beach")
+        readFromDB()
         
     }
     
@@ -95,21 +93,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isSearching {
             
             var bar = searchedData[indexPath.row]
-            let imageUrl =  URL(string: bar.record.images.removeFirst())
+            let imageUrl =  URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
                 cell.barImage.image = image
             }
             
-            //cell.barImage.alpha = 0.90
             cell.nameLabel.text = bar.record.name
-            // TODO: update distance from me
             let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
             cell.distanceLabel.text = "\(dist) mi"
             cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
             let today = Date()
             let todaysDate = today.weekdayName
-            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? "nil"
+            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? ""
             cell.happyHourLabel.text = todaysHappyHours
             cell.priceLabel.text = String(bar.record.price)
             
@@ -118,15 +114,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         } else {
             var bar = places[indexPath.row]
-            let imageUrl =  URL(string: bar.record.images.removeFirst())
+            let imageUrl =  URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
                 cell.barImage.image = image
             }
             
-            //cell.barImage.alpha = 0.90
             cell.nameLabel.text = bar.record.name
-            // TODO: update distance from me
             let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
             cell.distanceLabel.text = "\(dist) mi"
             cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
@@ -152,7 +146,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             sin(deltaLong / 2.0) * sin(deltaLong / 2.0)
         
         let c: Double = 2.0 * atan2(sqrt(a), sqrt(1.0 - a))
-        let d: Double = radius * c
+        let d: Double = radius * c * 0.621371
         return String(format: "%.2f", d)
     }
     
@@ -287,25 +281,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if currentDate > happyHourStartingDate! && currentDate < happyHourEndingDate! {
                     liveList!.append(bar)
                     SharedListsSingleton.shared.liveList.append(bar)
-                    
-                    // DEBUG:
-                    print("\tAdding \(bar.record.name) to live list")
                 } else {
                     notLiveList!.append(bar)
                     SharedListsSingleton.shared.notLiveList.append(bar)
-                    
-                    // DEBUG:
-                    print("\tAdding \(bar.record.name) to not live list")
                 }
                 
             } else {
                 notLiveList!.append(bar)
                 SharedListsSingleton.shared.notLiveList.append(bar)
-                print("\tAdding \(bar.record.name) to not live list")
             }
         }
         
-        //SVProgressHUD.dismiss()
     }
     
     func computeTimes(for happyHourString: String) -> (Int, String, String, String, String) {
@@ -342,7 +328,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             endTimeHours = Int(endComponents[0])!
             endTimeMinutes = Int(endComponents[1])!
         } else {
-            //endTimeHours = Int(components[3])! //This is crashing so Meelad added the next line
+            //endTimeHours = Int(components[3])!
+            // TODO: fix this
+            //This is crashing so Meelad added the next line
             endTimeHours = 1
             endTimeMinutes = 0
         }
@@ -358,49 +346,55 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         return (dayOffset, String(startTimeHours), String(startTimeMinutes), String(endTimeHours), String(endTimeMinutes))
     }
     
-    func readFromDB(fromNeighborhood neighborhood: String) {
+    func readFromDB() {
         var ref: DatabaseReference!
         ref = Database.database().reference()
         
         var places = [Place]()
         
-        refHandle = ref.child("\(neighborhood)").observe(.value, with: { (snapshot) in
-            
-            let favorited = false
-            let records = snapshot.value as? [String: AnyObject]
-            for record in records! {
-                let recordInfo = record.value as! [String: Any]
-                
-                let id = recordInfo["id"] as! String
-                let name = recordInfo["name"] as! String
-                let longitude = recordInfo["longitude"] as! Double
-                let latitude = recordInfo["latitude"] as! Double
-                let rating = recordInfo["rating"] as! Double
-                let price = recordInfo["price"] as! String
-                let reviewCount = recordInfo["reviewCount"] as! Int
-                let phoneNumber = recordInfo["phoneNumber"] as! String
-                let address = recordInfo["address"] as! String
-                let city = recordInfo["city"] as! String
-                let state = recordInfo["state"] as! String
-                let zipCode = recordInfo["zipCode"] as! String
-                let country = recordInfo["country"] as! String
-                let images = recordInfo["images"] as! [String]
-                
-                let categoriesArray = recordInfo["categories"] as! [String]
-                var categories = [BarType]()
-                for category in categoriesArray {
-                    categories.append(BarType(rawValue: category)!)
+        refHandle = ref.observe(.value, with: { (snapshot) in
+            let allRecords = snapshot.value as? [String: AnyObject]
+            for neighborhoodRecords in allRecords! {
+                let records = neighborhoodRecords.value as? [String: AnyObject]
+                for record in records! {
+                    let recordInfo = record.value as! [String: Any]
+                    
+                    let id = recordInfo["id"] as! String
+                    let name = recordInfo["name"] as! String
+                    let longitude = recordInfo["longitude"] as! Double
+                    let latitude = recordInfo["latitude"] as! Double
+                    let rating = recordInfo["rating"] as! Double
+                    let price = recordInfo["price"] as! String
+                    let reviewCount = recordInfo["reviewCount"] as! Int
+                    let phoneNumber = recordInfo["phoneNumber"] as! String
+                    let address = recordInfo["address"] as! String
+                    let city = recordInfo["city"] as! String
+                    let state = recordInfo["state"] as! String
+                    let zipCode = recordInfo["zipCode"] as! String
+                    let country = recordInfo["country"] as! String
+                    let images = recordInfo["images"] as! [String]
+                    
+                    // build list of categories, could be empty (defaults to unknown)
+                    var categoriesArray = [String]()
+                    if recordInfo["categories"] != nil {
+                        categoriesArray = recordInfo["categories"] as! [String]
+                    } else {
+                        categoriesArray.append("unknown")
+                    }
+                    var categories = [BarType]()
+                    for category in categoriesArray {
+                        categories.append(BarType(rawValue: category)!)
+                    }
+                    
+                    let happyHours = recordInfo["happyHours"] as! [String: String]
+                    
+                    let neighborhoodName = Neighborhood(rawValue: neighborhoodRecords.key)!
+                    
+                    let newRecord = DatabaseRecord(id: id, name: name, longitude: longitude, latitude: latitude, rating: rating, price: price, reviewCount: reviewCount, phoneNumber: phoneNumber, address: address, city: city, state: state, zipCode: zipCode, country: country, images: images, categories: categories, happyHours: happyHours, neighborhood: neighborhoodName)
+                    
+                    places.append(Place(record: newRecord, favorited: false))
+                    
                 }
-                
-                let happyHours = recordInfo["happyHours"] as! [String: String]
-                
-                let neighborhoodName = Neighborhood(rawValue: neighborhood)!
-                
-                let newRecord = DatabaseRecord(id: id, name: name, longitude: longitude, latitude: latitude, rating: rating, price: price, reviewCount: reviewCount, phoneNumber: phoneNumber, address: address, city: city, state: state, zipCode: zipCode, country: country, images: images, categories: categories, happyHours: happyHours, neighborhood: neighborhoodName)
-               
-                let newPlace = Place(record: newRecord, favorited: favorited)
-                places.append(newPlace)
-                
             }
             
             self.masterList = places

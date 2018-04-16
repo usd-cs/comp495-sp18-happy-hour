@@ -12,6 +12,7 @@ class SharedListsSingleton {
     static let shared = SharedListsSingleton()
     var masterList: [Place] = [] {
         didSet {
+            // DEBUG:
             print("MasterList is now: \(masterList)\n\n")
         }
     }

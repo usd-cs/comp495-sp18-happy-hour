@@ -12,6 +12,8 @@
 		53B8AB51ECE9E0A4AD635A77 /* Pods_CheersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */; };
 		666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */; };
 		66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66D3EDFB20730BC3003A9CB0 /* happyhours.txt */; };
+		72D45BDF2084024200E06918 /* FilterSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */; };
+		72D45BE12084364100E06918 /* DowntownGaslampBars.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72D45BE02084364100E06918 /* DowntownGaslampBars.txt */; };
 		9A0A86FE11A77BD7A74EBA63 /* Pods_Cheers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */; };
 		B10E20BA2054AF88005E37BE /* BarInfoCheersApp.txt in Resources */ = {isa = PBXBuildFile; fileRef = B10E20B92054AF88005E37BE /* BarInfoCheersApp.txt */; };
 		B15ACF5D208197320052C4CB /* FilterMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15ACF5C208197320052C4CB /* FilterMenu.swift */; };
@@ -38,7 +40,6 @@
 		BEC473AD20510B7C00FC5702 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC473AC20510B7C00FC5702 /* Place.swift */; };
 		BEF309A62061AA3200022098 /* BarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A52061AA3200022098 /* BarType.swift */; };
 		BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A72061BA0D00022098 /* DatabaseRecord.swift */; };
-		BEF309AA2061D3CE00022098 /* FilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A92061D3CE00022098 /* FilterSettings.swift */; };
 		BEF4A5D82075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4A5D72075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift */; };
 		BEF4A5DA2075C53100D7BCE5 /* PlaceMapAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotationView.xib */; };
 		BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */; };
@@ -71,6 +72,8 @@
 		3FFE80B91BF7B44C17B2D247 /* Pods-CheersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests.release.xcconfig"; sourceTree = "<group>"; };
 		666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBarViewController.swift; sourceTree = "<group>"; };
 		66D3EDFB20730BC3003A9CB0 /* happyhours.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = happyhours.txt; sourceTree = "<group>"; };
+		72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingsSingleton.swift; sourceTree = "<group>"; };
+		72D45BE02084364100E06918 /* DowntownGaslampBars.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DowntownGaslampBars.txt; sourceTree = "<group>"; };
 		7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FDF68A309F93D49B4568F8 /* Pods-Cheers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cheers/Pods-Cheers.release.xcconfig"; sourceTree = "<group>"; };
 		972A4A435F45ED4976ED9E9E /* Pods-CheersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,7 +109,6 @@
 		BEC473AC20510B7C00FC5702 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		BEF309A52061AA3200022098 /* BarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarType.swift; sourceTree = "<group>"; };
 		BEF309A72061BA0D00022098 /* DatabaseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRecord.swift; sourceTree = "<group>"; };
-		BEF309A92061D3CE00022098 /* FilterSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettings.swift; sourceTree = "<group>"; };
 		BEF4A5D72075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapAnnotationViewModel.swift; sourceTree = "<group>"; };
 		BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceMapAnnotationView.xib; sourceTree = "<group>"; };
 		BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapAnnotationView.swift; sourceTree = "<group>"; };
@@ -209,10 +211,10 @@
 				B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */,
 				BEF309A52061AA3200022098 /* BarType.swift */,
 				BEF309A72061BA0D00022098 /* DatabaseRecord.swift */,
-				BEF309A92061D3CE00022098 /* FilterSettings.swift */,
 				BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */,
 				BEF4A5D72075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift */,
 				BEADB55E2075DB5800E107B7 /* ColorsSingleton.swift */,
+				72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,6 +256,7 @@
 				B1C20A582051E3FB00ECB998 /* View */,
 				B1C20A572051E3F700ECB998 /* Controller */,
 				BEA1B469204F34AF00136463 /* Assets.xcassets */,
+				72D45BE02084364100E06918 /* DowntownGaslampBars.txt */,
 				BEADB55C2075D8C300E107B7 /* Credits Page.txt */,
 				66D3EDFB20730BC3003A9CB0 /* happyhours.txt */,
 				BE500C6620619CD1006F4FD0 /* BarNames.txt */,
@@ -399,6 +402,7 @@
 				B1FFE6AB205B69F500531FDB /* GoogleService-Info.plist in Resources */,
 				BE500C6720619CD1006F4FD0 /* BarNames.txt in Resources */,
 				B10E20BA2054AF88005E37BE /* BarInfoCheersApp.txt in Resources */,
+				72D45BE12084364100E06918 /* DowntownGaslampBars.txt in Resources */,
 				BEA1B46A204F34AF00136463 /* Assets.xcassets in Resources */,
 				BEF4A5DA2075C53100D7BCE5 /* PlaceMapAnnotationView.xib in Resources */,
 				BEA1B468204F34AF00136463 /* Main.storyboard in Resources */,
@@ -537,6 +541,7 @@
 			files = (
 				BEA1B465204F34AF00136463 /* MapViewController.swift in Sources */,
 				BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */,
+				72D45BDF2084024200E06918 /* FilterSettingsSingleton.swift in Sources */,
 				B1FF31152072DE84001DF2DF /* ImageLoader.swift in Sources */,
 				B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */,
 				B1FFE6AF205B717E00531FDB /* DatabaseController.swift in Sources */,
@@ -546,7 +551,6 @@
 				BEF309A62061AA3200022098 /* BarType.swift in Sources */,
 				BEADB55F2075DB5800E107B7 /* ColorsSingleton.swift in Sources */,
 				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
-				BEF309AA2061D3CE00022098 /* FilterSettings.swift in Sources */,
 				BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */,
 				BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */,
 				339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */,
