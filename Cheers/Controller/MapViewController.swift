@@ -33,6 +33,10 @@ class MapViewController: UIViewController {
         // gets the current location from the caculation in the AppDelegate
         myLocation = UserLocations.shared.currentLocation?.coordinate
         mapView.showsUserLocation = true
+        
+        mapView.showsPointsOfInterest = false
+        mapView.showsTraffic = false
+        mapView.showsBuildings = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
