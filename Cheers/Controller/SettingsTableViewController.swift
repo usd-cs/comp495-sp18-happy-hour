@@ -13,6 +13,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var distanceSegmentedControl: UISegmentedControl!
     
     let distanceSegmentedControlIndexPath = IndexPath(row: 1, section: 1)
+    let historyIndexPath = IndexPath(row: 0, section: 0)
     
     var showSegmentedControl: Bool = false {
         didSet {
@@ -57,6 +58,10 @@ class SettingsTableViewController: UITableViewController {
             }
             tableView.beginUpdates()
             tableView.endUpdates()
+        case (historyIndexPath.section, historyIndexPath.row):
+            // TODO: finish this
+            //performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+            print("Items in history: \(HistoryQueue.shared.history.count)")
         default:
             showSegmentedControl = false
             tableView.beginUpdates()
@@ -77,6 +82,10 @@ class SettingsTableViewController: UITableViewController {
     
     @IBAction func distanceSegmentedControlTapped(_ sender: UISegmentedControl) {
         updateSegmentedControl()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // TODO: finish this method
     }
     
     /*

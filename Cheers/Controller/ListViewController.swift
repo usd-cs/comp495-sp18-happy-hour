@@ -215,7 +215,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         // if nothing is entered then display the original
-        if searchText == nil || searchText == "" {
+        if searchText == "" {
             isSearching = false
             view.endEditing(true)
             tableView.reloadData()
@@ -421,6 +421,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        HistoryQueue.shared.append(places[indexPath.row])
         self.performSegue(withIdentifier: "showSelected", sender: self)
     }
     
