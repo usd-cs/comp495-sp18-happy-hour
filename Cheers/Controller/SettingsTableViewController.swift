@@ -62,6 +62,15 @@ class SettingsTableViewController: UITableViewController {
             // TODO: finish this
             //performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
             print("Items in history: \(HistoryQueue.shared.history.count)")
+            
+            var alert = UIAlertController(title: "History Update", message: "There are \(HistoryQueue.shared.history.count) items in the history.", preferredStyle: .alert)
+            if HistoryQueue.shared.history.count == 1 {
+                alert = UIAlertController(title: "History Update", message: "There is \(HistoryQueue.shared.history.count) item in the history.", preferredStyle: .alert)
+            }
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
         default:
             showSegmentedControl = false
             tableView.beginUpdates()
