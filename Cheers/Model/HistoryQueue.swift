@@ -16,8 +16,15 @@ class HistoryQueue: Codable {
     let MAX_SIZE: Int = 10
     
     func append(_ item: Place) {
-        history.insert(item, at: index)
-        index = (index + 1) % MAX_SIZE
+        if history.contains(item) {
+            history.remove(at: history.index(of: item)!)
+            history.append(item)
+        } else {
+            if history.count >= MAX_SIZE {
+                history.remove(at: 0)
+            }
+            history.append(item)
+        }
         
         // TODO: need to make the history queue persist
         //persist()
@@ -32,7 +39,10 @@ class HistoryQueue: Codable {
         let encodedHistory = try? propertyListEncoder.encode(history)
         
         print("\n\nSaving history...")
-        print("History is now: \(history)")
+        print("History is now:")
+        for (i, place) in history.enumerated() {
+            print("\(i). \(place.record.name)")
+        }
         
         try? encodedHistory?.write(to: archiveURL, options: .noFileProtection)
     }
