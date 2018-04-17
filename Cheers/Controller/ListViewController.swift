@@ -426,11 +426,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSelected" {
-            let selectedVC = segue.destination as! SelectedBarViewController
+            let navigator = segue.destination as! UINavigationController
+            let selectedVC = navigator.viewControllers.first as! SelectedBarViewController
             let indexPath = tableView.indexPathForSelectedRow!
             let selectedPlace = places[indexPath.row]
             selectedVC.place = selectedPlace
-            //selectedVC.image = 
+            selectedVC.senderString = "List"
             self.navigationController?.isNavigationBarHidden = false
         }
     }
@@ -439,6 +440,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    @IBAction func unwindToList(segue: UIStoryboardSegue) {
+        
     }
 
 }
