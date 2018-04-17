@@ -104,7 +104,7 @@ struct DatabaseRecord: Codable {
     }
     
     static func writeToDB() {
-        let file = Bundle.main.path(forResource: "BarNames", ofType: "txt")
+        let file = Bundle.main.path(forResource: "NorthParkBars", ofType: "txt")
         var fileToString = ""
         do {
             fileToString = try String(contentsOfFile: file!, encoding: .utf8)
