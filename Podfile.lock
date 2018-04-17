@@ -12,10 +12,10 @@ PODS:
   - FirebaseAnalytics (4.0.5):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
   - FirebaseCore (4.0.13):
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseDatabase (4.1.3):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
@@ -23,7 +23,7 @@ PODS:
   - FirebaseInstanceID (2.0.8):
     - FirebaseCore (~> 4.0)
   - GoogleToolboxForMac/Defines (2.1.3)
-  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - Kingfisher (4.6.3)
   - leveldb-library (1.20)
@@ -47,23 +47,6 @@ DEPENDENCIES:
   - SVProgressHUD
   - SwiftDate (~> 4.5.1)
   - SwiftyJSON
-
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Alamofire
-    - Firebase
-    - FirebaseAnalytics
-    - FirebaseCore
-    - FirebaseDatabase
-    - FirebaseInstanceID
-    - GoogleToolboxForMac
-    - Kingfisher
-    - leveldb-library
-    - MapViewPlus
-    - nanopb
-    - SVProgressHUD
-    - SwiftDate
-    - SwiftyJSON
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -93,4 +76,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: f3a35bf08edc653191972667fd51e60595b9360d
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.4.0
