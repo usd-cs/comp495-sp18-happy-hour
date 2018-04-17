@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A224B205081CE00C099FA /* FavoritesViewController.swift */; };
-		339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A224D205081DD00C099FA /* SettingsViewController.swift */; };
 		53B8AB51ECE9E0A4AD635A77 /* Pods_CheersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */; };
 		666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */; };
 		66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66D3EDFB20730BC3003A9CB0 /* happyhours.txt */; };
+		722D24FA20865951007B8427 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24F920865951007B8427 /* SettingsTableViewController.swift */; };
+		722D24FC20868AD1007B8427 /* SettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24FB20868AD1007B8427 /* SettingsSingleton.swift */; };
 		72D45BDF2084024200E06918 /* FilterSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */; };
 		72D45BE12084364100E06918 /* DowntownGaslampBars.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72D45BE02084364100E06918 /* DowntownGaslampBars.txt */; };
 		9A0A86FE11A77BD7A74EBA63 /* Pods_Cheers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */; };
@@ -69,10 +70,11 @@
 		1DEF0424F9094255F5B5B799 /* Pods-CheersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2010BDD9FF669BDD3D11AC9E /* Pods-CheersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		339A224B205081CE00C099FA /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		339A224D205081DD00C099FA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3FFE80B91BF7B44C17B2D247 /* Pods-CheersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests.release.xcconfig"; sourceTree = "<group>"; };
 		666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBarViewController.swift; sourceTree = "<group>"; };
 		66D3EDFB20730BC3003A9CB0 /* happyhours.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = happyhours.txt; sourceTree = "<group>"; };
+		722D24F920865951007B8427 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		722D24FB20868AD1007B8427 /* SettingsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSingleton.swift; sourceTree = "<group>"; };
 		72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingsSingleton.swift; sourceTree = "<group>"; };
 		72D45BE02084364100E06918 /* DowntownGaslampBars.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DowntownGaslampBars.txt; sourceTree = "<group>"; };
 		7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,10 +189,10 @@
 				666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */,
 				BEA1B464204F34AF00136463 /* MapViewController.swift */,
 				339A224B205081CE00C099FA /* FavoritesViewController.swift */,
-				339A224D205081DD00C099FA /* SettingsViewController.swift */,
 				B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */,
 				B1FF31142072DE84001DF2DF /* ImageLoader.swift */,
 				B1FFE6AE205B717E00531FDB /* DatabaseController.swift */,
+				722D24F920865951007B8427 /* SettingsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -217,6 +219,7 @@
 				BEF4A5D72075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift */,
 				BEADB55E2075DB5800E107B7 /* ColorsSingleton.swift */,
 				72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */,
+				722D24FB20868AD1007B8427 /* SettingsSingleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -557,13 +560,14 @@
 				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
 				BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */,
 				BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */,
-				339A224E205081DD00C099FA /* SettingsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
 				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
 				BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */,
 				BEF4A5D82075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift in Sources */,
 				B15ACF632081A9C90052C4CB /* FilterOptionCell.swift in Sources */,
 				B1FF310F20720A33001DF2DF /* UserLocations.swift in Sources */,
+				722D24FC20868AD1007B8427 /* SettingsSingleton.swift in Sources */,
+				722D24FA20865951007B8427 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
