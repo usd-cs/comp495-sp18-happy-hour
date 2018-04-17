@@ -76,7 +76,6 @@ class MapViewController: UIViewController {
         let c: Double = 2.0 * atan2(sqrt(a), sqrt(1.0 - a))
         let d: Double = radius * c
         
-        // convert km to mi
         return d * 0.621371
     }
     

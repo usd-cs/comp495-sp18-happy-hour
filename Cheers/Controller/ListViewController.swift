@@ -101,7 +101,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             cell.nameLabel.text = bar.record.name
             let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
-            cell.distanceLabel.text = "\(dist) mi"
+            if SettingsSingleton.shared.useMiles {
+                cell.distanceLabel.text = "\(dist) mi"
+            } else {
+                cell.distanceLabel.text = "\(dist) km"
+            }
             cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
             let today = Date()
             let todaysDate = today.weekdayName
@@ -146,7 +150,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             sin(deltaLong / 2.0) * sin(deltaLong / 2.0)
         
         let c: Double = 2.0 * atan2(sqrt(a), sqrt(1.0 - a))
-        let d: Double = radius * c * 0.621371
+        var d: Double = radius * c
+        
+        if SettingsSingleton.shared.useMiles {
+            d *= 0.621371
+        }
         return String(format: "%.2f", d)
     }
     
@@ -234,7 +242,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     @IBAction func segmentedButtonChanged(_ sender: Any) {
-        // TODO: switch between displaying live and all lists
         if segmentedControlButton.selectedSegmentIndex == 0 {
             // TODO: need to safely unwrap
             places = liveList!
@@ -258,12 +265,16 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 let (dayOffset, startTimeHours, startTimeMinutes, endTimeHours, endTimeMinutes): (Int, String, String, String, String) = computeTimes(for: happyHourString)
                 
+                //print(bar.record.name)
                 var startingDate = DateComponents()
                 startingDate.year = currentDate.year
                 startingDate.timeZone = TimeZoneName.americaLosAngeles.timeZone
                 startingDate.calendar = CalendarName.gregorian.calendar
                 startingDate.month = currentDate.month
                 startingDate.day = currentDate.day
+                //print("hours: \(startTimeHours)")
+                //print("minutes: \(startTimeMinutes)")
+                
                 startingDate.hour = Int(startTimeHours)!
                 startingDate.minute = Int(startTimeMinutes)
                 let happyHourStartingDate = DateInRegion(components: startingDate)
