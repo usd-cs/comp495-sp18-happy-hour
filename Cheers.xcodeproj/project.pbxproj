@@ -13,6 +13,10 @@
 		66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66D3EDFB20730BC3003A9CB0 /* happyhours.txt */; };
 		722D24FA20865951007B8427 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24F920865951007B8427 /* SettingsTableViewController.swift */; };
 		722D24FC20868AD1007B8427 /* SettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24FB20868AD1007B8427 /* SettingsSingleton.swift */; };
+		722D24FE20869CD9007B8427 /* HistoryQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24FD20869CD9007B8427 /* HistoryQueue.swift */; };
+		722D25002086B1E8007B8427 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24FF2086B1E8007B8427 /* NotificationsViewController.swift */; };
+		722D25022086B273007B8427 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D25012086B273007B8427 /* ContactUsViewController.swift */; };
+		722D25042086B27D007B8427 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D25032086B27D007B8427 /* AboutViewController.swift */; };
 		72D45BDF2084024200E06918 /* FilterSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */; };
 		72D45BE12084364100E06918 /* DowntownGaslampBars.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72D45BE02084364100E06918 /* DowntownGaslampBars.txt */; };
 		9A0A86FE11A77BD7A74EBA63 /* Pods_Cheers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */; };
@@ -74,6 +78,10 @@
 		66D3EDFB20730BC3003A9CB0 /* happyhours.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = happyhours.txt; sourceTree = "<group>"; };
 		722D24F920865951007B8427 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		722D24FB20868AD1007B8427 /* SettingsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSingleton.swift; sourceTree = "<group>"; };
+		722D24FD20869CD9007B8427 /* HistoryQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryQueue.swift; sourceTree = "<group>"; };
+		722D24FF2086B1E8007B8427 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		722D25012086B273007B8427 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		722D25032086B27D007B8427 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingsSingleton.swift; sourceTree = "<group>"; };
 		72D45BE02084364100E06918 /* DowntownGaslampBars.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DowntownGaslampBars.txt; sourceTree = "<group>"; };
 		7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +191,7 @@
 				B15ACF5F2081A8F30052C4CB /* Filter Classes */,
 				B1FF310D20720A08001DF2DF /* Location Classes */,
 				BEA1B460204F34AF00136463 /* AppDelegate.swift */,
+				722D24FF2086B1E8007B8427 /* NotificationsViewController.swift */,
 				BEA1B462204F34AF00136463 /* ListViewController.swift */,
 				666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */,
 				BEA1B464204F34AF00136463 /* MapViewController.swift */,
@@ -191,6 +200,8 @@
 				B1FF31142072DE84001DF2DF /* ImageLoader.swift */,
 				B1FFE6AE205B717E00531FDB /* DatabaseController.swift */,
 				722D24F920865951007B8427 /* SettingsTableViewController.swift */,
+				722D25012086B273007B8427 /* ContactUsViewController.swift */,
+				722D25032086B27D007B8427 /* AboutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,6 +229,7 @@
 				BEADB55E2075DB5800E107B7 /* ColorsSingleton.swift */,
 				72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */,
 				722D24FB20868AD1007B8427 /* SettingsSingleton.swift */,
+				722D24FD20869CD9007B8427 /* HistoryQueue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -624,6 +636,8 @@
 			files = (
 				BEA1B465204F34AF00136463 /* MapViewController.swift in Sources */,
 				BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */,
+				722D25022086B273007B8427 /* ContactUsViewController.swift in Sources */,
+				722D24FE20869CD9007B8427 /* HistoryQueue.swift in Sources */,
 				72D45BDF2084024200E06918 /* FilterSettingsSingleton.swift in Sources */,
 				B1FF31152072DE84001DF2DF /* ImageLoader.swift in Sources */,
 				B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */,
@@ -636,6 +650,7 @@
 				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
 				BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */,
 				BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */,
+				722D25002086B1E8007B8427 /* NotificationsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
 				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
 				BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */,
@@ -643,6 +658,7 @@
 				B15ACF632081A9C90052C4CB /* FilterOptionCell.swift in Sources */,
 				B1FF310F20720A33001DF2DF /* UserLocations.swift in Sources */,
 				722D24FC20868AD1007B8427 /* SettingsSingleton.swift in Sources */,
+				722D25042086B27D007B8427 /* AboutViewController.swift in Sources */,
 				722D24FA20865951007B8427 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

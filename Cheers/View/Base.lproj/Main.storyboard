@@ -197,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="-156" y="87"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Settings-->
         <scene sceneID="mxz-fg-2lV">
             <objects>
                 <tableViewController id="YZP-eQ-lfz" customClass="SettingsTableViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
@@ -311,6 +311,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="7aG-gt-5qY" kind="show" id="hVl-9z-mYh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -339,6 +342,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NXQ-bo-Dwc" kind="show" id="anf-0p-WLb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -367,6 +373,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ySJ-k9-eWJ" kind="show" id="Wer-j5-zhj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -376,7 +385,7 @@
                             <outlet property="delegate" destination="YZP-eQ-lfz" id="6Jk-9f-Zk7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="6nq-4a-pWZ"/>
+                    <navigationItem key="navigationItem" title="Settings" id="6nq-4a-pWZ"/>
                     <connections>
                         <outlet property="distanceLabel" destination="Smk-1c-ZMn" id="56h-49-k3q"/>
                         <outlet property="distanceSegmentedControl" destination="Q53-Ad-fSp" id="330-HX-dnM"/>
@@ -385,6 +394,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckI-j8-z4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1838" y="888"/>
+        </scene>
+        <!--Notifications View Controller-->
+        <scene sceneID="7ro-8A-R34">
+            <objects>
+                <viewController id="7aG-gt-5qY" customClass="NotificationsViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OuA-l0-NYX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications coming soon!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khm-jH-lln">
+                                <rect key="frame" x="85.5" y="323" width="204" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Khm-jH-lln" firstAttribute="centerX" secondItem="OuA-l0-NYX" secondAttribute="centerX" id="S3G-zT-nFx"/>
+                            <constraint firstItem="Khm-jH-lln" firstAttribute="centerY" secondItem="OuA-l0-NYX" secondAttribute="centerY" id="tM4-oC-G4f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8hC-0B-ItY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ous-F1-2p7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2760" y="888"/>
+        </scene>
+        <!--Contact Us View Controller-->
+        <scene sceneID="OKv-6G-syV">
+            <objects>
+                <viewController id="NXQ-bo-Dwc" customClass="ContactUsViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pf8-Tl-6ZK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More coming soon!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGl-4s-wHp">
+                                <rect key="frame" x="114" y="323" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NGl-4s-wHp" firstAttribute="centerY" secondItem="Pf8-Tl-6ZK" secondAttribute="centerY" id="OzP-WO-pAC"/>
+                            <constraint firstItem="NGl-4s-wHp" firstAttribute="centerX" secondItem="Pf8-Tl-6ZK" secondAttribute="centerX" id="gNe-1k-XFN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AcY-b7-yND"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OU5-tW-9af" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2759.1999999999998" y="1578.2608695652175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vQD-nP-KHn">
@@ -508,6 +571,47 @@
                 <exit id="cQu-wu-a46" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="918" y="1642"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="kYp-Lr-zqf">
+            <objects>
+                <viewController id="ySJ-k9-eWJ" customClass="AboutViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UUF-qv-RFz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check out our code at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9N-AW-iGT">
+                                <rect key="frame" x="95" y="271" width="185" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com/usd-cs/comp495-sp18-happy-hour" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVM-32-tbT">
+                                <rect key="frame" x="51" y="307" width="272" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="6Is-N7-kId"/>
+                                    <constraint firstAttribute="width" constant="272" id="Vew-Ph-CeM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="R9N-AW-iGT" firstAttribute="centerY" secondItem="UUF-qv-RFz" secondAttribute="centerY" constant="-52" id="BxS-cI-Tig"/>
+                            <constraint firstItem="pVM-32-tbT" firstAttribute="centerY" secondItem="UUF-qv-RFz" secondAttribute="centerY" id="DLq-1l-Vuh"/>
+                            <constraint firstItem="R9N-AW-iGT" firstAttribute="centerX" secondItem="UUF-qv-RFz" secondAttribute="centerX" id="ErJ-f6-xAh"/>
+                            <constraint firstItem="R9N-AW-iGT" firstAttribute="centerX" secondItem="UUF-qv-RFz" secondAttribute="centerX" id="M6p-lk-GSo"/>
+                            <constraint firstItem="pVM-32-tbT" firstAttribute="centerX" secondItem="UUF-qv-RFz" secondAttribute="centerX" id="Q38-cL-8kH"/>
+                            <constraint firstItem="R9N-AW-iGT" firstAttribute="centerY" secondItem="UUF-qv-RFz" secondAttribute="centerY" id="vnU-H1-eYZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yBv-zP-ogs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CXg-h2-IXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837.5999999999999" y="1577.3613193403301"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="bwF-R7-QK5">

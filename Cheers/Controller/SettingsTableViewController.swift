@@ -13,6 +13,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var distanceSegmentedControl: UISegmentedControl!
     
     let distanceSegmentedControlIndexPath = IndexPath(row: 1, section: 1)
+    let historyIndexPath = IndexPath(row: 0, section: 0)
     
     var showSegmentedControl: Bool = false {
         didSet {
@@ -57,6 +58,19 @@ class SettingsTableViewController: UITableViewController {
             }
             tableView.beginUpdates()
             tableView.endUpdates()
+        case (historyIndexPath.section, historyIndexPath.row):
+            // TODO: finish this
+            //performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+            print("Items in history: \(HistoryQueue.shared.history.count)")
+            
+            var alert = UIAlertController(title: "History Update", message: "There are \(HistoryQueue.shared.history.count) items in the history.", preferredStyle: .alert)
+            if HistoryQueue.shared.history.count == 1 {
+                alert = UIAlertController(title: "History Update", message: "There is \(HistoryQueue.shared.history.count) item in the history.", preferredStyle: .alert)
+            }
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
         default:
             showSegmentedControl = false
             tableView.beginUpdates()
@@ -77,6 +91,10 @@ class SettingsTableViewController: UITableViewController {
     
     @IBAction func distanceSegmentedControlTapped(_ sender: UISegmentedControl) {
         updateSegmentedControl()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // TODO: finish this method
     }
     
     /*
