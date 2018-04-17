@@ -9,6 +9,8 @@
 import Foundation
 
 class HistoryQueue: Codable {
+    static let shared = HistoryQueue()
+    
     var history = [DatabaseRecord]()
     var index: Int = 0
     let MAX_SIZE: Int = 10
