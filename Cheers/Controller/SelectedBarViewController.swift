@@ -13,6 +13,7 @@ import ChameleonFramework
 class SelectedBarViewController: UIViewController {
     
     var place: Place!
+    var senderString: String!
     // TODO: update image from ListViewController
     //var image: UIImage?
     
@@ -34,6 +35,7 @@ class SelectedBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = place.record.name
+        
         
         let current = Date()
         imageView.image = UIImage(named: "shout.jpg")
@@ -91,6 +93,13 @@ class SelectedBarViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    @IBAction func backButtonPressed(_ sender: Any) {
+        if senderString == "List" {
+            performSegue(withIdentifier: "toList", sender: nil)
+        } else if senderString == "Map" {
+            performSegue(withIdentifier: "toMap", sender: nil)
+        }
+    }
     
 }
 

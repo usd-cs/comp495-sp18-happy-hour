@@ -170,13 +170,14 @@ class MapViewController: UIViewController {
         guard segue.identifier == "AnnotationTapped" else { return }
         guard let selectedPlace = selectedPlace else { return }
         
-        //let destination = segue.destination as! UINavigationController
-        let destination = segue.destination as! SelectedBarViewController
+        let navigator = segue.destination as! UINavigationController
+        let destination = navigator.viewControllers.first as! SelectedBarViewController
         
         destination.place = selectedPlace
+        destination.senderString = "Map"
     }
     
-    @IBAction func unwindToMap() {
+    @IBAction func unwindToMap(segue: UIStoryboardSegue) {
     
     }
 
