@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -590,7 +590,7 @@
                                         <rect key="frame" x="0.0" y="200" width="375" height="44.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PQ-ZT-DDR">
-                                                <rect key="frame" x="0.0" y="0.0" width="224" height="44.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="44.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="otR-tz-qRu"/>
                                                 </constraints>
@@ -599,11 +599,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdG-6x-gM5">
-                                                <rect key="frame" x="224" y="0.0" width="57" height="44.5"/>
+                                                <rect key="frame" x="260" y="0.0" width="56.5" height="44.5"/>
                                                 <state key="normal" title="📍"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAp-wK-hIT">
-                                                <rect key="frame" x="281" y="0.0" width="94" height="44.5"/>
+                                                <rect key="frame" x="326.5" y="0.0" width="48.5" height="44.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="disabled" image="icon-HeartEmpty"/>
                                                 <connections>
@@ -651,7 +651,6 @@
                         <barButtonItem key="leftBarButtonItem" image="back" id="unt-S6-X5m">
                             <connections>
                                 <action selector="backButtonPressed:" destination="9rn-Gq-Zgu" id="MC9-Vc-oei"/>
-                                <segue destination="cQu-wu-a46" kind="unwind" identifier="barToFavorites" unwindAction="unwindToFavoritesWithSegue:" id="6Y8-lj-luc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -666,6 +665,7 @@
                         <outlet property="timeLabel" destination="WFD-Us-oOT" id="4mo-RI-cFN"/>
                         <segue destination="cQu-wu-a46" kind="unwind" identifier="barToList" unwindAction="unwindToListWithSegue:" id="wkv-iv-CwW"/>
                         <segue destination="cQu-wu-a46" kind="unwind" identifier="barToMap" unwindAction="unwindToMapWithSegue:" id="xwn-P8-ckl"/>
+                        <segue destination="cQu-wu-a46" kind="unwind" identifier="barToFavorites" unwindAction="unwindToFavoritesWithSegue:" id="M8p-sV-pSI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1b-Gx-rcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
