@@ -16,18 +16,36 @@ class FilterViewController: UIViewController {
     @IBOutlet var favSegementedControl: UISegmentedControl!
     
     
+    let masterList = SharedListsSingleton.shared.masterList
+    var liveList = SharedListsSingleton.shared.liveList
+    var notLiveList = SharedListsSingleton.shared.notLiveList
+    
+    var filtredMasterList = [Place]()
+    
     @IBAction func distanceFilter(_ sender: Any) {
         distanceLabel.text = "Maximum Distance: \(distanceSlider.value)"
         distanceLabel.reloadInputViews()
+        //filtredMasterList = masterList.filter {$0.record.}
+        
     }
     
     @IBAction func ratingsFilter(_ sender: Any) {
+        filtredMasterList = masterList.filter {$0.record.rating >= Double(ratingsSegementedControl.selectedSegmentIndex + 1)}
+        
+        print(filtredMasterList)
     }
     
     @IBAction func priceFilter(_ sender: Any) {
+        filtredMasterList = masterList.filter {Int($0.record.price.count) <= Int(priceSegementedControl.selectedSegmentIndex + 1)}
+        SharedListsSingleton.shared.masterList = filtredMasterList
     }
     
     @IBAction func favoritesOnly(_ sender: Any) {
+        
+        if favSegementedControl.selectedSegmentIndex == 1 {
+            filtredMasterList = masterList.filter {$0.favorited}
+        }
+        
     }
     
     @IBAction func resetButtonPressed(_ sender: Any) {

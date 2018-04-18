@@ -78,6 +78,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //if searching is toggled then loaded results
         if isSearching {
@@ -443,6 +445,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = true
         //self.searchBar.isHidden = true
+        tableView.reloadData()
     }
     
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
