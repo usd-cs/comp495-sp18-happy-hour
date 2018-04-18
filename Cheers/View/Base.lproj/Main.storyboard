@@ -449,7 +449,7 @@
             </objects>
             <point key="canvasLocation" x="2759.1999999999998" y="1578.2608695652175"/>
         </scene>
-        <!--Item-->
+        <!--Favorites Table View Controller-->
         <scene sceneID="tnz-J7-FNt">
             <objects>
                 <tableViewController id="u6m-jf-7TY" customClass="FavoritesTableViewController" customModule="Cheers" customModuleProvider="target" sceneMemberID="viewController">
@@ -461,46 +461,57 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bar" rowHeight="215" id="fcC-Yo-NrE" customClass="BarTableViewCell" customModule="Cheers" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="215"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fcC-Yo-NrE" id="z95-iz-ME2">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fcC-Yo-NrE" id="z95-iz-ME2">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="214.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mZQ-Rg-NPi">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mZQ-Rg-NPi">
                                             <rect key="frame" x="16" y="11" width="343" height="193"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="215" id="4xQ-M5-WPi"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvV-0K-GEm">
-                                            <rect key="frame" x="267" y="28" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvV-0K-GEm">
+                                            <rect key="frame" x="199" y="28" width="133" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="133" id="qkR-yE-NnF"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgd-Xx-eMA">
-                                            <rect key="frame" x="267" y="76" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgd-Xx-eMA">
+                                            <rect key="frame" x="199" y="76" width="133" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="133" id="MZj-Da-SdL"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il4-Rp-7SF">
-                                            <rect key="frame" x="267" y="116" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il4-Rp-7SF">
+                                            <rect key="frame" x="199" y="116" width="133" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="133" id="lVs-Bk-kQ9"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmd-0x-dPn">
-                                            <rect key="frame" x="267" y="162" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmd-0x-dPn">
+                                            <rect key="frame" x="199" y="162" width="133" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="133" id="tW6-vF-yUo"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goZ-Qq-fQA">
-                                            <rect key="frame" x="39" y="162" width="42" height="21"/>
+                                            <rect key="frame" x="39" y="162" width="142" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -527,14 +538,16 @@
                             <outlet property="delegate" destination="u6m-jf-7TY" id="oHU-14-zlY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="YeU-M7-a0r"/>
+                    <tabBarItem key="tabBarItem" title="" image="favorites" selectedImage="favorites_selected" id="YeU-M7-a0r">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="favoritesTableView" destination="kUo-0g-T0C" id="Bc9-Mu-k6o"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pq8-n4-gcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878" y="83"/>
+            <point key="canvasLocation" x="877.60000000000002" y="82.3088455772114"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vQD-nP-KHn">
@@ -713,8 +726,8 @@
                     <connections>
                         <segue destination="UaC-UE-NUh" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="E4f-NI-7TC" kind="relationship" relationship="viewControllers" id="1tU-N0-AJ4"/>
                         <segue destination="u6m-jf-7TY" kind="relationship" relationship="viewControllers" id="cEe-wo-qqc"/>
+                        <segue destination="E4f-NI-7TC" kind="relationship" relationship="viewControllers" id="1tU-N0-AJ4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -763,6 +776,8 @@
     </scenes>
     <resources>
         <image name="back" width="24" height="24"/>
+        <image name="favorites" width="24" height="24"/>
+        <image name="favorites_selected" width="24" height="24"/>
         <image name="icon-HeartEmpty" width="50" height="50"/>
         <image name="icon-filter" width="25" height="25"/>
         <image name="list" width="24" height="24"/>

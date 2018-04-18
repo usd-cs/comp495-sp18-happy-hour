@@ -41,6 +41,8 @@ public struct Place: Equatable, Codable{
         let encodedPlaces = try? encoder.encode(favoriteList)
         try? encodedPlaces?.write(to: ArchiveURL, options: .noFileProtection)
         
+        // DEBUG:
+        print("Saving \(favoritedPlace) to file...")
     }
     
     static func loadFromFile() -> [Place]?  {
