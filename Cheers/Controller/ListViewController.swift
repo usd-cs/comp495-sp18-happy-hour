@@ -21,6 +21,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var segmentedControlButton: UISegmentedControl!
     
     var isSearching = false //Determines if we are in search mode or not
+    var filterMode = false
     var refHandle: DatabaseHandle?
     
     var places: [Place] = []
@@ -236,6 +237,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func filterMore() {
         self.performSegue(withIdentifier: "filterPressed", sender: self)
         
+        
     }
     
     @objc func handleDismiss() {
@@ -436,6 +438,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if segue.identifier == "filterPressed" {
             //let navigator = segue.destination as! UINavigationController
             //self.navigationController?.isNavigationBarHidden = false
+            filterMode = true
+            
         }
         
         
@@ -445,6 +449,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = true
         //self.searchBar.isHidden = true
+        filterMode = false
         tableView.reloadData()
     }
     
