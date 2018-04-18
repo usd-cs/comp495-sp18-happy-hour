@@ -126,7 +126,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             cell.nameLabel.text = bar.record.name
             let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
-            cell.distanceLabel.text = "\(dist) mi"
+            if SettingsSingleton.shared.useMiles {
+                cell.distanceLabel.text = "\(dist) mi"
+            } else {
+                cell.distanceLabel.text = "\(dist) km"
+            }
             cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
             let today = Date()
             let todaysDate = today.weekdayName
@@ -211,7 +215,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         // if nothing is entered then display the original
-        if searchText == nil || searchText == "" {
+        if searchText == "" {
             isSearching = false
             view.endEditing(true)
             tableView.reloadData()
@@ -417,6 +421,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        HistoryQueue.shared.append(places[indexPath.row])
         self.performSegue(withIdentifier: "showSelected", sender: self)
     }
     
@@ -434,8 +439,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: - Start of View Function
     override func viewWillAppear(_ animated: Bool) {
-        //self.navigationController?.isNavigationBarHidden = true
-        //self.searchBar.isHidden = true
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     @IBAction func unwindToList(segue: UIStoryboardSegue) {

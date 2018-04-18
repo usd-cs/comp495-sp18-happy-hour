@@ -26,7 +26,8 @@ class ImageLoader {
             //check if image is in the imageCache
             if let cachedImage = self.imageCache.object(forKey: url.absoluteString as NSString) {
                 DispatchQueue.main.async {
-                    print("We in the cache boys")
+                    // DEBUG:
+                    //print("We in the cache boys")
                     completionHandler(UIImage(data: cachedImage as Data)) }
                 return
             }
