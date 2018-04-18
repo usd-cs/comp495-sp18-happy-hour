@@ -232,7 +232,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     func filterMore() {
-        
+        self.performSegue(withIdentifier: "filterPressed", sender: self)
         
     }
     
@@ -429,6 +429,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             selectedVC.place = selectedPlace
             selectedVC.senderString = "List"
             self.navigationController?.isNavigationBarHidden = false
+        }
+        
+        if segue.identifier == "filterPressed" {
+            //let navigator = segue.destination as! UINavigationController
+            //self.navigationController?.isNavigationBarHidden = false
         }
         
         
