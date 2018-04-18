@@ -43,6 +43,7 @@ class SelectedBarViewController: UIViewController {
         ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
             self.imageView.image = image
         }
+        imageView.contentMode = .scaleAspectFill
         
         
         nameLabel.text  = place.record.name
