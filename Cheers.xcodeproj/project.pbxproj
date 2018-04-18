@@ -16,6 +16,7 @@
 		722D25002086B1E8007B8427 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24FF2086B1E8007B8427 /* NotificationsViewController.swift */; };
 		722D25022086B273007B8427 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D25012086B273007B8427 /* ContactUsViewController.swift */; };
 		722D25042086B27D007B8427 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D25032086B27D007B8427 /* AboutViewController.swift */; };
+		72D17D762087B39E0074A647 /* FavoritesSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D17D752087B39E0074A647 /* FavoritesSingleton.swift */; };
 		72D45BDF2084024200E06918 /* FilterSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */; };
 		72D45BE12084364100E06918 /* DowntownGaslampBars.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72D45BE02084364100E06918 /* DowntownGaslampBars.txt */; };
 		9A0A86FE11A77BD7A74EBA63 /* Pods_Cheers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */; };
@@ -81,6 +82,7 @@
 		722D24FF2086B1E8007B8427 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		722D25012086B273007B8427 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		722D25032086B27D007B8427 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		72D17D752087B39E0074A647 /* FavoritesSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSingleton.swift; sourceTree = "<group>"; };
 		72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingsSingleton.swift; sourceTree = "<group>"; };
 		72D45BE02084364100E06918 /* DowntownGaslampBars.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DowntownGaslampBars.txt; sourceTree = "<group>"; };
 		7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +232,7 @@
 				72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */,
 				722D24FB20868AD1007B8427 /* SettingsSingleton.swift */,
 				722D24FD20869CD9007B8427 /* HistoryQueue.swift */,
+				72D17D752087B39E0074A647 /* FavoritesSingleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */,
 				722D25022086B273007B8427 /* ContactUsViewController.swift in Sources */,
 				722D24FE20869CD9007B8427 /* HistoryQueue.swift in Sources */,
+				72D17D762087B39E0074A647 /* FavoritesSingleton.swift in Sources */,
 				72D45BDF2084024200E06918 /* FilterSettingsSingleton.swift in Sources */,
 				B1FF31152072DE84001DF2DF /* ImageLoader.swift in Sources */,
 				B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */,

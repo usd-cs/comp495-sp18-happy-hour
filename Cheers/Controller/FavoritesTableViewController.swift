@@ -12,9 +12,6 @@ class FavoritesTableViewController: UITableViewController {
 
     @IBOutlet var favoritesTableView: UITableView!
     
-    var favorites : [Place] = []
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,12 +19,12 @@ class FavoritesTableViewController: UITableViewController {
         favoritesTableView.delegate = self
         favoritesTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
-        if let attempt = Place.loadFromFile()
-        {
-            favorites = attempt
-        } else {
-            print("Error: Could not read persisted list from file")
-        }
+//        if let attempt = Place.loadFromFile()
+//        {
+//            favorites = attempt
+//        } else {
+//            print("Error: Could not read persisted list from file")
+//        }
        
         
     }
@@ -40,14 +37,14 @@ class FavoritesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favorites.count
+        return FavoritesSingleton.shared.favorites.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "bar", for: indexPath) as! BarTableViewCell
         
-        var bar = favorites[indexPath.row]
+        var bar = FavoritesSingleton.shared.favorites[indexPath.row]
         let imageUrl =  URL(string: bar.record.images[0])
         
         ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
@@ -95,7 +92,7 @@ class FavoritesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        HistoryQueue.shared.append(favorites[indexPath.row])
+        HistoryQueue.shared.append(FavoritesSingleton.shared.favorites[indexPath.row])
         self.performSegue(withIdentifier: "showSelectedFromFavorites", sender: self)
     }
     
@@ -104,7 +101,7 @@ class FavoritesTableViewController: UITableViewController {
             let navigator = segue.destination as! UINavigationController
             let selectedVC = navigator.viewControllers.first as! SelectedBarViewController
             let indexPath = tableView.indexPathForSelectedRow!
-            let selectedPlace = favorites[indexPath.row]
+            let selectedPlace = FavoritesSingleton.shared.favorites[indexPath.row]
             selectedVC.place = selectedPlace
             selectedVC.senderString = "Favorites"
             self.navigationController?.isNavigationBarHidden = false
