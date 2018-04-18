@@ -74,7 +74,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // DEBUG: when writing to DB, comment out this line
         // DEBUG: when reading from DB, uncomment this line
-        readFromDB()
+       // readFromDB()
         
     }
     

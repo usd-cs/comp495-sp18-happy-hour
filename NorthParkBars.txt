@@ -1,0 +1,155 @@
+Bar Pink
+North Park
+Monday
+4 pm – 8 pm
+Tuesday 
+4 pm – 8 pm
+Wednesday
+4 pm – 8 pm
+Thursday
+4 pm – 8 pm
+Friday
+4 pm – 8 pm
+Saturday
+4 pm – 8 pm
+Sunday
+4 pm – 8 pm
+END OF RECORD
+Seven Grand SD
+North Park
+Monday
+4 pm – 8 pm
+Tuesday
+4 pm – 8 pm
+Wednesday
+4 pm – 8 pm
+Thursday
+4 pm – 8 pm
+Friday
+4 pm – 8 pm
+Saturday
+4 pm – 8 pm
+END OF RECORD
+The Office
+North Park
+Monday
+4 pm – 9 pm
+Tuesday
+4 pm – 9 pm
+Wednesday
+4 pm – 9 pm
+Thursday
+4 pm – 9 pm
+Friday
+4 pm – 9 pm
+Saturday
+4 pm – 9 pm
+Sunday
+4 pm – 9 pm
+END OF RECORD
+Whistle Stop
+North Park
+Monday
+4 pm – 8 pm
+Tuesday
+4 pm – 8 pm
+Wednesday
+4 pm – 8 pm
+Thursday
+4 pm – 8 pm
+Friday
+4 pm – 8 pm
+Saturday
+2 pm – 8 pm
+Sunday 
+2 pm – 8 pm
+END OF RECORD
+Waypoint Public 
+North Park
+Monday
+4 pm – 6 pm
+Tuesday
+4 pm – 6 pm
+Wednesday
+4 pm – 6 pm
+Thursday
+4 pm – 6 pm
+Friday
+4 pm – 6 pm
+END OF RECORD
+West Coast Tavern
+North Park
+Monday
+4 pm – 7 pm 
+Tuesday
+4 pm – 7 pm
+Wednesday
+4 pm – 7 pm
+Thursday
+4 pm – 7 pm
+Friday
+4 pm – 7 pm
+Saturday
+4 pm – 7 pm
+Sunday
+4 pm – 7 pm
+END OF RECORD
+True North Tavern
+North Park
+Monday
+12 pm – 7 pm
+Tuesday 
+12 pm – 7 pm
+Wednesday
+12 pm – 7 pm
+Thursday
+12 pm – 7 pm
+Friday
+12 pm – 7 pm
+END OF RECORD
+End Zone Sports Bar and Grill
+North Park
+Monday
+2 pm – 6 pm
+Tuesday
+2 pm – 6 pm
+Wednesday
+2 pm – 6 pm
+Thursday
+2 pm – 6 pm
+Friday 
+2 pm – 6 pm
+END OF RECORD
+One Door North
+Monday 
+4 pm – 6 pm
+Tuesday
+4 pm – 6 pm
+Wednesday
+4 pm – 6 pm
+Thursday
+4 pm – 6 pm
+Friday
+4 pm – 6 pm
+Saturday 
+4 pm – 6 pm
+Sunday
+4 pm – 6 pm
+END OF RECORD
+Tamarindo
+North Park
+Monday
+3 pm – 6 pm
+Tuesday
+3 pm – 6 pm
+Wednesday
+3 pm – 6 pm
+Thursday
+3 pm – 6 pm
+Friday
+3 pm – 6 pm
+Saturday
+3 pm – 6 pm
+Sunday
+3 pm – 6 pm
+END OF RECORD
