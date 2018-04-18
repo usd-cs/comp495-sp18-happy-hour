@@ -98,6 +98,8 @@ class SelectedBarViewController: UIViewController {
             performSegue(withIdentifier: "barToList", sender: nil)
         } else if senderString == "Map" {
             performSegue(withIdentifier: "barToMap", sender: nil)
+        } else if senderString == "Favorites" {
+            performSegue(withIdentifier: "barToFavorites", sender: nil)
         }
     }
 }
