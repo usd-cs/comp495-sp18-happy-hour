@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A224B205081CE00C099FA /* FavoritesViewController.swift */; };
 		53B8AB51ECE9E0A4AD635A77 /* Pods_CheersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */; };
 		666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */; };
 		66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66D3EDFB20730BC3003A9CB0 /* happyhours.txt */; };
@@ -30,6 +29,7 @@
 		B1FFE6AB205B69F500531FDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */; };
 		B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */; };
 		B1FFE6AF205B717E00531FDB /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AE205B717E00531FDB /* DatabaseController.swift */; };
+		B259C8CE20870C6300C37678 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B259C8CD20870C6300C37678 /* FavoritesTableViewController.swift */; };
 		BE500C6720619CD1006F4FD0 /* BarNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = BE500C6620619CD1006F4FD0 /* BarNames.txt */; };
 		BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */; };
 		BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B460204F34AF00136463 /* AppDelegate.swift */; };
@@ -72,7 +72,6 @@
 		1415AA8AD312D852EA849603 /* Pods-Cheers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cheers/Pods-Cheers.debug.xcconfig"; sourceTree = "<group>"; };
 		1DEF0424F9094255F5B5B799 /* Pods-CheersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2010BDD9FF669BDD3D11AC9E /* Pods-CheersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		339A224B205081CE00C099FA /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		3FFE80B91BF7B44C17B2D247 /* Pods-CheersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests.release.xcconfig"; sourceTree = "<group>"; };
 		666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBarViewController.swift; sourceTree = "<group>"; };
 		66D3EDFB20730BC3003A9CB0 /* happyhours.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = happyhours.txt; sourceTree = "<group>"; };
@@ -98,6 +97,7 @@
 		B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neighborhoods.swift; sourceTree = "<group>"; };
 		B1FFE6AE205B717E00531FDB /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		B259C8CD20870C6300C37678 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		BE500C6620619CD1006F4FD0 /* BarNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BarNames.txt; sourceTree = "<group>"; };
 		BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedListsSingleton.swift; sourceTree = "<group>"; };
 		BEA1B45D204F34AF00136463 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,13 +195,13 @@
 				BEA1B462204F34AF00136463 /* ListViewController.swift */,
 				666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */,
 				BEA1B464204F34AF00136463 /* MapViewController.swift */,
-				339A224B205081CE00C099FA /* FavoritesViewController.swift */,
 				B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */,
 				B1FF31142072DE84001DF2DF /* ImageLoader.swift */,
 				B1FFE6AE205B717E00531FDB /* DatabaseController.swift */,
 				722D24F920865951007B8427 /* SettingsTableViewController.swift */,
 				722D25012086B273007B8427 /* ContactUsViewController.swift */,
 				722D25032086B27D007B8427 /* AboutViewController.swift */,
+				B259C8CD20870C6300C37678 /* FavoritesTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -635,6 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA1B465204F34AF00136463 /* MapViewController.swift in Sources */,
+				B259C8CE20870C6300C37678 /* FavoritesTableViewController.swift in Sources */,
 				BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */,
 				722D25022086B273007B8427 /* ContactUsViewController.swift in Sources */,
 				722D24FE20869CD9007B8427 /* HistoryQueue.swift in Sources */,
@@ -642,7 +643,6 @@
 				B1FF31152072DE84001DF2DF /* ImageLoader.swift in Sources */,
 				B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */,
 				B1FFE6AF205B717E00531FDB /* DatabaseController.swift in Sources */,
-				339A224C205081CE00C099FA /* FavoritesViewController.swift in Sources */,
 				B15ACF5D208197320052C4CB /* FilterMenu.swift in Sources */,
 				BEC473AD20510B7C00FC5702 /* Place.swift in Sources */,
 				BEF309A62061AA3200022098 /* BarType.swift in Sources */,

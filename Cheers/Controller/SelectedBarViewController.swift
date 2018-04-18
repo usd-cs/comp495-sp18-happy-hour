@@ -57,12 +57,17 @@ class SelectedBarViewController: UIViewController {
         // TODO: need to figure out how to show menu information
         menuLabel.text = "Yelp Reviews"
         
-        if place.favorited {
-            favoriteButton.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
-        }
-        else if place.favorited == false {
+        var localPlaces = Place.loadFromFile()
+        if localPlaces == nil {
             favoriteButton.setImage(#imageLiteral(resourceName: "favorites"), for: UIControlState.normal)
+        } else {
+            if (localPlaces?.contains(place))! {
+                favoriteButton.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
+            } else {
+                favoriteButton.setImage(#imageLiteral(resourceName: "favorites"), for: UIControlState.normal)
+            }
         }
+        
         view.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
         
         
@@ -105,6 +110,8 @@ class SelectedBarViewController: UIViewController {
             performSegue(withIdentifier: "barToList", sender: nil)
         } else if senderString == "Map" {
             performSegue(withIdentifier: "barToMap", sender: nil)
+        } else if senderString == "Favorites" {
+            performSegue(withIdentifier: "barToFavorites", sender: nil)
         }
     }
 }
