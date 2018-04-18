@@ -32,9 +32,12 @@ class PlaceMapAnnotationView: UIView, CalloutViewPlus {
         let viewModel = viewModel as! PlaceMapAnnotationViewModel
         
         titleLabel.text = viewModel.name
-        barImage.image = viewModel.image
         happyHoursLabel.text = viewModel.happyHours
-        
         place = viewModel.place
+        
+        let imageUrl =  URL(string: (place?.record.images[0])!)
+        ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
+            self.barImage.image = image
+        }
     }
 }

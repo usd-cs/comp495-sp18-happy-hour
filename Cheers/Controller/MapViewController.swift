@@ -101,8 +101,8 @@ class MapViewController: UIViewController {
                 let todaysDate = today.weekdayName
                 let todaysHappyHours = place.record.happyHours[todaysDate] ?? "No happy hours today."
                 
-                // TODO: get image working
-                let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: true)
+                let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: true)
+               
                 let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
                 let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
                 annotations.append(annotation)
@@ -127,8 +127,9 @@ class MapViewController: UIViewController {
                 let todaysDate = today.weekdayName
                 let todaysHappyHours = place.record.happyHours[todaysDate] ?? "No happy hours today."
                 
-                // TODO: get image working
-                let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: false)
+                
+                let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: false)
+                
                 let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
                 let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
                 annotations.append(annotation)

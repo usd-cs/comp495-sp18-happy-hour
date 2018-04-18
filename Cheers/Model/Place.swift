@@ -25,6 +25,7 @@ public struct Place: Equatable, Codable{
     var record: DatabaseRecord
     var favorited: Bool
     
+    
     public static func ==(lhs: Place, rhs: Place) -> Bool {
         return lhs.record.id == rhs.record.id
     }
