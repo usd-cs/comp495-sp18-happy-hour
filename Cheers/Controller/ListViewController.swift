@@ -226,7 +226,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func filterButtonPressed(_ sender: Any) {
         // TODO: present filtering options
         //filterMore()
-        filterMenu.showFilterMenu()
+        //filterMenu.showFilterMenu()
     }
     
 
@@ -430,6 +430,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             selectedVC.senderString = "List"
             self.navigationController?.isNavigationBarHidden = false
         }
+        
+        
     }
     
     // MARK: - Start of View Function
