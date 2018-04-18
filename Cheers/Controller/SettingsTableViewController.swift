@@ -68,6 +68,10 @@ class SettingsTableViewController: UITableViewController {
                 alert = UIAlertController(title: "History Update", message: "There is \(HistoryQueue.shared.history.count) item in the history.", preferredStyle: .alert)
             }
             
+            showSegmentedControl = false
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
             
             self.present(alert, animated: true)
