@@ -35,7 +35,9 @@ class FavoritesTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return FavoritesSingleton.shared.favorites.count
     }
@@ -111,6 +113,21 @@ class FavoritesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.favoritesTableView.reloadData()
+        
+//        if FavoritesSingleton.shared.favorites.count == 0 {
+//
+//            let label : UILabel = {
+//               let lab = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 35))
+//                lab.text = "No Favorites"
+//                return lab
+//            }()
+//
+//            view.addSubview(label)
+//            label.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100)
+//            label.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100)
+//            label.heightAnchor.constraint(equalTo: view.heightAnchor, constant: 150)
+//
+//        }
     }
     
     @IBAction func unwindToFavorites(segue: UIStoryboardSegue) {
