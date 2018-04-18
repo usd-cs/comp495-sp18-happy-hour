@@ -37,7 +37,14 @@ class SelectedBarViewController: UIViewController {
         navigationItem.title = place.record.name
         
         let current = Date()
-        imageView.image = UIImage(named: "shout.jpg")
+        
+        let imageUrl =  URL(string: place.record.images[0])
+        
+        ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
+            self.imageView.image = image
+        }
+        
+        
         nameLabel.text  = place.record.name
         nameLabel.sizeToFit()
         addressLabel.text = place.record.address

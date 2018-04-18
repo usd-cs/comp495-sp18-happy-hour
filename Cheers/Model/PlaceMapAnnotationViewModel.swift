@@ -11,7 +11,7 @@ import MapViewPlus
 
 class PlaceMapAnnotationViewModel: CalloutViewModel {
     var name: String
-    var image: UIImage
+    //var image: UIImage
     var happyHours: String
     var favorited: Bool
     
@@ -19,12 +19,14 @@ class PlaceMapAnnotationViewModel: CalloutViewModel {
     
     var place: Place
     
-    init(name: String, image: UIImage, happyHours: String, favorited: Bool, place: Place, live: Bool) {
+    init(name: String,  happyHours: String, favorited: Bool, place: Place, live: Bool) {
         self.name = name
-        self.image = image
+        //self.image = image
         self.happyHours = happyHours
         self.favorited = favorited
         self.place = place
         self.live = live
+        
+        
     }
 }
