@@ -46,38 +46,42 @@
                         </label>
                     </subviews>
                 </stackView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="agk-q4-KE2">
-                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="DlL-sg-wiy"/>
-                        <constraint firstAttribute="height" constant="50" id="yul-Jx-CuY"/>
-                    </constraints>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glo-r1-M5l">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="338"/>
                     <connections>
                         <action selector="barSelected:" destination="iN0-l3-epB" eventType="touchUpInside" id="A21-Ll-WDD"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqe-fJ-SzE">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Vbq-SV-Q9H"/>
+                        <constraint firstAttribute="width" constant="50" id="XxB-Y7-rur"/>
+                    </constraints>
+                    <connections>
+                        <action selector="favoriteButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="IuG-a0-EQK"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Glo-r1-M5l" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="12n-bz-Dwo"/>
+                <constraint firstItem="Vqe-fJ-SzE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="2Mg-Zj-2EC"/>
                 <constraint firstItem="Glo-r1-M5l" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7a7-8m-MHx"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Glo-r1-M5l" secondAttribute="bottom" id="Fl7-hx-IL1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="k3F-Yc-Uhh" secondAttribute="bottom" constant="40" id="JZy-qz-NQf"/>
                 <constraint firstItem="k3F-Yc-Uhh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MQs-Pj-bGj"/>
                 <constraint firstItem="k3F-Yc-Uhh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="SyR-Dc-3mn"/>
-                <constraint firstItem="agk-q4-KE2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ZhO-GW-2rF"/>
                 <constraint firstItem="Glo-r1-M5l" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kaC-vh-VNB"/>
-                <constraint firstItem="agk-q4-KE2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lPv-q4-MEc"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Glo-r1-M5l" secondAttribute="trailing" id="m8L-vS-x0h"/>
                 <constraint firstItem="Glo-r1-M5l" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="n2n-x3-ZWE"/>
+                <constraint firstItem="Vqe-fJ-SzE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yaT-eg-LqS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="barImage" destination="XEU-sF-7wU" id="O6X-Gg-o2f"/>
+                <outlet property="favoritedIcon" destination="Vqe-fJ-SzE" id="51K-EZ-H1Z"/>
                 <outlet property="happyHoursLabel" destination="T8W-70-cdT" id="tqZ-rt-DPm"/>
                 <outlet property="titleLabel" destination="p4c-h6-r99" id="pe8-fy-jtM"/>
             </connections>

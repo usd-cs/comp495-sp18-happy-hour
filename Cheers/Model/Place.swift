@@ -8,10 +8,10 @@
 
 import Foundation
 
-let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-let ArchiveURL = DocumentsDirectory.appendingPathComponent("places").appendingPathExtension("plist")
+//let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+//let ArchiveURL = DocumentsDirectory.appendingPathComponent("places").appendingPathExtension("plist")
 
-var favoriteList = [Place]()
+//var favoriteList = [Place]()
 
 extension String {
     var lines: [String] {
@@ -21,7 +21,7 @@ extension String {
     }
 }
 
-public struct Place: Equatable, Codable{
+public struct Place: Equatable, Codable {
     var record: DatabaseRecord
     var favorited: Bool
     
@@ -35,15 +35,26 @@ public struct Place: Equatable, Codable{
         self.favorited = favorited
     }
     
-    static func saveToFile(favoritedPlace: Place) {
+    /*
+    static func saveToFile(favoritedPlace: Place, favorited: Bool) {
         let encoder = PropertyListEncoder()
-        favoriteList.append(favoritedPlace)
         
-        let encodedPlaces = try? encoder.encode(favoriteList)
-        try? encodedPlaces?.write(to: ArchiveURL, options: .noFileProtection)
-        
-        // DEBUG:
-        print("Saving \(favoritedPlace) to file...")
+        if favorited {
+            favoriteList.append(favoritedPlace)
+            
+            let encodedPlaces = try? encoder.encode(favoriteList)
+            try? encodedPlaces?.write(to: ArchiveURL, options: .noFileProtection)
+            
+            // DEBUG:
+            print("Saving \(favoritedPlace) to file...")
+        } else {
+            favoriteList.remove(at: favoriteList.index(of: favoritedPlace)!)
+            
+            let encodedPlaces = try? encoder.encode(favoriteList)
+            try? encodedPlaces?.write(to: ArchiveURL, options: .noFileProtection)
+            
+            print("Unsaving \(favoritedPlace) to file...")
+        }
     }
     
     static func loadFromFile() -> [Place]?  {
@@ -67,6 +78,7 @@ public struct Place: Equatable, Codable{
     static func loadFromList() -> [Place]? {
         return favoriteList
     }
+ */
 }
 
 

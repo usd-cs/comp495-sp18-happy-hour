@@ -23,6 +23,8 @@ class MapViewController: UIViewController {
     var liveList: [Place] = []
     var notLiveList: [Place] = []
     var myLocation: CLLocationCoordinate2D?
+    
+    var hasAppeared: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,10 @@ class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         populateMap()
-        addRangeOverlay()
+        if !hasAppeared {
+            addRangeOverlay()
+            hasAppeared = true
+        }
     }
     
     // adds circle overlay based on how big the search radius is
