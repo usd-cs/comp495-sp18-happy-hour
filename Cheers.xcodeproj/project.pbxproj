@@ -11,17 +11,15 @@
 		725CACA22089456B007893FA /* records.txt in Resources */ = {isa = PBXBuildFile; fileRef = 725CACA12089456B007893FA /* records.txt */; };
 		725CACA42089482B007893FA /* Neighborhoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725CACA32089482A007893FA /* Neighborhoods.swift */; };
 		725CACA620894835007893FA /* BarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725CACA520894835007893FA /* BarType.swift */; };
+		725CACAA2089501E007893FA /* DatabaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725CACA92089501E007893FA /* DatabaseTableViewController.swift */; };
 		9A0A86FE11A77BD7A74EBA63 /* Pods_Cheers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */; };
 		B1FFE6AB205B69F500531FDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */; };
-		B1FFE6AF205B717E00531FDB /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AE205B717E00531FDB /* DatabaseController.swift */; };
 		BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B460204F34AF00136463 /* AppDelegate.swift */; };
 		BEA1B468204F34AF00136463 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA1B466204F34AF00136463 /* Main.storyboard */; };
 		BEA1B46A204F34AF00136463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA1B469204F34AF00136463 /* Assets.xcassets */; };
 		BEA1B46D204F34AF00136463 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA1B46B204F34AF00136463 /* LaunchScreen.storyboard */; };
 		BEA1B478204F34B000136463 /* CheersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B477204F34B000136463 /* CheersTests.swift */; };
 		BEA1B483204F34B000136463 /* CheersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B482204F34B000136463 /* CheersUITests.swift */; };
-		BEC473AD20510B7C00FC5702 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC473AC20510B7C00FC5702 /* Place.swift */; };
-		BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF309A72061BA0D00022098 /* DatabaseRecord.swift */; };
 		ECBAF1DCFF0D62B667481A7D /* Pods_CheersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F4456248D6140CBDEA45D4 /* Pods_CheersTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,12 +48,12 @@
 		725CACA12089456B007893FA /* records.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = records.txt; sourceTree = "<group>"; };
 		725CACA32089482A007893FA /* Neighborhoods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Neighborhoods.swift; path = Cheers/Neighborhoods.swift; sourceTree = SOURCE_ROOT; };
 		725CACA520894835007893FA /* BarType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarType.swift; path = Cheers/BarType.swift; sourceTree = SOURCE_ROOT; };
+		725CACA92089501E007893FA /* DatabaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTableViewController.swift; sourceTree = "<group>"; };
 		7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FDF68A309F93D49B4568F8 /* Pods-Cheers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cheers/Pods-Cheers.release.xcconfig"; sourceTree = "<group>"; };
 		972A4A435F45ED4976ED9E9E /* Pods-CheersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0F4456248D6140CBDEA45D4 /* Pods_CheersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B1FFE6AE205B717E00531FDB /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		BEA1B45D204F34AF00136463 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA1B460204F34AF00136463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA1B467204F34AF00136463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,8 +66,6 @@
 		BEA1B47E204F34B000136463 /* CheersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA1B482204F34B000136463 /* CheersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersUITests.swift; sourceTree = "<group>"; };
 		BEA1B484204F34B000136463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEC473AC20510B7C00FC5702 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		BEF309A72061BA0D00022098 /* DatabaseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRecord.swift; sourceTree = "<group>"; };
 		F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cheers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				BEA1B460204F34AF00136463 /* AppDelegate.swift */,
-				B1FFE6AE205B717E00531FDB /* DatabaseController.swift */,
+				725CACA92089501E007893FA /* DatabaseTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -147,8 +143,6 @@
 			children = (
 				725CACA520894835007893FA /* BarType.swift */,
 				725CACA32089482A007893FA /* Neighborhoods.swift */,
-				BEC473AC20510B7C00FC5702 /* Place.swift */,
-				BEF309A72061BA0D00022098 /* DatabaseRecord.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -536,10 +530,8 @@
 			files = (
 				BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */,
 				725CACA620894835007893FA /* BarType.swift in Sources */,
-				B1FFE6AF205B717E00531FDB /* DatabaseController.swift in Sources */,
-				BEC473AD20510B7C00FC5702 /* Place.swift in Sources */,
 				725CACA42089482B007893FA /* Neighborhoods.swift in Sources */,
-				BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */,
+				725CACAA2089501E007893FA /* DatabaseTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
