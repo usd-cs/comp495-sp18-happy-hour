@@ -1,0 +1,317 @@
+Analog Bar
+Gaslamp Quarter
+Thursday
+5 pm - 7 pm
+Friday
+5 pm - 7 pm
+Saturday
+5 pm - 7 pm
+END OF RECORD
+Brian's 24
+Gaslamp Quarter
+Monday
+4 pm - 7 pm
+Tuesday
+4 pm - 7 pm
+Wednesday
+4 pm - 7 pm
+Thursday
+4 pm - 7 pm
+Friday
+4 pm - 7 pm
+Saturday
+4 pm - 7 pm
+Sunday
+4 pm - 7 pm
+END OF RECORD
+Coyote Ugly Saloon
+Gaslamp Quarter
+Monday
+4 pm - 7 pm
+Tuesday
+4 pm - 7 pm
+Wednesday
+4 pm - 7 pm
+Thursday
+4 pm - 7 pm
+Friday
+4 pm - 7 pm
+Saturday
+4 pm - 7 pm
+Sunday
+4 pm - 7 pm
+END OF RECORD
+Dobson's
+Gaslamp Quarter
+Monday
+4 pm - 7 pm
+Tuesday
+4 pm - 7 pm
+Wednesday
+4 pm - 7 pm
+Thursday
+4 pm - 7 pm
+Friday
+4 pm - 7 pm
+END OF RECORD
+The Whiskey House
+Gaslamp Quarter
+Monday
+4 pm - 7 pm
+Tuesday
+4 pm - 7 pm
+Wednesday
+4 pm - 7 pm
+Thursday
+4 pm - 7 pm
+Friday
+4 pm - 7 pm
+Saturday
+4 pm - 7 pm
+Sunday
+4 pm - 7 pm
+END OF RECORD
+Lionfish
+Gaslamp Quarter
+Monday
+5 pm - 7 pm
+Tuesday
+5 pm - 7 pm
+Wednesday
+5 pm - 7 pm
+Thursday
+5 pm - 7 pm
+Friday
+5 pm - 7 pm
+END OF RECORD
+Pinzimini
+Gaslamp Quarter
+Monday
+5 pm - 7 pm
+Tuesday
+5 pm - 7 pm
+Wednesday
+5 pm - 7 pm
+Thursday
+5 pm - 7 pm
+Friday
+5 pm - 7 pm
+Saturday
+5 pm - 7 pm
+Sunday
+5 pm - 7 pm
+END OF RECORD
+Searsucker
+Gaslamp Quarter
+Monday
+4:30 pm - 7 pm
+Tuesday
+4:30 pm - 7 pm
+Wednesday
+4:30 pm - 7 pm
+Thursday
+4:30 pm - 7 pm
+Friday
+4:30 pm - 7 pm
+END OF RECORD
+Striders
+Gaslamp Quarter
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+207 Lounge
+Gaslamp Quarter
+Monday
+3 pm - 7 pm
+Tuesday
+3 pm - 7 pm
+Wednesday
+3 pm - 7 pm
+Thursday
+3 pm - 7 pm
+Friday
+3 pm - 7 pm
+END OF RECORD
+Shack Bar & Grill
+La Jolla
+Monday
+3 pm - 7 pm
+Tuesday
+3 pm - 7 pm
+Wednesday
+3 pm - 7 pm
+Thursday
+3 pm - 7 pm
+Friday
+3 pm - 7 pm
+END OF RECORD
+Bella Vista Social Club & Caffé
+La Jolla
+Tuesday
+4 pm - 7 pm
+Wednesday
+4 pm - 7 pm
+Thursday
+4 pm - 7 pm
+Friday
+4 pm - 7 pm
+END OF RECORD
+Catania
+La Jolla
+Sunday
+3 pm - 6 pm
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+Nine-Ten
+La Jolla
+Monday
+3:30 pm - 6:30 pm
+Tuesday
+3:30 pm - 6:30 pm
+Wednesday
+3:30 pm - 6:30 pm
+Thursday
+3:30 pm - 6:30 pm
+Friday
+3:30 pm - 6:30 pm
+END OF RECORD
+Shooters Bar & Grill
+La Jolla
+Monday
+4 pm - 8 pm
+Tuesday
+4 pm - 8 pm
+Wednesday
+4 pm - 8 pm
+Thursday
+4 pm - 8 pm
+Friday
+4 pm - 8 pm
+Saturday
+4 pm - 8 pm
+END OF RECORD
+The Promiscuous Fork
+La Jolla
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+The Spot
+La Jolla
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+The Shores Restaurant
+La Jolla
+Sunday
+3 pm - 6 pm
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+The Shack
+La Jolla
+Sunday
+3 pm - 7 pm
+Monday
+3 pm - 7 pm
+Tuesday
+3 pm - 7 pm
+Wednesday
+3 pm - 7 pm
+Thursday
+3 pm - 7 pm
+Friday
+3 pm - 7 pm
+Saturday
+3 pm - 7 pm
+END OF RECORD
+Puesto
+La Jolla
+Monday
+3 pm - 5 pm
+Tuesday
+3 pm - 5 pm
+Wednesday
+3 pm - 5 pm
+Thursday
+3 pm - 5 pm
+Friday
+3 pm - 5 pm
+END OF RECORD
+Firehouse
+Pacific Beach
+Monday
+5 pm - 12 am
+Tuesday
+5 pm - 12 am
+Wednesday
+5 pm - 12 am
+Thursday
+5 pm - 2 am
+Friday
+5 pm - 10 pm
+Sunday
+9 am - 3 pm
+END OF RECORD
+Pacific Beach Ale House
+Pacific Beach
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+El Prez
+Pacific Beach
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
