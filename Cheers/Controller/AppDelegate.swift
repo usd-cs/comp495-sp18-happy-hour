@@ -20,17 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var locationManager: CLLocationManager!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        //getUserLocation(); //Makes a call to determine user location on launch
         FirebaseApp.configure()
         UserLocations.instantiateSharedInstance()
-
-    
-        
-        
-        // DEBUG: when reading from DB, comment out this line
-        // DEBUG: when writing to DB, uncomment this line
-       //DatabaseRecord.writeToDB()
-
         return true
     }
     
