@@ -25,8 +25,22 @@ class DatabaseTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        writeToDB()
-        self.title = "Uploaded bars:"
+        self.title = "Uploaded Bars"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "Uploaded Bars"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        SVProgressHUD.show()
+        DispatchQueue.global(qos: .background).async {
+            self.writeToDB()
+            SVProgressHUD.dismiss()
+            print("\nAll uploads completed successfully.")
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,7 +57,11 @@ class DatabaseTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    static func getPlaceData(url: String, parameters: [String: String], happyHours: [String: String], neighborhood: Neighborhood) {
+    func tableView(tableView: UITableView, titleForHeaderInSection section:Int) -> String? {
+        return "Uploaded Bars"
+    }
+    
+    func getPlaceData(url: String, parameters: [String: String], happyHours: [String: String], neighborhood: Neighborhood) {
         let header: HTTPHeaders = [
             "Authorization": "Bearer Mxkbvkgu6VYllYtDz5Oppicd1FiPg2G6QBj2yiKw3nUlIaB1BUCSHAThlEMb_vF4Np5iNpYjNLuC_clWi-2yXAo_WTLzabGmeoAaNHwehd2MTOZwyYRX5fu741WsWnYx"
         ]
@@ -101,12 +119,14 @@ class DatabaseTableViewController: UITableViewController {
                 print(error!)
                 print("Attempting to continue...")
             } else {
-                print("\(record.name) saved successfully to DB")
+                print("\(record.name) saved successfully to DB.")
+                self.uploads.append(record.name)
             }
         }
     }
     
     func writeToDB() {
+        SVProgressHUD.show()
         let file = Bundle.main.path(forResource: "records", ofType: "txt")
         var fileToString = ""
         do {
@@ -144,15 +164,12 @@ class DatabaseTableViewController: UITableViewController {
                         "location": "San Diego",
                         "limit": "1"
                     ]
-                    DatabaseTableViewController.getPlaceData(url: url, parameters: parameters, happyHours: happyHours, neighborhood: neighborhood)
-                    //let second: UInt32 = 1000000
-                    //usleep(UInt32(0.5) * second)
+                    getPlaceData(url: url, parameters: parameters, happyHours: happyHours, neighborhood: neighborhood)
                     sleep(1)
                     neighborhood = .unknown
                     count = 0
                     stringArray.remove(at: 0)
                     happyHours = [:]
-                    //break
                 } else {
                     let day = stringArray[0]
                     let time = stringArray[1]
@@ -204,7 +221,7 @@ class DatabaseTableViewController: UITableViewController {
 
 }
 
-struct DatabaseRecord: Codable {
+struct DatabaseRecord {
     var id: String
     var name: String
     var longitude: Double

@@ -315,3 +315,29 @@ Thursday
 Friday
 3 pm - 6 pm
 END OF RECORD
+La Gran Terraza
+Linda Vista
+Monday
+5 pm - 6:30 pm
+Tuesday
+5 pm - 6:30 pm
+Wednesday
+5 pm - 6:30 pm
+Thursday
+5 pm - 6:30 pm
+Friday
+4 pm - 6:30 pm
+END OF RECORD
+Sidecar
+Linda Vista
+Monday
+3 pm - 7 pm
+Tuesday
+3 pm - 7 pm
+Wednesday
+3 pm - 7 pm
+Thursday
+3 pm - 7 pm
+Friday
+3 pm - 7 pm
+END OF RECORD
