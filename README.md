@@ -23,7 +23,8 @@ If you have any issues, please refer to [this helpful Stack Overflow post](https
 
 ## How to upload to the database
 Look to `BarNames.txt` for the template...
-1. Start an empty `.txt` file on your local machine. For your selected neighborhood, add bars in the following format:
+1. Pull and checkout the branch called `database`. It will be a complete separate app for database management.
+2. Start an empty `.txt` file on your local machine. For your selected neighborhood, add bars in the following format:
 
 ```
 barName1
@@ -43,7 +44,7 @@ happyHour2TimeN
 END OF RECORD
 ```
 
-For example, if I wanted to upload two bars for North Park, it would look like this:
+For example, if I wanted to upload two bars for Pacific Beach, it would look like this:
 ```
 Firehouse
 Pacific Beach
@@ -79,13 +80,12 @@ Make sure that your neighborhood matches **EXACTLY** the raw value of the `enum 
 
 2. Add the `.txt` file to your project by right-clicking on the top-level folder in your Xcode project (the folder called "Cheers") and then select "Add files to Cheers...". Then select your new `.txt` file.
 3. Commit and push the file to whatever branch you're working on.
-4. In the `Model` folder of the Xcode project, open the file `DatabaseRecord.swift`. Locate the function `writeToDB()` (Line 46 as of writing this).
-5. The first line in `writeToDB()` contains the following:
+4. MAKE SURE TO MANUALLY ADD YOUR NEW `.txt` FILE WHEN YOU COMMIT SO IT'S ADDED TO THE REPO.
+5. In the `Controller` folder of the Xcode project, open the file `DatabaseTableViewController.swift`. Locate the function `writeToDB()` (Line 130 as of writing this).
+6. The first line in `writeToDB()` contains the following:
 
-    `let file = Bundle.main.path(forResource: "BarNames", ofType: "txt")`
+    `let file = Bundle.main.path(forResource: "records", ofType: "txt")`
 
-    Change the value of the `forResource:` parameter `"BarNames"` to the name of your `.txt` file. Do not include the `.txt` extension. For example, if my file was named `fileName.txt`, then my line would look like: `let file = Bundle.main.path(forResource: "fileName", ofType: "txt")`.
+    Change the value of the `forResource:` parameter `"records"` to the name of your `.txt` file. Do not include the `.txt` extension. For example, if my file was named `fileName.txt`, then my line would look like: `let file = Bundle.main.path(forResource: "fileName", ofType: "txt")`.
 
-6. Your bars will be pulled from Yelp and uploaded to the database! Go to [Firebase](https://firebase.google.com/) and log in using the credentials listed in the Team Drive -- confirm that your bars were indeed uploaded.
-
-You may need to change the parameter of the first line in `writeToDB()` back to `barNames` to avoid any merge conflicts when pushing to GitHub, but make sure to include your `.txt` in your branch so we have a record of who's pushed what bars to the database.
+7. Your bars will be pulled from Yelp and uploaded to the database! Go to [Firebase](https://firebase.google.com/) and log in using the credentials listed in the Team Drive -- confirm that your bars were indeed uploaded.
