@@ -16,6 +16,7 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         cv.backgroundColor = UIColor.white
+        cv.isUserInteractionEnabled = true
         return cv
     }()
     
@@ -32,7 +33,7 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
             window.addSubview(blackView)
             window.addSubview(collectionView)
             
-            let height : CGFloat = 200
+            let height : CGFloat = 400
             let theY = window.frame.height - height
             
             collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
@@ -68,7 +69,7 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 50)
+        return CGSize(width: collectionView.frame.width, height: 125)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

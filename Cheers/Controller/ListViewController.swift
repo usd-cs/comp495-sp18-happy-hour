@@ -71,9 +71,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         SVProgressHUD.show()
         
-        // DEBUG: when writing to DB, comment out this line
-        // DEBUG: when reading from DB, uncomment this line
-        //readFromDB()
+        readFromDB()
         
     }
     
@@ -443,9 +441,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Start of View Function
     
     override func viewWillAppear(_ animated: Bool) {
-        //self.navigationController?.isNavigationBarHidden = true
-        //self.searchBar.isHidden = true
-        filterMode = false
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
     

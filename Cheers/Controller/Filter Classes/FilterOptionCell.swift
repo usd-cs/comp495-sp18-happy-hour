@@ -14,6 +14,7 @@ class FilterOptionCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Distance"
         label.textColor = UIColor.black
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -25,9 +26,11 @@ class FilterOptionCell: UICollectionViewCell {
         slider.maximumValue = 100
         slider.isContinuous = true
         slider.value = 100
-        slider.addTarget(self, action: #selector(sliderValueDidChange) , for: UIControlEvents.valueChanged)
+        
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.isUserInteractionEnabled = true
+        slider.contentMode = .scaleToFill
+        slider.addTarget(self, action: #selector(sliderValueDidChange), for: UIControlEvents.valueChanged)
         
         return slider
     }()
@@ -39,35 +42,62 @@ class FilterOptionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame:  frame)
-//        self.addSubview(titleLabel)
-//
-
-        let stackView = UIStackView(arrangedSubviews: [titleLabel,slideItem])
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
+        setUpViews()
+       
         
 
+    }
+    
+    func setUpViews() {
         
+        let blueView : UIView = {
+            let b = UIView()
+            //frame: CGRect(x: 0, y: 0, width: frame.width, height: 50)
+            b.backgroundColor = UIColor.blue
+            b.translatesAutoresizingMaskIntoConstraints = false
+            return b
+        }()
         
+        let redView : UIView = {
+            let r = UIView()
+            //frame: CGRect(x: 0, y: 0, width: frame.width, height: 50)
+            r.backgroundColor = UIColor.red
+            r.translatesAutoresizingMaskIntoConstraints = false
+            return r
+        }()
+        
+        let stackView: UIStackView = {
+            let stack = UIStackView(arrangedSubviews: [titleLabel,slideItem])
+            stack.distribution = .fillEqually
+            stack.axis = .vertical
+            stack.translatesAutoresizingMaskIntoConstraints = false
+            return stack
+        }()
         
         self.addSubview(stackView)
         
-        stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 100)
-        stackView.isUserInteractionEnabled = true
+        NSLayoutConstraint.activate([stackView.topAnchor.constraint(equalTo: self.topAnchor),
+                                     stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                                     stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                                     stackView.heightAnchor.constraint(equalToConstant: 100)
+            
+            ])
         
-        
-        titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
-        titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
-        
-        slideItem.frame = CGRect(x: 0, y: 50, width: frame.width, height: 25)
-        slideItem.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
-        slideItem.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 30).isActive = true
-        
-
-        
+        //Works Perfectly
+//        self.addSubview(blueView)
+//        self.addSubview(redView)
+//
+//        NSLayoutConstraint.activate([blueView.topAnchor.constraint(equalTo: self.topAnchor),
+//                                     blueView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+//                                     blueView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+//                                     blueView.heightAnchor.constraint(equalToConstant: 50)
+//            ])
+//
+//        NSLayoutConstraint.activate([redView.topAnchor.constraint(equalTo: blueView.bottomAnchor),
+//                                     redView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+//                                     redView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+//                                     redView.heightAnchor.constraint(equalToConstant: 50)
+//            ])
         
     }
     
