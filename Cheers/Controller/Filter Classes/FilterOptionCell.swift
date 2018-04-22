@@ -44,7 +44,7 @@ class FilterOptionCell: UICollectionViewCell {
 
         let stackView = UIStackView(arrangedSubviews: [titleLabel,slideItem])
         stackView.axis = .vertical
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
         
 
         
@@ -55,7 +55,7 @@ class FilterOptionCell: UICollectionViewCell {
         stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 100)
         stackView.isUserInteractionEnabled = true
         
         
@@ -66,26 +66,7 @@ class FilterOptionCell: UICollectionViewCell {
         slideItem.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
         slideItem.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 30).isActive = true
         
-//        titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-//        titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-//        titleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-//        titleLabel.heightAnchor.constraint(equalToConstant: 20)
-//
-//
-//
-//        //slideItem.frame.width = frame.width
-//        //slideItem.frame.height = 50
-//        slideItem.tintColor = UIColor.black
-//        slideItem.thumbTintColor = UIColor.blue
-//
-//
-//        slideItem.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-//        slideItem.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-//        slideItem.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-//        //slideItem.leadingAnchor.constraint(equalTo: self.leadingAnchor)
-//        //slideItem.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-//        //slideItem.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-//
+
         
         
     }

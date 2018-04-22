@@ -75,7 +75,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // DEBUG: when writing to DB, comment out this line
         // DEBUG: when reading from DB, uncomment this line
-        readFromDB()
+        //readFromDB()
         
     }
     
@@ -229,7 +229,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func filterButtonPressed(_ sender: Any) {
         // TODO: present filtering options
         //filterMore()
-        //filterMenu.showFilterMenu()
+        filterMenu.showFilterMenu()
     }
     
 

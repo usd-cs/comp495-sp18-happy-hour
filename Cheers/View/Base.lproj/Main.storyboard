@@ -20,26 +20,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Op-Dv-tK4">
-                                <rect key="frame" x="125" y="243" width="124" height="21"/>
+                                <rect key="frame" x="125" y="199" width="124" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeJ-th-M6x">
-                                <rect key="frame" x="128" y="340" width="118" height="21"/>
+                                <rect key="frame" x="128" y="296" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.10000000000000001" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="228-mH-fri">
-                                <rect key="frame" x="14" y="173" width="347" height="31"/>
+                                <rect key="frame" x="14" y="129" width="347" height="31"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="distanceFilter:" destination="KYG-t9-MhT" eventType="valueChanged" id="URB-nB-l2h"/>
                                 </connections>
                             </slider>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I6w-yV-1d7">
-                                <rect key="frame" x="16" y="272" width="343" height="29"/>
+                                <rect key="frame" x="16" y="228" width="343" height="29"/>
                                 <segments>
                                     <segment title="1 Star"/>
                                     <segment title="2 Stars"/>
@@ -52,7 +52,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EI3-lH-hAg">
-                                <rect key="frame" x="16" y="369" width="343" height="29"/>
+                                <rect key="frame" x="16" y="325" width="343" height="29"/>
                                 <segments>
                                     <segment title="$"/>
                                     <segment title="$$"/>
@@ -65,13 +65,13 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites Only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ht-zQ-bGg">
-                                <rect key="frame" x="133" y="437" width="109" height="21"/>
+                                <rect key="frame" x="133" y="393" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-oE-1DL">
-                                <rect key="frame" x="16" y="466" width="343" height="29"/>
+                                <rect key="frame" x="16" y="422" width="343" height="29"/>
                                 <segments>
                                     <segment title="No"/>
                                     <segment title="Yes"/>
@@ -81,14 +81,14 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsR-7P-dA2">
-                                <rect key="frame" x="145" y="541" width="85" height="30"/>
+                                <rect key="frame" x="145" y="497" width="85" height="30"/>
                                 <state key="normal" title="Reset Filters"/>
                                 <connections>
                                     <action selector="resetButtonPressed:" destination="KYG-t9-MhT" eventType="touchUpInside" id="OG0-e2-vpW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Distance: 25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4j-tG-WjO">
-                                <rect key="frame" x="100" y="144" width="175" height="21"/>
+                                <rect key="frame" x="100" y="100" width="175" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -260,7 +260,6 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="icon-filter" id="yZ6-Mr-aHP">
                             <connections>
                                 <action selector="filterButtonPressed:" destination="9pv-A4-QxB" id="ahW-DE-HIf"/>
-                                <segue destination="KYG-t9-MhT" kind="show" identifier="filterPressed" id="MtS-vs-0cz"/>
                             </connections>
                         </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="4zs-2v-Mhg">
