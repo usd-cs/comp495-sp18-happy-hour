@@ -37,7 +37,15 @@ class SelectedBarViewController: UIViewController {
         navigationItem.title = place.record.name
         
         let current = Date()
-        imageView.image = UIImage(named: "shout.jpg")
+        
+        let imageUrl =  URL(string: place.record.images[0])
+        
+        ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
+            self.imageView.image = image
+        }
+        imageView.contentMode = .scaleAspectFill
+        
+        
         nameLabel.text  = place.record.name
         nameLabel.sizeToFit()
         addressLabel.text = place.record.address
@@ -50,15 +58,28 @@ class SelectedBarViewController: UIViewController {
         // TODO: need to figure out how to show menu information
         menuLabel.text = "Yelp Reviews"
         
-        if place.favorited {
-            favoriteButton.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
-        }
-        else if place.favorited == false {
-            favoriteButton.setImage(#imageLiteral(resourceName: "favorites"), for: UIControlState.normal)
-        }
+        updateFavoriteButton()
+        
         view.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateFavoriteButton()
+    }
+    
+    func updateFavoriteButton() {
+        if FavoritesSingleton.shared.favorites.isEmpty {
+            favoriteButton.setImage(#imageLiteral(resourceName: "favorites"), for: UIControlState.normal)
+        } else {
+            if FavoritesSingleton.shared.favorites.contains(place) {
+                favoriteButton.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
+            } else {
+                favoriteButton.setImage(#imageLiteral(resourceName: "favorites"), for: UIControlState.normal)
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,19 +88,23 @@ class SelectedBarViewController: UIViewController {
     }
     
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
-        
-        if place.favorited == true {
-            place.favorited = false
-            favoriteButton.setImage(#imageLiteral(resourceName: "favorites"), for: UIControlState.normal)
-        }
-        else if place.favorited == false{
+        if FavoritesSingleton.shared.favorites.isEmpty {
             place.favorited = true
             favoriteButton.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
-            //favoriteButton.setImage(#imageLiteral(resourceName: "icon-HeartFull"), for: UIControlState.normal)
-            
-            Place.saveToFile(favoritedPlace: place)
-
-            //print(Place.loadFromFile() ?? "No Places Favorited in File\n")
+            print("Sending \(place.record.name) with value true")
+            FavoritesSingleton.shared.update(place: place, isFavorited: true)
+        } else {
+            if FavoritesSingleton.shared.favorites.contains(place) {
+                place.favorited = false
+                favoriteButton.setImage(#imageLiteral(resourceName: "favorites"), for: UIControlState.normal)
+                print("Sending \(place.record.name) with value false")
+                FavoritesSingleton.shared.update(place: place, isFavorited: false)
+            } else {
+                place.favorited = true
+                favoriteButton.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
+                print("Sending \(place.record.name) with value true")
+                FavoritesSingleton.shared.update(place: place, isFavorited: true)
+            }
         }
     }
     
@@ -98,6 +123,8 @@ class SelectedBarViewController: UIViewController {
             performSegue(withIdentifier: "barToList", sender: nil)
         } else if senderString == "Map" {
             performSegue(withIdentifier: "barToMap", sender: nil)
+        } else if senderString == "Favorites" {
+            performSegue(withIdentifier: "barToFavorites", sender: nil)
         }
     }
 }

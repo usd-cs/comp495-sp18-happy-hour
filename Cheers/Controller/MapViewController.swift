@@ -23,6 +23,8 @@ class MapViewController: UIViewController {
     var liveList: [Place] = []
     var notLiveList: [Place] = []
     var myLocation: CLLocationCoordinate2D?
+    
+    var hasAppeared: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,10 @@ class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         populateMap()
-        addRangeOverlay()
+        if !hasAppeared {
+            addRangeOverlay()
+            hasAppeared = true
+        }
     }
     
     // adds circle overlay based on how big the search radius is
@@ -101,8 +106,8 @@ class MapViewController: UIViewController {
                 let todaysDate = today.weekdayName
                 let todaysHappyHours = place.record.happyHours[todaysDate] ?? "No happy hours today."
                 
-                // TODO: get image working
-                let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: true)
+                let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: true)
+               
                 let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
                 let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
                 annotations.append(annotation)
@@ -127,8 +132,9 @@ class MapViewController: UIViewController {
                 let todaysDate = today.weekdayName
                 let todaysHappyHours = place.record.happyHours[todaysDate] ?? "No happy hours today."
                 
-                // TODO: get image working
-                let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, image: UIImage(named: "shout.jpg")!, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: false)
+                
+                let viewModel = PlaceMapAnnotationViewModel(name: place.record.name, happyHours: todaysHappyHours, favorited: place.favorited, place: place, live: false)
+                
                 let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
                 let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
                 annotations.append(annotation)

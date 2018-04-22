@@ -54,8 +54,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         didSet {
             guard notLiveList != nil else { return }
             tableView.reloadData()
-            
-            // DEBUG: is this the right place to put this?
             SVProgressHUD.dismiss()
         }
     }
@@ -82,7 +80,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //if searching is toggled then loaded results
+        // if searching is toggled then loaded results
         if isSearching {
             return searchedData.count
         }
@@ -129,7 +127,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             cell.nameLabel.text = bar.record.name
             let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
-            cell.distanceLabel.text = "\(dist) mi"
+            if SettingsSingleton.shared.useMiles {
+                cell.distanceLabel.text = "\(dist) mi"
+            } else {
+                cell.distanceLabel.text = "\(dist) km"
+            }
             cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
             let today = Date()
             let todaysDate = today.weekdayName
@@ -168,13 +170,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: - Search Functions
     
-    //Action function when the search button is pressed
     @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
         showSearchBar()
         
     }
     
-    //Displays the search bar and hides the bar buttons
+    // displays the search bar and hides the bar buttons
     func showSearchBar() {
         
         navigationItem.titleView = searchBar
@@ -190,15 +191,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.searchBar.becomeFirstResponder()
         })
     }
+
     
-    //action function when the cancel button is pressed
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        hideSearchBar()
         
         // TODO: when search bar hides, segmented control is no longer visible
+        hideSearchBar()
     }
     
-    //func that hides the search bar and bar button
+    // hides the search bar and bar button
     func hideSearchBar() {
         searchBar.isHidden =  true
         navigationItem.setRightBarButton(searchBarButton, animated: true)
@@ -209,16 +210,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
     }
     
-    
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         // if nothing is entered then display the original
-        if searchText == nil || searchText == "" {
+        if searchText == "" {
             isSearching = false
             view.endEditing(true)
             tableView.reloadData()
-        } else { // display searched results
+        } else {
+            // display searched results
             isSearching = true
             searchedData = places.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
             tableView.reloadData()
@@ -232,18 +232,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         filterMenu.showFilterMenu()
     }
     
-
-    
     func filterMore() {
         self.performSegue(withIdentifier: "filterPressed", sender: self)
-        
         
     }
     
     @objc func handleDismiss() {
         
     }
-    
     
     @IBAction func segmentedButtonChanged(_ sender: Any) {
         if segmentedControlButton.selectedSegmentIndex == 0 {
@@ -368,48 +364,46 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         var places = [Place]()
         
         refHandle = ref.observe(.value, with: { (snapshot) in
-            let allRecords = snapshot.value as? [String: AnyObject]
-            for neighborhoodRecords in allRecords! {
-                let records = neighborhoodRecords.value as? [String: AnyObject]
-                for record in records! {
-                    let recordInfo = record.value as! [String: Any]
-                    
-                    let id = recordInfo["id"] as! String
-                    let name = recordInfo["name"] as! String
-                    let longitude = recordInfo["longitude"] as! Double
-                    let latitude = recordInfo["latitude"] as! Double
-                    let rating = recordInfo["rating"] as! Double
-                    let price = recordInfo["price"] as! String
-                    let reviewCount = recordInfo["reviewCount"] as! Int
-                    let phoneNumber = recordInfo["phoneNumber"] as! String
-                    let address = recordInfo["address"] as! String
-                    let city = recordInfo["city"] as! String
-                    let state = recordInfo["state"] as! String
-                    let zipCode = recordInfo["zipCode"] as! String
-                    let country = recordInfo["country"] as! String
-                    let images = recordInfo["images"] as! [String]
-                    
-                    // build list of categories, could be empty (defaults to unknown)
-                    var categoriesArray = [String]()
-                    if recordInfo["categories"] != nil {
-                        categoriesArray = recordInfo["categories"] as! [String]
-                    } else {
-                        categoriesArray.append("unknown")
-                    }
-                    var categories = [BarType]()
-                    for category in categoriesArray {
-                        categories.append(BarType(rawValue: category)!)
-                    }
-                    
-                    let happyHours = recordInfo["happyHours"] as! [String: String]
-                    
-                    let neighborhoodName = Neighborhood(rawValue: neighborhoodRecords.key)!
-                    
-                    let newRecord = DatabaseRecord(id: id, name: name, longitude: longitude, latitude: latitude, rating: rating, price: price, reviewCount: reviewCount, phoneNumber: phoneNumber, address: address, city: city, state: state, zipCode: zipCode, country: country, images: images, categories: categories, happyHours: happyHours, neighborhood: neighborhoodName)
-                    
-                    places.append(Place(record: newRecord, favorited: false))
-                    
+            let records = snapshot.value as? [String: AnyObject]
+            
+            for record in records! {
+                let recordInfo = record.value as! [String: Any]
+                
+                let id = recordInfo["id"] as! String
+                let name = recordInfo["name"] as! String
+                let longitude = recordInfo["longitude"] as! Double
+                let latitude = recordInfo["latitude"] as! Double
+                let rating = recordInfo["rating"] as! Double
+                let price = recordInfo["price"] as! String
+                let reviewCount = recordInfo["reviewCount"] as! Int
+                let phoneNumber = recordInfo["phoneNumber"] as! String
+                let address = recordInfo["address"] as! String
+                let city = recordInfo["city"] as! String
+                let state = recordInfo["state"] as! String
+                let zipCode = recordInfo["zipCode"] as! String
+                let country = recordInfo["country"] as! String
+                let images = recordInfo["images"] as! [String]
+                
+                // build list of categories, could be empty (defaults to unknown)
+                var categoriesArray = [String]()
+                if recordInfo["categories"] != nil {
+                    categoriesArray = recordInfo["categories"] as! [String]
+                } else {
+                    categoriesArray.append("unknown")
                 }
+                var categories = [BarType]()
+                for category in categoriesArray {
+                    categories.append(BarType(rawValue: category)!)
+                }
+                
+                let happyHours = recordInfo["happyHours"] as! [String: String]
+                
+                let neighborhoodName = Neighborhood(rawValue: recordInfo["neighborhood"] as! String)!
+                
+                let newRecord = DatabaseRecord(id: id, name: name, longitude: longitude, latitude: latitude, rating: rating, price: price, reviewCount: reviewCount, phoneNumber: phoneNumber, address: address, city: city, state: state, zipCode: zipCode, country: country, images: images, categories: categories, happyHours: happyHours, neighborhood: neighborhoodName)
+                
+                places.append(Place(record: newRecord, favorited: false))
+                
             }
             
             self.masterList = places
@@ -421,6 +415,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        HistoryQueue.shared.append(places[indexPath.row])
         self.performSegue(withIdentifier: "showSelected", sender: self)
     }
     
@@ -446,6 +441,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     // MARK: - Start of View Function
+    
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = true
         //self.searchBar.isHidden = true

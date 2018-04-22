@@ -13,7 +13,7 @@ class SharedListsSingleton {
     var masterList: [Place] = [] {
         didSet {
             // DEBUG:
-            print("MasterList is now: \(masterList)\n\n")
+            //print("MasterList is now: \(masterList)\n\n")
         }
     }
     var liveList: [Place] = []

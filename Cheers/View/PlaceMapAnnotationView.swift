@@ -22,19 +22,50 @@ class PlaceMapAnnotationView: UIView, CalloutViewPlus {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var barImage: UIImageView!
     @IBOutlet weak var happyHoursLabel: UILabel!
+    @IBOutlet weak var favoritedIcon: UIButton!
+    
     
     @IBAction func barSelected(_ sender: Any) {
         delegate!.beginToTriggerSegue(for: place!)
     }
     
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+        if FavoritesSingleton.shared.favorites.isEmpty {
+            //place.favorited = true
+            favoritedIcon.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
+            print("Sending \(place?.record.name) with value true")
+            FavoritesSingleton.shared.update(place: place!, isFavorited: true)
+        } else {
+            if FavoritesSingleton.shared.favorites.contains(place!) {
+                //place.favorited = false
+                favoritedIcon.setImage(#imageLiteral(resourceName: "favorites"), for: UIControlState.normal)
+                print("Sending \(place?.record.name) with value false")
+                FavoritesSingleton.shared.update(place: place!, isFavorited: false)
+            } else {
+                //place.favorited = true
+                favoritedIcon.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
+                print("Sending \(place?.record.name) with value true")
+                FavoritesSingleton.shared.update(place: place!, isFavorited: true)
+            }
+        }
+    }
     
     func configureCallout(_ viewModel: CalloutViewModel) {
         let viewModel = viewModel as! PlaceMapAnnotationViewModel
         
         titleLabel.text = viewModel.name
-        barImage.image = viewModel.image
         happyHoursLabel.text = viewModel.happyHours
-        
         place = viewModel.place
+        
+        let imageUrl =  URL(string: (place?.record.images[0])!)
+        ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
+            self.barImage.image = image
+        }
+        
+        if FavoritesSingleton.shared.favorites.contains(place!) {
+            favoritedIcon.setImage(#imageLiteral(resourceName: "favorites_selected"), for: UIControlState.normal)
+        } else {
+            favoritedIcon.setImage(#imageLiteral(resourceName: "favorites"), for: UIControlState.normal)
+        }
     }
 }

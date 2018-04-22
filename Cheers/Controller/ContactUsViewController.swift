@@ -1,21 +1,19 @@
 //
-//  FavoritesViewController.swift
+//  ContactUsViewController.swift
 //  Cheers
 //
-//  Created by Jordan Abushahla on 3/7/18.
+//  Created by Will Carhart on 4/17/18.
 //  Copyright © 2018 University of San Diego. All rights reserved.
 //
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
-    
-   
+class ContactUsViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +21,6 @@ class FavoritesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-  
 
     /*
     // MARK: - Navigation
