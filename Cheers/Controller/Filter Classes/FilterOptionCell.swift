@@ -30,7 +30,8 @@ class FilterOptionCell: UICollectionViewCell {
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.isUserInteractionEnabled = true
         slider.contentMode = .scaleToFill
-        slider.addTarget(self, action: #selector(sliderValueDidChange), for: UIControlEvents.valueChanged)
+        
+        slider.isUserInteractionEnabled = true
         
         return slider
     }()
@@ -43,6 +44,8 @@ class FilterOptionCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame:  frame)
         setUpViews()
+        
+        slideItem.addTarget(self, action: #selector(sliderValueDidChange), for: UIControlEvents.valueChanged)
        
         
 
