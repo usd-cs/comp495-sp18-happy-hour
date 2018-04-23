@@ -23,9 +23,9 @@ class DistanceFilterOptionCell: UICollectionViewCell {
         let slider = UISlider()
         
         slider.minimumValue = 0
-        slider.maximumValue = 100
+        slider.maximumValue = 25
         slider.isContinuous = true
-        slider.value = 100
+        slider.value = 25
         
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.isUserInteractionEnabled = true
@@ -38,6 +38,7 @@ class DistanceFilterOptionCell: UICollectionViewCell {
     
     @objc func sliderValueDidChange(sender:UISlider!)
     {
+        titleLabel.text = "Distance: \(sender.value.rounded())"
         print("value--\(sender.value)")
     }
     
