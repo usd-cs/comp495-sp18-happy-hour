@@ -10,6 +10,12 @@ import UIKit
 
 class MinimumRatingFilterOptionCell: UICollectionViewCell {
     
+    let masterList = SharedListsSingleton.shared.masterList
+    var liveList = SharedListsSingleton.shared.liveList
+    var notLiveList = SharedListsSingleton.shared.notLiveList
+    
+    var filtredMasterList = [Place]()
+    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Minimum Ratings"
@@ -28,7 +34,14 @@ class MinimumRatingFilterOptionCell: UICollectionViewCell {
     
     @objc func segmenetSelected(sender:UISegmentedControl!)
     {
-        print("value--\(sender.selectedSegmentIndex)")
+        print("mini rating is --\(sender.selectedSegmentIndex)")
+        filtredMasterList = masterList.filter {$0.record.rating >= Double(ratingsSegementedControl.selectedSegmentIndex + 1)}
+        
+        SharedListsSingleton.shared.filteredList = filtredMasterList
+        
+        
+        print(filtredMasterList)
+        
     }
     
     override init(frame: CGRect) {

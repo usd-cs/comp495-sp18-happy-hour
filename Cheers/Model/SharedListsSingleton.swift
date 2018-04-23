@@ -18,4 +18,5 @@ class SharedListsSingleton {
     }
     var liveList: [Place] = []
     var notLiveList: [Place] = []
+    var filteredList:[Place] = []
 }

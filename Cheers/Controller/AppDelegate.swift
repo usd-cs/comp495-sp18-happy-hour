@@ -47,32 +47,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    // MARK: - Getting User Location
-    
-    // Helper function
-    func getUserLocation() {
-        initLocationManager();
-    }
-    
-    // inits all the required LocationManager settings
-    func initLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        CLLocationManager.locationServicesEnabled()
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    // Pulls latest location and stops updating.
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locationArray = locations as NSArray
-        let locationObj = locationArray.lastObject as? CLLocation
-        let coord = locationObj?.coordinate
-        userLocation = coord
-        locationManager.stopUpdatingLocation()
-        
-    }
-    
 }
 

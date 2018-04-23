@@ -10,6 +10,12 @@ import UIKit
 
 class MaximumPriceFilterOptionCell: UICollectionViewCell {
     
+    let masterList = SharedListsSingleton.shared.masterList
+    var liveList = SharedListsSingleton.shared.liveList
+    var notLiveList = SharedListsSingleton.shared.notLiveList
+    
+    var filtredMasterList = [Place]()
+    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Maximum Price"
@@ -28,13 +34,18 @@ class MaximumPriceFilterOptionCell: UICollectionViewCell {
     
     @objc func segmenetSelected(sender:UISegmentedControl!)
     {
-        print("value--\(sender.selectedSegmentIndex)")
+        print("value--\(sender.selectedSegmentIndex + 1)")
+        filtredMasterList = masterList.filter {Int($0.record.price.count) <= Int(sender.selectedSegmentIndex + 1)}
+        SharedListsSingleton.shared.filteredList = filtredMasterList
+        //print(SharedListsSingleton.shared.filteredList)
     }
     
     override init(frame: CGRect) {
         super.init(frame:  frame)
         setUpViews()
         ratingsSegementedControl.addTarget(self, action: #selector(segmenetSelected), for: UIControlEvents.valueChanged)
+        
+
         
     }
     
