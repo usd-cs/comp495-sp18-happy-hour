@@ -24,39 +24,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var filterMode = false
     var refHandle: DatabaseHandle?
     
-    var places: [Place] = []
+    var places: [Place] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     var searchedData: [Place] = []
     
     // used to pull info from AppDelegate
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    var masterList: [Place]? {
-        didSet {
-            liveList = []
-            notLiveList = []
-            SharedListsSingleton.shared.masterList = masterList!
-            filterList()
-        }
-    }
-    var liveList: [Place]? {
-        didSet {
-            guard notLiveList != nil else { return }
-            tableView.reloadData()
-            if liveList!.count != 0 {
-                // DEBUG: 
-                print("places is ready")
-                places = liveList!
-                tableView.reloadData()
-            }
-        }
-    }
-    var notLiveList: [Place]? {
-        didSet {
-            guard notLiveList != nil else { return }
-            tableView.reloadData()
-            SVProgressHUD.dismiss()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,8 +50,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         readFromDB()
         
     }
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // if searching is toggled then loaded results
@@ -113,7 +87,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.priceLabel.text = String(bar.record.price)
             
             return cell
-            
             
         } else {
             var bar = places[indexPath.row]
@@ -170,7 +143,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
         showSearchBar()
-        
     }
     
     // displays the search bar and hides the bar buttons
@@ -190,9 +162,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
     }
 
-    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
         // TODO: when search bar hides, segmented control is no longer visible
         hideSearchBar()
     }
@@ -232,7 +202,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func filterMore() {
         self.performSegue(withIdentifier: "filterPressed", sender: self)
-        
     }
     
     @objc func handleDismiss() {
@@ -241,119 +210,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func segmentedButtonChanged(_ sender: Any) {
         if segmentedControlButton.selectedSegmentIndex == 0 {
-            // TODO: need to safely unwrap
-            places = liveList!
-            tableView.reloadData()
+            places = SharedListsSingleton.shared.liveList
+            // TODO: do we need this here?
+            //tableView.reloadData()
         } else {
-            // TODO: need to safely unwrap
-            places = notLiveList!
-            tableView.reloadData()
+            places = SharedListsSingleton.shared.notLiveList
+            // TODO: do we need this here?
+            //tableView.reloadData()
         }
     }
-    
     
     // MARK: - Database Functions
-    
-    func filterList() {
-        let current = Date()
-        let currentDate = DateInRegion(absoluteDate: current)
-        
-        for bar in masterList! {
-            if let happyHourString = bar.record.happyHours["\(current.weekdayName)"] {
-                
-                let (dayOffset, startTimeHours, startTimeMinutes, endTimeHours, endTimeMinutes): (Int, String, String, String, String) = computeTimes(for: happyHourString)
-                
-                //print(bar.record.name)
-                var startingDate = DateComponents()
-                startingDate.year = currentDate.year
-                startingDate.timeZone = TimeZoneName.americaLosAngeles.timeZone
-                startingDate.calendar = CalendarName.gregorian.calendar
-                startingDate.month = currentDate.month
-                startingDate.day = currentDate.day
-                //print("hours: \(startTimeHours)")
-                //print("minutes: \(startTimeMinutes)")
-                
-                startingDate.hour = Int(startTimeHours)!
-                startingDate.minute = Int(startTimeMinutes)
-                let happyHourStartingDate = DateInRegion(components: startingDate)
-                
-                var endingDate = DateComponents()
-                endingDate.year = currentDate.year
-                endingDate.timeZone = TimeZoneName.americaLosAngeles.timeZone
-                endingDate.calendar = CalendarName.gregorian.calendar
-                endingDate.month = currentDate.month
-                endingDate.day = currentDate.day + dayOffset
-                endingDate.hour = Int(endTimeHours)!
-                endingDate.minute = Int(endTimeMinutes)
-                let happyHourEndingDate = DateInRegion(components: endingDate)
-                
-                if currentDate > happyHourStartingDate! && currentDate < happyHourEndingDate! {
-                    liveList!.append(bar)
-                    SharedListsSingleton.shared.liveList.append(bar)
-                } else {
-                    notLiveList!.append(bar)
-                    SharedListsSingleton.shared.notLiveList.append(bar)
-                }
-                
-            } else {
-                notLiveList!.append(bar)
-                SharedListsSingleton.shared.notLiveList.append(bar)
-            }
-        }
-        
-    }
-    
-    func computeTimes(for happyHourString: String) -> (Int, String, String, String, String) {
-        let components = happyHourString.components(separatedBy: " ")
-        var dayOffset = 0
-        var startInMorning: Bool = true
-        var startTimeHours: Int
-        var startTimeMinutes: Int
-        var endTimeHours: Int
-        var endTimeMinutes: Int
-        guard components.count == 5 else {
-            print("ERROR: incompatible time")
-            return (0, "", "", "", "")
-        }
-        
-        // compute starting time
-        if components[0].contains(":") {
-            let startComponents = components[0].components(separatedBy: ":")
-            startTimeHours = Int(startComponents[0])!
-            startTimeMinutes = Int(startComponents[1])!
-        } else {
-            startTimeHours = Int(components[0])!
-            startTimeMinutes = 0
-        }
-        
-        if components[1] == "pm" || components[1] == "Pm" || components[1] == "PM" || components[1] == "pM" {
-            startTimeHours += 12
-            startInMorning = false
-        }
-        
-        // compute ending time
-        if components[3].contains(":") {
-            let endComponents = components[3].components(separatedBy: ":")
-            endTimeHours = Int(endComponents[0])!
-            endTimeMinutes = Int(endComponents[1])!
-        } else {
-            //endTimeHours = Int(components[3])!
-            // TODO: fix this
-            //This is crashing so Meelad added the next line
-            endTimeHours = 1
-            endTimeMinutes = 0
-        }
-        
-        if components[4] == "pm" || components[4] == "Pm" || components[4] == "PM" || components[4] == "pM" {
-            endTimeHours += 12
-        } else if components[4] == "am" || components[4] == "Am" || components[4] == "AM" || components[4] == "aM" {
-            if !startInMorning {
-                dayOffset += 1
-            }
-        }
-        
-        return (dayOffset, String(startTimeHours), String(startTimeMinutes), String(endTimeHours), String(endTimeMinutes))
-    }
     
     func readFromDB() {
         var ref: DatabaseReference!
@@ -404,7 +271,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
             }
             
-            self.masterList = places
+            SharedListsSingleton.shared.masterList = places
+            //self.masterList = places
         })
     }
 
@@ -442,6 +310,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("viewWillAppear")
         tableView.reloadData()
     }
     

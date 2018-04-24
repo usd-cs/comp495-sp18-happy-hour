@@ -51,7 +51,6 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
                 
             }, completion: nil)
             
-            
         }
         
     }
@@ -62,14 +61,8 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
             
             if let window = UIApplication.shared.keyWindow {
                 self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
-                
-                
             }
-            
-            
         }
-        
-        
     }
     
     

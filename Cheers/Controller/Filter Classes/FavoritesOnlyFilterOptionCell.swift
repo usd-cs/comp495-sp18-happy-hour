@@ -26,9 +26,15 @@ class FavoritesOnlyFilterOptionCell: UICollectionViewCell {
         return seg
     }()
     
-    @objc func segmenetSelected(sender:UISegmentedControl!)
+    @objc func segmenetSelected(sender: UISegmentedControl!)
     {
         print("value--\(sender.selectedSegmentIndex)")
+        if sender.selectedSegmentIndex == 0 {
+            FilterSettingsSingleton.shared.favorited = false
+        } else {
+            FilterSettingsSingleton.shared.favorited = true
+        }
+        SharedListsSingleton.shared.filterWithSettings()
     }
     
     override init(frame: CGRect) {
