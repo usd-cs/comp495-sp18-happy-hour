@@ -24,9 +24,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var filterMode = false
     var refHandle: DatabaseHandle?
     
+    var showLive: Bool = true {
+        didSet {
+            tableView.reloadData()
+            print("Number of items in masterList: \(SharedListsSingleton.shared.masterList.count)")
+        }
+    }
+    
     var places: [Place] = [] {
         didSet {
             tableView.reloadData()
+            print("Number of items in masterList: \(SharedListsSingleton.shared.masterList.count)")
         }
     }
     var searchedData: [Place] = []
@@ -48,7 +56,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         SVProgressHUD.show()
         
         readFromDB()
-        
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,9 +64,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isSearching {
             return searchedData.count
         }
-        print("Size of masterList: \(SharedListsSingleton.shared.masterList.count)")
-        print("Size of places: \(places.count)")
-        return places.count
+        return showLive ? SharedListsSingleton.shared.liveList.count : SharedListsSingleton.shared.notLiveList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,8 +97,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             return cell
             
         } else {
-            var bar = places[indexPath.row]
-            print(bar.record.name)
+            var bar = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
+            //var bar = places[indexPath.row]
+            //print(bar.record.name)
             let imageUrl =  URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
@@ -191,7 +198,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             // display searched results
             isSearching = true
-            searchedData = places.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
+            
+            searchedData = showLive ? SharedListsSingleton.shared.liveList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())}) : SharedListsSingleton.shared.notLiveList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
             tableView.reloadData()
         }
     }
@@ -212,6 +220,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func segmentedButtonChanged(_ sender: Any) {
+        showLive = segmentedControlButton.selectedSegmentIndex == 0 ? true : false
+        print(showLive)
+        
+        /*
+        
         if segmentedControlButton.selectedSegmentIndex == 0 {
             places = SharedListsSingleton.shared.liveList
             // TODO: do we need this here?
@@ -231,6 +244,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             // TODO: do we need this here?
             //tableView.reloadData()
         }
+        */
     }
     
     // MARK: - Database Functions
@@ -281,7 +295,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let newRecord = DatabaseRecord(id: id, name: name, longitude: longitude, latitude: latitude, rating: rating, price: price, reviewCount: reviewCount, phoneNumber: phoneNumber, address: address, city: city, state: state, zipCode: zipCode, country: country, images: images, categories: categories, happyHours: happyHours, neighborhood: neighborhoodName)
                 
                 places.append(Place(record: newRecord, favorited: false))
-                
+                //print("Appending \(newRecord.name) to local method places list")
             }
             
             SharedListsSingleton.shared.masterList = places
@@ -294,7 +308,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        HistoryQueue.shared.append(places[indexPath.row])
+        if showLive {
+            HistoryQueue.shared.append(SharedListsSingleton.shared.liveList[indexPath.row])
+        } else {
+            HistoryQueue.shared.append(SharedListsSingleton.shared.notLiveList[indexPath.row])
+        }
         self.performSegue(withIdentifier: "showSelected", sender: self)
     }
     
@@ -303,7 +321,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             let navigator = segue.destination as! UINavigationController
             let selectedVC = navigator.viewControllers.first as! SelectedBarViewController
             let indexPath = tableView.indexPathForSelectedRow!
-            let selectedPlace = places[indexPath.row]
+            let selectedPlace = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
             selectedVC.place = selectedPlace
             selectedVC.senderString = "List"
             self.navigationController?.isNavigationBarHidden = false
