@@ -18,10 +18,7 @@ class MapViewController: UIViewController {
     
     // place to be passed via segue to SelectedBarViewController
     var selectedPlace: Place?
-    
-    var masterList: [Place] = []
-    var liveList: [Place] = []
-    var notLiveList: [Place] = []
+
     var myLocation: CLLocationCoordinate2D?
     
     var hasAppeared: Bool = false
@@ -90,15 +87,11 @@ class MapViewController: UIViewController {
     
     // populate map with live and non-live bars
     func populateMap() {
-        masterList = SharedListsSingleton.shared.masterList
-        liveList = SharedListsSingleton.shared.liveList
-        notLiveList = SharedListsSingleton.shared.notLiveList
-        
         var maxDist: Double = 0.0
         var annotations = [AnnotationPlus]()
         
         // load live bars into map
-        for place in liveList {
+        for place in SharedListsSingleton.shared.liveList {
             let distanceFromMe = calculateDistance(myLat: Double((UserLocations.shared.currentLocation?.coordinate.latitude)!), myLong: Double((UserLocations.shared.currentLocation?.coordinate.longitude)!), placeLat: place.record.latitude, placeLong: place.record.longitude)
             
             if distanceFromMe <= FilterSettingsSingleton.shared.distanceFromMe {
@@ -124,7 +117,7 @@ class MapViewController: UIViewController {
         mapView.setup(withAnnotations: annotations)
         
         // load not live bars into map
-        for place in notLiveList {
+        for place in SharedListsSingleton.shared.notLiveList {
             let distanceFromMe = calculateDistance(myLat: Double((UserLocations.shared.currentLocation?.coordinate.latitude)!), myLong: Double((UserLocations.shared.currentLocation?.coordinate.longitude)!), placeLat: place.record.latitude, placeLong: place.record.longitude)
 
             if distanceFromMe <= FilterSettingsSingleton.shared.distanceFromMe {

@@ -56,6 +56,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isSearching {
             return searchedData.count
         }
+        print("Size of masterList: \(SharedListsSingleton.shared.masterList.count)")
+        print("Size of places: \(places.count)")
         return places.count
     }
     
@@ -66,7 +68,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isSearching {
             
             var bar = searchedData[indexPath.row]
-            let imageUrl =  URL(string: bar.record.images[0])
+            let imageUrl = URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
                 cell.barImage.image = image
@@ -90,6 +92,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         } else {
             var bar = places[indexPath.row]
+            print(bar.record.name)
             let imageUrl =  URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
@@ -106,7 +109,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
             let today = Date()
             let todaysDate = today.weekdayName
-            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? "nil"
+            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? ""
             cell.happyHourLabel.text = todaysHappyHours
             cell.priceLabel.text = String(bar.record.price)
             
@@ -197,7 +200,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func filterButtonPressed(_ sender: Any) {
         // TODO: present filtering options
         //filterMore()
-        filterMenu.showFilterMenu()
+        filterMenu.showFilterMenu(tableView: tableView)
     }
     
     func filterMore() {
@@ -215,6 +218,16 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             //tableView.reloadData()
         } else {
             places = SharedListsSingleton.shared.notLiveList
+            /*print("\n\nplaces is now:")
+            for place in places {
+                print(place.record.name)
+            }
+            
+            print("\n\nsingleton masterList is now:")
+            for place in SharedListsSingleton.shared.masterList {
+                print(place.record.name)
+            }
+            */
             // TODO: do we need this here?
             //tableView.reloadData()
         }
@@ -272,7 +285,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             SharedListsSingleton.shared.masterList = places
-            //self.masterList = places
+            self.places = SharedListsSingleton.shared.liveList
         })
     }
 
@@ -310,7 +323,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear")
         tableView.reloadData()
     }
     

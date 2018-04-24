@@ -11,6 +11,8 @@ import UIKit
 
 class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
+    var tableView: UITableView!
+    
     let blackView = UIView()
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -25,7 +27,9 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
     let maximumPriceCellId = "maximumPriceCellId"
     let favoritesOnlyCellId = "favoritesOnlyCellId"
     
-    func showFilterMenu() {
+    func showFilterMenu(tableView: UITableView) {
+        
+        self.tableView = tableView
         
         if let window = UIApplication.shared.keyWindow {
             
@@ -56,6 +60,7 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     @objc func hideFilterMenu() {
+        tableView.reloadData()
         UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 0
             

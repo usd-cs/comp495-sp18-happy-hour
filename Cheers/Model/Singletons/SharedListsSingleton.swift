@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftDate
+import SVProgressHUD
 
 class SharedListsSingleton {
     static let shared = SharedListsSingleton()
@@ -51,18 +52,22 @@ class SharedListsSingleton {
                 
                 if currentDate > happyHourStartingDate! && currentDate < happyHourEndingDate! {
                     liveList.append(bar)
+                    print("Adding \(bar.record.name) to liveList...")
                     SharedListsSingleton.shared.liveList.append(bar)
                 } else {
                     notLiveList.append(bar)
+                    print("Adding \(bar.record.name) to notLiveList...")
                     SharedListsSingleton.shared.notLiveList.append(bar)
                 }
                 
             } else {
                 notLiveList.append(bar)
+                print("Adding \(bar.record.name) to notLiveList...")
                 SharedListsSingleton.shared.notLiveList.append(bar)
             }
         }
         
+        SVProgressHUD.dismiss()
         filterWithSettings()
         
     }
