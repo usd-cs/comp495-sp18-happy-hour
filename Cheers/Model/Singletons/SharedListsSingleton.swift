@@ -25,6 +25,11 @@ class SharedListsSingleton {
         let currentDate = DateInRegion(absoluteDate: current)
         
         for bar in masterList {
+            
+            print(bar.record.name)
+            
+            //
+            
             if let happyHourString = bar.record.happyHours["\(current.weekdayName)"] {
                 
                 let (dayOffset, startTimeHours, startTimeMinutes, endTimeHours, endTimeMinutes): (Int, String, String, String, String) = computeTimes(for: happyHourString)
@@ -124,11 +129,12 @@ class SharedListsSingleton {
             endTimeHours = Int(endComponents[0])!
             endTimeMinutes = Int(endComponents[1])!
         } else {
-            //endTimeHours = Int(components[3])!
+            endTimeHours = Int(components[3])!
+            endTimeMinutes = 0
             // TODO: fix this
             //This is crashing so Meelad added the next line
-            endTimeHours = 1
-            endTimeMinutes = 0
+            //endTimeHours = 1
+            //endTimeMinutes = 0
         }
         
         if components[4] == "pm" || components[4] == "Pm" || components[4] == "PM" || components[4] == "pM" {
