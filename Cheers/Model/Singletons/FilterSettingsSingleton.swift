@@ -10,6 +10,7 @@ import Foundation
 
 class FilterSettingsSingleton {
     static let shared = FilterSettingsSingleton()
+    static let filterMenu = FilterMenu()
     
     // whether or not we are searching for bars in our favorites list
     // default is false

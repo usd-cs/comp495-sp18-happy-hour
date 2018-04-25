@@ -99,7 +99,7 @@ class SharedListsSingleton {
         }
         
         // distance calculations
-        print("Adding distance filter...\n")
+        print("Adding distance filter...")
         tempLiveList = tempLiveList.filter { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < FilterSettingsSingleton.shared.distanceFromMe }
         tempNotLiveList = tempNotLiveList.filter { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < FilterSettingsSingleton.shared.distanceFromMe }
         
@@ -163,10 +163,6 @@ class SharedListsSingleton {
         } else {
             endTimeHours = Int(components[3])!
             endTimeMinutes = 0
-            // TODO: fix this
-            //This is crashing so Meelad added the next line
-            //endTimeHours = 1
-            //endTimeMinutes = 0
         }
         
         if components[4] == "pm" || components[4] == "Pm" || components[4] == "PM" || components[4] == "pM" {

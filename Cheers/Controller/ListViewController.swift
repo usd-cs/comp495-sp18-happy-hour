@@ -205,10 +205,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
-    let filterMenu = FilterMenu()
+    //let filterMenu = FilterMenu()
     @IBAction func filterButtonPressed(_ sender: Any) {
-        filterMenu.delegate = self
-        filterMenu.showFilterMenu()
+        FilterSettingsSingleton.filterMenu.delegate = self
+        FilterSettingsSingleton.filterMenu.showFilterMenu()
     }
     
     func filterMore() {

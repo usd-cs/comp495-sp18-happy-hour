@@ -4,4 +4,5 @@ Icons made by:
  - Smashicons
  - Freepik
  - Gregor Cresnar
+ - Darius Dan
 from www.flaticon.com
