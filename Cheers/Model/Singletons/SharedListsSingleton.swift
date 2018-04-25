@@ -66,6 +66,8 @@ class SharedListsSingleton {
             }
         }
         
+        print("The shared live list is this" , SharedListsSingleton.shared.liveList)
+        
         SVProgressHUD.dismiss()
         liveList = preFilteredLiveList
         notLiveList = preFilteredNotLiveList
