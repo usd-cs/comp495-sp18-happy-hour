@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -302,12 +302,38 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b7S-Zl-gGq" customClass="MapViewPlus" customModule="MapViewPlus">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSm-rH-Xeb">
+                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Fhy-HU-rZ1"/>
+                                    <constraint firstAttribute="width" constant="35" id="f0m-jZ-TsO"/>
+                                </constraints>
+                                <state key="normal" image="icon-filter"/>
+                                <connections>
+                                    <action selector="filterButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="7Ep-6f-G5I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAJ-sf-Wph">
+                                <rect key="frame" x="343" y="0.0" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="NWK-XL-YUe"/>
+                                    <constraint firstAttribute="height" constant="32" id="V3Z-6w-BmW"/>
+                                </constraints>
+                                <state key="normal" image="radar"/>
+                                <connections>
+                                    <action selector="rangeButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="2h4-Fj-u4k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rAJ-sf-Wph" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" constant="171.5" id="Cdy-pZ-Y9x"/>
+                            <constraint firstItem="rAJ-sf-Wph" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="-317.5" id="Oja-up-Q8A"/>
                             <constraint firstItem="b7S-Zl-gGq" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="YTf-tu-cGc"/>
                             <constraint firstItem="b7S-Zl-gGq" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" id="a3A-OS-pPP"/>
                             <constraint firstItem="b7S-Zl-gGq" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="c1G-uZ-x17"/>
+                            <constraint firstItem="ZSm-rH-Xeb" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="-316" id="dtN-eS-4gD"/>
+                            <constraint firstItem="ZSm-rH-Xeb" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" constant="-170" id="hXX-mM-kNW"/>
                             <constraint firstItem="b7S-Zl-gGq" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="wGY-1B-bns"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
@@ -315,14 +341,18 @@
                     <tabBarItem key="tabBarItem" title="" image="map" selectedImage="map_selected" id="cPa-gy-q4n">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
                     </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="filterButton" destination="ZSm-rH-Xeb" id="oqw-nX-h9v"/>
                         <outlet property="mapView" destination="b7S-Zl-gGq" id="8n0-eY-Nv5"/>
+                        <outlet property="rangeButton" destination="rAJ-sf-Wph" id="kV9-Ds-BGX"/>
                         <segue destination="Nq6-sI-Nuv" kind="presentation" identifier="AnnotationTapped" id="bOn-O5-bxD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-156" y="87"/>
+            <point key="canvasLocation" x="-156" y="86.806596701649184"/>
         </scene>
         <!--Settings-->
         <scene sceneID="mxz-fg-2lV">
@@ -729,7 +759,7 @@
                                         <rect key="frame" x="0.0" y="200" width="375" height="44.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PQ-ZT-DDR">
-                                                <rect key="frame" x="0.0" y="0.0" width="224" height="44.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="44.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="otR-tz-qRu"/>
                                                 </constraints>
@@ -738,11 +768,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdG-6x-gM5">
-                                                <rect key="frame" x="224" y="0.0" width="57" height="44.5"/>
+                                                <rect key="frame" x="260" y="0.0" width="56.5" height="44.5"/>
                                                 <state key="normal" title="📍"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAp-wK-hIT">
-                                                <rect key="frame" x="281" y="0.0" width="94" height="44.5"/>
+                                                <rect key="frame" x="326.5" y="0.0" width="48.5" height="44.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="disabled" image="icon-HeartEmpty"/>
                                                 <connections>
@@ -923,10 +953,11 @@
         <image name="list_selected" width="24" height="24"/>
         <image name="map" width="24" height="24"/>
         <image name="map_selected" width="24" height="24"/>
+        <image name="radar" width="32" height="32"/>
         <image name="settings" width="24" height="24"/>
         <image name="settings_selected" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qgs-1j-L7G"/>
+        <segue reference="bOn-O5-bxD"/>
     </inferredMetricsTieBreakers>
 </document>

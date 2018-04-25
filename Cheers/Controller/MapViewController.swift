@@ -11,8 +11,10 @@ import MapKit
 import MapViewPlus
 import SwiftDate
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, FilterMenuDelegate {
     
+    @IBOutlet weak var rangeButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var mapView: MapViewPlus!
     weak var currentCalloutView: UIView?
     
@@ -22,6 +24,7 @@ class MapViewController: UIViewController {
     var myLocation: CLLocationCoordinate2D?
     
     var overlays = [MKCircle]()
+    var showOverlay: Bool = true
     
     var hasAppeared: Bool = false
     var lastDist: Double!
@@ -43,6 +46,10 @@ class MapViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        reloadMap()
+    }
+    
+    func reloadMap() {
         if !hasAppeared {
             populateMap()
             addRangeOverlay()
@@ -53,7 +60,6 @@ class MapViewController: UIViewController {
             mapView.removeAllAnnotations()
             populateMap()
         }
-        
         updateSpan()
     }
     
@@ -74,10 +80,33 @@ class MapViewController: UIViewController {
     }
     
     func updateRangeOverlay() {
-        mapView.removeOverlays(overlays)
-        overlays.removeAll()
-        overlays.append(MKCircle(center: (UserLocations.shared.currentLocation?.coordinate)!, radius: FilterSettingsSingleton.shared.distanceFromMe*1609.34))
-        mapView.addOverlays(overlays)
+        if showOverlay {
+            if !overlays.isEmpty {
+                mapView.removeOverlays(overlays)
+                overlays.removeAll()
+            }
+            overlays.append(MKCircle(center: (UserLocations.shared.currentLocation?.coordinate)!, radius: FilterSettingsSingleton.shared.distanceFromMe*1609.34))
+            mapView.addOverlays(overlays)
+        } else {
+            if !overlays.isEmpty {
+                mapView.removeOverlays(overlays)
+                overlays.removeAll()
+            }
+        }
+    }
+    
+    @IBAction func filterButtonPressed(_ sender: UIButton) {
+        FilterSettingsSingleton.filterMenu.delegate = self
+        FilterSettingsSingleton.filterMenu.showFilterMenu()
+    }
+    
+    @IBAction func rangeButtonPressed(_ sender: UIButton) {
+        showOverlay = !showOverlay
+        updateRangeOverlay()
+    }
+    
+    func updateParent() {
+        reloadMap()
     }
     
     // renderer for map view overlay
