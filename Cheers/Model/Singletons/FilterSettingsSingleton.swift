@@ -16,14 +16,12 @@ class FilterSettingsSingleton {
     var favorited: Bool = false
     
     // minimum user rating for search (i.e. more than 3 stars)
-    // discrete element of [1,5]
-    // default is 0
-    var ratingMinimum: Int = 0
+    // continuous element of [1,5]
+    var ratingMinimum: Double?
     
     // maximum price for search (i.e. less than two dollar signs)
     // discrete element of [1,5]
-    // default is 5
-    var priceMaximum: Int = 5
+    var priceMaximum: Int?
     
     // distance from my current location
     // default is 1 mile
