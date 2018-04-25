@@ -94,7 +94,6 @@ class FavoritesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        HistoryQueue.shared.append(FavoritesSingleton.shared.favorites[indexPath.row])
         self.performSegue(withIdentifier: "showSelectedFromFavorites", sender: self)
     }
     

@@ -34,6 +34,7 @@ class SelectedBarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        HistoryQueue.shared.append(place)
         navigationItem.title = place.record.name
         
         let current = Date()
