@@ -286,11 +286,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if showLive {
-            HistoryQueue.shared.append(SharedListsSingleton.shared.liveList[indexPath.row])
-        } else {
-            HistoryQueue.shared.append(SharedListsSingleton.shared.notLiveList[indexPath.row])
-        }
         self.performSegue(withIdentifier: "showSelected", sender: self)
     }
     
