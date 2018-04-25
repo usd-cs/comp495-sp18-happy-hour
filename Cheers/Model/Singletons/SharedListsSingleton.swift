@@ -94,6 +94,8 @@ class SharedListsSingleton {
         if FilterSettingsSingleton.shared.favorited {
             print("Adding favorites filter...")
             // TODO: needs to work with FavoritesSingleton
+            //tempLiveList = tempNotLiveList.filter { FavoritesSingleton.shared.favorites.contains($0) }
+            //tempNotLiveList = tempNotLiveList.filter { FavoritesSingleton.shared.favorites.contains($0) }
         }
         
         // distance calculations
