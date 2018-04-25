@@ -23,6 +23,7 @@ class MapViewController: UIViewController, FilterMenuDelegate {
 
     var myLocation: CLLocationCoordinate2D?
     
+    // for circle overlay
     var overlays = [MKCircle]()
     var showOverlay: Bool = true
     
@@ -42,6 +43,9 @@ class MapViewController: UIViewController, FilterMenuDelegate {
         mapView.showsPointsOfInterest = false
         mapView.showsTraffic = false
         mapView.showsBuildings = false
+        
+        filterButton.tintColor = UIColor.black
+        rangeButton.tintColor = UIColor.black
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +56,7 @@ class MapViewController: UIViewController, FilterMenuDelegate {
     func reloadMap() {
         if !hasAppeared {
             populateMap()
-            addRangeOverlay()
+            updateRangeOverlay()
             hasAppeared = true
             lastDist = FilterSettingsSingleton.shared.distanceFromMe
         } else {
@@ -71,12 +75,6 @@ class MapViewController: UIViewController, FilterMenuDelegate {
         let span = MKCoordinateSpanMake(spanRadius, spanRadius)
         let region = MKCoordinateRegion(center: (UserLocations.shared.currentLocation?.coordinate)!, span: span)
         mapView.setRegion(region, animated: true)
-    }
-    
-    // adds circle overlay based on how big the search radius is
-    func addRangeOverlay() {
-        overlays.append(MKCircle(center: (UserLocations.shared.currentLocation?.coordinate)!, radius: FilterSettingsSingleton.shared.distanceFromMe*1609.34))
-        mapView.addOverlays(overlays)
     }
     
     func updateRangeOverlay() {
@@ -113,7 +111,7 @@ class MapViewController: UIViewController, FilterMenuDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKCircleRenderer(overlay: overlay)
         renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
-        renderer.strokeColor = UIColor.blue
+        renderer.strokeColor = UIColor.black
         renderer.lineWidth = 1
         return renderer
     }

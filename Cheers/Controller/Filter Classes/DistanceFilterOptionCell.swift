@@ -39,7 +39,6 @@ class DistanceFilterOptionCell: UICollectionViewCell {
     @objc func sliderValueDidChange(sender: UISlider!) {
         titleLabel.text = "Distance: \(sender.value.rounded())"
         FilterSettingsSingleton.shared.distanceFromMe = Double(sender.value.rounded())
-        print("Setting distance value to: \(Double(sender.value.rounded()))")
         SharedListsSingleton.shared.filterWithSettings()
     }
     
