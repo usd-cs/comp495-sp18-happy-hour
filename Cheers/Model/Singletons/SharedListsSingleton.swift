@@ -17,6 +17,9 @@ class SharedListsSingleton {
             filterLive()
         }
     }
+    
+    var preFilteredLiveList: [Place] = []
+    var preFilteredNotLiveList: [Place] = []
     var liveList: [Place] = []
     var notLiveList: [Place] = []
     
@@ -25,10 +28,6 @@ class SharedListsSingleton {
         let currentDate = DateInRegion(absoluteDate: current)
         
         for bar in masterList {
-            
-            print(bar.record.name)
-            
-            //
             
             if let happyHourString = bar.record.happyHours["\(current.weekdayName)"] {
                 
@@ -56,36 +55,33 @@ class SharedListsSingleton {
                 let happyHourEndingDate = DateInRegion(components: endingDate)
                 
                 if currentDate > happyHourStartingDate! && currentDate < happyHourEndingDate! {
-                    liveList.append(bar)
-                    print("Adding \(bar.record.name) to liveList...")
-                    SharedListsSingleton.shared.liveList.append(bar)
+                    preFilteredLiveList.append(bar)
                 } else {
-                    notLiveList.append(bar)
-                    print("Adding \(bar.record.name) to notLiveList...")
+                    preFilteredNotLiveList.append(bar)
                     SharedListsSingleton.shared.notLiveList.append(bar)
                 }
                 
             } else {
-                notLiveList.append(bar)
-                print("Adding \(bar.record.name) to notLiveList...")
-                SharedListsSingleton.shared.notLiveList.append(bar)
+                preFilteredNotLiveList.append(bar)
             }
         }
         
         SVProgressHUD.dismiss()
+        liveList = preFilteredLiveList
+        notLiveList = preFilteredNotLiveList
         filterWithSettings()
         
     }
     
     func filterWithSettings() {
         if let ratingMinimum = FilterSettingsSingleton.shared.ratingMinimum {
-            liveList = liveList.filter { $0.record.rating >= ratingMinimum }
-            notLiveList = notLiveList.filter { $0.record.rating >= ratingMinimum }
+            liveList = preFilteredLiveList.filter { $0.record.rating >= ratingMinimum }
+            notLiveList = preFilteredNotLiveList.filter { $0.record.rating >= ratingMinimum }
             print("Adding rating filter...")
         }
         if let priceMaximum = FilterSettingsSingleton.shared.priceMaximum {
-            liveList = liveList.filter {Int($0.record.price.count) <= priceMaximum}
-            notLiveList = notLiveList.filter {Int($0.record.price.count) <= priceMaximum}
+            liveList = preFilteredLiveList.filter {Int($0.record.price.count) <= priceMaximum}
+            notLiveList = preFilteredNotLiveList.filter {Int($0.record.price.count) <= priceMaximum}
             print("Adding price filter...")
         }
         if FilterSettingsSingleton.shared.favorited {

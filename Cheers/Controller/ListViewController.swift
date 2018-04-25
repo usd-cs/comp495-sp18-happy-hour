@@ -12,7 +12,7 @@ import SVProgressHUD
 import SwiftDate
 import Foundation
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, FilterMenuDelegate{
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
@@ -204,11 +204,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func updateParent() {
+        print("here")
+        tableView.reloadData()
+    }
+    
     let filterMenu = FilterMenu()
     @IBAction func filterButtonPressed(_ sender: Any) {
         // TODO: present filtering options
         //filterMore()
-        filterMenu.showFilterMenu(tableView: tableView)
+        filterMenu.delegate = self
+        filterMenu.showFilterMenu()
     }
     
     func filterMore() {
@@ -221,30 +227,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func segmentedButtonChanged(_ sender: Any) {
         showLive = segmentedControlButton.selectedSegmentIndex == 0 ? true : false
-        print(showLive)
-        
-        /*
-        
-        if segmentedControlButton.selectedSegmentIndex == 0 {
-            places = SharedListsSingleton.shared.liveList
-            // TODO: do we need this here?
-            //tableView.reloadData()
-        } else {
-            places = SharedListsSingleton.shared.notLiveList
-            /*print("\n\nplaces is now:")
-            for place in places {
-                print(place.record.name)
-            }
-            
-            print("\n\nsingleton masterList is now:")
-            for place in SharedListsSingleton.shared.masterList {
-                print(place.record.name)
-            }
-            */
-            // TODO: do we need this here?
-            //tableView.reloadData()
-        }
-        */
     }
     
     // MARK: - Database Functions

@@ -9,9 +9,13 @@
 import Foundation
 import UIKit
 
+protocol FilterMenuDelegate {
+    func updateParent()
+}
+
 class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
-    var tableView: UITableView!
+    var delegate: FilterMenuDelegate?
     
     let blackView = UIView()
     let collectionView: UICollectionView = {
@@ -27,9 +31,7 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
     let maximumPriceCellId = "maximumPriceCellId"
     let favoritesOnlyCellId = "favoritesOnlyCellId"
     
-    func showFilterMenu(tableView: UITableView) {
-        
-        self.tableView = tableView
+    func showFilterMenu() {
         
         if let window = UIApplication.shared.keyWindow {
             
@@ -60,7 +62,7 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     @objc func hideFilterMenu() {
-        tableView.reloadData()
+        delegate?.updateParent()
         UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 0
             
