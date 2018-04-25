@@ -179,6 +179,7 @@
 				BEADB55E2075DB5800E107B7 /* ColorsSingleton.swift */,
 				72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */,
 				BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */,
+				722D24FD20869CD9007B8427 /* HistoryQueue.swift */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -249,7 +250,6 @@
 				BEF309A52061AA3200022098 /* BarType.swift */,
 				BEF309A72061BA0D00022098 /* DatabaseRecord.swift */,
 				BEF4A5D72075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift */,
-				722D24FD20869CD9007B8427 /* HistoryQueue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
