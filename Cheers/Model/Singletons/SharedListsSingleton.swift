@@ -66,8 +66,6 @@ class SharedListsSingleton {
             }
         }
         
-        print("The shared live list is this" , SharedListsSingleton.shared.liveList)
-        
         SVProgressHUD.dismiss()
         liveList = preFilteredLiveList
         notLiveList = preFilteredNotLiveList
@@ -76,21 +74,55 @@ class SharedListsSingleton {
     }
     
     func filterWithSettings() {
+        var tempLiveList: [Place] = preFilteredLiveList
+        var tempNotLiveList: [Place] = preFilteredNotLiveList
+        
         if let ratingMinimum = FilterSettingsSingleton.shared.ratingMinimum {
-            liveList = preFilteredLiveList.filter { $0.record.rating >= ratingMinimum }
-            notLiveList = preFilteredNotLiveList.filter { $0.record.rating >= ratingMinimum }
-            print("Adding rating filter...")
+            if ratingMinimum != 1.0 {
+                tempLiveList = tempLiveList.filter { $0.record.rating >= ratingMinimum }
+                tempNotLiveList = tempNotLiveList.filter { $0.record.rating >= ratingMinimum }
+                print("Adding rating filter...")
+            }
         }
         if let priceMaximum = FilterSettingsSingleton.shared.priceMaximum {
-            liveList = preFilteredLiveList.filter {Int($0.record.price.count) <= priceMaximum}
-            notLiveList = preFilteredNotLiveList.filter {Int($0.record.price.count) <= priceMaximum}
-            print("Adding price filter...")
+            if priceMaximum != 0 {
+                tempLiveList = tempLiveList.filter { Int($0.record.price.count) <= priceMaximum }
+                tempNotLiveList = tempNotLiveList.filter { Int($0.record.price.count) <= priceMaximum }
+                print("Adding price filter...")
+            }
         }
         if FilterSettingsSingleton.shared.favorited {
             print("Adding favorites filter...")
             // TODO: needs to work with FavoritesSingleton
         }
-        // TODO: account for distance filter setting
+        
+        // distance calculations
+        print("Adding distance filter...\n")
+        tempLiveList = tempLiveList.filter { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < FilterSettingsSingleton.shared.distanceFromMe }
+        tempNotLiveList = tempNotLiveList.filter { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < FilterSettingsSingleton.shared.distanceFromMe }
+        
+        
+        liveList = tempLiveList
+        notLiveList = tempNotLiveList
+    }
+    
+    func calculateDistance(myLat: Double, myLong: Double, placeLat: Double, placeLong: Double) -> Double {
+        let radius: Double = 6371.0
+        let deltaLat: Double = toRadians(placeLat - myLat)
+        let deltaLong: Double = toRadians(placeLong - myLong)
+        
+        let a: Double =
+            sin(deltaLat / 2.0) * sin(deltaLat / 2.0) +
+            cos(toRadians(myLat)) * cos(toRadians(placeLat)) *
+            sin(deltaLong / 2.0) * sin(deltaLong / 2.0)
+        
+        let c: Double = 2.0 * atan2(sqrt(a), sqrt(1.0 - a))
+        let d: Double = radius * c * 0.621371
+        return d
+    }
+    
+    func toRadians(_ degrees: Double) -> Double {
+        return degrees * (Double.pi / 180.0)
     }
     
     func computeTimes(for happyHourString: String) -> (Int, String, String, String, String) {

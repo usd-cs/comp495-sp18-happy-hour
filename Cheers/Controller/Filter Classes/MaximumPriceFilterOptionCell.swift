@@ -10,10 +10,6 @@ import UIKit
 
 class MaximumPriceFilterOptionCell: UICollectionViewCell {
     
-    // TODO: delete unnecessary code
-    
-    //var filtredMasterList = [Place]()
-    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Maximum Price"
@@ -24,22 +20,15 @@ class MaximumPriceFilterOptionCell: UICollectionViewCell {
     }()
     
     let ratingsSegementedControl: UISegmentedControl = {
-        let seg = UISegmentedControl(items: ["$","$$","$$$","$$$$","$$$$$"])
+        let seg = UISegmentedControl(items: ["Off","$","$$","$$$","$$$$","$$$$$"])
         seg.translatesAutoresizingMaskIntoConstraints = false
-        
+        seg.selectedSegmentIndex = 0
         return seg
     }()
     
-    @objc func segmenetSelected(sender:UISegmentedControl!)
-    {
-        print("value--\(sender.selectedSegmentIndex + 1)")
-        
-        FilterSettingsSingleton.shared.priceMaximum = Int(sender.selectedSegmentIndex + 1)
+    @objc func segmenetSelected(sender:UISegmentedControl!) {
+        FilterSettingsSingleton.shared.priceMaximum = Int(sender.selectedSegmentIndex)
         SharedListsSingleton.shared.filterWithSettings()
-        
-        //filtredMasterList = masterList.filter {Int($0.record.price.count) <= Int(sender.selectedSegmentIndex + 1)}
-        //SharedListsSingleton.shared.filteredList = filtredMasterList
-        //print(SharedListsSingleton.shared.filteredList)
     }
     
     override init(frame: CGRect) {

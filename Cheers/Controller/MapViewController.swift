@@ -21,7 +21,10 @@ class MapViewController: UIViewController {
 
     var myLocation: CLLocationCoordinate2D?
     
+    var overlays = [MKCircle]()
+    
     var hasAppeared: Bool = false
+    var lastDist: Double!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +43,39 @@ class MapViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        populateMap()
         if !hasAppeared {
+            populateMap()
             addRangeOverlay()
             hasAppeared = true
+            lastDist = FilterSettingsSingleton.shared.distanceFromMe
+        } else {
+            updateRangeOverlay()
+            mapView.removeAllAnnotations()
+            populateMap()
         }
+        
+        updateSpan()
+    }
+    
+    func updateSpan() {
+        // set span of map
+        let spanRadius = 2.5 * FilterSettingsSingleton.shared.distanceFromMe / 69.0
+        
+        // set region of map
+        let span = MKCoordinateSpanMake(spanRadius, spanRadius)
+        let region = MKCoordinateRegion(center: (UserLocations.shared.currentLocation?.coordinate)!, span: span)
+        mapView.setRegion(region, animated: true)
     }
     
     // adds circle overlay based on how big the search radius is
     func addRangeOverlay() {
-        var overlays = [MKCircle]()
+        overlays.append(MKCircle(center: (UserLocations.shared.currentLocation?.coordinate)!, radius: FilterSettingsSingleton.shared.distanceFromMe*1609.34))
+        mapView.addOverlays(overlays)
+    }
+    
+    func updateRangeOverlay() {
+        mapView.removeOverlays(overlays)
+        overlays.removeAll()
         overlays.append(MKCircle(center: (UserLocations.shared.currentLocation?.coordinate)!, radius: FilterSettingsSingleton.shared.distanceFromMe*1609.34))
         mapView.addOverlays(overlays)
     }
@@ -87,7 +113,6 @@ class MapViewController: UIViewController {
     
     // populate map with live and non-live bars
     func populateMap() {
-        var maxDist: Double = 0.0
         var annotations = [AnnotationPlus]()
         
         // load live bars into map
@@ -104,13 +129,6 @@ class MapViewController: UIViewController {
                 let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
                 let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
                 annotations.append(annotation)
-                
-                // need to check to see if maxDist for region needs to be updated
-                let deltaLat = abs(Double(location.latitude) - Double((UserLocations.shared.currentLocation?.coordinate.latitude)!))
-                let deltaLong = abs(Double(location.longitude) - Double((UserLocations.shared.currentLocation?.coordinate.longitude)!))
-                
-                let newMaxDist = deltaLat > deltaLong ? deltaLat : deltaLong
-                maxDist = newMaxDist > maxDist ? newMaxDist : maxDist
             }
         }
         
@@ -131,26 +149,10 @@ class MapViewController: UIViewController {
                 let location = CLLocationCoordinate2DMake(CLLocationDegrees(place.record.latitude), CLLocationDegrees(place.record.longitude))
                 let annotation = AnnotationPlus(viewModel: viewModel, coordinate: location)
                 annotations.append(annotation)
-                
-                // need to check to see if maxDist for region needs to be updated
-                let deltaLat = abs(Double(location.latitude) - Double((UserLocations.shared.currentLocation?.coordinate.latitude)!))
-                let deltaLong = abs(Double(location.longitude) - Double((UserLocations.shared.currentLocation?.coordinate.longitude)!))
-                
-                let newMaxDist = deltaLat > deltaLong ? deltaLat : deltaLong
-                maxDist = newMaxDist > maxDist ? newMaxDist : maxDist
             }
         }
         
         mapView.setup(withAnnotations: annotations)
-        
-        // set span of map
-        let spanRadius = 2.5 * maxDist
-        
-        // set region of map
-        let span = MKCoordinateSpan(latitudeDelta: CLLocationDegrees(spanRadius), longitudeDelta: CLLocationDegrees(spanRadius))
-        let region = MKCoordinateRegion(center: (UserLocations.shared.currentLocation?.coordinate)!, span: span)
-        mapView.setRegion(region, animated: true)
-        
     }
     
     override func didReceiveMemoryWarning() {

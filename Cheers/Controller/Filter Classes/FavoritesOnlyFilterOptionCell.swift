@@ -22,13 +22,11 @@ class FavoritesOnlyFilterOptionCell: UICollectionViewCell {
     let ratingsSegementedControl: UISegmentedControl = {
         let seg = UISegmentedControl(items: ["No","Yes"])
         seg.translatesAutoresizingMaskIntoConstraints = false
-        
+        seg.selectedSegmentIndex = 0
         return seg
     }()
     
-    @objc func segmenetSelected(sender: UISegmentedControl!)
-    {
-        print("value--\(sender.selectedSegmentIndex)")
+    @objc func segmenetSelected(sender: UISegmentedControl!) {
         if sender.selectedSegmentIndex == 0 {
             FilterSettingsSingleton.shared.favorited = false
         } else {

@@ -12,7 +12,7 @@ class DistanceFilterOptionCell: UICollectionViewCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Distance"
+        label.text = "Distance \(FilterSettingsSingleton.shared.distanceFromMe)"
         label.textColor = UIColor.black
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +25,7 @@ class DistanceFilterOptionCell: UICollectionViewCell {
         slider.minimumValue = 0
         slider.maximumValue = 25
         slider.isContinuous = true
-        slider.value = 25
+        slider.value = Float(FilterSettingsSingleton.shared.distanceFromMe)
         
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.isUserInteractionEnabled = true
@@ -36,20 +36,17 @@ class DistanceFilterOptionCell: UICollectionViewCell {
         return slider
     }()
     
-    @objc func sliderValueDidChange(sender:UISlider!)
-    {
+    @objc func sliderValueDidChange(sender: UISlider!) {
         titleLabel.text = "Distance: \(sender.value.rounded())"
-        print("value--\(sender.value)")
+        FilterSettingsSingleton.shared.distanceFromMe = Double(sender.value.rounded())
+        print("Setting distance value to: \(Double(sender.value.rounded()))")
+        SharedListsSingleton.shared.filterWithSettings()
     }
     
     override init(frame: CGRect) {
         super.init(frame:  frame)
         setUpViews()
-        
         slideItem.addTarget(self, action: #selector(sliderValueDidChange), for: UIControlEvents.valueChanged)
-        
-        
-        
     }
     
     func setUpViews() {

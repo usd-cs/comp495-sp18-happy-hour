@@ -20,21 +20,20 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var filterBarButton: UIBarButtonItem!
     @IBOutlet weak var segmentedControlButton: UISegmentedControl!
     
-    var isSearching = false //Determines if we are in search mode or not
+    //Determines if we are in search mode or not
+    var isSearching = false
     var filterMode = false
     var refHandle: DatabaseHandle?
     
     var showLive: Bool = true {
         didSet {
             tableView.reloadData()
-            print("Number of items in masterList: \(SharedListsSingleton.shared.masterList.count)")
         }
     }
     
     var places: [Place] = [] {
         didSet {
             tableView.reloadData()
-            print("Number of items in masterList: \(SharedListsSingleton.shared.masterList.count)")
         }
     }
     var searchedData: [Place] = []
@@ -98,9 +97,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         } else {
             var bar = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
-            //ar bar = places[indexPath.row]
-            print(places)
-            print("dequeing the boys", bar.record.name)
             let imageUrl =  URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
@@ -206,14 +202,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func updateParent() {
-        print("here")
         tableView.reloadData()
     }
     
     let filterMenu = FilterMenu()
     @IBAction func filterButtonPressed(_ sender: Any) {
-        // TODO: present filtering options
-        //filterMore()
         filterMenu.delegate = self
         filterMenu.showFilterMenu()
     }
