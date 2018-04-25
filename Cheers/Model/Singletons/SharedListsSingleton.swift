@@ -56,21 +56,23 @@ class SharedListsSingleton {
                 let happyHourEndingDate = DateInRegion(components: endingDate)
                 
                 if currentDate > happyHourStartingDate! && currentDate < happyHourEndingDate! {
-                    liveList.append(bar)
+          //BUG          //liveList.append(bar)
                     print("Adding \(bar.record.name) to liveList...")
                     SharedListsSingleton.shared.liveList.append(bar)
                 } else {
-                    notLiveList.append(bar)
+          //BUG          //notLiveList.append(bar)
                     print("Adding \(bar.record.name) to notLiveList...")
                     SharedListsSingleton.shared.notLiveList.append(bar)
                 }
                 
             } else {
-                notLiveList.append(bar)
+          //BUG      //notLiveList.append(bar)
                 print("Adding \(bar.record.name) to notLiveList...")
                 SharedListsSingleton.shared.notLiveList.append(bar)
             }
         }
+        
+        print("The shared live list is this" , SharedListsSingleton.shared.liveList)
         
         SVProgressHUD.dismiss()
         filterWithSettings()

@@ -98,8 +98,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         } else {
             var bar = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
-            //var bar = places[indexPath.row]
-            //print(bar.record.name)
+            //ar bar = places[indexPath.row]
+            print(places)
+            print("dequeing the boys", bar.record.name)
             let imageUrl =  URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
