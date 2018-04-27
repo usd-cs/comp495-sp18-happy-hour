@@ -703,6 +703,7 @@
                                     <outlet property="nameLabel" destination="K5F-YS-v7l" id="f2E-xs-wfx"/>
                                     <outlet property="priceLabel" destination="5B1-Vc-CBW" id="2QM-mg-ke6"/>
                                     <outlet property="ratingsLabel" destination="ReU-Bz-kDK" id="PXC-oK-TJE"/>
+                                    <segue destination="Nq6-sI-Nuv" kind="show" identifier="showSelectedFromFavorites" id="rBv-nw-z3A"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -962,6 +963,6 @@
         <image name="settings_selected" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bOn-O5-bxD"/>
+        <segue reference="rBv-nw-z3A"/>
     </inferredMetricsTieBreakers>
 </document>

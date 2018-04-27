@@ -18,7 +18,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarButton: UIBarButtonItem!
     @IBOutlet weak var filterBarButton: UIBarButtonItem!
-    @IBOutlet weak var segmentedControlButton: UISegmentedControl!
+    @IBOutlet var segmentedControlButton: UISegmentedControl!
     
     //Determines if we are in search mode or not
     var isSearching = false
@@ -183,6 +183,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }, completion: { finished in
             
         })
+        navigationItem.titleView = segmentedControlButton
+        segmentedControlButton.isHidden = false
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -284,11 +286,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if showLive {
-            HistoryQueue.shared.append(SharedListsSingleton.shared.liveList[indexPath.row])
-        } else {
-            HistoryQueue.shared.append(SharedListsSingleton.shared.notLiveList[indexPath.row])
-        }
         self.performSegue(withIdentifier: "showSelected", sender: self)
     }
     
