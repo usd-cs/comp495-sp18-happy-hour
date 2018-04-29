@@ -146,11 +146,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar autoresizesSubviews="NO" contentMode="redraw" fixedFrame="YES" barStyle="blackTranslucent" searchBarStyle="prominent" placeholder="Enter bar name" translatesAutoresizingMaskIntoConstraints="NO" id="Ael-If-owj">
-                                <rect key="frame" x="0.0" y="311" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zrY-IH-8Kk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -281,7 +276,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="filterBarButton" destination="yZ6-Mr-aHP" id="3LY-X9-1Ew"/>
-                        <outlet property="searchBar" destination="Ael-If-owj" id="aGi-Oh-cmu"/>
                         <outlet property="searchBarButton" destination="6qE-b9-gTj" id="eex-ja-0xx"/>
                         <outlet property="segmentedControlButton" destination="4zs-2v-Mhg" id="V5C-oG-zKH"/>
                         <outlet property="tableView" destination="zrY-IH-8Kk" id="NNR-4o-mgh"/>
@@ -963,6 +957,6 @@
         <image name="settings_selected" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rBv-nw-z3A"/>
+        <segue reference="qgs-1j-L7G"/>
     </inferredMetricsTieBreakers>
 </document>

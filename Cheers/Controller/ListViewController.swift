@@ -14,7 +14,7 @@ import Foundation
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, FilterMenuDelegate{
     
-    @IBOutlet var searchBar: UISearchBar!
+    var searchBar = UISearchBar()
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarButton: UIBarButtonItem!
     @IBOutlet weak var filterBarButton: UIBarButtonItem!
@@ -294,8 +294,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             let navigator = segue.destination as! UINavigationController
             let selectedVC = navigator.viewControllers.first as! SelectedBarViewController
             let indexPath = tableView.indexPathForSelectedRow!
-            let selectedPlace = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
-            selectedVC.place = selectedPlace
+            if isSearching {
+                selectedVC.place = searchedData[indexPath.row]
+            } else {
+                selectedVC.place = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
+            }
             selectedVC.senderString = "List"
             self.navigationController?.isNavigationBarHidden = false
         }
