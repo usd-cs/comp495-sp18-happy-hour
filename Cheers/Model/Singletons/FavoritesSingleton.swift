@@ -87,4 +87,9 @@ public class FavoritesSingleton: Codable {
             return nil
         }
     }
+    func loadFavorites() {
+        if let favoritesFromDisk = loadFromFile() {
+            FavoritesSingleton.shared.favorites = favoritesFromDisk
+        }
+    }
 }
