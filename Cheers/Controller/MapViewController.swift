@@ -162,7 +162,7 @@ class MapViewController: UIViewController, FilterMenuDelegate {
         mapView.setup(withAnnotations: annotations)
         
         // load not live bars into map
-        for place in SharedListsSingleton.shared.notLiveList {
+        for place in SharedListsSingleton.shared.allList {
             let distanceFromMe = calculateDistance(myLat: Double((UserLocations.shared.currentLocation?.coordinate.latitude)!), myLong: Double((UserLocations.shared.currentLocation?.coordinate.longitude)!), placeLat: place.record.latitude, placeLong: place.record.longitude)
 
             if distanceFromMe <= FilterSettingsSingleton.shared.distanceFromMe {

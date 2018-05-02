@@ -47,7 +47,9 @@ public class FavoritesSingleton: Codable {
             print("Adding \(place.record.name) to favorites...")
             saveToFile()
         }
-        
+        if FilterSettingsSingleton.shared.favorited {
+            SharedListsSingleton.shared.filterWithSettings()
+        }
     }
     
     private func saveToFile() {

@@ -65,7 +65,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isSearching {
             return searchedData.count
         }
-        return showLive ? SharedListsSingleton.shared.liveList.count : SharedListsSingleton.shared.notLiveList.count
+        return showLive ? SharedListsSingleton.shared.liveList.count : SharedListsSingleton.shared.allList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,7 +98,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             return cell
             
         } else {
-            var bar = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
+            var bar = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.allList[indexPath.row]
             let imageUrl =  URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
@@ -200,7 +200,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             // display searched results
             isSearching = true
             
-            searchedData = showLive ? SharedListsSingleton.shared.liveList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())}) : SharedListsSingleton.shared.notLiveList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
+            searchedData = showLive ? SharedListsSingleton.shared.liveList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())}) : SharedListsSingleton.shared.allList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
             tableView.reloadData()
         }
     }
@@ -299,7 +299,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             if isSearching {
                 selectedVC.place = searchedData[indexPath.row]
             } else {
-                selectedVC.place = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
+                selectedVC.place = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.allList[indexPath.row]
             }
             selectedVC.senderString = "List"
             self.navigationController?.isNavigationBarHidden = false
