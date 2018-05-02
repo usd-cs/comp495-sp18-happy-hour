@@ -18,8 +18,10 @@ class SharedListsSingleton {
         }
     }
     
+    var preFilteredAllList: [Place] = []
     var preFilteredLiveList: [Place] = []
     var preFilteredNotLiveList: [Place] = []
+    var allList: [Place] = []
     var liveList: [Place] = []
     var notLiveList: [Place] = []
     
@@ -64,11 +66,13 @@ class SharedListsSingleton {
             } else {
                 preFilteredNotLiveList.append(bar)
             }
+            preFilteredAllList.append(bar)
         }
         
         SVProgressHUD.dismiss()
         liveList = preFilteredLiveList
         notLiveList = preFilteredNotLiveList
+        allList = preFilteredAllList
         filterWithSettings()
         
     }
@@ -76,11 +80,13 @@ class SharedListsSingleton {
     func filterWithSettings() {
         var tempLiveList: [Place] = preFilteredLiveList
         var tempNotLiveList: [Place] = preFilteredNotLiveList
+        var tempAllList: [Place] = preFilteredAllList
         
         if let ratingMinimum = FilterSettingsSingleton.shared.ratingMinimum {
             if ratingMinimum != 1.0 {
                 tempLiveList = tempLiveList.filter { $0.record.rating >= ratingMinimum }
                 tempNotLiveList = tempNotLiveList.filter { $0.record.rating >= ratingMinimum }
+                tempAllList = tempAllList.filter { $0.record.rating >= ratingMinimum }
                 print("Adding rating filter...")
             }
         }
@@ -88,24 +94,27 @@ class SharedListsSingleton {
             if priceMaximum != 0 {
                 tempLiveList = tempLiveList.filter { Int($0.record.price.count) <= priceMaximum }
                 tempNotLiveList = tempNotLiveList.filter { Int($0.record.price.count) <= priceMaximum }
+                tempAllList = tempAllList.filter { Int($0.record.price.count) <= priceMaximum }
                 print("Adding price filter...")
             }
         }
         if FilterSettingsSingleton.shared.favorited {
             print("Adding favorites filter...")
             // TODO: needs to work with FavoritesSingleton
-            //tempLiveList = tempNotLiveList.filter { FavoritesSingleton.shared.favorites.contains($0) }
-            //tempNotLiveList = tempNotLiveList.filter { FavoritesSingleton.shared.favorites.contains($0) }
+            tempLiveList = tempLiveList.filter { FavoritesSingleton.shared.favorites.contains($0) }
+            tempNotLiveList = tempNotLiveList.filter { FavoritesSingleton.shared.favorites.contains($0) }
+            tempAllList = tempAllList.filter { FavoritesSingleton.shared.favorites.contains($0) }
         }
         
         // distance calculations
         print("Adding distance filter...")
         tempLiveList = tempLiveList.filter { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < FilterSettingsSingleton.shared.distanceFromMe }
         tempNotLiveList = tempNotLiveList.filter { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < FilterSettingsSingleton.shared.distanceFromMe }
-        
+        tempAllList = tempAllList.filter { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < FilterSettingsSingleton.shared.distanceFromMe }
         
         liveList = tempLiveList
         notLiveList = tempNotLiveList
+        allList = tempAllList
     }
     
     func calculateDistance(myLat: Double, myLong: Double, placeLat: Double, placeLong: Double) -> Double {

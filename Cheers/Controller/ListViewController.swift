@@ -14,7 +14,7 @@ import Foundation
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, FilterMenuDelegate{
     
-    @IBOutlet var searchBar: UISearchBar!
+    var searchBar = UISearchBar()
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarButton: UIBarButtonItem!
     @IBOutlet weak var filterBarButton: UIBarButtonItem!
@@ -44,6 +44,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        FavoritesSingleton.shared.loadFavorites()
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
@@ -63,7 +65,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isSearching {
             return searchedData.count
         }
-        return showLive ? SharedListsSingleton.shared.liveList.count : SharedListsSingleton.shared.notLiveList.count
+        return showLive ? SharedListsSingleton.shared.liveList.count : SharedListsSingleton.shared.allList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,7 +98,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             return cell
             
         } else {
-            var bar = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
+            var bar = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.allList[indexPath.row]
             let imageUrl =  URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
@@ -198,7 +200,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             // display searched results
             isSearching = true
             
-            searchedData = showLive ? SharedListsSingleton.shared.liveList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())}) : SharedListsSingleton.shared.notLiveList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
+            searchedData = showLive ? SharedListsSingleton.shared.liveList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())}) : SharedListsSingleton.shared.allList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
             tableView.reloadData()
         }
     }
@@ -294,8 +296,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             let navigator = segue.destination as! UINavigationController
             let selectedVC = navigator.viewControllers.first as! SelectedBarViewController
             let indexPath = tableView.indexPathForSelectedRow!
-            let selectedPlace = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
-            selectedVC.place = selectedPlace
+            if isSearching {
+                selectedVC.place = searchedData[indexPath.row]
+            } else {
+                selectedVC.place = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.allList[indexPath.row]
+            }
             selectedVC.senderString = "List"
             self.navigationController?.isNavigationBarHidden = false
         }
