@@ -113,7 +113,7 @@ class DatabaseTableViewController: UITableViewController {
             "neighborhood": record.neighborhood.rawValue
         ]
         
-        barToUpload.child(record.name).setValue(barRecord) { (error, reference) in
+        barToUpload.child("Verified").child(record.name).setValue(barRecord) { (error, reference) in
             if error != nil {
                 print("Error in writing \(record.name) to DB! Here is the error:")
                 print(error!)
