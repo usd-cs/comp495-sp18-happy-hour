@@ -341,3 +341,132 @@ Thursday
 Friday
 3 pm - 7 pm
 END OF RECORD
+Duke's La Jolla
+La Jolla
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+Herringbone
+La Jolla
+Sunday
+4 pm - 6 pm
+Monday
+4 pm - 6 pm
+Tuesday
+4 pm - 6 pm
+Wednesday
+4 pm - 6 pm
+Thursday
+4 pm - 6 pm
+Friday
+4 pm - 6 pm
+END OF RECORD
+Hennessey's Tavern
+La Jolla
+Monday
+4 pm - 7 pm
+Tuesday
+4 pm - 7 pm
+Wednesday
+4 pm - 7 pm
+Thursday
+4 pm - 7 pm
+Friday
+4 pm - 7 pm
+END OF RECORD
+Karl Strauss Brewing Company
+La Jolla
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+Dirty Birds
+Point Loma
+Monday
+3 pm - 6 pm
+Tuesday
+11 am - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+Mess Hall Bar
+Point Loma
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+Jimmy's Famous American Tavern
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+Goodbar
+Point Loma
+Monday
+3 pm - 7 pm
+Tuesday
+3 pm - 7 pm
+Wednesday
+3 pm - 7 pm
+Thursday
+3 pm - 7 pm
+Friday
+3 pm - 7 pm
+Saturday
+3 pm - 7 pm
+END OF RECORD
+Bottlecraft
+Point Loma
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+Fig Tree Cafe
+Point Loma
+Monday
+4 pm - 6:30 pm
+Wednesday
+4 pm - 6:30 pm
+Thursday
+4 pm - 6:30 pm
+END OF RECORD
