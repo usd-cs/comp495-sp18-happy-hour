@@ -277,53 +277,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let newRecord = DatabaseRecord(id: id, name: name, longitude: longitude, latitude: latitude, rating: rating, price: price, reviewCount: reviewCount, phoneNumber: phoneNumber, address: address, city: city, state: state, zipCode: zipCode, country: country, images: images, categories: categories, happyHours: happyHours, neighborhood: neighborhoodName)
                 
                 places.append(Place(record: newRecord, favorited: false))
-                //print("Appending \(newRecord.name) to local method places list")
             }
-            
-            
-//            for verifiedRecords in allRecords! {
-//                let verifiedRecord = verifiedRecords.value as? [String: AnyObject]
-//
-//                for record in verifiedRecord! {
-//                    let recordInfo = record.value as! [String: Any]
-//
-//                    let id = recordInfo["id"] as! String
-//                    let name = recordInfo["name"] as! String
-//                    let longitude = recordInfo["longitude"] as! Double
-//                    let latitude = recordInfo["latitude"] as! Double
-//                    let rating = recordInfo["rating"] as! Double
-//                    let price = recordInfo["price"] as! String
-//                    let reviewCount = recordInfo["reviewCount"] as! Int
-//                    let phoneNumber = recordInfo["phoneNumber"] as! String
-//                    let address = recordInfo["address"] as! String
-//                    let city = recordInfo["city"] as! String
-//                    let state = recordInfo["state"] as! String
-//                    let zipCode = recordInfo["zipCode"] as! String
-//                    let country = recordInfo["country"] as! String
-//                    let images = recordInfo["images"] as! [String]
-//
-//                    // build list of categories, could be empty (defaults to unknown)
-//                    var categoriesArray = [String]()
-//                    if recordInfo["categories"] != nil {
-//                        categoriesArray = recordInfo["categories"] as! [String]
-//                    } else {
-//                        categoriesArray.append("unknown")
-//                    }
-//                    var categories = [BarType]()
-//                    for category in categoriesArray {
-//                        categories.append(BarType(rawValue: category)!)
-//                    }
-//
-//                    let happyHours = recordInfo["happyHours"] as! [String: String]
-//
-//                    let neighborhoodName = Neighborhood(rawValue: recordInfo["neighborhood"] as! String)!
-//
-//                    let newRecord = DatabaseRecord(id: id, name: name, longitude: longitude, latitude: latitude, rating: rating, price: price, reviewCount: reviewCount, phoneNumber: phoneNumber, address: address, city: city, state: state, zipCode: zipCode, country: country, images: images, categories: categories, happyHours: happyHours, neighborhood: neighborhoodName)
-//
-//                    places.append(Place(record: newRecord, favorited: false))
-//                    //print("Appending \(newRecord.name) to local method places list")
-//                }
-//            }
             
             SharedListsSingleton.shared.masterList = places
             self.places = SharedListsSingleton.shared.liveList
