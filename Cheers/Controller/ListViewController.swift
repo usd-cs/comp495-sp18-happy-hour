@@ -236,9 +236,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         var places = [Place]()
         
         refHandle = ref.observe(.value, with: { (snapshot) in
-            let records = snapshot.value as? [String: AnyObject]
+            let allRecords = snapshot.value as! [String: AnyObject]
             
-            for record in records! {
+            let verifiedRecords = allRecords["Verified"] as! [String: AnyObject]
+            
+            for record in verifiedRecords {
                 let recordInfo = record.value as! [String: Any]
                 
                 let id = recordInfo["id"] as! String
@@ -275,7 +277,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let newRecord = DatabaseRecord(id: id, name: name, longitude: longitude, latitude: latitude, rating: rating, price: price, reviewCount: reviewCount, phoneNumber: phoneNumber, address: address, city: city, state: state, zipCode: zipCode, country: country, images: images, categories: categories, happyHours: happyHours, neighborhood: neighborhoodName)
                 
                 places.append(Place(record: newRecord, favorited: false))
-                //print("Appending \(newRecord.name) to local method places list")
             }
             
             SharedListsSingleton.shared.masterList = places
