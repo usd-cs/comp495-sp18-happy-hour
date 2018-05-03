@@ -112,6 +112,27 @@ class SharedListsSingleton {
         tempNotLiveList = tempNotLiveList.filter { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < FilterSettingsSingleton.shared.distanceFromMe }
         tempAllList = tempAllList.filter { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < FilterSettingsSingleton.shared.distanceFromMe }
         
+        if let sortBy = FilterSettingsSingleton.shared.sortBy {
+            if sortBy != 0 {
+                switch(sortBy){
+                case 1:
+                    tempLiveList = tempLiveList.sorted { $0.record.rating < $1.record.rating }
+                    tempNotLiveList = tempNotLiveList.sorted { $0.record.rating < $1.record.rating }
+                    tempAllList = tempAllList.sorted { $0.record.rating < $1.record.rating }
+                case 2:
+                    tempLiveList = tempLiveList.sorted { $0.record.price < $1.record.price }
+                    tempNotLiveList = tempNotLiveList.sorted { $0.record.price < $1.record.price }
+                    tempAllList = tempAllList.sorted { $0.record.price < $1.record.price }
+                case 3:
+                    tempLiveList = tempLiveList.sorted { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $1.record.latitude, placeLong: $1.record.longitude) }
+                    tempNotLiveList = tempNotLiveList.sorted { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $1.record.latitude, placeLong: $1.record.longitude) }
+                    tempAllList = tempAllList.sorted { calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $0.record.latitude, placeLong: $0.record.longitude) < calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: $1.record.latitude, placeLong: $1.record.longitude) }
+                default:
+                    print("Not Sorted")
+                }
+            }
+        }
+        
         liveList = tempLiveList
         notLiveList = tempNotLiveList
         allList = tempAllList
@@ -185,3 +206,5 @@ class SharedListsSingleton {
         return (dayOffset, String(startTimeHours), String(startTimeMinutes), String(endTimeHours), String(endTimeMinutes))
     }
 }
+
+

@@ -30,6 +30,7 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
     let minimumRatingCellId = "minimumRatingCellId"
     let maximumPriceCellId = "maximumPriceCellId"
     let favoritesOnlyCellId = "favoritesOnlyCellId"
+    let sortCellId = "sortCellId"
     
     func showFilterMenu() {
         
@@ -42,7 +43,7 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
             window.addSubview(blackView)
             window.addSubview(collectionView)
             
-            let height : CGFloat = 250
+            let height : CGFloat = 350
             let theY = window.frame.height - height
             
             collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
@@ -78,7 +79,7 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -100,6 +101,10 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         if indexPath.row == 3 {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoritesOnlyCellId, for: indexPath)
         }
+        
+        if indexPath.row == 4 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: sortCellId, for: indexPath)
+        }
         return cell!
     }
     
@@ -114,5 +119,6 @@ class FilterMenu: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         collectionView.register(MinimumRatingFilterOptionCell.self, forCellWithReuseIdentifier: minimumRatingCellId)
         collectionView.register(MaximumPriceFilterOptionCell.self, forCellWithReuseIdentifier: maximumPriceCellId)
         collectionView.register(FavoritesOnlyFilterOptionCell.self, forCellWithReuseIdentifier: favoritesOnlyCellId)
+        collectionView.register(SortFilterOptionCell.self, forCellWithReuseIdentifier: sortCellId)
     }
 }
