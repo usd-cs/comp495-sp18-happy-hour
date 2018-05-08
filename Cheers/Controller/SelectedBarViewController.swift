@@ -9,6 +9,7 @@
 import UIKit
 import SwiftDate
 import ChameleonFramework
+import Firebase
 
 class SelectedBarViewController: UIViewController {
     
@@ -21,6 +22,8 @@ class SelectedBarViewController: UIViewController {
         UIColor.flatSand,
         UIColor.flatWhite,
     ]
+    
+    var newBarToUpload: DatabaseRecord!
     
     
     @IBOutlet weak var imageView: UIImageView!
@@ -109,16 +112,6 @@ class SelectedBarViewController: UIViewController {
         }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
     @IBAction func backButtonPressed(_ sender: Any) {
         if senderString == "List" {
             performSegue(withIdentifier: "barToList", sender: nil)
@@ -128,5 +121,54 @@ class SelectedBarViewController: UIViewController {
             performSegue(withIdentifier: "barToFavorites", sender: nil)
         }
     }
+    
+    @IBAction func unwindAndUpload(segue: UIStoryboardSegue) {
+        upload()
+    }
+    
+    
+    func upload() {
+        
+        guard let record = self.newBarToUpload else { print("ERROR: could not safely unwrap bar"); return }
+        
+        let ref = Database.database().reference()
+        var categoriesStrings = [String]()
+        
+        for cat in record.categories {
+            categoriesStrings.append(cat.rawValue)
+        }
+        
+        
+        let barRecord: [String: Any] = [
+            "id": record.id,
+            "name": record.name,
+            "longitude": record.longitude,
+            "latitude": record.latitude,
+            "rating": record.rating,
+            "price": record.price,
+            "reviewCount": record.reviewCount,
+            "phoneNumber": record.phoneNumber,
+            "address": record.address,
+            "city": record.city,
+            "state": record.state,
+            "zipCode": record.zipCode,
+            "country": record.country,
+            "images": record.images,
+            "categories": categoriesStrings,
+            "happyHours": record.happyHours,
+            "neighborhood": record.neighborhood.rawValue
+        ]
+        
+        ref.child("Unverified").child(record.name).setValue(barRecord) { (error, reference) in
+            if error != nil {
+                print("ERROR: Error in writing \(record.name) to DB! Here is the error:")
+                print(error!)
+                print("WARNING: Attempting to continue...")
+            } else {
+                print("LOG: \(record.name) saved successfully to DB.")
+            }
+        }
+    }
+    
 }
 
