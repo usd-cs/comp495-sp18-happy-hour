@@ -132,8 +132,17 @@ class SelectedBarViewController: UIViewController {
         }
     }
     
-    @IBAction func addButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "addHappyHour", sender: nil)
+    @IBAction func unwindCancel(segue: UIStoryboardSegue) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "addHappyHour" else { return }
+        
+        guard let navigator = segue.destination as? UINavigationController
+            else { return }
+        let destination = navigator.viewControllers.first as! AddHappyHourViewController
+        destination.place = self.place
     }
 }
 
