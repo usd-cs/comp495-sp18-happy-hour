@@ -44,6 +44,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        FavoritesSingleton.shared.loadFavorites()
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
@@ -63,7 +65,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if isSearching {
             return searchedData.count
         }
-        return showLive ? SharedListsSingleton.shared.liveList.count : SharedListsSingleton.shared.notLiveList.count
+        return showLive ? SharedListsSingleton.shared.liveList.count : SharedListsSingleton.shared.allList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,7 +98,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             return cell
             
         } else {
-            var bar = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
+            var bar = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.allList[indexPath.row]
             let imageUrl =  URL(string: bar.record.images[0])
             
             ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
@@ -198,7 +200,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             // display searched results
             isSearching = true
             
-            searchedData = showLive ? SharedListsSingleton.shared.liveList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())}) : SharedListsSingleton.shared.notLiveList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
+            searchedData = showLive ? SharedListsSingleton.shared.liveList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())}) : SharedListsSingleton.shared.allList.filter({$0.record.name.lowercased().contains(searchBar.text!.lowercased())})
             tableView.reloadData()
         }
     }
@@ -234,9 +236,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         var places = [Place]()
         
         refHandle = ref.observe(.value, with: { (snapshot) in
-            let records = snapshot.value as? [String: AnyObject]
+            let allRecords = snapshot.value as! [String: AnyObject]
             
-            for record in records! {
+            let verifiedRecords = allRecords["Verified"] as! [String: AnyObject]
+            
+            for record in verifiedRecords {
                 let recordInfo = record.value as! [String: Any]
                 
                 let id = recordInfo["id"] as! String
@@ -273,7 +277,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let newRecord = DatabaseRecord(id: id, name: name, longitude: longitude, latitude: latitude, rating: rating, price: price, reviewCount: reviewCount, phoneNumber: phoneNumber, address: address, city: city, state: state, zipCode: zipCode, country: country, images: images, categories: categories, happyHours: happyHours, neighborhood: neighborhoodName)
                 
                 places.append(Place(record: newRecord, favorited: false))
-                //print("Appending \(newRecord.name) to local method places list")
             }
             
             SharedListsSingleton.shared.masterList = places
@@ -297,7 +300,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             if isSearching {
                 selectedVC.place = searchedData[indexPath.row]
             } else {
-                selectedVC.place = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.notLiveList[indexPath.row]
+                selectedVC.place = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.allList[indexPath.row]
             }
             selectedVC.senderString = "List"
             self.navigationController?.isNavigationBarHidden = false

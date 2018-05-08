@@ -29,5 +29,8 @@ class FilterSettingsSingleton {
     //var distanceFromMe: Double = 1.0
     var distanceFromMe: Double = 5.0
     
+    // filter to be sorted by
+    //0 = Off, 1 = Rating, 2 = Price, 3 = Distance
+    var sortBy: Int?
 }
 

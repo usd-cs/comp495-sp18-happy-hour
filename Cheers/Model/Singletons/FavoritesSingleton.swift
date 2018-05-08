@@ -47,7 +47,9 @@ public class FavoritesSingleton: Codable {
             print("Adding \(place.record.name) to favorites...")
             saveToFile()
         }
-        
+        if FilterSettingsSingleton.shared.favorited {
+            SharedListsSingleton.shared.filterWithSettings()
+        }
     }
     
     private func saveToFile() {
@@ -85,6 +87,11 @@ public class FavoritesSingleton: Codable {
         } catch {
             print("Error loading from disk: \n\(error)")
             return nil
+        }
+    }
+    func loadFavorites() {
+        if let favoritesFromDisk = loadFromFile() {
+            FavoritesSingleton.shared.favorites = favoritesFromDisk
         }
     }
 }

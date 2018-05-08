@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33A372DB209A2CB00076F051 /* SortFilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A372DA209A2CB00076F051 /* SortFilterOptionCell.swift */; };
 		53B8AB51ECE9E0A4AD635A77 /* Pods_CheersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */; };
 		666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */; };
 		66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66D3EDFB20730BC3003A9CB0 /* happyhours.txt */; };
@@ -77,6 +78,7 @@
 		1415AA8AD312D852EA849603 /* Pods-Cheers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cheers/Pods-Cheers.debug.xcconfig"; sourceTree = "<group>"; };
 		1DEF0424F9094255F5B5B799 /* Pods-CheersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2010BDD9FF669BDD3D11AC9E /* Pods-CheersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		33A372DA209A2CB00076F051 /* SortFilterOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFilterOptionCell.swift; sourceTree = "<group>"; };
 		3FFE80B91BF7B44C17B2D247 /* Pods-CheersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests.release.xcconfig"; sourceTree = "<group>"; };
 		666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBarViewController.swift; sourceTree = "<group>"; };
 		66D3EDFB20730BC3003A9CB0 /* happyhours.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = happyhours.txt; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				B15ACF5C208197320052C4CB /* FilterMenu.swift */,
 				B15ACF622081A9C90052C4CB /* DistanceFilterOptionCell.swift */,
 				B1053DC0208D5BDF00394370 /* MinimumRatingFilterOptionCell.swift */,
+				33A372DA209A2CB00076F051 /* SortFilterOptionCell.swift */,
 				B1053DC2208D5C5100394370 /* MaximumPriceFilterOptionCell.swift */,
 				B1053DC4208D5C7000394370 /* FavoritesOnlyFilterOptionCell.swift */,
 				B15524FD2086ECA40077323B /* FilterViewController.swift */,
@@ -586,6 +589,7 @@
 				72D17D762087B39E0074A647 /* FavoritesSingleton.swift in Sources */,
 				B1053DC1208D5BDF00394370 /* MinimumRatingFilterOptionCell.swift in Sources */,
 				72D45BDF2084024200E06918 /* FilterSettingsSingleton.swift in Sources */,
+				33A372DB209A2CB00076F051 /* SortFilterOptionCell.swift in Sources */,
 				B1FF31152072DE84001DF2DF /* ImageLoader.swift in Sources */,
 				B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */,
 				B15524FE2086ECA40077323B /* FilterViewController.swift in Sources */,
