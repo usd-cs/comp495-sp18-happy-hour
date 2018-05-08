@@ -17,6 +17,9 @@ class SelectedBarViewController: UIViewController {
     // TODO: update image from ListViewController
     //var image: UIImage?
     
+    @IBAction func AddHappyHour(_ sender: UIBarButtonItem) {
+    }
+    
     let colors:[UIColor] = [
         UIColor.flatSand,
         UIColor.flatWhite,
@@ -127,6 +130,10 @@ class SelectedBarViewController: UIViewController {
         } else if senderString == "Favorites" {
             performSegue(withIdentifier: "barToFavorites", sender: nil)
         }
+    }
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "addHappyHour", sender: nil)
     }
 }
 

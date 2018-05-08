@@ -34,6 +34,7 @@
 		B1FFE6AB205B69F500531FDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */; };
 		B1FFE6AD205B6F7200531FDB /* Neighborhoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */; };
 		B259C8CE20870C6300C37678 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B259C8CD20870C6300C37678 /* FavoritesTableViewController.swift */; };
+		B278BBEF209A24B60077B23C /* AddHappyHourTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278BBEE209A24B60077B23C /* AddHappyHourTableViewController.swift */; };
 		BE500C6720619CD1006F4FD0 /* BarNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = BE500C6620619CD1006F4FD0 /* BarNames.txt */; };
 		BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */; };
 		BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1B460204F34AF00136463 /* AppDelegate.swift */; };
@@ -106,6 +107,7 @@
 		B1FFE6AA205B69F500531FDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neighborhoods.swift; sourceTree = "<group>"; };
 		B259C8CD20870C6300C37678 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		B278BBEE209A24B60077B23C /* AddHappyHourTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHappyHourTableViewController.swift; sourceTree = "<group>"; };
 		BE500C6620619CD1006F4FD0 /* BarNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BarNames.txt; sourceTree = "<group>"; };
 		BE8EF5B0207539BF0088F098 /* SharedListsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedListsSingleton.swift; sourceTree = "<group>"; };
 		BEA1B45D204F34AF00136463 /* Cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +228,7 @@
 				722D25012086B273007B8427 /* ContactUsViewController.swift */,
 				722D25032086B27D007B8427 /* AboutViewController.swift */,
 				B259C8CD20870C6300C37678 /* FavoritesTableViewController.swift */,
+				B278BBEE209A24B60077B23C /* AddHappyHourTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				722D25002086B1E8007B8427 /* NotificationsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
 				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
+				B278BBEF209A24B60077B23C /* AddHappyHourTableViewController.swift in Sources */,
 				B1053DC3208D5C5100394370 /* MaximumPriceFilterOptionCell.swift in Sources */,
 				BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */,
 				BEF4A5D82075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift in Sources */,
