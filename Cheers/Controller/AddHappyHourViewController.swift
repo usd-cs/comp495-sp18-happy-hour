@@ -21,12 +21,15 @@ class AddHappyHourViewController: UIViewController {
     @IBOutlet weak var dayTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
     
-    
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "unwindCancel", sender: nil)
+
     }
     
-
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        
+    }
+    
     let colors:[UIColor] = [
         UIColor.flatSand,
         UIColor.flatWhite,
