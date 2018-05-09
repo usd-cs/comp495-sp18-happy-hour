@@ -15,7 +15,7 @@ class BarTableViewCell: UITableViewCell {
     @IBOutlet var distanceLabel: UILabel!
     @IBOutlet var ratingsLabel: UILabel!
     @IBOutlet var happyHourLabel: UILabel!
-    @IBOutlet var priceLabel: UILabel!
+    //@IBOutlet var priceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

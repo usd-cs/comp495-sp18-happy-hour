@@ -48,7 +48,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
@@ -93,7 +93,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             let todaysDate = today.weekdayName
             let todaysHappyHours = bar.record.happyHours[todaysDate] ?? ""
             cell.happyHourLabel.text = todaysHappyHours
-            cell.priceLabel.text = String(bar.record.price)
+            //cell.priceLabel.text = String(bar.record.price)
             
             return cell
             
@@ -117,7 +117,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             let todaysDate = today.weekdayName
             let todaysHappyHours = bar.record.happyHours[todaysDate] ?? ""
             cell.happyHourLabel.text = todaysHappyHours
-            cell.priceLabel.text = String(bar.record.price)
+            //cell.priceLabel.text = String(bar.record.price)
             
         
         }
