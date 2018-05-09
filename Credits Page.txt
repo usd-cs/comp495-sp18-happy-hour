@@ -5,4 +5,7 @@ Icons made by:
  - Freepik
  - Gregor Cresnar
  - Darius Dan
+ - Icomoon
+ - Google
+ - Pixel perfect
 from www.flaticon.com

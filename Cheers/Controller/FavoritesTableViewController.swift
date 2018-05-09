@@ -99,13 +99,11 @@ class FavoritesTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSelectedFromFavorites" {
-            let navigator = segue.destination as! UINavigationController
-            let selectedVC = navigator.viewControllers.first as! SelectedBarViewController
+            let destination = segue.destination as! SelectedPlaceViewController
             let indexPath = tableView.indexPathForSelectedRow!
             let selectedPlace = FavoritesSingleton.shared.favorites[indexPath.row]
-            selectedVC.place = selectedPlace
-            selectedVC.senderString = "Favorites"
-            self.navigationController?.isNavigationBarHidden = false
+            destination.place = selectedPlace
+            destination.sender = "Favorites"
         }
     }
     

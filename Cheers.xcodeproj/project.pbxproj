@@ -17,6 +17,9 @@
 		722D25002086B1E8007B8427 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24FF2086B1E8007B8427 /* NotificationsViewController.swift */; };
 		722D25022086B273007B8427 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D25012086B273007B8427 /* ContactUsViewController.swift */; };
 		722D25042086B27D007B8427 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D25032086B27D007B8427 /* AboutViewController.swift */; };
+		726E34F520A3082B00865189 /* SelectedPlace.xib in Resources */ = {isa = PBXBuildFile; fileRef = 726E34F420A3082B00865189 /* SelectedPlace.xib */; };
+		726E34F720A3096D00865189 /* SelectedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E34F620A3096D00865189 /* SelectedPlace.swift */; };
+		726E34F920A346AD00865189 /* SelectedPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E34F820A346AD00865189 /* SelectedPlaceViewController.swift */; };
 		72D17D762087B39E0074A647 /* FavoritesSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D17D752087B39E0074A647 /* FavoritesSingleton.swift */; };
 		72D45BDF2084024200E06918 /* FilterSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */; };
 		72D45BE12084364100E06918 /* DowntownGaslampBars.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72D45BE02084364100E06918 /* DowntownGaslampBars.txt */; };
@@ -87,6 +90,9 @@
 		722D24FF2086B1E8007B8427 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		722D25012086B273007B8427 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		722D25032086B27D007B8427 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		726E34F420A3082B00865189 /* SelectedPlace.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedPlace.xib; sourceTree = "<group>"; };
+		726E34F620A3096D00865189 /* SelectedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlace.swift; sourceTree = "<group>"; };
+		726E34F820A346AD00865189 /* SelectedPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlaceViewController.swift; sourceTree = "<group>"; };
 		72D17D752087B39E0074A647 /* FavoritesSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSingleton.swift; sourceTree = "<group>"; };
 		72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingsSingleton.swift; sourceTree = "<group>"; };
 		72D45BE02084364100E06918 /* DowntownGaslampBars.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DowntownGaslampBars.txt; sourceTree = "<group>"; };
@@ -229,6 +235,8 @@
 				722D25012086B273007B8427 /* ContactUsViewController.swift */,
 				722D25032086B27D007B8427 /* AboutViewController.swift */,
 				B259C8CD20870C6300C37678 /* FavoritesTableViewController.swift */,
+				726E34F620A3096D00865189 /* SelectedPlace.swift */,
+				726E34F820A346AD00865189 /* SelectedPlaceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,6 +248,7 @@
 				BEA1B46B204F34AF00136463 /* LaunchScreen.storyboard */,
 				BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotationView.xib */,
 				BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */,
+				726E34F420A3082B00865189 /* SelectedPlace.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -436,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726E34F520A3082B00865189 /* SelectedPlace.xib in Resources */,
 				BEA1B46D204F34AF00136463 /* LaunchScreen.storyboard in Resources */,
 				B1FFE6AB205B69F500531FDB /* GoogleService-Info.plist in Resources */,
 				BE500C6720619CD1006F4FD0 /* BarNames.txt in Resources */,
@@ -497,6 +507,9 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MapViewPlus/MapViewPlus.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/MapboxStatic.swift/MapboxStatic.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -510,6 +523,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapViewPlus.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxStatic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -594,6 +610,7 @@
 				BEC473AD20510B7C00FC5702 /* Place.swift in Sources */,
 				BEF309A62061AA3200022098 /* BarType.swift in Sources */,
 				BEADB55F2075DB5800E107B7 /* ColorsSingleton.swift in Sources */,
+				726E34F920A346AD00865189 /* SelectedPlaceViewController.swift in Sources */,
 				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
 				BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */,
 				BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */,
@@ -605,6 +622,7 @@
 				BEF4A5D82075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift in Sources */,
 				B15ACF632081A9C90052C4CB /* DistanceFilterOptionCell.swift in Sources */,
 				B1FF310F20720A33001DF2DF /* UserLocations.swift in Sources */,
+				726E34F720A3096D00865189 /* SelectedPlace.swift in Sources */,
 				722D24FC20868AD1007B8427 /* SettingsSingleton.swift in Sources */,
 				722D25042086B27D007B8427 /* AboutViewController.swift in Sources */,
 				722D24FA20865951007B8427 /* SettingsTableViewController.swift in Sources */,

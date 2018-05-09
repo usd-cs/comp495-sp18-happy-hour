@@ -25,6 +25,8 @@ target 'Cheers' do
   
   # Map Annotations
   pod 'MapViewPlus'
+  pod 'Mapbox-iOS-SDK', '~> 4.0'
+  pod 'MapboxStatic.swift', '~> 0.9'
   
   # Colors
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'

@@ -294,23 +294,18 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSelected" {
-            let navigator = segue.destination as! UINavigationController
-            let selectedVC = navigator.viewControllers.first as! SelectedBarViewController
+            guard let destination = segue.destination as? SelectedPlaceViewController else { return }
             let indexPath = tableView.indexPathForSelectedRow!
             if isSearching {
-                selectedVC.place = searchedData[indexPath.row]
+                destination.place = searchedData[indexPath.row]
             } else {
-                selectedVC.place = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.allList[indexPath.row]
+                destination.place = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.allList[indexPath.row]
             }
-            selectedVC.senderString = "List"
-            self.navigationController?.isNavigationBarHidden = false
+            destination.sender = "List"
         }
         
         if segue.identifier == "filterPressed" {
-            //let navigator = segue.destination as! UINavigationController
-            //self.navigationController?.isNavigationBarHidden = false
             filterMode = true
-            
         }
         
         
