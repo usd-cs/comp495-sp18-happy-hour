@@ -197,11 +197,10 @@ class MapViewController: UIViewController, FilterMenuDelegate {
         guard segue.identifier == "AnnotationTapped" else { return }
         guard let selectedPlace = selectedPlace else { return }
         
-        let navigator = segue.destination as! UINavigationController
-        let destination = navigator.viewControllers.first as! SelectedBarViewController
+        let destination = segue.destination as! SelectedPlaceViewController
         
         destination.place = selectedPlace
-        destination.senderString = "Map"
+        destination.sender = "Map"
     }
     
     @IBAction func unwindToMap(segue: UIStoryboardSegue) {
