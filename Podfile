@@ -28,6 +28,14 @@ target 'Cheers' do
   pod 'Mapbox-iOS-SDK', '~> 4.0'
   pod 'MapboxStatic.swift', '~> 0.9'
   
+  # Ride Sharing
+  pod 'UberRides', '~> 0.9'
+  pod 'Lyft'
+  pod 'LyftSDK/API'
+  
+  # Photos
+  pod 'SwiftPhotoGallery'
+  
   # Colors
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   

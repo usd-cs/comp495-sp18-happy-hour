@@ -10,6 +10,7 @@ import UIKit
 import SwiftDate
 import ChameleonFramework
 import Firebase
+import FirebaseDatabase
 
 class SelectedBarViewController: UIViewController {
     

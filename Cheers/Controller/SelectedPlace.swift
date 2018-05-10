@@ -24,6 +24,7 @@ class SelectedPlace: UIView {
     // View I (image) outlets
     @IBOutlet weak var imageViewImage: UIImageView!
     @IBOutlet weak var imageViewPageControl: UIPageControl!
+    @IBOutlet weak var imageViewButton: UIButton!
     
     // View II (details) outlets
     @IBOutlet weak var detailsViewTitleLabel: UILabel!
@@ -52,6 +53,7 @@ class SelectedPlace: UIView {
     // View IV (review) outlets
     @IBOutlet weak var reviewViewContentLabel: UILabel!
     @IBOutlet weak var reviewViewAnnotationLabel: UILabel!
+    @IBOutlet weak var yelpReviewButton: UIButton!
     
     // View V (map) outlets
     @IBOutlet weak var mapViewImage: UIImageView!
@@ -113,8 +115,6 @@ class SelectedPlace: UIView {
         self.reviewView.backgroundColor = FlatWhite()
         self.mapViewButtonView.backgroundColor = FlatWhite()
         self.aboutView.backgroundColor = FlatWhite()
-        
-        self.mapViewDirectionsButton.layer.cornerRadius = 10
         
         self.detailsViewRatingLabel.layer.masksToBounds = true
         self.detailsViewRatingLabel.layer.cornerRadius = 10

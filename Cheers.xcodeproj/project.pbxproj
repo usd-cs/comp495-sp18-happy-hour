@@ -23,6 +23,8 @@
 		72D17D762087B39E0074A647 /* FavoritesSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D17D752087B39E0074A647 /* FavoritesSingleton.swift */; };
 		72D45BDF2084024200E06918 /* FilterSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */; };
 		72D45BE12084364100E06918 /* DowntownGaslampBars.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72D45BE02084364100E06918 /* DowntownGaslampBars.txt */; };
+		72D9951520A3F29100D4782F /* RideShareMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72D9951420A3F29100D4782F /* RideShareMenu.xib */; };
+		72D9951720A3F2C100D4782F /* RideShareMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D9951620A3F2C100D4782F /* RideShareMenu.swift */; };
 		9A0A86FE11A77BD7A74EBA63 /* Pods_Cheers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */; };
 		B1053DC1208D5BDF00394370 /* MinimumRatingFilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1053DC0208D5BDF00394370 /* MinimumRatingFilterOptionCell.swift */; };
 		B1053DC3208D5C5100394370 /* MaximumPriceFilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1053DC2208D5C5100394370 /* MaximumPriceFilterOptionCell.swift */; };
@@ -96,6 +98,8 @@
 		72D17D752087B39E0074A647 /* FavoritesSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSingleton.swift; sourceTree = "<group>"; };
 		72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingsSingleton.swift; sourceTree = "<group>"; };
 		72D45BE02084364100E06918 /* DowntownGaslampBars.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DowntownGaslampBars.txt; sourceTree = "<group>"; };
+		72D9951420A3F29100D4782F /* RideShareMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RideShareMenu.xib; sourceTree = "<group>"; };
+		72D9951620A3F2C100D4782F /* RideShareMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideShareMenu.swift; sourceTree = "<group>"; };
 		7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FDF68A309F93D49B4568F8 /* Pods-Cheers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cheers/Pods-Cheers.release.xcconfig"; sourceTree = "<group>"; };
 		972A4A435F45ED4976ED9E9E /* Pods-CheersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 				B259C8CD20870C6300C37678 /* FavoritesTableViewController.swift */,
 				726E34F620A3096D00865189 /* SelectedPlace.swift */,
 				726E34F820A346AD00865189 /* SelectedPlaceViewController.swift */,
+				72D9951620A3F2C100D4782F /* RideShareMenu.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotationView.xib */,
 				BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */,
 				726E34F420A3082B00865189 /* SelectedPlace.xib */,
+				72D9951420A3F29100D4782F /* RideShareMenu.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,7 +352,6 @@
 				BEA1B45B204F34AF00136463 /* Resources */,
 				393EFF8B4382076B8B7667C4 /* [CP] Embed Pods Frameworks */,
 				BE0E6E5A2063492800330712 /* ShellScript */,
-				B8E97880903C4EEE48C5F493 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -365,8 +370,6 @@
 				BEA1B46F204F34AF00136463 /* Sources */,
 				BEA1B470204F34AF00136463 /* Frameworks */,
 				BEA1B471204F34AF00136463 /* Resources */,
-				C1311713348A3EEA6F9208C1 /* [CP] Embed Pods Frameworks */,
-				E698FD5D4F8401A6E7F2539C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -386,8 +389,6 @@
 				BEA1B47A204F34B000136463 /* Sources */,
 				BEA1B47B204F34B000136463 /* Frameworks */,
 				BEA1B47C204F34B000136463 /* Resources */,
-				7203D3F6612E35422C92AF50 /* [CP] Embed Pods Frameworks */,
-				731FB545911EA7AC9EBED3BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -458,6 +459,7 @@
 				72D45BE12084364100E06918 /* DowntownGaslampBars.txt in Resources */,
 				BEA1B46A204F34AF00136463 /* Assets.xcassets in Resources */,
 				BEF4A5DA2075C53100D7BCE5 /* PlaceMapAnnotationView.xib in Resources */,
+				72D9951520A3F29100D4782F /* RideShareMenu.xib in Resources */,
 				BEA1B468204F34AF00136463 /* Main.storyboard in Resources */,
 				B1C20A612051EF6500ECB998 /* shout.jpg in Resources */,
 				BEADB55D2075D8C300E107B7 /* Credits Page.txt in Resources */,
@@ -511,13 +513,18 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Lyft/Lyft.framework",
+				"${BUILT_PRODUCTS_DIR}/LyftSDK/LyftSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/MapViewPlus/MapViewPlus.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/MapboxStatic.swift/MapboxStatic.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftPhotoGallery/SwiftPhotoGallery.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UberCore/UberCore.framework",
+				"${BUILT_PRODUCTS_DIR}/UberRides/UberRides.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -527,13 +534,18 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lyft.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LyftSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapViewPlus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxStatic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftPhotoGallery.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberRides.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -560,51 +572,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7203D3F6612E35422C92AF50 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		731FB545911EA7AC9EBED3BE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B8E97880903C4EEE48C5F493 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cheers/Pods-Cheers-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BE0E6E5A2063492800330712 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -617,21 +584,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "TAGS=\"TODO:|FIXME:|DEBUG:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
-		};
-		C1311713348A3EEA6F9208C1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		C95E93F5C6B97D7BFDA081ED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -649,21 +601,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E698FD5D4F8401A6E7F2539C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -697,6 +634,7 @@
 				722D25002086B1E8007B8427 /* NotificationsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
 				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
+				72D9951720A3F2C100D4782F /* RideShareMenu.swift in Sources */,
 				B1053DC3208D5C5100394370 /* MaximumPriceFilterOptionCell.swift in Sources */,
 				BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */,
 				BEF4A5D82075C44900D7BCE5 /* PlaceMapAnnotationViewModel.swift in Sources */,
@@ -878,7 +816,29 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NKB7H7KVZ8;
+				DEVELOPMENT_TEAM = E255S56V67;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ChameleonFramework\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/LyftSDK\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MapViewPlus\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MapboxStatic.swift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftDate\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/UberCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/UberRides\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"\"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic\"",
+				);
 				INFOPLIST_FILE = Cheers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sandiego.comp495.Cheers;
@@ -896,7 +856,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NKB7H7KVZ8;
+				DEVELOPMENT_TEAM = E255S56V67;
 				INFOPLIST_FILE = Cheers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sandiego.comp495.Cheers;

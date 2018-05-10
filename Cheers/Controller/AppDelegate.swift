@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import CoreLocation
 import Firebase
-import SwiftDate
+import Lyft
+import LyftSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -20,8 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var locationManager: CLLocationManager!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        // set up Firebase
         FirebaseApp.configure()
         UserLocations.instantiateSharedInstance()
+        
+        // set up Lyft API
+        LyftConfiguration.developer = (
+            token: "QqBquxy3I6dOq/12Qd9LWGt0yhNtYeozqWaUq/AcZM/19ULc8M0SkM6tpHYRNLrBXqKpMyIT9hBqIbMPaLmQIe3tzjc83x6PLHfQDEtF3zCMPQzeGTMewQA=",
+            clientId: "GfL8zotV5-nr"
+        )
+        
+        // set up CoreLocations
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         return true
     }
