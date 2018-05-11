@@ -9,6 +9,7 @@ target 'Cheers' do
   # database
   pod 'Firebase/Database'
   pod 'Firebase/Core'
+  pod 'Firebase'
   
   # Date/Time Management
   pod 'SwiftDate', '~> 4.5.1'

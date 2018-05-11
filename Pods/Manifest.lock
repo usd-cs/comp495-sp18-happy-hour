@@ -3,6 +3,8 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - Firebase (5.0.0):
+    - Firebase/Core (= 5.0.0)
   - Firebase/Core (5.0.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.0.0)
@@ -50,6 +52,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - Firebase
   - Firebase/Core
   - Firebase/Database
   - Lyft
@@ -64,7 +67,7 @@ DEPENDENCIES:
   - UberRides (~> 0.9)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - Firebase
     - FirebaseAnalytics
@@ -120,6 +123,6 @@ SPEC CHECKSUMS:
   UberCore: 512950407dadc8045a583e4a509da2750ae7dc21
   UberRides: cc6d7c5232966e45229dda1534106b33e379dfbe
 
-PODFILE CHECKSUM: 3c634d6206d9c203b44bb2144a650acab38a1065
+PODFILE CHECKSUM: 81b2e65b6e9b4371d4ca52cde84e3dd199f9ba58
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
