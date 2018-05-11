@@ -1,17 +1,17 @@
 //
-//  FavoritesTableViewController.swift
+//  FavoritesViewController.swift
 //  Cheers
 //
-//  Created by Maia Thomas on 4/17/18.
+//  Created by Will Carhart on 5/11/18.
 //  Copyright © 2018 University of San Diego. All rights reserved.
 //
 
 import UIKit
 import ChameleonFramework
 
-class FavoritesTableViewController: UITableViewController {
+class FavoritesViewController: UIViewController {
 
-    @IBOutlet var favoritesTableView: UITableView!
+    @IBOutlet weak var favoritesTableView: UITableView!
     
     var emptyView: EmptyView!
     
@@ -23,7 +23,6 @@ class FavoritesTableViewController: UITableViewController {
         favoritesTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         favoritesTableView.backgroundColor = FlatWhiteDark()
         
-        // TODO: need to change this class from UITableViewController to UIViewController + reference to tableView
         emptyView = EmptyView()
         self.view.addSubview(emptyView)
         emptyView.backgroundColor = FlatWhiteDark()
@@ -31,7 +30,7 @@ class FavoritesTableViewController: UITableViewController {
         emptyView.image.image = #imageLiteral(resourceName: "favorites")
         
         DispatchQueue.main.async {
-            //self.emptyView.frame = self.favoritesTableView.frame
+            self.emptyView.frame = self.favoritesTableView.frame
             self.emptyView.needsUpdateConstraints()
             self.emptyView.setNeedsLayout()
             self.emptyView.setNeedsDisplay()
@@ -39,16 +38,22 @@ class FavoritesTableViewController: UITableViewController {
         
         emptyView.isHidden = true
         
-        if FavoritesSingleton.shared.favorites.count == 0 {
-            self.emptyView.isHidden = false
-            self.favoritesTableView.isHidden = true
-        }
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.favoritesTableView.reloadData()
+        
+        DispatchQueue.main.async {
+            self.emptyView.frame = self.favoritesTableView.frame
+            self.emptyView.topAnchor.constraint(equalTo: self.favoritesTableView.topAnchor, constant: 0).isActive = true
+            self.emptyView.bottomAnchor.constraint(equalTo: self.favoritesTableView.bottomAnchor, constant: 0).isActive = true
+            self.emptyView.leftAnchor.constraint(equalTo: self.favoritesTableView.leftAnchor, constant: 0).isActive = true
+            self.emptyView.rightAnchor.constraint(equalTo: self.favoritesTableView.rightAnchor, constant: 0).isActive = true
+            self.emptyView.needsUpdateConstraints()
+            self.emptyView.setNeedsLayout()
+            self.emptyView.setNeedsDisplay()
+        }
         
         if FavoritesSingleton.shared.favorites.count == 0 {
             DispatchQueue.main.async {
@@ -65,11 +70,29 @@ class FavoritesTableViewController: UITableViewController {
         self.emptyView.isHidden = false
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSelectedFromFavorites" {
+            let destination = segue.destination as! SelectedPlaceViewController
+            let indexPath = favoritesTableView.indexPathForSelectedRow!
+            let selectedPlace = FavoritesSingleton.shared.favorites[indexPath.row]
+            destination.place = selectedPlace
+            destination.sender = "Favorites"
+        }
+    }
+    
+    @IBAction func unwindToFavorites(segue: UIStoryboardSegue) {
+        
+    }
+
+}
+
+extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return FavoritesSingleton.shared.favorites.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "bar", for: indexPath) as! BarTableViewCell
         
@@ -120,22 +143,7 @@ class FavoritesTableViewController: UITableViewController {
         return degrees * (Double.pi / 180.0)
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "showSelectedFromFavorites", sender: self)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSelectedFromFavorites" {
-            let destination = segue.destination as! SelectedPlaceViewController
-            let indexPath = tableView.indexPathForSelectedRow!
-            let selectedPlace = FavoritesSingleton.shared.favorites[indexPath.row]
-            destination.place = selectedPlace
-            destination.sender = "Favorites"
-        }
-    }
-    
-    @IBAction func unwindToFavorites(segue: UIStoryboardSegue) {
-        
-    }
-    
 }
