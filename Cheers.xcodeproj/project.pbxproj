@@ -232,6 +232,7 @@
 		72189A5420A55D9D00D7CA33 /* Map+Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */,
 				BEA1B464204F34AF00136463 /* MapViewController.swift */,
 			);
 			path = "Map+Helpers";
@@ -306,7 +307,6 @@
 				BEA1B466204F34AF00136463 /* Main.storyboard */,
 				BEA1B46B204F34AF00136463 /* LaunchScreen.storyboard */,
 				BEF4A5D92075C53100D7BCE5 /* PlaceMapAnnotationView.xib */,
-				BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */,
 				726E34F420A3082B00865189 /* SelectedPlace.xib */,
 				72D9951420A3F29100D4782F /* RideShareMenu.xib */,
 				72189A5620A6055700D7CA33 /* EmptyView.xib */,
@@ -575,7 +575,6 @@
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/MapboxStatic.swift/MapboxStatic.framework",
-				"${BUILT_PRODUCTS_DIR}/SIFloatingCollection/SIFloatingCollection.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftPhotoGallery/SwiftPhotoGallery.framework",
@@ -597,7 +596,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxStatic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SIFloatingCollection.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftPhotoGallery.framework",

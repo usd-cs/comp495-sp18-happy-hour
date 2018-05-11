@@ -23,14 +23,15 @@ class FavoritesTableViewController: UITableViewController {
         favoritesTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         favoritesTableView.backgroundColor = FlatWhiteDark()
         
+        // TODO: need to change this class from UITableViewController to UIViewController + reference to tableView
         emptyView = EmptyView()
         self.view.addSubview(emptyView)
         emptyView.backgroundColor = FlatWhiteDark()
-        //emptyView.textLabel.text = "No Favorites Yet"
-        //emptyView.image.image = #imageLiteral(resourceName: "favorites")
+        emptyView.textLabel.text = "No Favorites Yet"
+        emptyView.image.image = #imageLiteral(resourceName: "favorites")
         
         DispatchQueue.main.async {
-            self.emptyView.frame = self.favoritesTableView.frame
+            //self.emptyView.frame = self.favoritesTableView.frame
             self.emptyView.needsUpdateConstraints()
             self.emptyView.setNeedsLayout()
             self.emptyView.setNeedsDisplay()

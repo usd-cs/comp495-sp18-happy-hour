@@ -36,9 +36,6 @@ target 'Cheers' do
   # Colors
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   
-  # UI
-  pod 'SIFloatingCollection'
-  
   target 'CheersTests' do
     inherit! :search_paths
     # Pods for testing
