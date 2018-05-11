@@ -28,6 +28,7 @@ class SelectedPlaceViewController: UIViewController {
     struct Review {
         var name: String
         var text: String
+        var score: Int
     }
 
     // storyboard outlets
@@ -277,18 +278,48 @@ class SelectedPlaceViewController: UIViewController {
             if response.result.isSuccess {
                 let json = JSON(response.result.value!)
                 
-                if let review = json["reviews"][0]["text"].string, let user = json["reviews"][0]["user"]["name"].string {
-                    self.reviews.append(Review(name: user, text: review))
-                }
-                if let review = json["reviews"][1]["text"].string, let user = json["reviews"][1]["user"]["name"].string {
-                    self.reviews.append(Review(name: user, text: review))
-                }
-                if let review = json["reviews"][2]["text"].string, let user = json["reviews"][2]["user"]["name"].string {
-                    self.reviews.append(Review(name: user, text: review))
+                for i in 0...2 {
+                    if let review = json["reviews"][i]["text"].string,
+                        let user = json["reviews"][i]["user"]["name"].string,
+                        let rating = json["reviews"][i]["rating"].int {
+                        self.reviews.append(Review(name: user, text: review, score: rating))
+                    }
                 }
                 
                 self.selectedPlaceView.reviewViewContentLabel.text = self.reviews[self.reviewIndex].text
                 self.selectedPlaceView.reviewViewAnnotationLabel.text = "-\(self.reviews[self.reviewIndex].name)"
+                
+                self.selectedPlaceView.reviewStar0.isHidden = true
+                self.selectedPlaceView.reviewStar1.isHidden = true
+                self.selectedPlaceView.reviewStar2.isHidden = true
+                self.selectedPlaceView.reviewStar3.isHidden = true
+                self.selectedPlaceView.reviewStar4.isHidden = true
+                
+                switch self.reviews[self.reviewIndex].score {
+                case 0:
+                    break
+                case 1:
+                    self.selectedPlaceView.reviewStar0.isHidden = false
+                case 2:
+                    self.selectedPlaceView.reviewStar0.isHidden = false
+                    self.selectedPlaceView.reviewStar1.isHidden = false
+                case 3:
+                    self.selectedPlaceView.reviewStar0.isHidden = false
+                    self.selectedPlaceView.reviewStar1.isHidden = false
+                    self.selectedPlaceView.reviewStar2.isHidden = false
+                case 4:
+                    self.selectedPlaceView.reviewStar0.isHidden = false
+                    self.selectedPlaceView.reviewStar1.isHidden = false
+                    self.selectedPlaceView.reviewStar2.isHidden = false
+                    self.selectedPlaceView.reviewStar3.isHidden = false
+                default:
+                    self.selectedPlaceView.reviewStar0.isHidden = false
+                    self.selectedPlaceView.reviewStar1.isHidden = false
+                    self.selectedPlaceView.reviewStar2.isHidden = false
+                    self.selectedPlaceView.reviewStar3.isHidden = false
+                    self.selectedPlaceView.reviewStar4.isHidden = false
+                }
+                
                 self.reviewIndex += 1
                 
             }
@@ -303,6 +334,38 @@ class SelectedPlaceViewController: UIViewController {
         UIView.transition(with: self.selectedPlaceView.reviewView, duration: 0.5, options: .transitionCrossDissolve, animations: {
             self.selectedPlaceView.reviewViewContentLabel.text = newText
             self.selectedPlaceView.reviewViewAnnotationLabel.text = newName
+            
+            self.selectedPlaceView.reviewStar0.isHidden = true
+            self.selectedPlaceView.reviewStar1.isHidden = true
+            self.selectedPlaceView.reviewStar2.isHidden = true
+            self.selectedPlaceView.reviewStar3.isHidden = true
+            self.selectedPlaceView.reviewStar4.isHidden = true
+            
+            switch self.reviews[self.reviewIndex].score {
+            case 0:
+                break
+            case 1:
+                self.selectedPlaceView.reviewStar0.isHidden = false
+            case 2:
+                self.selectedPlaceView.reviewStar0.isHidden = false
+                self.selectedPlaceView.reviewStar1.isHidden = false
+            case 3:
+                self.selectedPlaceView.reviewStar0.isHidden = false
+                self.selectedPlaceView.reviewStar1.isHidden = false
+                self.selectedPlaceView.reviewStar2.isHidden = false
+            case 4:
+                self.selectedPlaceView.reviewStar0.isHidden = false
+                self.selectedPlaceView.reviewStar1.isHidden = false
+                self.selectedPlaceView.reviewStar2.isHidden = false
+                self.selectedPlaceView.reviewStar3.isHidden = false
+            default:
+                self.selectedPlaceView.reviewStar0.isHidden = false
+                self.selectedPlaceView.reviewStar1.isHidden = false
+                self.selectedPlaceView.reviewStar2.isHidden = false
+                self.selectedPlaceView.reviewStar3.isHidden = false
+                self.selectedPlaceView.reviewStar4.isHidden = false
+            }
+            
         }, completion: nil)
         
         self.reviewIndex += 1

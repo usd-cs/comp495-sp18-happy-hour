@@ -8,4 +8,5 @@ Icons made by:
  - Icomoon
  - Google
  - Pixel perfect
+ - Dave Gandy
 from www.flaticon.com

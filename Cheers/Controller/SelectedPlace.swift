@@ -54,6 +54,11 @@ class SelectedPlace: UIView {
     @IBOutlet weak var reviewViewContentLabel: UILabel!
     @IBOutlet weak var reviewViewAnnotationLabel: UILabel!
     @IBOutlet weak var yelpReviewButton: UIButton!
+    @IBOutlet weak var reviewStar0: UIImageView!
+    @IBOutlet weak var reviewStar1: UIImageView!
+    @IBOutlet weak var reviewStar2: UIImageView!
+    @IBOutlet weak var reviewStar3: UIImageView!
+    @IBOutlet weak var reviewStar4: UIImageView!
     
     // View V (map) outlets
     @IBOutlet weak var mapViewImage: UIImageView!

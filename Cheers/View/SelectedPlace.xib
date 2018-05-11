@@ -17,12 +17,6 @@
                 <outlet property="aboutViewContentLabel" destination="3bh-8j-JAw" id="U9Z-xj-Qxc"/>
                 <outlet property="aboutViewTitleLabel" destination="WKh-Ok-GIB" id="SEZ-Jn-RdX"/>
                 <outlet property="categoriesView" destination="FBm-oO-Or1" id="ZfM-1H-oCp"/>
-                <outlet property="categoryLabel0" destination="2h7-kY-5yM" id="fa0-wa-pAM"/>
-                <outlet property="categoryLabel1" destination="53N-b9-If2" id="GE8-Nt-Mrb"/>
-                <outlet property="categoryLabel2" destination="2aW-wW-YMY" id="IVU-4V-miY"/>
-                <outlet property="categoryLabel3" destination="UGj-gN-9ss" id="TiF-kR-2nZ"/>
-                <outlet property="categoryLabel4" destination="UkZ-Xj-nox" id="UL0-dX-SvG"/>
-                <outlet property="categoryLabel5" destination="ewS-Co-RA8" id="FBk-ID-NOk"/>
                 <outlet property="detailsView" destination="1Wf-Nw-cEc" id="p4t-4q-gQa"/>
                 <outlet property="detailsViewCurrentHHLabel" destination="a0G-DG-Y6F" id="d6v-GD-Onu"/>
                 <outlet property="detailsViewFavoritesButton" destination="4Wm-RF-TTJ" id="036-o5-VBG"/>
@@ -46,6 +40,11 @@
                 <outlet property="mapViewButtonView" destination="On1-Mt-kl2" id="B0j-bj-WJ2"/>
                 <outlet property="mapViewDirectionsButton" destination="qcJ-Jd-YUw" id="uQl-yF-wWx"/>
                 <outlet property="mapViewImage" destination="D96-I5-g8n" id="bnn-3h-Md3"/>
+                <outlet property="reviewStar0" destination="V1X-Pi-bEy" id="eT5-H8-qKw"/>
+                <outlet property="reviewStar1" destination="nve-J4-Zw7" id="hlL-Tc-s91"/>
+                <outlet property="reviewStar2" destination="sSs-ew-rpI" id="ssA-8I-BJe"/>
+                <outlet property="reviewStar3" destination="dIj-3M-HE9" id="8nc-fh-KdL"/>
+                <outlet property="reviewStar4" destination="kIB-gH-k7R" id="KFK-Eh-Xbp"/>
                 <outlet property="reviewView" destination="sh8-ta-H4D" id="NB8-sH-69V"/>
                 <outlet property="reviewViewAnnotationLabel" destination="O50-RC-eNz" id="kKt-yA-4pr"/>
                 <outlet property="reviewViewContentLabel" destination="BIv-bp-M7S" id="ItQ-xx-qjr"/>
@@ -355,173 +354,9 @@
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBm-oO-Or1" userLabel="III - Categories View">
                             <rect key="frame" x="0.0" y="424" width="375" height="230"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSb-w6-3O5" userLabel="III - Title">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Known for:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKi-5A-kWj">
-                                            <rect key="frame" x="8" y="0.0" width="110" height="29"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="24"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="LKi-5A-kWj" firstAttribute="top" secondItem="aSb-w6-3O5" secondAttribute="top" id="IsU-wg-WXH"/>
-                                        <constraint firstAttribute="height" constant="30" id="PuV-JL-NzR"/>
-                                        <constraint firstItem="LKi-5A-kWj" firstAttribute="leading" secondItem="aSb-w6-3O5" secondAttribute="leading" constant="8" id="sLS-b2-iA7"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rs9-CU-ZVV" userLabel="III - Left">
-                                    <rect key="frame" x="8" y="38" width="187.5" height="192"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A33-WV-6ia" userLabel="IIIL Top">
-                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="64"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h7-kY-5yM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="36.5" height="20"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="2h7-kY-5yM" firstAttribute="leading" secondItem="A33-WV-6ia" secondAttribute="leading" id="AxV-9Y-DqG"/>
-                                                <constraint firstItem="2h7-kY-5yM" firstAttribute="top" secondItem="A33-WV-6ia" secondAttribute="top" id="GoC-z4-9vT"/>
-                                            </constraints>
-                                        </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdU-ol-4gT" userLabel="IIIL Mid">
-                                            <rect key="frame" x="0.0" y="64" width="187.5" height="64"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aW-wW-YMY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="36.5" height="20"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="2aW-wW-YMY" firstAttribute="leading" secondItem="rdU-ol-4gT" secondAttribute="leading" id="XTN-Dr-5hA"/>
-                                                <constraint firstItem="2aW-wW-YMY" firstAttribute="top" secondItem="rdU-ol-4gT" secondAttribute="top" id="gNb-Ik-WPQ"/>
-                                            </constraints>
-                                        </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dqX-rt-zG5" userLabel="IIIL Bot">
-                                            <rect key="frame" x="0.0" y="128" width="187.5" height="64"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkZ-Xj-nox">
-                                                    <rect key="frame" x="0.0" y="0.0" width="36.5" height="20"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="UkZ-Xj-nox" firstAttribute="top" secondItem="dqX-rt-zG5" secondAttribute="top" id="OFc-fi-PoZ"/>
-                                                <constraint firstItem="UkZ-Xj-nox" firstAttribute="leading" secondItem="dqX-rt-zG5" secondAttribute="leading" id="aME-Y6-KbN"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="dqX-rt-zG5" secondAttribute="bottom" id="2RP-xU-uMc"/>
-                                        <constraint firstAttribute="trailing" secondItem="A33-WV-6ia" secondAttribute="trailing" id="Bp3-qc-ekE"/>
-                                        <constraint firstItem="rdU-ol-4gT" firstAttribute="top" secondItem="A33-WV-6ia" secondAttribute="bottom" id="CQv-8z-CYT"/>
-                                        <constraint firstItem="A33-WV-6ia" firstAttribute="height" secondItem="Rs9-CU-ZVV" secondAttribute="height" multiplier="1:3" id="KRb-B9-ktG"/>
-                                        <constraint firstItem="rdU-ol-4gT" firstAttribute="bottom" secondItem="dqX-rt-zG5" secondAttribute="top" id="Qbb-eK-DBw"/>
-                                        <constraint firstItem="rdU-ol-4gT" firstAttribute="leading" secondItem="Rs9-CU-ZVV" secondAttribute="leading" id="aev-IV-4Ns"/>
-                                        <constraint firstItem="A33-WV-6ia" firstAttribute="top" secondItem="Rs9-CU-ZVV" secondAttribute="top" id="bWp-lk-H06"/>
-                                        <constraint firstAttribute="trailing" secondItem="rdU-ol-4gT" secondAttribute="trailing" id="jZM-TK-fWJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="dqX-rt-zG5" secondAttribute="trailing" id="jeW-O5-MkS"/>
-                                        <constraint firstItem="A33-WV-6ia" firstAttribute="leading" secondItem="Rs9-CU-ZVV" secondAttribute="leading" id="lQ4-zz-ga8"/>
-                                        <constraint firstItem="dqX-rt-zG5" firstAttribute="height" secondItem="Rs9-CU-ZVV" secondAttribute="height" multiplier="1:3" id="qzL-2f-LgL"/>
-                                        <constraint firstItem="dqX-rt-zG5" firstAttribute="leading" secondItem="Rs9-CU-ZVV" secondAttribute="leading" id="tE2-FX-Nev"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tdc-oO-Tfe" userLabel="III - Right">
-                                    <rect key="frame" x="179.5" y="38" width="187.5" height="192"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HnM-VU-VaM" userLabel="IIIR Top">
-                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="64"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53N-b9-If2">
-                                                    <rect key="frame" x="8" y="0.0" width="36.5" height="20"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="53N-b9-If2" firstAttribute="top" secondItem="HnM-VU-VaM" secondAttribute="top" id="OZr-WB-XVP"/>
-                                                <constraint firstItem="53N-b9-If2" firstAttribute="leading" secondItem="HnM-VU-VaM" secondAttribute="leading" constant="8" id="Off-0a-XfK"/>
-                                            </constraints>
-                                        </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-St-wOP" userLabel="IIIR Mid">
-                                            <rect key="frame" x="0.0" y="64" width="187.5" height="64"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGj-gN-9ss">
-                                                    <rect key="frame" x="8" y="0.0" width="36.5" height="20"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="UGj-gN-9ss" firstAttribute="top" secondItem="Yc4-St-wOP" secondAttribute="top" id="1z5-T0-B1C"/>
-                                                <constraint firstItem="UGj-gN-9ss" firstAttribute="leading" secondItem="Yc4-St-wOP" secondAttribute="leading" constant="8" id="wGv-f1-ddI"/>
-                                            </constraints>
-                                        </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OzO-s8-7Nm" userLabel="IIIR Bot">
-                                            <rect key="frame" x="0.0" y="128" width="187.5" height="64"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewS-Co-RA8">
-                                                    <rect key="frame" x="8" y="0.0" width="37" height="21"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ewS-Co-RA8" firstAttribute="leading" secondItem="OzO-s8-7Nm" secondAttribute="leading" constant="8" id="eDI-qi-MsM"/>
-                                                <constraint firstItem="ewS-Co-RA8" firstAttribute="top" secondItem="OzO-s8-7Nm" secondAttribute="top" id="qfV-Az-qP5"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="HnM-VU-VaM" firstAttribute="top" secondItem="Tdc-oO-Tfe" secondAttribute="top" id="5OR-oo-A84"/>
-                                        <constraint firstAttribute="trailing" secondItem="Yc4-St-wOP" secondAttribute="trailing" id="I6S-cd-bXw"/>
-                                        <constraint firstItem="HnM-VU-VaM" firstAttribute="height" secondItem="Tdc-oO-Tfe" secondAttribute="height" multiplier="1:3" id="KmE-2a-Zj2"/>
-                                        <constraint firstItem="HnM-VU-VaM" firstAttribute="leading" secondItem="Tdc-oO-Tfe" secondAttribute="leading" id="Kny-b6-2bE"/>
-                                        <constraint firstAttribute="bottom" secondItem="OzO-s8-7Nm" secondAttribute="bottom" id="Rsy-iZ-E5t"/>
-                                        <constraint firstAttribute="trailing" secondItem="HnM-VU-VaM" secondAttribute="trailing" id="dtu-L4-LKt"/>
-                                        <constraint firstItem="OzO-s8-7Nm" firstAttribute="height" secondItem="Tdc-oO-Tfe" secondAttribute="height" multiplier="1:3" id="kL5-uQ-6wU"/>
-                                        <constraint firstAttribute="trailing" secondItem="OzO-s8-7Nm" secondAttribute="trailing" id="n1o-74-yGv"/>
-                                        <constraint firstItem="Yc4-St-wOP" firstAttribute="bottom" secondItem="OzO-s8-7Nm" secondAttribute="top" id="o7f-lL-m25"/>
-                                        <constraint firstItem="Yc4-St-wOP" firstAttribute="leading" secondItem="Tdc-oO-Tfe" secondAttribute="leading" id="oVi-JW-teM"/>
-                                        <constraint firstItem="Yc4-St-wOP" firstAttribute="top" secondItem="HnM-VU-VaM" secondAttribute="bottom" id="qg6-xd-VzC"/>
-                                        <constraint firstItem="OzO-s8-7Nm" firstAttribute="leading" secondItem="Tdc-oO-Tfe" secondAttribute="leading" id="zbF-xT-Jdb"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
                             <constraints>
-                                <constraint firstItem="Tdc-oO-Tfe" firstAttribute="width" secondItem="FBm-oO-Or1" secondAttribute="width" multiplier="1:2" id="4xp-rd-nMz"/>
                                 <constraint firstAttribute="height" constant="230" id="62O-kd-ztg"/>
-                                <constraint firstAttribute="trailing" secondItem="Tdc-oO-Tfe" secondAttribute="trailing" constant="8" id="NNA-Ie-Rn4"/>
-                                <constraint firstAttribute="trailing" secondItem="aSb-w6-3O5" secondAttribute="trailing" id="PkK-JB-3QK"/>
-                                <constraint firstItem="Rs9-CU-ZVV" firstAttribute="width" secondItem="FBm-oO-Or1" secondAttribute="width" multiplier="1:2" id="SJt-ek-Cf1"/>
-                                <constraint firstItem="Rs9-CU-ZVV" firstAttribute="leading" secondItem="FBm-oO-Or1" secondAttribute="leading" constant="8" id="VoP-KS-Uar"/>
-                                <constraint firstItem="Tdc-oO-Tfe" firstAttribute="top" secondItem="aSb-w6-3O5" secondAttribute="bottom" constant="8" id="Vr5-TD-k4M"/>
-                                <constraint firstItem="Rs9-CU-ZVV" firstAttribute="top" secondItem="aSb-w6-3O5" secondAttribute="bottom" constant="8" id="XL7-zm-qgf"/>
-                                <constraint firstAttribute="bottom" secondItem="Tdc-oO-Tfe" secondAttribute="bottom" id="bH6-4V-IuQ"/>
-                                <constraint firstItem="aSb-w6-3O5" firstAttribute="top" secondItem="FBm-oO-Or1" secondAttribute="top" id="cDM-Tk-9CR"/>
-                                <constraint firstAttribute="bottom" secondItem="Rs9-CU-ZVV" secondAttribute="bottom" id="jbz-Q3-cho"/>
-                                <constraint firstItem="aSb-w6-3O5" firstAttribute="leading" secondItem="FBm-oO-Or1" secondAttribute="leading" id="xOq-cz-eMk"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="subviews">
-                                    <exclude reference="aSb-w6-3O5"/>
-                                    <exclude reference="Rs9-CU-ZVV"/>
-                                    <exclude reference="Tdc-oO-Tfe"/>
-                                </mask>
-                            </variation>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sh8-ta-H4D" userLabel="IV - Reviews View">
                             <rect key="frame" x="0.0" y="662" width="375" height="200"/>
@@ -555,6 +390,41 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbb-Qa-eEv" userLabel="Review Annotation">
                                     <rect key="frame" x="0.0" y="166.5" width="375" height="33.5"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelp_review_full" translatesAutoresizingMaskIntoConstraints="NO" id="V1X-Pi-bEy" userLabel="star0">
+                                            <rect key="frame" x="8" y="8.5" width="16" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="16" id="CS8-81-0Pe"/>
+                                                <constraint firstAttribute="height" constant="16" id="Xxj-u0-F8c"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelp_review_full" translatesAutoresizingMaskIntoConstraints="NO" id="nve-J4-Zw7" userLabel="star1">
+                                            <rect key="frame" x="32" y="8.5" width="16" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="16" id="0CW-Gs-Fhl"/>
+                                                <constraint firstAttribute="height" constant="16" id="d3c-bR-CMA"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelp_review_full" translatesAutoresizingMaskIntoConstraints="NO" id="sSs-ew-rpI" userLabel="star2">
+                                            <rect key="frame" x="56" y="8.5" width="16" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="R01-wT-ceN"/>
+                                                <constraint firstAttribute="width" constant="16" id="Uka-HE-GcF"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelp_review_full" translatesAutoresizingMaskIntoConstraints="NO" id="dIj-3M-HE9" userLabel="star3">
+                                            <rect key="frame" x="80" y="8.5" width="16" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="16" id="HIH-lb-vZd"/>
+                                                <constraint firstAttribute="height" constant="16" id="XDh-Gw-uBU"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelp_review_full" translatesAutoresizingMaskIntoConstraints="NO" id="kIB-gH-k7R" userLabel="star4">
+                                            <rect key="frame" x="104" y="8.5" width="16" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="2pM-Hz-1lH"/>
+                                                <constraint firstAttribute="width" constant="16" id="MKO-Ol-9AY"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O50-RC-eNz">
                                             <rect key="frame" x="330" y="13.5" width="37" height="20"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="17"/>
@@ -563,8 +433,18 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="sSs-ew-rpI" firstAttribute="leading" secondItem="nve-J4-Zw7" secondAttribute="trailing" constant="8" id="1Hp-pl-boY"/>
+                                        <constraint firstItem="nve-J4-Zw7" firstAttribute="leading" secondItem="V1X-Pi-bEy" secondAttribute="trailing" constant="8" id="3OQ-vh-ucn"/>
+                                        <constraint firstItem="V1X-Pi-bEy" firstAttribute="leading" secondItem="mbb-Qa-eEv" secondAttribute="leading" constant="8" id="8ns-a1-zST"/>
+                                        <constraint firstItem="sSs-ew-rpI" firstAttribute="centerY" secondItem="mbb-Qa-eEv" secondAttribute="centerY" id="BSQ-zj-qU8"/>
+                                        <constraint firstItem="kIB-gH-k7R" firstAttribute="leading" secondItem="dIj-3M-HE9" secondAttribute="trailing" constant="8" id="X8Q-wd-1VB"/>
+                                        <constraint firstItem="nve-J4-Zw7" firstAttribute="centerY" secondItem="mbb-Qa-eEv" secondAttribute="centerY" id="XTQ-6F-tvi"/>
                                         <constraint firstAttribute="trailing" secondItem="O50-RC-eNz" secondAttribute="trailing" constant="8" id="bDh-eL-Bjb"/>
                                         <constraint firstAttribute="bottom" secondItem="O50-RC-eNz" secondAttribute="bottom" id="bzv-xO-nGr"/>
+                                        <constraint firstItem="dIj-3M-HE9" firstAttribute="centerY" secondItem="mbb-Qa-eEv" secondAttribute="centerY" id="m9z-JM-SaA"/>
+                                        <constraint firstItem="kIB-gH-k7R" firstAttribute="centerY" secondItem="mbb-Qa-eEv" secondAttribute="centerY" id="pVH-WS-8Ta"/>
+                                        <constraint firstItem="V1X-Pi-bEy" firstAttribute="centerY" secondItem="mbb-Qa-eEv" secondAttribute="centerY" id="snR-p0-T4l"/>
+                                        <constraint firstItem="dIj-3M-HE9" firstAttribute="leading" secondItem="sSs-ew-rpI" secondAttribute="trailing" constant="8" id="xI0-Rn-mca"/>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csn-h9-Q4A">
@@ -717,5 +597,6 @@
     <resources>
         <image name="quotes" width="64" height="64"/>
         <image name="report" width="64" height="64"/>
+        <image name="yelp_review_full" width="64" height="64"/>
     </resources>
 </document>
