@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		33A372DB209A2CB00076F051 /* SortFilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A372DA209A2CB00076F051 /* SortFilterOptionCell.swift */; };
 		53B8AB51ECE9E0A4AD635A77 /* Pods_CheersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */; };
-		666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */; };
 		66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66D3EDFB20730BC3003A9CB0 /* happyhours.txt */; };
 		72189A4A20A506C500D7CA33 /* BubblesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72189A4920A506C500D7CA33 /* BubblesScene.swift */; };
 		72189A4C20A5070100D7CA33 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72189A4B20A5070100D7CA33 /* BubbleNode.swift */; };
@@ -88,7 +87,6 @@
 		2010BDD9FF669BDD3D11AC9E /* Pods-CheersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		33A372DA209A2CB00076F051 /* SortFilterOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFilterOptionCell.swift; sourceTree = "<group>"; };
 		3FFE80B91BF7B44C17B2D247 /* Pods-CheersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests.release.xcconfig"; sourceTree = "<group>"; };
-		666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBarViewController.swift; sourceTree = "<group>"; };
 		66D3EDFB20730BC3003A9CB0 /* happyhours.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = happyhours.txt; sourceTree = "<group>"; };
 		72189A4920A506C500D7CA33 /* BubblesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesScene.swift; sourceTree = "<group>"; };
 		72189A4B20A5070100D7CA33 /* BubbleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
@@ -202,9 +200,50 @@
 			path = "SIFloatingCollection Classes";
 			sourceTree = "<group>";
 		};
+		72189A5220A55D3500D7CA33 /* List+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B1FF31142072DE84001DF2DF /* ImageLoader.swift */,
+				726E34F820A346AD00865189 /* SelectedPlaceViewController.swift */,
+				B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */,
+				BEA1B462204F34AF00136463 /* ListViewController.swift */,
+				72D9951620A3F2C100D4782F /* RideShareMenu.swift */,
+				726E34F620A3096D00865189 /* SelectedPlace.swift */,
+			);
+			path = "List+Helpers";
+			sourceTree = "<group>";
+		};
+		72189A5320A55D7A00D7CA33 /* Settings+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				722D24F920865951007B8427 /* SettingsTableViewController.swift */,
+				722D24FF2086B1E8007B8427 /* NotificationsViewController.swift */,
+				722D25012086B273007B8427 /* ContactUsViewController.swift */,
+				722D25032086B27D007B8427 /* AboutViewController.swift */,
+			);
+			path = "Settings+Helpers";
+			sourceTree = "<group>";
+		};
+		72189A5420A55D9D00D7CA33 /* Map+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BEA1B464204F34AF00136463 /* MapViewController.swift */,
+			);
+			path = "Map+Helpers";
+			sourceTree = "<group>";
+		};
+		72189A5520A55DAF00D7CA33 /* Favorites+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B259C8CD20870C6300C37678 /* FavoritesTableViewController.swift */,
+			);
+			path = "Favorites+Helpers";
+			sourceTree = "<group>";
+		};
 		7229A67E208FB681008DB966 /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
+				BEA1B460204F34AF00136463 /* AppDelegate.swift */,
 				722D24FB20868AD1007B8427 /* SettingsSingleton.swift */,
 				72D17D752087B39E0074A647 /* FavoritesSingleton.swift */,
 				BEADB55E2075DB5800E107B7 /* ColorsSingleton.swift */,
@@ -245,23 +284,13 @@
 		B1C20A572051E3F700ECB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				72189A5520A55DAF00D7CA33 /* Favorites+Helpers */,
+				72189A5420A55D9D00D7CA33 /* Map+Helpers */,
+				72189A5320A55D7A00D7CA33 /* Settings+Helpers */,
+				72189A5220A55D3500D7CA33 /* List+Helpers */,
 				72189A4D20A5086B00D7CA33 /* SIFloatingCollection Classes */,
 				B15ACF5F2081A8F30052C4CB /* Filter Classes */,
 				B1FF310D20720A08001DF2DF /* Location Classes */,
-				BEA1B460204F34AF00136463 /* AppDelegate.swift */,
-				722D24FF2086B1E8007B8427 /* NotificationsViewController.swift */,
-				BEA1B462204F34AF00136463 /* ListViewController.swift */,
-				666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */,
-				BEA1B464204F34AF00136463 /* MapViewController.swift */,
-				B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */,
-				B1FF31142072DE84001DF2DF /* ImageLoader.swift */,
-				722D24F920865951007B8427 /* SettingsTableViewController.swift */,
-				722D25012086B273007B8427 /* ContactUsViewController.swift */,
-				722D25032086B27D007B8427 /* AboutViewController.swift */,
-				B259C8CD20870C6300C37678 /* FavoritesTableViewController.swift */,
-				726E34F620A3096D00865189 /* SelectedPlace.swift */,
-				726E34F820A346AD00865189 /* SelectedPlaceViewController.swift */,
-				72D9951620A3F2C100D4782F /* RideShareMenu.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -282,7 +311,6 @@
 		B1C20A592051E3FE00ECB998 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7229A67E208FB681008DB966 /* Singletons */,
 				BEC473AC20510B7C00FC5702 /* Place.swift */,
 				B1FFE6AC205B6F7200531FDB /* Neighborhoods.swift */,
 				BEF309A52061AA3200022098 /* BarType.swift */,
@@ -325,6 +353,7 @@
 		BEA1B45F204F34AF00136463 /* Cheers */ = {
 			isa = PBXGroup;
 			children = (
+				7229A67E208FB681008DB966 /* Singletons */,
 				B1C20A592051E3FE00ECB998 /* Model */,
 				B1C20A582051E3FB00ECB998 /* View */,
 				B1C20A572051E3F700ECB998 /* Controller */,
@@ -658,7 +687,6 @@
 				BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */,
 				722D25002086B1E8007B8427 /* NotificationsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
-				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
 				72189A5120A508D700D7CA33 /* SIFloatingNode.swift in Sources */,
 				72D9951720A3F2C100D4782F /* RideShareMenu.swift in Sources */,
 				B1053DC3208D5C5100394370 /* MaximumPriceFilterOptionCell.swift in Sources */,
