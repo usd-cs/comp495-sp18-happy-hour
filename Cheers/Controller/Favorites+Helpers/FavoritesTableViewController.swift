@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class FavoritesTableViewController: UITableViewController {
 
     @IBOutlet var favoritesTableView: UITableView!
+    
+    var emptyView: EmptyView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,25 +21,48 @@ class FavoritesTableViewController: UITableViewController {
         favoritesTableView.dataSource = self
         favoritesTableView.delegate = self
         favoritesTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        favoritesTableView.backgroundColor = FlatWhiteDark()
         
-//        if let attempt = Place.loadFromFile()
-//        {
-//            favorites = attempt
-//        } else {
-//            print("Error: Could not read persisted list from file")
-//        }
+        emptyView = EmptyView()
+        self.view.addSubview(emptyView)
+        emptyView.backgroundColor = FlatWhiteDark()
+        //emptyView.textLabel.text = "No Favorites Yet"
+        //emptyView.image.image = #imageLiteral(resourceName: "favorites")
+        
+        DispatchQueue.main.async {
+            self.emptyView.frame = self.favoritesTableView.frame
+            self.emptyView.needsUpdateConstraints()
+            self.emptyView.setNeedsLayout()
+            self.emptyView.setNeedsDisplay()
+        }
+        
+        emptyView.isHidden = true
+        
+        if FavoritesSingleton.shared.favorites.count == 0 {
+            self.emptyView.isHidden = false
+            self.favoritesTableView.isHidden = true
+        }
        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.favoritesTableView.reloadData()
         
+        if FavoritesSingleton.shared.favorites.count == 0 {
+            DispatchQueue.main.async {
+                self.emptyView.isHidden = false
+                self.favoritesTableView.isHidden = true
+                self.view.bringSubview(toFront: self.emptyView)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.emptyView.isHidden = true
+                self.favoritesTableView.isHidden = false
+            }
+        }
+        self.emptyView.isHidden = false
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-    
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return FavoritesSingleton.shared.favorites.count
@@ -105,26 +131,6 @@ class FavoritesTableViewController: UITableViewController {
             destination.place = selectedPlace
             destination.sender = "Favorites"
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.favoritesTableView.reloadData()
-        
-//        if FavoritesSingleton.shared.favorites.count == 0 {
-//
-//            let label : UILabel = {
-//               let lab = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 35))
-//                lab.text = "No Favorites"
-//                return lab
-//            }()
-//
-//            view.addSubview(label)
-//            label.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100)
-//            label.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100)
-//            label.heightAnchor.constraint(equalTo: view.heightAnchor, constant: 150)
-//
-//        }
     }
     
     @IBAction func unwindToFavorites(segue: UIStoryboardSegue) {

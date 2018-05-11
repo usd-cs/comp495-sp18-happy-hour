@@ -14,6 +14,8 @@
 		72189A4C20A5070100D7CA33 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72189A4B20A5070100D7CA33 /* BubbleNode.swift */; };
 		72189A4F20A508A900D7CA33 /* SIFloatingCollectionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72189A4E20A508A900D7CA33 /* SIFloatingCollectionScene.swift */; };
 		72189A5120A508D700D7CA33 /* SIFloatingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72189A5020A508D700D7CA33 /* SIFloatingNode.swift */; };
+		72189A5720A6055700D7CA33 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72189A5620A6055700D7CA33 /* EmptyView.xib */; };
+		72189A5920A6056B00D7CA33 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72189A5820A6056B00D7CA33 /* EmptyView.swift */; };
 		722D24FA20865951007B8427 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24F920865951007B8427 /* SettingsTableViewController.swift */; };
 		722D24FC20868AD1007B8427 /* SettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24FB20868AD1007B8427 /* SettingsSingleton.swift */; };
 		722D24FE20869CD9007B8427 /* HistoryQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24FD20869CD9007B8427 /* HistoryQueue.swift */; };
@@ -92,6 +94,8 @@
 		72189A4B20A5070100D7CA33 /* BubbleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
 		72189A4E20A508A900D7CA33 /* SIFloatingCollectionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFloatingCollectionScene.swift; sourceTree = "<group>"; };
 		72189A5020A508D700D7CA33 /* SIFloatingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFloatingNode.swift; sourceTree = "<group>"; };
+		72189A5620A6055700D7CA33 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		72189A5820A6056B00D7CA33 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		722D24F920865951007B8427 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		722D24FB20868AD1007B8427 /* SettingsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSingleton.swift; sourceTree = "<group>"; };
 		722D24FD20869CD9007B8427 /* HistoryQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryQueue.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 				BEA1B462204F34AF00136463 /* ListViewController.swift */,
 				72D9951620A3F2C100D4782F /* RideShareMenu.swift */,
 				726E34F620A3096D00865189 /* SelectedPlace.swift */,
+				72189A5820A6056B00D7CA33 /* EmptyView.swift */,
 			);
 			path = "List+Helpers";
 			sourceTree = "<group>";
@@ -284,10 +289,10 @@
 		B1C20A572051E3F700ECB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				72189A5520A55DAF00D7CA33 /* Favorites+Helpers */,
-				72189A5420A55D9D00D7CA33 /* Map+Helpers */,
-				72189A5320A55D7A00D7CA33 /* Settings+Helpers */,
 				72189A5220A55D3500D7CA33 /* List+Helpers */,
+				72189A5420A55D9D00D7CA33 /* Map+Helpers */,
+				72189A5520A55DAF00D7CA33 /* Favorites+Helpers */,
+				72189A5320A55D7A00D7CA33 /* Settings+Helpers */,
 				72189A4D20A5086B00D7CA33 /* SIFloatingCollection Classes */,
 				B15ACF5F2081A8F30052C4CB /* Filter Classes */,
 				B1FF310D20720A08001DF2DF /* Location Classes */,
@@ -304,6 +309,7 @@
 				BEF4A5DB2075C78300D7BCE5 /* PlaceMapAnnotationView.swift */,
 				726E34F420A3082B00865189 /* SelectedPlace.xib */,
 				72D9951420A3F29100D4782F /* RideShareMenu.xib */,
+				72189A5620A6055700D7CA33 /* EmptyView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				BEF4A5DA2075C53100D7BCE5 /* PlaceMapAnnotationView.xib in Resources */,
 				72D9951520A3F29100D4782F /* RideShareMenu.xib in Resources */,
 				BEA1B468204F34AF00136463 /* Main.storyboard in Resources */,
+				72189A5720A6055700D7CA33 /* EmptyView.xib in Resources */,
 				B1C20A612051EF6500ECB998 /* shout.jpg in Resources */,
 				BEADB55D2075D8C300E107B7 /* Credits Page.txt in Resources */,
 				66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */,
@@ -685,6 +692,7 @@
 				72189A4F20A508A900D7CA33 /* SIFloatingCollectionScene.swift in Sources */,
 				72189A4C20A5070100D7CA33 /* BubbleNode.swift in Sources */,
 				BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */,
+				72189A5920A6056B00D7CA33 /* EmptyView.swift in Sources */,
 				722D25002086B1E8007B8427 /* NotificationsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
 				72189A5120A508D700D7CA33 /* SIFloatingNode.swift in Sources */,

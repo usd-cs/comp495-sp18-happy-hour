@@ -12,6 +12,7 @@ import SVProgressHUD
 import SwiftDate
 import Foundation
 import FirebaseDatabase
+import ChameleonFramework
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, FilterMenuDelegate{
     
@@ -39,6 +40,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     var searchedData: [Place] = []
     
+    var emptyView: EmptyView!
+    
     // used to pull info from AppDelegate
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -50,6 +53,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        tableView.backgroundColor = FlatWhiteDark()
         
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
@@ -59,6 +63,24 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         readFromDB()
         tableView.reloadData()
+        
+        emptyView = EmptyView()
+        self.view.addSubview(emptyView)
+        emptyView.backgroundColor = FlatWhiteDark()
+        
+        DispatchQueue.main.async {
+            self.emptyView.frame = self.tableView.frame
+            self.emptyView.needsUpdateConstraints()
+            self.emptyView.setNeedsLayout()
+            self.emptyView.setNeedsDisplay()
+        }
+        
+         emptyView.isHidden = true
+        
+        if SharedListsSingleton.shared.liveList.count == 0 {
+            self.emptyView.isHidden = false
+            self.tableView.isHidden = true
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -173,7 +195,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        // TODO: when search bar hides, segmented control is no longer visible
         hideSearchBar()
     }
     
@@ -210,7 +231,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
-    //let filterMenu = FilterMenu()
     @IBAction func filterButtonPressed(_ sender: Any) {
         FilterSettingsSingleton.filterMenu.delegate = self
         FilterSettingsSingleton.filterMenu.showFilterMenu()
@@ -226,6 +246,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func segmentedButtonChanged(_ sender: Any) {
         showLive = segmentedControlButton.selectedSegmentIndex == 0 ? true : false
+        
+        if showLive {
+            if SharedListsSingleton.shared.liveList.count == 0 {
+                self.emptyView.isHidden = false
+                self.tableView.isHidden = true
+            } else {
+                self.emptyView.isHidden = true
+                self.tableView.isHidden = false
+            }
+        } else {
+            self.emptyView.isHidden = true
+            self.tableView.isHidden = false
+        }
     }
     
     // MARK: - Database Functions
