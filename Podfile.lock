@@ -39,6 +39,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SIFloatingCollection (3.0.1)
   - SVProgressHUD (2.2.5)
   - SwiftDate (4.5.1)
   - SwiftPhotoGallery (3.3.1)
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - Mapbox-iOS-SDK (~> 4.0)
   - MapboxStatic.swift (~> 0.9)
   - MapViewPlus
+  - SIFloatingCollection
   - SVProgressHUD
   - SwiftDate (~> 4.5.1)
   - SwiftPhotoGallery
@@ -80,6 +82,7 @@ SPEC REPOS:
     - MapboxStatic.swift
     - MapViewPlus
     - nanopb
+    - SIFloatingCollection
     - SVProgressHUD
     - SwiftDate
     - SwiftPhotoGallery
@@ -113,6 +116,7 @@ SPEC CHECKSUMS:
   MapboxStatic.swift: 247d98dd6e11b8934aa5d122efcb50384f8d66f6
   MapViewPlus: 4e448279f98297f007cb16904a244a525b3c9d5e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SIFloatingCollection: 096160b220e3a1b1cbcf349108ee24d3aa6b86de
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftPhotoGallery: 4b8eb285d41268bee6d49a37759cd07e5d1d3183
@@ -120,6 +124,6 @@ SPEC CHECKSUMS:
   UberCore: 512950407dadc8045a583e4a509da2750ae7dc21
   UberRides: cc6d7c5232966e45229dda1534106b33e379dfbe
 
-PODFILE CHECKSUM: 1dcc65c7c3058d938092585c833a6b1e8ba361f7
+PODFILE CHECKSUM: bb5ff65fd4734ad0d31fee3efd7134a14dc76768
 
 COCOAPODS: 1.5.0

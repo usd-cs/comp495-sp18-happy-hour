@@ -11,6 +11,10 @@
 		53B8AB51ECE9E0A4AD635A77 /* Pods_CheersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */; };
 		666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */; };
 		66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66D3EDFB20730BC3003A9CB0 /* happyhours.txt */; };
+		72189A4A20A506C500D7CA33 /* BubblesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72189A4920A506C500D7CA33 /* BubblesScene.swift */; };
+		72189A4C20A5070100D7CA33 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72189A4B20A5070100D7CA33 /* BubbleNode.swift */; };
+		72189A4F20A508A900D7CA33 /* SIFloatingCollectionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72189A4E20A508A900D7CA33 /* SIFloatingCollectionScene.swift */; };
+		72189A5120A508D700D7CA33 /* SIFloatingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72189A5020A508D700D7CA33 /* SIFloatingNode.swift */; };
 		722D24FA20865951007B8427 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24F920865951007B8427 /* SettingsTableViewController.swift */; };
 		722D24FC20868AD1007B8427 /* SettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24FB20868AD1007B8427 /* SettingsSingleton.swift */; };
 		722D24FE20869CD9007B8427 /* HistoryQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D24FD20869CD9007B8427 /* HistoryQueue.swift */; };
@@ -86,6 +90,10 @@
 		3FFE80B91BF7B44C17B2D247 /* Pods-CheersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersTests/Pods-CheersTests.release.xcconfig"; sourceTree = "<group>"; };
 		666ABDC02058CD8400A1C447 /* SelectedBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBarViewController.swift; sourceTree = "<group>"; };
 		66D3EDFB20730BC3003A9CB0 /* happyhours.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = happyhours.txt; sourceTree = "<group>"; };
+		72189A4920A506C500D7CA33 /* BubblesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesScene.swift; sourceTree = "<group>"; };
+		72189A4B20A5070100D7CA33 /* BubbleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
+		72189A4E20A508A900D7CA33 /* SIFloatingCollectionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFloatingCollectionScene.swift; sourceTree = "<group>"; };
+		72189A5020A508D700D7CA33 /* SIFloatingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIFloatingNode.swift; sourceTree = "<group>"; };
 		722D24F920865951007B8427 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		722D24FB20868AD1007B8427 /* SettingsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSingleton.swift; sourceTree = "<group>"; };
 		722D24FD20869CD9007B8427 /* HistoryQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryQueue.swift; sourceTree = "<group>"; };
@@ -183,6 +191,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		72189A4D20A5086B00D7CA33 /* SIFloatingCollection Classes */ = {
+			isa = PBXGroup;
+			children = (
+				72189A4920A506C500D7CA33 /* BubblesScene.swift */,
+				72189A4B20A5070100D7CA33 /* BubbleNode.swift */,
+				72189A4E20A508A900D7CA33 /* SIFloatingCollectionScene.swift */,
+				72189A5020A508D700D7CA33 /* SIFloatingNode.swift */,
+			);
+			path = "SIFloatingCollection Classes";
+			sourceTree = "<group>";
+		};
 		7229A67E208FB681008DB966 /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +245,7 @@
 		B1C20A572051E3F700ECB998 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				72189A4D20A5086B00D7CA33 /* SIFloatingCollection Classes */,
 				B15ACF5F2081A8F30052C4CB /* Filter Classes */,
 				B1FF310D20720A08001DF2DF /* Location Classes */,
 				BEA1B460204F34AF00136463 /* AppDelegate.swift */,
@@ -519,6 +539,7 @@
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/MapboxStatic.swift/MapboxStatic.framework",
+				"${BUILT_PRODUCTS_DIR}/SIFloatingCollection/SIFloatingCollection.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftPhotoGallery/SwiftPhotoGallery.framework",
@@ -540,6 +561,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxStatic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SIFloatingCollection.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftPhotoGallery.framework",
@@ -614,6 +636,7 @@
 				BEA1B465204F34AF00136463 /* MapViewController.swift in Sources */,
 				B259C8CE20870C6300C37678 /* FavoritesTableViewController.swift in Sources */,
 				BEA1B461204F34AF00136463 /* AppDelegate.swift in Sources */,
+				72189A4A20A506C500D7CA33 /* BubblesScene.swift in Sources */,
 				722D25022086B273007B8427 /* ContactUsViewController.swift in Sources */,
 				722D24FE20869CD9007B8427 /* HistoryQueue.swift in Sources */,
 				72D17D762087B39E0074A647 /* FavoritesSingleton.swift in Sources */,
@@ -630,10 +653,13 @@
 				726E34F920A346AD00865189 /* SelectedPlaceViewController.swift in Sources */,
 				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
 				BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */,
+				72189A4F20A508A900D7CA33 /* SIFloatingCollectionScene.swift in Sources */,
+				72189A4C20A5070100D7CA33 /* BubbleNode.swift in Sources */,
 				BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */,
 				722D25002086B1E8007B8427 /* NotificationsViewController.swift in Sources */,
 				BEA1B463204F34AF00136463 /* ListViewController.swift in Sources */,
 				666ABDC12058CD8400A1C447 /* SelectedBarViewController.swift in Sources */,
+				72189A5120A508D700D7CA33 /* SIFloatingNode.swift in Sources */,
 				72D9951720A3F2C100D4782F /* RideShareMenu.swift in Sources */,
 				B1053DC3208D5C5100394370 /* MaximumPriceFilterOptionCell.swift in Sources */,
 				BE8EF5B1207539BF0088F098 /* SharedListsSingleton.swift in Sources */,

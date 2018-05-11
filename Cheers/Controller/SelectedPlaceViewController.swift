@@ -9,6 +9,7 @@
 import UIKit
 import ChameleonFramework
 import SwiftPhotoGallery
+import SpriteKit
 
 import UberRides
 import Lyft
@@ -23,26 +24,40 @@ import SafariServices
 
 class SelectedPlaceViewController: UIViewController {
     
+    // for storing reviews from Yelp API call
     struct Review {
         var name: String
         var text: String
     }
 
+    // storyboard outlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var selectedPlaceView: SelectedPlace!
     
+    // current place struct and what view sent it
     var place: Place!
     var sender: String!
     
+    // for photo
     var photoURLs: [String?]?
     var photos = [UIImage]()
     var gallery: SwiftPhotoGallery!
     
+    // for opening Yelp in SafariVC
+    var yelpURL: String?
+    
+    // for reviews
     var reviews: [Review]!
     var reviewIndex = 0
     
+    // for showing ride share menu
     let background = UIView()
     let rideShareMenu = RideShareMenu()
+    
+    // for showing categories bubbles
+    var categories: [String]!
+    var skView: SKView!
+    var floatingCollectionScene: BubblesScene!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +71,7 @@ class SelectedPlaceViewController: UIViewController {
         self.photoURLs = [nil, nil, nil]
         
         reviews = []
+        categories = []
         
         acquirePictures()
         acquireReviews()
@@ -88,7 +104,7 @@ class SelectedPlaceViewController: UIViewController {
     func configureContent() {
         configureImageView()
         configureDetailsView()
-        configureCategoriesView()
+        //configureCategoriesView()
         configureReviewsView()
         configureMapView()
         configureAboutView()
@@ -113,17 +129,6 @@ class SelectedPlaceViewController: UIViewController {
         self.selectedPlaceView.imageViewImage.contentMode = .scaleAspectFill
         self.selectedPlaceView.imageViewPageControl.numberOfPages = 0
         
-        // set up gesture recognizer for photo reel
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        leftSwipe.delegate = self
-        self.selectedPlaceView.imageView.addGestureRecognizer(leftSwipe)
-        leftSwipe.direction = .left
-        
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        rightSwipe.delegate = self
-        self.selectedPlaceView.imageView.addGestureRecognizer(rightSwipe)
-        rightSwipe.direction = .right
-        
     }
     
     @objc func showGallery() {
@@ -139,25 +144,12 @@ class SelectedPlaceViewController: UIViewController {
         })
     }
     
-    // TODO: animate this?
-    @objc func handleSwipe(_ sender: UISwipeGestureRecognizer) {
-        
-        if sender.direction == .left {
-            self.selectedPlaceView.imageViewPageControl.currentPage += 1
-            self.selectedPlaceView.imageViewPageControl.currentPage %= self.photos.count
-            self.selectedPlaceView.imageViewImage.image = photos[selectedPlaceView.imageViewPageControl.currentPage]
-        } else {
-            self.selectedPlaceView.imageViewPageControl.currentPage -= 1
-            self.selectedPlaceView.imageViewPageControl.currentPage %= self.photos.count
-            self.selectedPlaceView.imageViewImage.image = photos[selectedPlaceView.imageViewPageControl.currentPage]
-        }
-    }
-    
     func configureDetailsView() {
         
         let current = Date()
         
         self.selectedPlaceView.happyHoursKnown = !place.record.happyHours.isEmpty
+        
         self.selectedPlaceView.detailsViewTitleLabel.text = place.record.name
         self.selectedPlaceView.detailsViewTitleLabel.sizeToFit()
         self.selectedPlaceView.detailsViewCurrentHHLabel.text = "\(place.record.happyHours[current.weekdayName] ?? "None today")"
@@ -182,7 +174,36 @@ class SelectedPlaceViewController: UIViewController {
     }
     
     func configureCategoriesView() {
-        self.selectedPlaceView.setCategories(place.record.categories.map { $0.rawValue })
+        skView = SKView(frame: self.selectedPlaceView.categoriesView.frame)
+        self.selectedPlaceView.categoriesView.addSubview(skView)
+        skView.topAnchor.constraint(equalTo: self.selectedPlaceView.categoriesView.topAnchor, constant: 0).isActive = true
+        skView.bottomAnchor.constraint(equalTo: self.selectedPlaceView.categoriesView.bottomAnchor, constant: 0).isActive = true
+        skView.leftAnchor.constraint(equalTo: self.selectedPlaceView.categoriesView.leftAnchor, constant: 0).isActive = true
+        skView.rightAnchor.constraint(equalTo: self.selectedPlaceView.categoriesView.rightAnchor, constant: 0).isActive = true
+        
+        DispatchQueue.main.async {
+            self.skView.frame = self.selectedPlaceView.categoriesView.bounds
+            self.skView.needsUpdateConstraints()
+            self.skView.setNeedsLayout()
+            self.skView.setNeedsDisplay()
+        }
+        
+        floatingCollectionScene = BubblesScene(size: skView.bounds.size)
+        skView.presentScene(floatingCollectionScene)
+        
+        for category in self.categories {
+            addBubble(named: category)
+        }
+        
+    }
+    
+    private func addBubble(named name: String) {
+        let newNode = BubbleNode.instantiate(named: name)
+        floatingCollectionScene.addChild(newNode)
+    }
+    
+    private func commitSelection() {
+        floatingCollectionScene.performCommitSelectionAnimation()
     }
     
     func configureReviewsView() {
@@ -190,7 +211,11 @@ class SelectedPlaceViewController: UIViewController {
     }
     
     @objc func showYelpPage() {
-        
+        if let urlString = self.yelpURL {
+            let url = URL(string: urlString)!
+            let safariVC = SFSafariViewController(url: url)
+            present(safariVC, animated: true, completion: nil)
+        }
     }
     
     func configureMapView() {
@@ -214,6 +239,11 @@ class SelectedPlaceViewController: UIViewController {
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
             if response.result.isSuccess {
                 let json = JSON(response.result.value!)
+                
+                self.yelpURL = json["url"].string
+                
+                self.categories = json["categories"].map { $0.1["title"].string! }
+                self.configureCategoriesView()
                 
                 self.photoURLs![0] = json["photos"][0].string
                 self.photoURLs![1] = json["photos"][1].string
@@ -479,5 +509,26 @@ extension SelectedPlaceViewController: SwiftPhotoGalleryDataSource, SwiftPhotoGa
         self.selectedPlaceView.imageViewPageControl.currentPage = self.gallery.currentPage
         self.selectedPlaceView.imageViewImage.image = photos[selectedPlaceView.imageViewPageControl.currentPage]
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension UIView {
+    func addDashedBorder() {
+        let color = FlatRed().cgColor
+        
+        let shapeLayer:CAShapeLayer = CAShapeLayer()
+        let frameSize = self.frame.size
+        let shapeRect = CGRect(x: 0, y: 0, width: frameSize.width, height: frameSize.height)
+        
+        shapeLayer.bounds = shapeRect
+        shapeLayer.position = CGPoint(x: frameSize.width/2, y: frameSize.height/2)
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = color
+        shapeLayer.lineWidth = 2
+        shapeLayer.lineJoin = kCALineJoinRound
+        shapeLayer.lineDashPattern = [6,3]
+        shapeLayer.path = UIBezierPath(roundedRect: shapeRect, cornerRadius: 5).cgPath
+        
+        self.layer.addSublayer(shapeLayer)
     }
 }

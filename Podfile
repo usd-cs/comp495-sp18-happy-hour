@@ -10,9 +10,6 @@ target 'Cheers' do
   pod 'Firebase/Database'
   pod 'Firebase/Core'
   
-  # Yelp
-  #pod 'YelpAPI'
-  
   # Date/Time Management
   pod 'SwiftDate', '~> 4.5.1'
   
@@ -38,6 +35,9 @@ target 'Cheers' do
   
   # Colors
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  
+  # UI
+  pod 'SIFloatingCollection'
   
   target 'CheersTests' do
     inherit! :search_paths
