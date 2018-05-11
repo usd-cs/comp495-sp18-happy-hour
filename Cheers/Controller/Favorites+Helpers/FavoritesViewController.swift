@@ -46,6 +46,7 @@ class FavoritesViewController: UIViewController {
         
         DispatchQueue.main.async {
             self.emptyView.frame = self.favoritesTableView.frame
+            self.emptyView.translatesAutoresizingMaskIntoConstraints = false
             self.emptyView.topAnchor.constraint(equalTo: self.favoritesTableView.topAnchor, constant: 0).isActive = true
             self.emptyView.bottomAnchor.constraint(equalTo: self.favoritesTableView.bottomAnchor, constant: 0).isActive = true
             self.emptyView.leftAnchor.constraint(equalTo: self.favoritesTableView.leftAnchor, constant: 0).isActive = true
