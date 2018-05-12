@@ -39,6 +39,8 @@ private var pressUpAction: (() -> Void)?
 var localVariable = urlComponents 
 urlComponents?.queryItems = (localVariable?.queryItems ?? []) + queryItems 
 ```
+6. In Pods/LyftSDK/Core/Resources, open `LyftButtonNone.xib`
+7. In the view hierarchy, there are two different views. A higher level view (we'll call this View #1) contains a button and another view (we'll call this View #2). Select View #1 and in the Attribute Inspector, set the `Background` to `Default` (no color). Do the same for View #2. This step fixes the button UI and does not affect functionality.
 
 
 ## How to upload to the database
