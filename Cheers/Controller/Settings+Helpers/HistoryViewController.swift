@@ -1,106 +1,108 @@
 //
-//  FavoritesViewController.swift
+//  HistoryViewController.swift
 //  Cheers
 //
-//  Created by Will Carhart on 5/11/18.
+//  Created by Will Carhart on 5/12/18.
 //  Copyright © 2018 University of San Diego. All rights reserved.
 //
 
 import UIKit
 import ChameleonFramework
 
-class FavoritesViewController: UIViewController {
+class HistoryViewController: UIViewController {
 
-    @IBOutlet weak var favoritesTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     var emptyView: EmptyView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let xib = UINib(nibName: "PlaceTableViewCell", bundle: nil)
-        self.favoritesTableView.register(xib, forCellReuseIdentifier: "PlaceCell")
+        self.tableView.register(xib, forCellReuseIdentifier: "PlaceCell")
         
-        favoritesTableView.dataSource = self
-        favoritesTableView.delegate = self
-        favoritesTableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        favoritesTableView.backgroundColor = FlatWhiteDark()
+        tableView.dataSource = self
+        tableView.delegate = self
         
         emptyView = EmptyView()
         self.view.addSubview(emptyView)
         emptyView.backgroundColor = FlatWhiteDark()
-        emptyView.textLabel.text = "No Favorites Yet"
-        emptyView.image.image = #imageLiteral(resourceName: "favorites")
+        emptyView.textLabel.text = "History is empty"
+        emptyView.image.image = #imageLiteral(resourceName: "history")
         
         DispatchQueue.main.async {
-            self.emptyView.frame = self.favoritesTableView.frame
+            self.emptyView.frame = self.tableView.frame
             self.emptyView.needsUpdateConstraints()
             self.emptyView.setNeedsLayout()
             self.emptyView.setNeedsDisplay()
         }
         
         emptyView.isHidden = true
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.favoritesTableView.reloadData()
+        
+        self.tableView.reloadData()
         
         DispatchQueue.main.async {
-            self.emptyView.frame = self.favoritesTableView.frame
+            self.emptyView.frame = self.tableView.frame
             self.emptyView.translatesAutoresizingMaskIntoConstraints = false
-            self.emptyView.topAnchor.constraint(equalTo: self.favoritesTableView.topAnchor, constant: 0).isActive = true
-            self.emptyView.bottomAnchor.constraint(equalTo: self.favoritesTableView.bottomAnchor, constant: 0).isActive = true
-            self.emptyView.leftAnchor.constraint(equalTo: self.favoritesTableView.leftAnchor, constant: 0).isActive = true
-            self.emptyView.rightAnchor.constraint(equalTo: self.favoritesTableView.rightAnchor, constant: 0).isActive = true
+            self.emptyView.topAnchor.constraint(equalTo: self.tableView.topAnchor, constant: 0).isActive = true
+            self.emptyView.bottomAnchor.constraint(equalTo: self.tableView.bottomAnchor, constant: 0).isActive = true
+            self.emptyView.leftAnchor.constraint(equalTo: self.tableView.leftAnchor, constant: 0).isActive = true
+            self.emptyView.rightAnchor.constraint(equalTo: self.tableView.rightAnchor, constant: 0).isActive = true
             self.emptyView.needsUpdateConstraints()
             self.emptyView.setNeedsLayout()
             self.emptyView.setNeedsDisplay()
         }
         
-        if FavoritesSingleton.shared.favorites.count == 0 {
+        if HistoryQueue.shared.history.count == 0 {
             DispatchQueue.main.async {
                 self.emptyView.isHidden = false
-                self.favoritesTableView.isHidden = true
+                self.tableView.isHidden = true
                 self.view.bringSubview(toFront: self.emptyView)
             }
         } else {
             DispatchQueue.main.async {
                 self.emptyView.isHidden = true
-                self.favoritesTableView.isHidden = false
+                self.tableView.isHidden = false
             }
         }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSelectedFromFavorites" {
+        if segue.identifier == "showSelectedFromHistory" {
             let destination = segue.destination as! SelectedPlaceViewController
-            let indexPath = favoritesTableView.indexPathForSelectedRow!
-            let selectedPlace = FavoritesSingleton.shared.favorites[indexPath.row]
+            let indexPath = tableView.indexPathForSelectedRow!
+            let selectedPlace = HistoryQueue.shared.history[indexPath.row]
             destination.place = selectedPlace
-            destination.sender = "Favorites"
+            destination.sender = "History"
         }
     }
     
-    @IBAction func unwindToFavorites(segue: UIStoryboardSegue) {
+    @IBAction func unwindToHistory(segue: UIStoryboardSegue) {
         
     }
-
+    
 }
 
-extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
+extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return FavoritesSingleton.shared.favorites.count
+        return HistoryQueue.shared.history.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell", for: indexPath) as! PlaceTableViewCell
         
-        var bar = FavoritesSingleton.shared.favorites[indexPath.row]
+        var bar = HistoryQueue.shared.history[indexPath.row]
         
         let imageUrl =  URL(string: bar.record.images[0])
         
@@ -189,6 +191,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showSelectedFromFavorites", sender: self)
+        self.performSegue(withIdentifier: "showSelectedFromHistory", sender: self)
     }
+    
 }

@@ -58,23 +58,6 @@ class SettingsTableViewController: UITableViewController {
             }
             tableView.beginUpdates()
             tableView.endUpdates()
-        case (historyIndexPath.section, historyIndexPath.row):
-            // TODO: finish this
-            //performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
-            print("Items in history: \(HistoryQueue.shared.history.count)")
-            
-            var alert = UIAlertController(title: "History Update", message: "There are \(HistoryQueue.shared.history.count) items in the history.", preferredStyle: .alert)
-            if HistoryQueue.shared.history.count == 1 {
-                alert = UIAlertController(title: "History Update", message: "There is \(HistoryQueue.shared.history.count) item in the history.", preferredStyle: .alert)
-            }
-            
-            showSegmentedControl = false
-            tableView.beginUpdates()
-            tableView.endUpdates()
-            
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-            
-            self.present(alert, animated: true)
         default:
             showSegmentedControl = false
             tableView.beginUpdates()
@@ -97,39 +80,8 @@ class SettingsTableViewController: UITableViewController {
         updateSegmentedControl()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // TODO: finish this method
+    @IBAction func unwindToSettings(segue: UIStoryboardSegue) {
+        
     }
-    
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
 
 }

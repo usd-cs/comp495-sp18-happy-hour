@@ -25,12 +25,15 @@
 		726E34F520A3082B00865189 /* SelectedPlace.xib in Resources */ = {isa = PBXBuildFile; fileRef = 726E34F420A3082B00865189 /* SelectedPlace.xib */; };
 		726E34F720A3096D00865189 /* SelectedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E34F620A3096D00865189 /* SelectedPlace.swift */; };
 		726E34F920A346AD00865189 /* SelectedPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E34F820A346AD00865189 /* SelectedPlaceViewController.swift */; };
+		728D127920A681DC00647E06 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D127720A681DC00647E06 /* PlaceTableViewCell.swift */; };
+		728D127A20A681DC00647E06 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 728D127820A681DC00647E06 /* PlaceTableViewCell.xib */; };
 		72A8630020A63AAF00D3C16F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A862FF20A63AAF00D3C16F /* FavoritesViewController.swift */; };
 		72D17D762087B39E0074A647 /* FavoritesSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D17D752087B39E0074A647 /* FavoritesSingleton.swift */; };
 		72D45BDF2084024200E06918 /* FilterSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */; };
 		72D45BE12084364100E06918 /* DowntownGaslampBars.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72D45BE02084364100E06918 /* DowntownGaslampBars.txt */; };
 		72D9951520A3F29100D4782F /* RideShareMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72D9951420A3F29100D4782F /* RideShareMenu.xib */; };
 		72D9951720A3F2C100D4782F /* RideShareMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D9951620A3F2C100D4782F /* RideShareMenu.swift */; };
+		72F357E920A730FB0023E7EC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F357E820A730FB0023E7EC /* HistoryViewController.swift */; };
 		9A0A86FE11A77BD7A74EBA63 /* Pods_Cheers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46CB7E3BE7DAFDFD4F6DD4E /* Pods_Cheers.framework */; };
 		B1053DC1208D5BDF00394370 /* MinimumRatingFilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1053DC0208D5BDF00394370 /* MinimumRatingFilterOptionCell.swift */; };
 		B1053DC3208D5C5100394370 /* MaximumPriceFilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1053DC2208D5C5100394370 /* MaximumPriceFilterOptionCell.swift */; };
@@ -105,12 +108,15 @@
 		726E34F420A3082B00865189 /* SelectedPlace.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedPlace.xib; sourceTree = "<group>"; };
 		726E34F620A3096D00865189 /* SelectedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlace.swift; sourceTree = "<group>"; };
 		726E34F820A346AD00865189 /* SelectedPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlaceViewController.swift; sourceTree = "<group>"; };
+		728D127720A681DC00647E06 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		728D127820A681DC00647E06 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		72A862FF20A63AAF00D3C16F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		72D17D752087B39E0074A647 /* FavoritesSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSingleton.swift; sourceTree = "<group>"; };
 		72D45BDE2084024200E06918 /* FilterSettingsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSettingsSingleton.swift; sourceTree = "<group>"; };
 		72D45BE02084364100E06918 /* DowntownGaslampBars.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DowntownGaslampBars.txt; sourceTree = "<group>"; };
 		72D9951420A3F29100D4782F /* RideShareMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RideShareMenu.xib; sourceTree = "<group>"; };
 		72D9951620A3F2C100D4782F /* RideShareMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideShareMenu.swift; sourceTree = "<group>"; };
+		72F357E820A730FB0023E7EC /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		7510546D200EA9295116FBC0 /* Pods_CheersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FDF68A309F93D49B4568F8 /* Pods-Cheers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cheers/Pods-Cheers.release.xcconfig"; sourceTree = "<group>"; };
 		972A4A435F45ED4976ED9E9E /* Pods-CheersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheersUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheersUITests/Pods-CheersUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +220,7 @@
 				72D9951620A3F2C100D4782F /* RideShareMenu.swift */,
 				726E34F620A3096D00865189 /* SelectedPlace.swift */,
 				72189A5820A6056B00D7CA33 /* EmptyView.swift */,
+				728D127720A681DC00647E06 /* PlaceTableViewCell.swift */,
 			);
 			path = "List+Helpers";
 			sourceTree = "<group>";
@@ -225,6 +232,7 @@
 				722D24FF2086B1E8007B8427 /* NotificationsViewController.swift */,
 				722D25012086B273007B8427 /* ContactUsViewController.swift */,
 				722D25032086B27D007B8427 /* AboutViewController.swift */,
+				72F357E820A730FB0023E7EC /* HistoryViewController.swift */,
 			);
 			path = "Settings+Helpers";
 			sourceTree = "<group>";
@@ -310,6 +318,7 @@
 				726E34F420A3082B00865189 /* SelectedPlace.xib */,
 				72D9951420A3F29100D4782F /* RideShareMenu.xib */,
 				72189A5620A6055700D7CA33 /* EmptyView.xib */,
+				728D127820A681DC00647E06 /* PlaceTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -520,6 +529,7 @@
 				B1C20A612051EF6500ECB998 /* shout.jpg in Resources */,
 				BEADB55D2075D8C300E107B7 /* Credits Page.txt in Resources */,
 				66D3EDFC20730BC4003A9CB0 /* happyhours.txt in Resources */,
+				728D127A20A681DC00647E06 /* PlaceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,9 +695,11 @@
 				BEF309A62061AA3200022098 /* BarType.swift in Sources */,
 				BEADB55F2075DB5800E107B7 /* ColorsSingleton.swift in Sources */,
 				726E34F920A346AD00865189 /* SelectedPlaceViewController.swift in Sources */,
+				728D127920A681DC00647E06 /* PlaceTableViewCell.swift in Sources */,
 				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
 				BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */,
 				72189A4F20A508A900D7CA33 /* SIFloatingCollectionScene.swift in Sources */,
+				72F357E920A730FB0023E7EC /* HistoryViewController.swift in Sources */,
 				72189A4C20A5070100D7CA33 /* BubbleNode.swift in Sources */,
 				BEF309A82061BA0D00022098 /* DatabaseRecord.swift in Sources */,
 				72189A5920A6056B00D7CA33 /* EmptyView.swift in Sources */,

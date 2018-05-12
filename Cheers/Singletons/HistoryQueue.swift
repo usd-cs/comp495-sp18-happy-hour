@@ -11,39 +11,62 @@ import Foundation
 class HistoryQueue: Codable {
     static let shared = HistoryQueue()
     
+    private let documentsDirectory: URL
+    private let archiveURL: URL
+    
     var history: [Place] = []
     var index: Int = 0
     let MAX_SIZE: Int = 10
     
-    func append(_ item: Place) {
-        if history.contains(item) {
-            history.remove(at: history.index(of: item)!)
-            history.append(item)
-        } else {
-            if history.count >= MAX_SIZE {
-                history.remove(at: 0)
-            }
-            history.append(item)
-        }
-        
-        // TODO: need to make the history queue persist
-        //persist()
+    init() {
+        documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        archiveURL = documentsDirectory.appendingPathComponent("history").appendingPathExtension(".plist")
     }
     
-    func persist() {
-        let fileManager = FileManager.default
-        let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("history_queue").appendingPathComponent("plist")
+    func append(_ item: Place) {
         
-        let propertyListEncoder = PropertyListEncoder()
-        let encodedHistory = try? propertyListEncoder.encode(history)
+        let historyFromDisk = loadFromFile()
         
-        print("\n\nSaving history...")
-        print("History is now:")
-        for (i, place) in history.enumerated() {
-            print("\(i). \(place.record.name)")
+        if var history = historyFromDisk {
+            if history.contains(item) {
+                history.remove(at: history.index(of: item)!)
+                history.append(item)
+                self.history = history
+                persist()
+            } else {
+                if history.count >= MAX_SIZE {
+                    history.remove(at: 0)
+                }
+                history.append(item)
+                self.history = history
+                persist()
+            }
+        } else {
+            HistoryQueue.shared.history.append(item)
+            persist()
         }
         
-        try? encodedHistory?.write(to: archiveURL, options: .noFileProtection)
+    }
+    
+    private func loadFromFile() -> [Place]? {
+        guard let decodedList = try? Data(contentsOf: archiveURL) else { return nil }
+        
+        let decoder = PropertyListDecoder()
+        do {
+            let decodedArray = try decoder.decode(Array<Place>.self, from: decodedList)
+            return decodedArray
+        } catch { return nil }
+    }
+    
+    func loadHistory() {
+        if let historyFromDisk = loadFromFile() {
+            HistoryQueue.shared.history = historyFromDisk
+        }
+    }
+    
+    private func persist() {
+        let encoder = PropertyListEncoder()
+        let encodedPlaces = try! encoder.encode(self.history)
+        try! encodedPlaces.write(to: archiveURL, options: .noFileProtection)
     }
 }

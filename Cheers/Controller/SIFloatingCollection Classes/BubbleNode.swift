@@ -32,6 +32,8 @@ class BubbleNode: SIFloatingNode {
         node.labelNode.position = CGPoint.zero
         node.labelNode.fontColor = SKColor.white
         node.labelNode.fontSize = 17
+        node.labelNode.numberOfLines = 0
+        node.labelNode.preferredMaxLayoutWidth = 110
         node.labelNode.isUserInteractionEnabled = false
         node.labelNode.verticalAlignmentMode = .center
         node.labelNode.horizontalAlignmentMode = .center

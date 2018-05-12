@@ -14,7 +14,7 @@ import Foundation
 import FirebaseDatabase
 import ChameleonFramework
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, FilterMenuDelegate{
+class ListViewController: UIViewController, UISearchBarDelegate, FilterMenuDelegate{
     
     var searchBar = UISearchBar()
     @IBOutlet var tableView: UITableView!
@@ -48,12 +48,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FavoritesSingleton.shared.loadFavorites()
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         tableView.backgroundColor = FlatWhiteDark()
+        
+        let xib = UINib(nibName: "PlaceTableViewCell", bundle: nil)
+        self.tableView.register(xib, forCellReuseIdentifier: "PlaceCell")
         
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
@@ -75,101 +76,28 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.emptyView.setNeedsDisplay()
         }
         
-         emptyView.isHidden = true
+        emptyView.isHidden = true
         
-        if SharedListsSingleton.shared.liveList.count == 0 {
-            self.emptyView.isHidden = false
-            self.tableView.isHidden = true
-        }
+        checkIfEmpty(SharedListsSingleton.shared.liveList.count == 0)
+        
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // if searching is toggled then loaded results
-        if isSearching {
-            return searchedData.count
-        }
-        return showLive ? SharedListsSingleton.shared.liveList.count : SharedListsSingleton.shared.allList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func checkIfEmpty(_ showLive: Bool) {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bar", for: indexPath) as! BarTableViewCell
-        
-        if isSearching {
-            
-            var bar = searchedData[indexPath.row]
-            let imageUrl = URL(string: bar.record.images[0])
-            
-            ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
-                cell.barImage.image = image
-            }
-            
-            cell.nameLabel.text = bar.record.name
-            let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
-            if SettingsSingleton.shared.useMiles {
-                cell.distanceLabel.text = "\(dist) mi"
+        if showLive {
+            if SharedListsSingleton.shared.liveList.count == 0 {
+                self.emptyView.isHidden = false
+                self.tableView.isHidden = true
             } else {
-                cell.distanceLabel.text = "\(dist) km"
+                self.emptyView.isHidden = true
+                self.tableView.isHidden = false
             }
-            cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
-            let today = Date()
-            let todaysDate = today.weekdayName
-            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? ""
-            cell.happyHourLabel.text = todaysHappyHours
-            //cell.priceLabel.text = String(bar.record.price)
-            
-            return cell
-            
         } else {
-            var bar = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.allList[indexPath.row]
-            let imageUrl =  URL(string: bar.record.images[0])
-            
-            ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
-                cell.barImage.image = image
-            }
-            
-            cell.nameLabel.text = bar.record.name
-            let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
-            if SettingsSingleton.shared.useMiles {
-                cell.distanceLabel.text = "\(dist) mi"
-            } else {
-                cell.distanceLabel.text = "\(dist) km"
-            }
-            cell.ratingsLabel.text = String(repeating: "👍", count: Int(round(bar.record.rating)))
-            let today = Date()
-            let todaysDate = today.weekdayName
-            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? ""
-            cell.happyHourLabel.text = todaysHappyHours
-            //cell.priceLabel.text = String(bar.record.price)
-            
-        
+            self.emptyView.isHidden = true
+            self.tableView.isHidden = false
         }
-        return cell
-    }
-    
-    func calculateDistance(myLat: Double, myLong: Double, placeLat: Double, placeLong: Double) -> String {
-        let radius: Double = 6371.0
-        let deltaLat: Double = toRadians(placeLat - myLat)
-        let deltaLong: Double = toRadians(placeLong - myLong)
         
-        let a: Double =
-            sin(deltaLat / 2.0) * sin(deltaLat / 2.0) +
-            cos(toRadians(myLat)) * cos(toRadians(placeLat)) *
-            sin(deltaLong / 2.0) * sin(deltaLong / 2.0)
-        
-        let c: Double = 2.0 * atan2(sqrt(a), sqrt(1.0 - a))
-        var d: Double = radius * c
-        
-        if SettingsSingleton.shared.useMiles {
-            d *= 0.621371
-        }
-        return String(format: "%.2f", d)
     }
-    
-    func toRadians(_ degrees: Double) -> Double {
-        return degrees * (Double.pi / 180.0)
-    }
-    
     
     // MARK: - Search Functions
     
@@ -246,19 +174,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func segmentedButtonChanged(_ sender: Any) {
         showLive = segmentedControlButton.selectedSegmentIndex == 0 ? true : false
-        
-        if showLive {
-            if SharedListsSingleton.shared.liveList.count == 0 {
-                self.emptyView.isHidden = false
-                self.tableView.isHidden = true
-            } else {
-                self.emptyView.isHidden = true
-                self.tableView.isHidden = false
-            }
-        } else {
-            self.emptyView.isHidden = true
-            self.tableView.isHidden = false
-        }
+        checkIfEmpty(showLive)
     }
     
     // MARK: - Database Functions
@@ -315,15 +231,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             SharedListsSingleton.shared.masterList = places
             self.places = SharedListsSingleton.shared.liveList
+            
+            self.checkIfEmpty(SharedListsSingleton.shared.liveList.count == 0)
         })
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showSelected", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -356,5 +266,175 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
 
+}
+
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // if searching is toggled then loaded results
+        if isSearching {
+            return searchedData.count
+        }
+        return showLive ? SharedListsSingleton.shared.liveList.count : SharedListsSingleton.shared.allList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell", for: indexPath) as! PlaceTableViewCell
+        
+        if isSearching {
+            
+            var bar = searchedData[indexPath.row]
+            let imageUrl = URL(string: bar.record.images[0])
+            
+            ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
+                cell.cellImageView.image = image
+            }
+            
+            var detailString = ""
+            
+            let today = Date()
+            let todaysDate = today.weekdayName
+            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? ""
+            detailString += todaysHappyHours == "" ? "" : "\(todaysHappyHours)   |   "
+            
+            cell.cellNameLabel.text = bar.record.name
+            let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
+            if SettingsSingleton.shared.useMiles {
+                detailString += "\(dist) mi"
+            } else {
+                detailString += "\(dist) km"
+            }
+            
+            cell.cellDetailLabel.text = detailString
+            
+            cell.cellStar0.isHidden = true
+            cell.cellStar1.isHidden = true
+            cell.cellStar2.isHidden = true
+            cell.cellStar3.isHidden = true
+            cell.cellStar4.isHidden = true
+            
+            switch Int(bar.record.rating) {
+            case 0:
+                break
+            case 1:
+                cell.cellStar0.isHidden = false
+            case 2:
+                cell.cellStar0.isHidden = false
+                cell.cellStar1.isHidden = false
+            case 3:
+                cell.cellStar0.isHidden = false
+                cell.cellStar1.isHidden = false
+                cell.cellStar2.isHidden = false
+            case 4:
+                cell.cellStar0.isHidden = false
+                cell.cellStar1.isHidden = false
+                cell.cellStar2.isHidden = false
+                cell.cellStar3.isHidden = false
+            default:
+                cell.cellStar0.isHidden = false
+                cell.cellStar1.isHidden = false
+                cell.cellStar2.isHidden = false
+                cell.cellStar3.isHidden = false
+                cell.cellStar4.isHidden = false
+            }
+            
+            cell.backgroundColor = UIColor.clear
+            cell.selectionStyle = .none
+            return cell
+            
+        } else {
+            var bar = showLive ? SharedListsSingleton.shared.liveList[indexPath.row] : SharedListsSingleton.shared.allList[indexPath.row]
+            let imageUrl =  URL(string: bar.record.images[0])
+            
+            ImageLoader.shared.getImageFromURL(for: imageUrl!) { image in
+                cell.cellImageView.image = image
+            }
+            
+            var detailString = ""
+            
+            let today = Date()
+            let todaysDate = today.weekdayName
+            let todaysHappyHours = bar.record.happyHours[todaysDate] ?? ""
+            detailString += todaysHappyHours == "" ? "" : "\(todaysHappyHours)   |   "
+            
+            cell.cellNameLabel.text = bar.record.name
+            let dist = calculateDistance(myLat: (UserLocations.shared.currentLocation?.coordinate.latitude)!, myLong: (UserLocations.shared.currentLocation?.coordinate.longitude)!, placeLat: bar.record.latitude, placeLong: bar.record.longitude)
+            if SettingsSingleton.shared.useMiles {
+                detailString += "\(dist) mi"
+            } else {
+                detailString += "\(dist) km"
+            }
+            
+            cell.cellDetailLabel.text = detailString
+            
+            cell.cellStar0.isHidden = true
+            cell.cellStar1.isHidden = true
+            cell.cellStar2.isHidden = true
+            cell.cellStar3.isHidden = true
+            cell.cellStar4.isHidden = true
+            
+            switch Int(bar.record.rating) {
+            case 0:
+                break
+            case 1:
+                cell.cellStar0.isHidden = false
+            case 2:
+                cell.cellStar0.isHidden = false
+                cell.cellStar1.isHidden = false
+            case 3:
+                cell.cellStar0.isHidden = false
+                cell.cellStar1.isHidden = false
+                cell.cellStar2.isHidden = false
+            case 4:
+                cell.cellStar0.isHidden = false
+                cell.cellStar1.isHidden = false
+                cell.cellStar2.isHidden = false
+                cell.cellStar3.isHidden = false
+            default:
+                cell.cellStar0.isHidden = false
+                cell.cellStar1.isHidden = false
+                cell.cellStar2.isHidden = false
+                cell.cellStar3.isHidden = false
+                cell.cellStar4.isHidden = false
+            }
+            
+        }
+        
+        cell.backgroundColor = UIColor.clear
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 215.0
+    }
+    
+    func calculateDistance(myLat: Double, myLong: Double, placeLat: Double, placeLong: Double) -> String {
+        let radius: Double = 6371.0
+        let deltaLat: Double = toRadians(placeLat - myLat)
+        let deltaLong: Double = toRadians(placeLong - myLong)
+        
+        let a: Double =
+            sin(deltaLat / 2.0) * sin(deltaLat / 2.0) +
+                cos(toRadians(myLat)) * cos(toRadians(placeLat)) *
+                sin(deltaLong / 2.0) * sin(deltaLong / 2.0)
+        
+        let c: Double = 2.0 * atan2(sqrt(a), sqrt(1.0 - a))
+        var d: Double = radius * c
+        
+        if SettingsSingleton.shared.useMiles {
+            d *= 0.621371
+        }
+        return String(format: "%.2f", d)
+    }
+    
+    func toRadians(_ degrees: Double) -> Double {
+        return degrees * (Double.pi / 180.0)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showSelected", sender: self)
+    }
 }
 

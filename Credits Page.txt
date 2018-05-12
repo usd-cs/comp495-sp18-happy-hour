@@ -9,4 +9,5 @@ Icons made by:
  - Google
  - Pixel perfect
  - Dave Gandy
+ - Hadrien
 from www.flaticon.com

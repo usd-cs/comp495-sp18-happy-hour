@@ -34,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // set up CoreLocations
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
+        // load history and favorites from disk
+        FavoritesSingleton.shared.loadFavorites()
+        HistoryQueue.shared.loadHistory()
+        
         return true
     }
     

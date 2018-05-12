@@ -152,6 +152,7 @@ class SelectedPlaceViewController: UIViewController {
         self.selectedPlaceView.happyHoursKnown = !place.record.happyHours.isEmpty
         
         self.selectedPlaceView.detailsViewTitleLabel.text = place.record.name
+        self.selectedPlaceView.detailsViewTitleLabel.adjustsFontSizeToFitWidth = true
         self.selectedPlaceView.detailsViewTitleLabel.sizeToFit()
         self.selectedPlaceView.detailsViewCurrentHHLabel.text = "\(place.record.happyHours[current.weekdayName] ?? "None today")"
         self.selectedPlaceView.detailsViewCurrentHHLabel.sizeToFit()
@@ -386,9 +387,7 @@ class SelectedPlaceViewController: UIViewController {
     
     func grabMapSnapshot() {
         let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(place.record.latitude), longitude: CLLocationDegrees(place.record.longitude))
-        let camera = SnapshotCamera(lookingAtCenter: location, zoomLevel: 14)
-        //camera.heading = 45
-        //camera.pitch = 60
+        let camera = SnapshotCamera(lookingAtCenter: location, zoomLevel: 12)
         
         let marker = Marker(coordinate: location, size: .medium, iconName: "beer")
         marker.color = FlatOrange()
@@ -550,6 +549,8 @@ extension SelectedPlaceViewController: UIGestureRecognizerDelegate, UIScrollView
                 performSegue(withIdentifier: "barToMap", sender: nil)
             } else if sender == "Favorites" {
                 performSegue(withIdentifier: "barToFavorites", sender: nil)
+            } else if sender == "History" {
+                performSegue(withIdentifier: "barToHistory", sender: nil)
             }
         }
     }
