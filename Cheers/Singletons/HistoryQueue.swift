@@ -30,19 +30,23 @@ class HistoryQueue: Codable {
         if var history = historyFromDisk {
             if history.contains(item) {
                 history.remove(at: history.index(of: item)!)
+                history.reverse()
                 history.append(item)
+                history.reverse()
                 self.history = history
                 persist()
             } else {
                 if history.count >= MAX_SIZE {
                     history.remove(at: 0)
                 }
+                history.reverse()
                 history.append(item)
+                history.reverse()
                 self.history = history
                 persist()
             }
         } else {
-            HistoryQueue.shared.history.append(item)
+            self.history.append(item)
             persist()
         }
         
