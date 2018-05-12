@@ -43,12 +43,6 @@ class SelectedPlace: UIView {
     @IBOutlet weak var detailsViewPricinessLabel: UILabel!
     
     // View III (categories) outlets
-    @IBOutlet weak var categoryLabel0: UILabel!
-    @IBOutlet weak var categoryLabel1: UILabel!
-    @IBOutlet weak var categoryLabel2: UILabel!
-    @IBOutlet weak var categoryLabel3: UILabel!
-    @IBOutlet weak var categoryLabel4: UILabel!
-    @IBOutlet weak var categoryLabel5: UILabel!
     
     // View IV (review) outlets
     @IBOutlet weak var reviewViewContentLabel: UILabel!
@@ -126,15 +120,6 @@ class SelectedPlace: UIView {
         
         self.detailsViewPricinessLabel.layer.masksToBounds = true
         self.detailsViewPricinessLabel.layer.cornerRadius = 10
-    }
-    
-    func setCategories(_ categories: [String]) {
-        categoryLabel0.text = categories.count > 0 ? categories[0] : ""
-        categoryLabel1.text = categories.count > 1 ? categories[1] : ""
-        categoryLabel2.text = categories.count > 2 ? categories[2] : ""
-        categoryLabel3.text = categories.count > 3 ? categories[3] : ""
-        categoryLabel4.text = categories.count > 4 ? categories[4] : ""
-        categoryLabel5.text = categories.count > 5 ? categories[5] : ""
     }
     
 }
