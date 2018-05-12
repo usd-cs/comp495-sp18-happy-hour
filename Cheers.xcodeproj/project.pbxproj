@@ -42,7 +42,6 @@
 		B15524FE2086ECA40077323B /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15524FD2086ECA40077323B /* FilterViewController.swift */; };
 		B15ACF5D208197320052C4CB /* FilterMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15ACF5C208197320052C4CB /* FilterMenu.swift */; };
 		B15ACF632081A9C90052C4CB /* DistanceFilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15ACF622081A9C90052C4CB /* DistanceFilterOptionCell.swift */; };
-		B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */; };
 		B1C20A612051EF6500ECB998 /* shout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1C20A602051EF6500ECB998 /* shout.jpg */; };
 		B1FF310F20720A33001DF2DF /* UserLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FF310E20720A33001DF2DF /* UserLocations.swift */; };
 		B1FF31152072DE84001DF2DF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FF31142072DE84001DF2DF /* ImageLoader.swift */; };
@@ -128,7 +127,6 @@
 		B15524FD2086ECA40077323B /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		B15ACF5C208197320052C4CB /* FilterMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMenu.swift; sourceTree = "<group>"; };
 		B15ACF622081A9C90052C4CB /* DistanceFilterOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFilterOptionCell.swift; sourceTree = "<group>"; };
-		B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTableViewCell.swift; sourceTree = "<group>"; };
 		B1C20A602051EF6500ECB998 /* shout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shout.jpg; sourceTree = "<group>"; };
 		B1FF310E20720A33001DF2DF /* UserLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocations.swift; sourceTree = "<group>"; };
 		B1FF31142072DE84001DF2DF /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 			children = (
 				B1FF31142072DE84001DF2DF /* ImageLoader.swift */,
 				726E34F820A346AD00865189 /* SelectedPlaceViewController.swift */,
-				B1C20A5E2051E9ED00ECB998 /* BarTableViewCell.swift */,
 				BEA1B462204F34AF00136463 /* ListViewController.swift */,
 				72D9951620A3F2C100D4782F /* RideShareMenu.swift */,
 				726E34F620A3096D00865189 /* SelectedPlace.swift */,
@@ -696,7 +693,6 @@
 				BEADB55F2075DB5800E107B7 /* ColorsSingleton.swift in Sources */,
 				726E34F920A346AD00865189 /* SelectedPlaceViewController.swift in Sources */,
 				728D127920A681DC00647E06 /* PlaceTableViewCell.swift in Sources */,
-				B1C20A5F2051E9ED00ECB998 /* BarTableViewCell.swift in Sources */,
 				BEF4A5DC2075C78300D7BCE5 /* PlaceMapAnnotationView.swift in Sources */,
 				72189A4F20A508A900D7CA33 /* SIFloatingCollectionScene.swift in Sources */,
 				72F357E920A730FB0023E7EC /* HistoryViewController.swift in Sources */,
