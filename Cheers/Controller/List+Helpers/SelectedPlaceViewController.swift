@@ -515,6 +515,8 @@ class SelectedPlaceViewController: UIViewController {
         let rideParameters = builder.build()
         
         let uberButton = RideRequestButton(rideParameters: rideParameters)
+        uberButton.titleLabel?.centerXAnchor.constraint(equalTo: uberButton.centerXAnchor, constant: 0).isActive = true
+        uberButton.titleLabel?.centerYAnchor.constraint(equalTo: uberButton.centerYAnchor, constant: 0).isActive = true
         rideShareMenu.uberView.addSubview(uberButton)
         
         DispatchQueue.main.async {
@@ -526,7 +528,22 @@ class SelectedPlaceViewController: UIViewController {
     }
     
     func prepareLyft() {
-        //let lyftButton = LyftButton()
+        let lyftButton = LyftButton()
+        let pickupLocation = CLLocationCoordinate2D(latitude: CLLocationDegrees(UserLocations.shared.currentLatitude!), longitude: CLLocationDegrees(UserLocations.shared.currentLatitude!))
+        let dropOffLocation = CLLocationCoordinate2D(latitude: CLLocationDegrees(place.record.latitude), longitude: CLLocationDegrees(place.record.longitude))
+        lyftButton.configure(rideKind: LyftSDK.RideKind.Standard, pickup: pickupLocation, destination: dropOffLocation)
+        lyftButton.style = .hotPink
+        lyftButton.backgroundColor = .clear
+        lyftButton.layer.cornerRadius = 10
+        
+        rideShareMenu.lyftView.addSubview(lyftButton)
+        
+        DispatchQueue.main.async {
+            lyftButton.frame = self.rideShareMenu.uberView.frame
+            lyftButton.needsUpdateConstraints()
+            lyftButton.setNeedsLayout()
+            lyftButton.setNeedsDisplay()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

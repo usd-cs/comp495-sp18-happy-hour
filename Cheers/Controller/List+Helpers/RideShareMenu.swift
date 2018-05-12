@@ -39,7 +39,7 @@ class RideShareMenu: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        self.lyftView.backgroundColor = FlatWhite()
+        self.lyftView.backgroundColor = .clear
         self.lyftView.layer.cornerRadius = 10
         self.mapsView.backgroundColor = FlatWhite()
         self.mapsView.layer.cornerRadius = 10

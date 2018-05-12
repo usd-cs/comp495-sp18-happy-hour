@@ -31,7 +31,9 @@ PODS:
   - Kingfisher (4.6.4)
   - leveldb-library (1.20)
   - Lyft (0.0.8)
-  - LyftSDK/API (1.0.6)
+  - LyftSDK (1.0.6):
+    - LyftSDK/Core (= 1.0.6)
+  - LyftSDK/Core (1.0.6)
   - Mapbox-iOS-SDK (4.0.0)
   - MapboxStatic.swift (0.9.1)
   - MapViewPlus (0.1.2):
@@ -56,7 +58,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Lyft
-  - LyftSDK/API
+  - LyftSDK
   - Mapbox-iOS-SDK (~> 4.0)
   - MapboxStatic.swift (~> 0.9)
   - MapViewPlus
@@ -123,6 +125,6 @@ SPEC CHECKSUMS:
   UberCore: 512950407dadc8045a583e4a509da2750ae7dc21
   UberRides: cc6d7c5232966e45229dda1534106b33e379dfbe
 
-PODFILE CHECKSUM: 81b2e65b6e9b4371d4ca52cde84e3dd199f9ba58
+PODFILE CHECKSUM: 64715322fd38f67cb6f917aae047e51ff6896231
 
 COCOAPODS: 1.5.0

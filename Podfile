@@ -29,7 +29,7 @@ target 'Cheers' do
   # Ride Sharing
   pod 'UberRides', '~> 0.9'
   pod 'Lyft'
-  pod 'LyftSDK/API'
+  pod 'LyftSDK'
   
   # Photos
   pod 'SwiftPhotoGallery'

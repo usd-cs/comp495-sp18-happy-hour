@@ -11,6 +11,7 @@
 		00371406F42E69744071C443A4B5BABE /* FOverwrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB9A405396747D0922BCA3D29B91E7D /* FOverwrite.m */; };
 		006EC02261DDCEC16F742C5FA3B77FC2 /* FPathIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ED979F4A31FC0C44541A2B6FA0AB31A /* FPathIndex.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0096C6816AC3D92834AB65C49518C177 /* ImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695535042D5DAF02E6155827B8F0C41 /* ImageView+Kingfisher.swift */; };
+		012766A93B3868A703E5708086AB8600 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F05A906D15C7A91045116585247F78 /* UIColor+Extension.swift */; };
 		0152C271D1BA0D0457BEE26EF4701376 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F6B8F4DB2853B88907845F2911FAFA /* Foundation.framework */; };
 		0170E7BADC92F540E2F2C8D454263332 /* memtable.h in Headers */ = {isa = PBXBuildFile; fileRef = 71BD05FF2914E600E741ADD99C0412E6 /* memtable.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		01CF3964B6B2773426F815C740E1F387 /* SwiftPhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60A6C5AFFE940979D8AEBA6B4D869C /* SwiftPhotoGallery.swift */; };
@@ -31,6 +32,7 @@
 		0756BB84608545202D11BCD3585E7CBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F6B8F4DB2853B88907845F2911FAFA /* Foundation.framework */; };
 		07DB270DF8A6518BEBC0F6B408AE3FEC /* BaseDeeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19545A50CB08F59F668276EC91EC694 /* BaseDeeplink.swift */; };
 		07E0F4E73A0FB8C6E422CFE1FE3ABEAE /* UberScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD4414BF3B8A9D3DE330AA6745F56EF /* UberScope.swift */; };
+		0860A2ED06AEAAFD6D59BDC2C9C10DFE /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C983E0E9360B0A71FF665FC186239E /* Asset.swift */; };
 		08E1454A5F6F16777FD50E681EB5B70B /* FSnapshotHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E795E73EF52A17FB97DBB6CD0367C79 /* FSnapshotHolder.m */; };
 		09B4D0F0FC387B23AD47A8BFA5640773 /* DistanceEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D607B7CBFD16F79C582CE78F1546B /* DistanceEstimate.swift */; };
 		09B60E27E2212ADE93662910C10F3048 /* FKeepSyncedEventRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AACC444F2ACAF4952A1DC4ADA7EE52 /* FKeepSyncedEventRegistration.m */; };
@@ -40,6 +42,7 @@
 		0ABF3961C14F4E2D012936D83C5C724A /* FIRErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2C4A6DE1DADDDCB852102EFF310278 /* FIRErrors.m */; };
 		0AFC4B2D7E1DBF342F071A3903B50C8F /* LyftOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC1D3DDCD04256270EB5BDA4CAB6AA9 /* LyftOAuth.swift */; };
 		0B3733B6404F22F79CFE6E81AA3F2829 /* Pods-Cheers-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF0662D1FAD17FE5357FF9ABDE76691 /* Pods-Cheers-dummy.m */; };
+		0C0F6EFD33775E76C607ABD63B22F5D3 /* LyftButtonFull.xib in Resources */ = {isa = PBXBuildFile; fileRef = 304B879CA02F37CB58561142BCB45FBE /* LyftButtonFull.xib */; };
 		0CEE168C1850E859F79931CCDF51452A /* FTupleObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CD6110FD820B092C078F672B1343F3 /* FTupleObjects.m */; };
 		0CF1AEC1A12BA47ABF28A4ED3FA6132B /* ImagesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C73751378376C02B3037BF15DC3BA3 /* ImagesHelper.swift */; };
 		0D7F425CFB628271BFB6FCFF8201BF4F /* UIButton+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 47DF3ABF2476A3C472870D764475BFC4 /* UIButton+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,6 +52,7 @@
 		0EA17AC1F7AA81D343152A0B10637F4E /* UberAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CFA59EFE96AD9583F76E3B80A2ADAB /* UberAuthenticating.swift */; };
 		0F5506D3748C3B08A4A8E3497499D985 /* FSRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB3F6F3202A61355F12CC4B2E259B51 /* FSRWebSocket.m */; };
 		0F6DA24F5DE57DB6468780577AB9BC50 /* FQueryParams.h in Headers */ = {isa = PBXBuildFile; fileRef = FDC88A701A86EDF09D5CC16CF0F7C98B /* FQueryParams.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0F7A14A0D6DD9E443ECBFBB6211200A0 /* LyftConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94EC0E5DE5C73D5A5496D44655A536 /* LyftConfiguration.swift */; };
 		0FE430D3D15EA36860CDF204E1721666 /* RideEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4339E8D992454070EBD44CA0E5320EF3 /* RideEstimate.swift */; };
 		0FFDA3019B3EF8BE39EAC639B2CB7809 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E3CD3DB66E6D0AA9FB428AAF71DB12 /* SwiftyJSON-dummy.m */; };
 		103228D906B112AA75562E8B17179127 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5AA1BB35E15FC26AA75FEE1F599F9E /* Indicator.swift */; };
@@ -100,6 +104,7 @@
 		1C62D4203FA08661A1B6BA1C645EF637 /* FKeyIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F52BE65A6B820EF6531C688100A373 /* FKeyIndex.m */; };
 		1C9293353BDE4499C5F30D46E9B3D852 /* db.h in Headers */ = {isa = PBXBuildFile; fileRef = 48E3AF021AA6A26EE4B6322BBB2F2064 /* db.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CAA751C644D3DD6A6DC3290E8B4E829 /* slice.h in Headers */ = {isa = PBXBuildFile; fileRef = C55C1E5D7549C46BE2C5FD9740CCA3E4 /* slice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CD1C33B98227BD8AFF95D7A59A95509 /* LyftSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8948E68D881AEE4673C99C9678B9B529 /* LyftSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DAF623741A8EBF893E48CC3BA488C36 /* FCompoundHash.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E6469C301F5A488B04B30BE7DC81D9 /* FCompoundHash.m */; };
 		1E8EFA5A596129AE737A7E20F68A0ABD /* FSnapshotUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 548A9FEABF3A0B5B6C917CF6C88251CA /* FSnapshotUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1F0BB471859F98053379ABD68A51B969 /* FEventRaiser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBBB7723A3AC03ABC678253B82DC56 /* FEventRaiser.m */; };
@@ -153,9 +158,9 @@
 		331FC2AD7464F80A4612321FABF7A3AA /* cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 7125F67EF071772776635548A46A3F08 /* cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		340A34606D2231ACECE9B74F232C2FF6 /* DefaultCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 207A068D68396F3124D7ED21570A8BC3 /* DefaultCalloutView.xib */; };
 		3464228E4F1F63DBCA803CC848A6A8C0 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E49FF264E1E873344ACDD5E46537728 /* Resource.swift */; };
+		348DB35ED6F6EE001854C222E20437F4 /* LyftAPIURLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7EB6AB64C6AA04750713D9E9EE97D /* LyftAPIURLEncoding.swift */; };
 		34CEBD8C30685C46B3F850F275E8BE1F /* FEventGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = D05AFC86A4E0A045EA3196EB07DA3DA9 /* FEventGenerator.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		34D751AECD252A6F375328CB8BB48D4B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C6F858124FECA60B39707FDB15CE6B /* QuartzCore.framework */; };
-		3526788593C690C5E0373BE48AB58FF4 /* CLLocationCoordinate2D+JSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54890018CE34F6E168386707BA7755C /* CLLocationCoordinate2D+JSONMappable.swift */; };
 		352770AA397316E5FD1EBE664A8B89E7 /* APLevelDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2F0C850D9CD04FE542C338B6E24462CD /* APLevelDB.mm */; };
 		3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4EC052A4759FB833DAD9C82CFF838 /* TaskDelegate.swift */; };
 		364DB3F46FAEB14540098B0AC15CC6B9 /* FAtomicNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAB92DE11BFB1A9D9BB76F8F67BF6 /* FAtomicNumber.m */; };
@@ -196,12 +201,12 @@
 		427A0E2994FCDF7983EA54011BE1496C /* log_reader.cc in Sources */ = {isa = PBXBuildFile; fileRef = 123AC9398AB81532D1D9313E6A8FDA39 /* log_reader.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
 		42B3E9685AE6850F41A6BD5E95C2E40B /* SwiftDate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE33CBB9D0C9EF066C23D182A4BB38BD /* SwiftDate.bundle */; };
 		4354E2DF5EE4D6FD602D9BA92D62D385 /* FTypedefs_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EBF772C8EA84DEBAFECE6A71BE4F0E3 /* FTypedefs_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4357B234887190D377DA51A319E1328C /* I18N.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2848595D8A037B50E593ED5BF9967ACC /* I18N.swift */; };
 		43624EF43605D462BAED57193E677436 /* FPriorityIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = BBB04923E9BA8DD6460262E02ACC9A4D /* FPriorityIndex.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		440A1B4B6EEBA46AC63F6947321863CF /* FCompleteChildSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2717AB02FAE80E76339326FE6F5914 /* FCompleteChildSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		44117424757A5E62D87B8BF4B41A4207 /* UIColor+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = F7BEC6E1D34644B7BB599B6ACE463294 /* UIColor+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		444696F708FB0CE560866823A7ADA811 /* FOverwrite.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C1BFF1A5E9297F7707A06E5C7C8236 /* FOverwrite.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		44F71D092F75DD73FAEC7319EE75D92F /* Lyft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9A86C056E316D7DAB4009A9EDCC80 /* Lyft.swift */; };
-		4503DF92FE013C990A859B8851EFB00F /* LyftAPIURLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9B0267196D6A5D67364EDB82EE763 /* LyftAPIURLEncoding.swift */; };
 		4542EA1B7CE7D3CEFD1BD6FD99A11CC5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C91560FBB50E48F7C15973D2EDB6F2 /* Extensions.swift */; };
 		455AA9E3F75E2D22FC0630FE1D3A38E7 /* FLeafNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A5F0440603F7DE4D490CB61FBC780C /* FLeafNode.m */; };
 		455C312BB29EF7AB3F980E7EF4B4ED37 /* FNodeFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CD37D5B76C0682C7BA56230864DEAE /* FNodeFilter.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -217,7 +222,6 @@
 		4A09B90C992548B3B76199F8162917D4 /* FQuerySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96339D1F9F8DCB512504CD399163A7BA /* FQuerySpec.m */; };
 		4B1D1B271A23D81D38CCD04A166AB20C /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E75156F518B4B13698EF46081B19C06 /* LoginManager.swift */; };
 		4B9FFDCD46F8924501BA37F68744B480 /* FIRDatabaseReference_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 914DB9845FAC1941B8636BD9F5E322D5 /* FIRDatabaseReference_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4C0FA55153714F0ADCB519CAE09180C3 /* LyftAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC71C56D9B2911186E0945548335DB /* LyftAPIError.swift */; };
 		4C82719B10795332AC6736808923D336 /* DOTNETDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247A73A58DBA06B27DCCE952B3A616F5 /* DOTNETDateTimeFormatter.swift */; };
 		4CA7278FDDE7171FB8C3161943B84FFE /* Lyft-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A92E992066134D8F951D20F5F3CEBD6 /* Lyft-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CC3F65C57BA53EA7DD0617AA6B09354 /* SwiftDate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A3BC71813A744AC6E53EE7BE824165A /* SwiftDate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -225,12 +229,14 @@
 		4E07EEA4D05FD6E2A66F638E805A1B5E /* FOperationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = D4A3ABD5DABA2A1AA34BDFF97FB4B458 /* FOperationSource.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4E1BD0DB6636B8B5EC45B5359B79F410 /* FTupleCallbackStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = CBA1F30C48378A40ADE0AC1550531D7A /* FTupleCallbackStatus.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4E1FA16D371FA2636C1E14BC94B58989 /* FSparseSnapshotTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C748791ABF71DB540F86A86DAC5770B /* FSparseSnapshotTree.m */; };
+		4E2AD070F88558D8210AF02C55E7C0FA /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1771D7036EDB7E3A5468699500BE9A21 /* en.lproj */; };
 		4E9E3F4C76FDD56538C1D94D6E004488 /* FIRAppEnvironmentUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 33754D3DEEB2463B8E1437EC06A07DD7 /* FIRAppEnvironmentUtil.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4EB5633910B9930E2F7719D8DA835A80 /* FIRDataSnapshot_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C03267A2A6EA27E21077CAB1AC3E8A12 /* FIRDataSnapshot_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4FB56F6CF1214292B65508F5374418AE /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 46D70A1AABFE3B6C6D7DB4CE95E83A52 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FD48A45DA46B927B30EB439A97D9075 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB21EA681AC06E95069E71AA4B7022C6 /* Media.xcassets */; };
 		5042ADD2D096C04B949D32507BE9FD54 /* FCacheNode.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CA959F570D5572132C0AB4A70545F0 /* FCacheNode.m */; };
 		509A5621DAB44B06929B30ACCA7CA598 /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE2A620C0E50BEC5A9211164C13C24F /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50A98F5CAB1387E6DAA34DBCCAF04970 /* CLLocationCoordinate2D+JSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F101959871421AD6D0A2CAB825BF01D /* CLLocationCoordinate2D+JSONMappable.swift */; };
 		50DD971FAFA29D59E89EBD4B386CBEB5 /* log_writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 90099F4BC7978C76845F73EA4F1885A0 /* log_writer.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		50E3DB1032B98282167E0757B01B4157 /* comparator.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A2D4B4DBA687CB41DC4AD74B0B2BD4A /* comparator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5176D8C2F911883FC75A97525B5567CB /* FIRReachabilityChecker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CA2C3CF747D422F74844060CA1FD5F3 /* FIRReachabilityChecker.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -253,9 +259,8 @@
 		5C3FAB6582357180D3BC4A1EFC952BF6 /* arena.cc in Sources */ = {isa = PBXBuildFile; fileRef = 2468B22DD5699D660FC7B5D1FF9582D6 /* arena.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
 		5C50CF388C81ABE0F63D1E0423D2BA2E /* log_format.h in Headers */ = {isa = PBXBuildFile; fileRef = 482BD467C44A86E8BCDB7DDF943067F2 /* log_format.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5C84BC682E71B03DAA83263AF5B153D6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5437A0A932E1867E47BDFBF619D5DF8 /* Media.xcassets */; };
-		5C89821607BA5C73637DAEAFAC423B14 /* ETA.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6AD85A35DAE61E9CC5C697DC3FD6B /* ETA.swift */; };
-		5C909817D0C377A733491B90280B6898 /* LyftConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE3DDF76A33306C24544F3513B41B1 /* LyftConfiguration.swift */; };
 		5CCCBB0455397C38AF3F045AACCA5D83 /* FKeyIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = B54ED9E3F416CD3889EAD31DFA2046A1 /* FKeyIndex.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5CE500521E4289A0438BA594DCBF6A66 /* NearbyDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9BC262A0B685A8B786FD8619EBC86 /* NearbyDriver.swift */; };
 		5D11C839BE86A43C242A5084E5EEBB19 /* FTupleFirebase.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DBF6FD1A7930AD4E85E2221F6BA31B0 /* FTupleFirebase.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5D335BD06636DC0220CE99317184DA67 /* DefaultCalloutView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 207A068D68396F3124D7ED21570A8BC3 /* DefaultCalloutView.xib */; };
 		5D55D7BB0B6E97CC8A55CAAF3D36BCD0 /* FRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = C8730BE9630D32513466D8723D8897CE /* FRepo.m */; };
@@ -263,14 +268,16 @@
 		5E9E59C245E267AF031A25889C2B5BB3 /* FTupleTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A505387F37BA1FC865214D719E8EE77 /* FTupleTransaction.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5EA9F0ED011B06DEFA8542EEE72508C3 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = C84AB64B92643093C74719E8491498DD /* UIViewController+Chameleon.m */; };
 		5ED15DE93E0D61137AD67AEE7030A845 /* FListenComplete.h in Headers */ = {isa = PBXBuildFile; fileRef = 018B6444979C259927033873155F0151 /* FListenComplete.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5F8B085583021A94BDEF465FDFF7DF0C /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5D3D37062D104F0BEC442979E8F55 /* APIRoute.swift */; };
 		5FB2E07F9547D78BE7031440404DC938 /* FViewProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3D0F80139A9414316331093E263FD1 /* FViewProcessor.m */; };
 		604286A8F8A2ACB063BDF97B09D4987C /* UILabel+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 7863EB17FEF9A5024F3EB28BCDF948C4 /* UILabel+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60447CE0515AD55FFF99E2F966C67D83 /* table.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6E033CFEE693EE19410A34751ECCFAE2 /* table.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
 		609A9DBF93FBDE3190C209F057C17119 /* port_example.h in Headers */ = {isa = PBXBuildFile; fileRef = 76875717C0B6AA3AB374347865DB9AF2 /* port_example.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		60BE214D2076EBC154CE3943F6717B55 /* DeeplinkRequestingBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3326C41C78AC9ECBB0ABAA5D7838046 /* DeeplinkRequestingBehavior.swift */; };
 		60F3C415F09D0C663A5A2A1D994460F1 /* cache.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4C0CE365A6432BD633D5644554C6405D /* cache.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
+		6119E60336D4DE8EBCD2377FB0B4964F /* Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568A146F00FBE07451A55488CB0643D0 /* Safari.swift */; };
 		61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1994C3B51F2BD43A606F3365D244C3 /* DispatchQueue+Alamofire.swift */; };
+		613734E56EEB0E516ADC700177678ADC /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3946CCB1C4886839903CE475EB52E494 /* APIRoute.swift */; };
+		617575B1EEB50B8A9A7E7E7E6BDE57A5 /* Money+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1412CF44F7FDED88140E9D3653296A27 /* Money+UI.swift */; };
 		618F2F75F1FB3149894AEF8B234B65FE /* RideRequestViewErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020894B9F98EAD8AC64FDDCE86FD1C8C /* RideRequestViewErrorFactory.swift */; };
 		61B710AFDED32EC8BB6D8B5B3690D296 /* FConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = D4D9A769CA591299F705823305C206AC /* FConstants.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B2ECF2E4049DA76FDC7690C6F1FC8A /* ServerTrustPolicy.swift */; };
@@ -279,6 +286,7 @@
 		6486781D756A9D71FE5C6E56CC9A343F /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA27A4EFDC99C3BFDE95667DEC04F50 /* ImageCache.swift */; };
 		6510F2BAC7A0E04846B2D3F7C9023A16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F6B8F4DB2853B88907845F2911FAFA /* Foundation.framework */; };
 		6515B4796396F5E9ECD402B62F5DCE27 /* LyftRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60529DAB70DE4A0F6DB7DB3863AF8B94 /* LyftRides.swift */; };
+		6556F6C84D2BE571FEE3AA8BEB3CBB5F /* LyftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DB8463A968CE49B8AB1FBDFD03C4F /* LyftAPI.swift */; };
 		65736E1FDF516AE1EF4927AA623D5486 /* FIRAppAssociationRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D00CBAD7BF45B50024A112BCDA8A88 /* FIRAppAssociationRegistration.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		65B752614B4128DF6C7FCF3FA9F6160D /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69F4B5AD77993653B0389926CFCF14 /* APIEndpoint.swift */; };
 		664751DF9799FB9EC7191000D557F94A /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D288E8795F20AB9052F7F977E6FB6B /* Region.swift */; };
@@ -289,8 +297,9 @@
 		6712100A2CCB9B987281A02F6778473C /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E02C31DD6A71B35D85C1B3049D94B2 /* NSArray+Chameleon.m */; };
 		673A15FFEE3AAA1B4E11F91CB034C7F9 /* LocaleName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C70AF43A32759BCB8D3653DB5FBBAD /* LocaleName.swift */; };
 		67C6E487E0A88B5049CB9EBE4753C6B8 /* DateInRegionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9382CCB22DB89FB09E6443091584542 /* DateInRegionFormatter.swift */; };
+		67DC0A381098CAC04FD7C0E5013A77A5 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E086FD397E560EAF4045F398C8007 /* Money.swift */; };
+		68757C3CC0886F82B415D5910FEF2C83 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D25B321F8EDF404FF86FF4B7B34220 /* Bundle+Extension.swift */; };
 		6A5CC35B0F7F3C926D6B4DF00082A589 /* FIRDatabaseQuery_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 91EAD5762930ED509B8C672E13E2CDC3 /* FIRDatabaseQuery_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6C23152F6D2D3DB4C22D95862EDC1FDF /* RideKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A7F707F4694B2AD95BA99DEA2621FC /* RideKind.swift */; };
 		6C811E25B7CA473969811C8204BA44AA /* FViewCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 19AB1FF63E3AEDC2159E6FE987175CA5 /* FViewCache.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6CF7ABDE07C4F2DD0204F6094B1D712C /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BC8D8078DAFAA5463298AED887C95F /* Ride.swift */; };
 		6D9F0C77C6996D7FBC0F03AF8E706276 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA56A8F0851F46B7A94AA0C9EB41C69 /* UIKit.framework */; };
@@ -317,6 +326,7 @@
 		750249BF8067E642EC68888452197FED /* dumpfile.h in Headers */ = {isa = PBXBuildFile; fileRef = 196EBF3D19ED5DF53E14B0B270FBBA0A /* dumpfile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7525390045039F998FF0DADC322488CB /* FIRAnalyticsConfiguration+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = CBEB2D6EEE1332E272E5CB1CA6B367AD /* FIRAnalyticsConfiguration+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		752A07769F58084F9718574DDCA49B46 /* builder.cc in Sources */ = {isa = PBXBuildFile; fileRef = 36D9B8ABA35B0DC8964EA9DC07C553E5 /* builder.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
+		752B3251975C7390D0DB11C07F2AAE5A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68ACC0C413D5E7988F79578FEBE7C7 /* Result.swift */; };
 		7579B0C80EDD38A5543335DCBAB0C27E /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = AAD6D41976EDF63DCAE8FDD3003D75B9 /* en.lproj */; };
 		76D40E113B66CA2F023C9F0186C75BF3 /* RideRequestViewRequestingBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE9E993C5D3E3793C6A3F8B3B690E4E /* RideRequestViewRequestingBehavior.swift */; };
 		772F02101BEA655D332549861D38F4FA /* hi-In.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 070BB6C05BC41BF3F9D2020F15CE88BA /* hi-In.lproj */; };
@@ -337,24 +347,22 @@
 		7EF7379A0CC562D025B9F38F0B087CFF /* FIRLoggerLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = C16C152AC5D923F0CEA3A002B9C7A931 /* FIRLoggerLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F1BA8E42F846336BE38D9A238943733 /* MapboxStatic.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F22AC80D8D8C88B2A47921CF1822054 /* MapboxStatic.swift-dummy.m */; };
 		7F44817EE5C375E6BFF8C819E2192288 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA456353A3DFFA8EB7C92F8B79996F8 /* Date+Formatter.swift */; };
+		804001D6891DDDB3B600BDC9403E1EF5 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEFC72A3D0E2C0DD7B97300D42D1E20 /* HTTPClient.swift */; };
 		806BAA4E00218D70995697C4400BE7A0 /* pb_common.h in Headers */ = {isa = PBXBuildFile; fileRef = D2312D38EB56D961CBCA2DC4B47C69D5 /* pb_common.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		806E74C3CD5A024DA5DE16048DF816FD /* NearbyDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AB504169B813ECD6BC01466116E06 /* NearbyDriver.swift */; };
 		807D58F0C95D20FB5299E3282F3E2500 /* coding.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B65DB4D349F293A8BE66720E9462EE8 /* coding.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		80E436DC724CA658D0B28262BDB8FFFA /* FTypedefs.h in Headers */ = {isa = PBXBuildFile; fileRef = D894CDA4EE28A9A817D7B1497DD69DF8 /* FTypedefs.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		81669D41BF551F21776C64292512FDFC /* FTree.m in Sources */ = {isa = PBXBuildFile; fileRef = E756A3978F336C41B5F11D313659370E /* FTree.m */; };
+		8168D98313B8FF43561C4C9B531000E4 /* LyftButtonNone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE02F84514BFFDF3F72FB20014506C9 /* LyftButtonNone.xib */; };
 		82483B9137C5BEADEB10FC8BF0DA835D /* FRepoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ADC33B676EE260D55C670A38986777 /* FRepoInfo.m */; };
 		833F15A28A0D562548517BCA8EAF23B6 /* ChameleonShorthand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7BF97E4415DAB3DB3666F2AABF17FE /* ChameleonShorthand.swift */; };
 		83CFC8F573AD5B75191E162E64C7D039 /* UIButton+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C61034475BB5D59D0A0DBF6627F1C8 /* UIButton+Chameleon.m */; };
 		84A7DADC4B2D45D4A23E8B259D14A4A5 /* dbformat.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F336D3ED9271F379D5FB14B272C2DAB /* dbformat.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		84CF440A4E3CCDEE93FA2475748A9934 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E33D0449ED66901B8DD1AECE24F1F1ED /* CFNetwork.framework */; };
 		8596E56F78BFEDB605B83B4F3FC8E10D /* FTuplePathValue.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCD4430225DA9FD2F0B6CA82A4CECCA /* FTuplePathValue.m */; };
-		85B66C130A7B776CC038ACA577E60DB7 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DF3C0371E9196B84B7E1501E8A2F3 /* RideType.swift */; };
-		86C049BFB3D145C4459F0D8B2C2041D2 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7897F6263A7676A2FBF921F32DF228F /* HTTPClient.swift */; };
 		86F7D970F220974A0E26C3B632C5C74F /* UIImage+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 70E40C57FA17315B89F8FF0C78872FEA /* UIImage+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		885C3197EAA041C8202423EA8DB8CDD4 /* FValueEventRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = DA34B4AA73CE392AED0036D9BE6921A0 /* FValueEventRegistration.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		89CB3EBDA158BD265B86AAE6F0E85A07 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F31C410F7B9B756AE638B44F7E41CF /* SVIndefiniteAnimatedView.m */; };
 		8A6197B9C6EBCAEB1FF64641B630DA74 /* FTupleTSN.m in Sources */ = {isa = PBXBuildFile; fileRef = 96733708B25B030D8918B8589528FD95 /* FTupleTSN.m */; };
-		8AB83F780B238ED95FD7C0EC714C568E /* LyftSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDFA76CD04C74A8C47DAE84602A4FB2 /* LyftSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AD6A09454F77F394EB0C6C5639B8D5D /* FStringUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B503190279EE4703770C63937DAE2 /* FStringUtilities.m */; };
 		8B1FBD4F6B3B70EC5B6AF31E7BD3EABC /* FWriteTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A30F833A433EDD2FDA22BCD4D826CF9 /* FWriteTree.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8B595D1E703A57549BB98A1AF0F257DA /* FIRAppEnvironmentUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304B8CF7DF1DFEF8148DB307C290D69 /* FIRAppEnvironmentUtil.m */; };
@@ -368,22 +376,20 @@
 		8F472814B92879DD6EB38B9A38BD6AE7 /* FPriorityIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDE709791E88FF6E2C6536E330A156E /* FPriorityIndex.m */; };
 		8F7D63B453A6010150DE1D6F4C648561 /* FRangedFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0209044A16475A2ABCFA1C3588D9DFCB /* FRangedFilter.m */; };
 		901E9A32472A82E8437D4642B2BE8DDD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F6B8F4DB2853B88907845F2911FAFA /* Foundation.framework */; };
+		9029C25A38302FAE983F9F2AE76598CA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AF51D9DB78A8C1AD1985C7684B33C8 /* Button.swift */; };
 		910614ABC433839EEB2D016A04609FA4 /* FIRDatabaseReference.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A973C3E1F570A0576E1D998DC69B75 /* FIRDatabaseReference.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9196DEEC9CD8F495F568B5410A336B5C /* Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0B13FD356C19E79095A472D0B86F2 /* Cost.swift */; };
 		919AEB12FCA5A2605B21A137F31D43B8 /* memtable.cc in Sources */ = {isa = PBXBuildFile; fileRef = C9BD24A5B2A71461A7B4216D291E1DF9 /* memtable.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
 		9216FA77B8ECDA7543FA6D743BF5276E /* FTupleRemovedQueriesEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDC83A528765D3078816780C8497D0 /* FTupleRemovedQueriesEvents.m */; };
-		921D0A20CC8E5979C12AD757FDAA4768 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832C75E7082A228D6DB641248E69C1B1 /* Bundle+Extension.swift */; };
 		932AE36436E9271E375CAD3BC4F7A9A8 /* FIRServerValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD2E2E4428B83BEC2D006AAD6BD3610 /* FIRServerValue.m */; };
 		936E555207C444795B205CA9BA8C511B /* Pods-CheersTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C680DD50F818B54E2DF8CAEEC8CA1 /* Pods-CheersTests-dummy.m */; };
 		93F3CF0BFFA1223543F611BAAA88A636 /* FEventRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = F72B299FB4115A4605B95B98BC3564B1 /* FEventRegistration.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		94285F8B851B89ED29CD1B2F38BF7144 /* BaseAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96576D1D630F5DFBE3BFCDB41FBDE30 /* BaseAuthenticator.swift */; };
-		948EA648474DFC56AF3F5F4F72236030 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E05FA8A0FEDFD0A543A1D35578FF837 /* Result.swift */; };
 		94B919E5E37E5F2A3328C01092D64B06 /* FOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = C684970FCE814EFBA9BCE3EE47720A3F /* FOperation.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		94DFCA33D9DA10EACE60D098B2361DE2 /* FTransformedEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E53D2C802B59732482A10EFC9B14FAE1 /* FTransformedEnumerator.m */; };
 		95156987028D309F91AC55FBDFE01643 /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B03F102E183C0D89724B5BAE6A64C4 /* Kingfisher-dummy.m */; };
-		9571160FF1686362770BEFA630502942 /* PricingDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F86D099A75BCB6E251E2579B13C787B /* PricingDetails.swift */; };
 		95BA971B3A3B79BA3EFBF446FBA7D0B4 /* FViewProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AD72821965062CC91017AE0D432C39 /* FViewProcessor.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		95E542740750F827BE2EBE3DE6F62D0E /* ChameleonFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2514C2A3259FEA17212BE71E1F15A4 /* ChameleonFramework-dummy.m */; };
+		9695DFC388E47C92990C75435DCE399F /* JSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A0511B01BE12CCD34408AD6746A0F /* JSONMappable.swift */; };
 		96D9B3E43696E717758336813A2659FE /* FCachePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CED494ADDFC075ABA6C67A805DD2916 /* FCachePolicy.m */; };
 		9726B65A1F97CF0EFB91F193D025C8B0 /* FIRDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DE4B2AE36B9734E6CA2B8CD80637C6 /* FIRDatabase.m */; };
 		9727FC6F0458718EFBC13F55CEF2C9B1 /* FCancelEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DFFAB9E6891694E224281B9556BCD5F /* FCancelEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -404,6 +410,7 @@
 		9B6AD39C81FAF37861FC0FEC41022146 /* UIAppearance+Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = E8C3D7770C06C71F45C499E66B04B7E4 /* UIAppearance+Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B823A767FF1882A55D50AAD52CD80BF /* CalloutViewPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD12DA82E3E573DF21986B06CE02DDA /* CalloutViewPlus.swift */; };
 		9BB1576C757F32D72757F97ED6A12F44 /* c.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D47C6F07510A7F777EEC04CD60853A6 /* c.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C5AEA8B5E9A8440932C94564300F730 /* LyftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9715271125731A52B8C3B707B2BF34F /* LyftButton.swift */; };
 		9C5B32FB531BCFE5B039C9C4A894B139 /* FTrackedQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AC59846E5B5A3EC5B05604437C2A44 /* FTrackedQuery.m */; };
 		9D8E5603E49BA59744466A6301DC1837 /* histogram.cc in Sources */ = {isa = PBXBuildFile; fileRef = 456156C5136DE4E8EF9A43FBC02BDB5D /* histogram.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
 		9E1F8C7970308B7C4C52B52A990AF5C0 /* FIRDatabase_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C47236167AEB8F22366B251C06CFD00 /* FIRDatabase_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -418,6 +425,7 @@
 		A01F85D48E5AFE797D1405635471C5D0 /* UBSDKConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = D62BC3E545A8622DF125A0B0E5E12C5B /* UBSDKConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0C9447BCDC65216357BC17A25CAC3AF /* FArraySortedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = FCBDB6CC39A079DE0B72C7DFC72800C2 /* FArraySortedDictionary.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A0DF59496B81A011FCC32FD74C4DB1D4 /* logging.cc in Sources */ = {isa = PBXBuildFile; fileRef = FBFAEE5F0B241CBDCB9ADF1E2368DF3D /* logging.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
+		A17DF23968E39606993C5FE3903823BB /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD550C1785FEE8DAD19C986843BA2A96 /* RideType.swift */; };
 		A1910C42D44099DC241B389D9BCC26C1 /* FIRConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 391B386CB2CF3AB66FAFA50048D9456B /* FIRConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1B37319657D8805F4C2C7A14E6A918C /* FRangedFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 73B4302DDEFC5EBBB054298F92AB35D7 /* FRangedFilter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A1B4503B730CF3345F970ED2DFDB8A68 /* DateInRegion+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F551BBABC2CADCA4292CED8C66DD995 /* DateInRegion+Math.swift */; };
@@ -425,12 +433,14 @@
 		A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAE0DFF584E0170501FF557F209FD1 /* NetworkReachabilityManager.swift */; };
 		A2BD4D7A41A27330CB8674EB2625CC77 /* FTupleObjectNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E7AC88E3B67515E6060C9030C38E63 /* FTupleObjectNode.m */; };
 		A2BF02FE06102FE692DA247C97812B97 /* FImmutableSortedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 08664B8F78104F0A2BCDC00C2F12DB7B /* FImmutableSortedDictionary.m */; };
+		A2EC57E189B65E22AAF52C8989A7947D /* PricingDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCBD85F4FD9B839CED0B9C0E55D7E7 /* PricingDetails.swift */; };
 		A2F909CC11B88E87A6596EA0C29ECB1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F6B8F4DB2853B88907845F2911FAFA /* Foundation.framework */; };
 		A2FF26B161E442DF7DFB20C75604BB48 /* FLeafNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 44919C918A213B507E8D51EB69315FDE /* FLeafNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A3192E10530C0D91DD7D7A403DE1E53F /* FClock.h in Headers */ = {isa = PBXBuildFile; fileRef = C561E41A042F4B1BD140D6F443588683 /* FClock.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A3AB6C9753DA553BDE0051AB33F1E329 /* Pods-CheersTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F765A6D2103B05AB29CDF283537BACDD /* Pods-CheersTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4753FE57CE56F2010E0B428789CB3EF /* FIRMutableData.m in Sources */ = {isa = PBXBuildFile; fileRef = D5514A75DA8328ACCD6A2C34D5786951 /* FIRMutableData.m */; };
 		A475CAF9C8558DBE4EA8BBBC53889B3C /* UberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3673EC456AAEEBC10505AADC52E566A /* UberButton.swift */; };
+		A4B2F2862886DF14CFB84774BE55A76E /* LyftButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6AF8468F351105F1A7E65DBC7210F0 /* LyftButtonStyle.swift */; };
 		A543062562F99997510A2983AC405A50 /* FDataEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BBD1593F25C123DDAF4370C01431DAB /* FDataEvent.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A56499E874DA6BFD36D3E733028866F2 /* FLLRBEmptyNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 143F1C1D7EC55102A9267844EC8D31E5 /* FLLRBEmptyNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A64BA00ABE2C9B3A37D50B82B3BCB103 /* db_iter.h in Headers */ = {isa = PBXBuildFile; fileRef = 318FBA333F77ECAC37CDAE582E999A9F /* db_iter.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -464,13 +474,13 @@
 		B1C494AB10C1AC3305493FD2B5A0B97F /* FImmutableSortedSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AC98A96031EAC8E84EDF3C8B9208FAE /* FImmutableSortedSet.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B26038F91C7C4CC322D7F25C5D16FE9E /* ChameleonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D357C78198C13972D105867A11504CD /* ChameleonConstants.m */; };
 		B2887913555F5C7033C598997ACE05E5 /* FChildrenNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5629A46780485F07C63F5660F27E1F9A /* FChildrenNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B2911C4432CAEB7B56483FB0A9DBBF96 /* LyftButtonRideTypeETA.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DEB6C11B7116A0026B7F04C5A9873C /* LyftButtonRideTypeETA.xib */; };
 		B2E9E71DE1D27AB7ABD2A1D5531134BF /* FTupleUserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = B21DA76B689C1E0EE4E2537CF978D779 /* FTupleUserCallback.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B328F96571B285F3257A9F9C7BB6FB7C /* ColloquialDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FAE4B4E0A5EA5EFB8067279427578 /* ColloquialDateFormatter.swift */; };
 		B352D4623270F2D8A882772A7B654299 /* FIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD052A210B275F8518C0A6FB342CFAF /* FIndex.m */; };
 		B3E70AF9B58B6D572E0B4F6C216786F0 /* arena.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A86B7F41420540E3176BFEE676FBA55 /* arena.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B3EDD6F62870A895F03281B4CE0B9A91 /* FIRNoopAuthTokenProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDDF266E22E9280331E53CB5BC7AF89 /* FIRNoopAuthTokenProvider.m */; };
 		B45961C0A93FF63B3E05416071167A9F /* Date+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804BF3201897078D4EFC33762559E022 /* Date+Compare.swift */; };
-		B4CBEE1595E33BB489EF520A40688C9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F6B8F4DB2853B88907845F2911FAFA /* Foundation.framework */; };
 		B4EA53699AA19822E674188743266B2B /* ChameleonMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 653E82FDBC3E83FBB6A6CC0ECC2D1640 /* ChameleonMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B52BCFC8CE551E0EC48DEA6E2B99873B /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E79B767EE5F9978C182DE58F3DE20 /* LoginButton.swift */; };
 		B564B930C3B6CCFCC109ABF374B21CE6 /* ImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70A2E5A502E0FA6FFA23F73E2E9F380 /* ImageModifier.swift */; };
@@ -479,8 +489,10 @@
 		B622F92774261551C2329DDE4D4E2404 /* FSyncTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 2892BDE9689A814CEA7BF7EFB8DB43A6 /* FSyncTree.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B65CB6EF3292BEB782D1C68597EB362F /* FIRReachabilityChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C5472E9729CADF0488DE5D1221798F /* FIRReachabilityChecker.m */; };
 		B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5A20D749C9A93DE6A3B0EA9B2C29D2 /* MultipartFormData.swift */; };
+		B665C916B45382D9333952567E8E94C5 /* LyftAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF3BDB96D2130F7581FE2450A4DEE /* LyftAPIError.swift */; };
 		B76C902A16D68CC3444CA2C31167615B /* FUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 177C510A8D581B6CC355F808D917C02A /* FUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B7762CCB1BF67C5F8451AF095A678D42 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B09B9D0641B08430DD1EA0E494BCDDE /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B81405BF543ED3641342B1D3F0209BA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E67EBA246E19172A76EA6D686AF2641 /* Images.xcassets */; };
 		B8B149B8C69E7E189C41C9A61EDC8D01 /* MapViewPlus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A893B128C92FEA9C32C59801FB17BA0C /* MapViewPlus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8CF053AF3B2B2C9ED24ED6033921CF7 /* DefaultCalloutViewThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7911A5FADAAB667962EE84C02C7B6E4F /* DefaultCalloutViewThemeManager.swift */; };
 		B8D68762B5ECF611DBB98221C97DEDF4 /* FWebSocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D79528D16B79E8842A3CDAFA20989CA9 /* FWebSocketConnection.m */; };
@@ -489,6 +501,7 @@
 		B91B34C38D46A1F288DB8E95B55096E5 /* DefaultCalloutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD736401943793D91B0CDFADEA05C1BE /* DefaultCalloutViewModel.swift */; };
 		B924069CD75769E22765912C66A87BF3 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECCA10899807CA38E461B068BA7D4F /* Image.swift */; };
 		B93143DAFCA0DA0D752C2D6291C47E42 /* RidesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCA852E17AE6905145FB5B7F69AC2D /* RidesUtil.swift */; };
+		B9D7A5DE33611AB0FC3D075B45EF4E80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F6B8F4DB2853B88907845F2911FAFA /* Foundation.framework */; };
 		BA098690B1C43A351CD03A472931831A /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E19BD46B671055E6A10FAF880BD0FB /* Configuration.swift */; };
 		BA3A9D2509E05835CBFBDD7C2654D3D6 /* FTupleSetIdPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 63761A0D245E4AEC28D6520796106B27 /* FTupleSetIdPath.m */; };
 		BA4DF38E820FF6B40FFABF8B1BBCC615 /* Kingfisher.h in Headers */ = {isa = PBXBuildFile; fileRef = C4832EEAEE9D9B42B6F8DE3222CE7A34 /* Kingfisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -505,7 +518,6 @@
 		BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D9C36A814A9AB84BA2EF6240334D73 /* ParameterEncoding.swift */; };
 		BE9FB5E8188E0B68DB277B09A06E79BA /* ImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5820E82F7CE557613E781FE6232E76 /* ImagePrefetcher.swift */; };
 		BEFE45E5D949D56DBE5002AB97E0DE78 /* UberRides-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A93C846186FFBE705592BA3E8E5207 /* UberRides-dummy.m */; };
-		BF1DBCFB95F5837937E12B74C6873B97 /* JSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE374FFADDAAB513A4C3B34D6CC03139 /* JSONMappable.swift */; };
 		BFA97401155C4E14893D9AA1E0D1EC80 /* UINavigationController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = D047F2B696B792C1AAC7C6AEC55A4734 /* UINavigationController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFE1F1E2DA0066F88EE29433A75436A7 /* SwiftDate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C432FD9C77B201398586DA76836828C1 /* SwiftDate-dummy.m */; };
 		C04AADE8E4A470C4074FCA8EE90CF4C2 /* FIROptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F3E5BA4DC1E87BA63792EBE81881C /* FIROptions.m */; };
@@ -530,7 +542,6 @@
 		C42835950132AFD24354BC496AAD1761 /* RideParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A441223297E140973E4E622D22304F7 /* RideParameters.swift */; };
 		C450BECB2B426D3AC130AF6BF116A581 /* FChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 552E689D3C9110FC096B20957F5058C7 /* FChange.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C46C89C30D782F421648C4EB85944904 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5EA45731F77ACDF2DFF0FAE56D0AA0C /* Kingfisher.framework */; };
-		C4DCE97E2092FA4307CCEA0C37D0A3F6 /* LyftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3E616B9F69888599A5398DB312243C /* LyftAPI.swift */; };
 		C54497646EEA586AFA5A2B8D454C6DFD /* version_edit.h in Headers */ = {isa = PBXBuildFile; fileRef = D991E3B72A3A89B64029B73634DE608C /* version_edit.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C5AC6892962C63826BA6796A87FFB8A2 /* FAckUserWrite.h in Headers */ = {isa = PBXBuildFile; fileRef = 831EB53F2C2EBF86552087303ADE34A6 /* FAckUserWrite.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C63150124CA1DF9EE9BC9711E169BF54 /* UberCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B692DB2F56096CC2B9F8525454CDE60 /* UberCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -538,7 +549,6 @@
 		C67184ADB62CE7B66A82752751AE28AF /* port.h in Headers */ = {isa = PBXBuildFile; fileRef = 339ADD04A7753D8C7ED37E867D4945EE /* port.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C68C212F7F9E59544063D61029437CB1 /* NSData+SRB64Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C3B9241D7FCDA4F83D94B9BD0223E4 /* NSData+SRB64Additions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C70A8DDB12EDAF23972DA0A316663BD7 /* crc32c.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B213CCACB84D1B23AEB4C660FD4AD92 /* crc32c.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C786AF4716ECB45007EB629761AF1562 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B918601FDF327D724E072A9DFE3186 /* Money.swift */; };
 		C7ABEACB53A953F03ACFA94C20C9FCBC /* filename.cc in Sources */ = {isa = PBXBuildFile; fileRef = DCD037B9090EF697E65138B653021899 /* filename.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
 		C8FD18821884B4859F4B58B33B377BC8 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7F1B338C0260E4EBA8B11A00C87F5 /* ModalViewController.swift */; };
 		C90C7F0C221C834D74182CBE60BACDC1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFB1AAA22C726B7EF6AC01076E2037B /* SystemConfiguration.framework */; };
@@ -548,6 +558,7 @@
 		CAAD8C8007C5868AEC3DEB72D6D1D74A /* FIRLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3158D418C2E5F396641F739CEA182B4D /* FIRLogger.m */; };
 		CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B870F439F3B6DE30649BC6ACA757D9 /* Response.swift */; };
 		CB73CA3F2EDC826E26885F09AA623324 /* FTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0A41E6FD1F9959C109F7831FAC126B /* FTreeNode.m */; };
+		CCB5EEF2EBCB66957735B5884037DCA9 /* RideKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E745714BCA4A45C688E6F62C4D20F /* RideKind.swift */; };
 		CD30C5F2E88630FE58A527157223A1DC /* RideRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501590E4171B66244BA53B0F884DB18A /* RideRequestView.swift */; };
 		CD79E6DE194C7C740B749D16473E5BA8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF1FC75C7972C9ADE2E8F4E2A504F67 /* Color.swift */; };
 		CD8616CC0A2FC053F2AA57FC57DDFE87 /* log_reader.h in Headers */ = {isa = PBXBuildFile; fileRef = F390AB0592E23CA5C6368CA0EDBAC264 /* log_reader.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -563,6 +574,7 @@
 		CF69516233616E77E30064C8535437F8 /* MapboxStatic.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8A577028AC04418D94E61829696ABF /* MapboxStatic.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFBD0E2AE8DB4DE7B3BD3D65E5438715 /* FPathIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = DE19A858DEC580026D37278761976B28 /* FPathIndex.m */; };
 		CFFD79E5D04B43EB97479DA0FC3C7AB9 /* FTupleOnDisconnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 41AE793017356A4AA68DA75A8DC31C88 /* FTupleOnDisconnect.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D04DA550CF798A051ABC0EC61537CD79 /* ETA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB505E8176D15DE617F3E65F0F15F24 /* ETA.swift */; };
 		D10FB989790484B77DC17003E16B1B82 /* LyftAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C19769E7481297B172405E6D185B1 /* LyftAvailability.swift */; };
 		D1575AAADDCEA395E3828EBAC2A772FA /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D110CDF7D36576BF62F6FABC87F01 /* Box.swift */; };
 		D15A7B562C6BC48B0AC227AAB1096336 /* MapViewPlusDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576F88473486B33E93F003910A72669D /* MapViewPlusDelegates.swift */; };
@@ -570,6 +582,7 @@
 		D1FC8973B7F2BEB8A69D628A3086C4CD /* ISO8601Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB54B80BABCE357F64B027D75E390C /* ISO8601Parser.swift */; };
 		D2829FFFD441F294E02EF923BECBBA30 /* FTreeSortedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AFAF77556F6ED81E21868EC1CA7DCE9 /* FTreeSortedDictionary.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D2922E0707B13B40D87A03255340D13B /* testutil.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4E20BC28ABDB82AFD70BCA7014B6B7E4 /* testutil.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
+		D39063F685B0CB3C3843E6D007AE9591 /* Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A5EF6D162ED85D9EDFEF04180B3A4 /* Cost.swift */; };
 		D3DED383CE685BBCD0D85C8495FEB24F /* RideRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430F505D12076DA89C23CB35F84D317 /* RideRequestViewController.swift */; };
 		D3F7E494E85A24369DB03FEF60E8A839 /* snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CEA4524F0C43529C79BEC93A10C0E46 /* snapshot.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D49BDA57E23F2D757D84996E70ABD7FC /* FLevelDBStorageEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = B8EC3815302AA81930F92F899E5FFF23 /* FLevelDBStorageEngine.m */; };
@@ -583,6 +596,7 @@
 		D7708908033BAF1F932016835C97AF33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F6B8F4DB2853B88907845F2911FAFA /* Foundation.framework */; };
 		D83CE71F0FDCCE799E3FE6C2DB9A2B8A /* FEmptyNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 583F1167A474018818B5A68E84EF2E11 /* FEmptyNode.m */; };
 		D8507AEF94F26D7345178A54256722DA /* FirebaseDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CA68960A1BF7DA9F44E94AA9811A056 /* FirebaseDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D86C7F8D25C835211B253F00BBB7F4CE /* LyftDeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19568E11E77EE56D70B8E5D0065E497 /* LyftDeepLink.swift */; };
 		D91379AB1A48A920A7DB6FF24AFC2613 /* FIndexedFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FDA4F99BA22AEB3682774575430071 /* FIndexedFilter.m */; };
 		D9594E36AE5792CE1D5D3C02291A5795 /* options.cc in Sources */ = {isa = PBXBuildFile; fileRef = C535A2D581C0481B000559D852B08053 /* options.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
 		DA2AC0AAA81893849A07CE69067318B0 /* FViewProcessorResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BECEF76A6DC46B64358F8832658CA108 /* FViewProcessorResult.m */; };
@@ -640,7 +654,6 @@
 		ECB180997B7E93632DD275ED337C6393 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E33D0449ED66901B8DD1AECE24F1F1ED /* CFNetwork.framework */; };
 		ECD464FCB2D6FF880AEC6F4ABCF608E2 /* write_batch.h in Headers */ = {isa = PBXBuildFile; fileRef = 69E7CBE6EB198D1B005004833FDCF720 /* write_batch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECDED525D94D5EB2C6E2A2430C263091 /* FIRApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8FABC29F2C4BF4D8FA62F6C6FFE74E /* FIRApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED05F4A3660741FA73CA7449669BAFA6 /* LyftSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB5B52D93D05B9AE2AFD05FD502F9ED /* LyftSDK-dummy.m */; };
 		ED46A42A25A94C53BD1FC7A89311FAE2 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94DE3E1567646544DE83854A3D97FC24 /* SVProgressHUD.bundle */; };
 		ED4DBD1E13182AA813DC1237FA6E3A42 /* Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = A60A99F79A72DDE305772D636065FC18 /* Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED77A8CFF29C6BA2A07C071CC71541FE /* FPruneForest.m in Sources */ = {isa = PBXBuildFile; fileRef = EB70FF3316A7FEF467DCECF44D69859B /* FPruneForest.m */; };
@@ -681,6 +694,7 @@
 		F99CE4D3861E9F7028E9FBCCAC35CA78 /* FLLRBValueNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2350915508CDBCA216569F3A53F1873C /* FLLRBValueNode.m */; };
 		F9CB61D2D29FD9389C97B07D0AA9E237 /* FLLRBValueNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 99963C40E2D56741CBC624DDFAE46C48 /* FLLRBValueNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F9D92BA503505CB48EF4ECF0DDF57686 /* nanopb-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 338BC6119A4A17B71A176043BEF9F977 /* nanopb-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA0A8F6DF999243A8CD022C949252ED7 /* LyftSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A02D36D4FE7E5660C085739D9E595 /* LyftSDK-dummy.m */; };
 		FA280BD252696167869DF965A07424BA /* FirebaseDatabase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3F487FBA1782AA3092320BC9B93F5F6 /* FirebaseDatabase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA3B0F6078FE6871506E520CB8D2FD79 /* ClassicSnapshotOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C681D866E31049DD3B454C6688925F /* ClassicSnapshotOptions.swift */; };
 		FA5FD415B2981BB2D8F0DBEAC41F705B /* FIROptions.h in Headers */ = {isa = PBXBuildFile; fileRef = C12879CB136C5535897D436C59576089 /* FIROptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -791,7 +805,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D2E4B61AA750B31E9B733F9D8DD99B2B;
+			remoteGlobalIDString = 8B2C869C1D1CC53E1F4B85F7AAEEE1A0;
 			remoteInfo = LyftSDK;
 		};
 		714BB503778D8B95DC803643DAD39B7F /* PBXContainerItemProxy */ = {
@@ -901,6 +915,7 @@
 		013F63B53E8DF5739BC23007FCBF7996 /* format.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = format.h; path = table/format.h; sourceTree = "<group>"; };
 		018B6444979C259927033873155F0151 /* FListenComplete.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FListenComplete.h; path = Firebase/Database/FListenComplete.h; sourceTree = "<group>"; };
 		01C3B9241D7FCDA4F83D94B9BD0223E4 /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SRB64Additions.h"; path = "Firebase/Database/third_party/SocketRocket/NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		01C983E0E9360B0A71FF665FC186239E /* Asset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Sources/LyftUI/Asset.swift; sourceTree = "<group>"; };
 		01DE1C37EC9BB2D66F2427F828EDD3DB /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		020894B9F98EAD8AC64FDDCE86FD1C8C /* RideRequestViewErrorFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RideRequestViewErrorFactory.swift; path = source/UberRides/RideRequestViewErrorFactory.swift; sourceTree = "<group>"; };
 		0209044A16475A2ABCFA1C3588D9DFCB /* FRangedFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FRangedFilter.m; path = Firebase/Database/FRangedFilter.m; sourceTree = "<group>"; };
@@ -913,7 +928,6 @@
 		04C6F858124FECA60B39707FDB15CE6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		04FB58A6FAA5706CD3C5D2BF29A6EE98 /* RideRequestButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RideRequestButton.swift; path = source/UberRides/RideRequestButton.swift; sourceTree = "<group>"; };
 		052E79B767EE5F9978C182DE58F3DE20 /* LoginButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginButton.swift; path = source/UberCore/Authentication/LoginButton.swift; sourceTree = "<group>"; };
-		05B0B13FD356C19E79095A472D0B86F2 /* Cost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cost.swift; path = Sources/LyftModels/Cost.swift; sourceTree = "<group>"; };
 		061E7D117FC75E3623491521F6FE71C8 /* FIRErrors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRErrors.h; path = Firebase/Core/Private/FIRErrors.h; sourceTree = "<group>"; };
 		0627814AC83BFA1EC03B9A65413F7967 /* hash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hash.h; path = util/hash.h; sourceTree = "<group>"; };
 		06AACC444F2ACAF4952A1DC4ADA7EE52 /* FKeepSyncedEventRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FKeepSyncedEventRegistration.m; path = Firebase/Database/Core/View/FKeepSyncedEventRegistration.m; sourceTree = "<group>"; };
@@ -940,19 +954,18 @@
 		0CC2DA19F9D7C8DBE72F3D2180C9C2DB /* FTupleRemovedQueriesEvents.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FTupleRemovedQueriesEvents.h; path = Firebase/Database/Utilities/Tuples/FTupleRemovedQueriesEvents.h; sourceTree = "<group>"; };
 		0D62BA4A363691D579822A1BD8EECF1B /* MapViewPlus.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MapViewPlus.bundle; path = "MapViewPlus-MapViewPlus.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D8A577028AC04418D94E61829696ABF /* MapboxStatic.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MapboxStatic.swift-umbrella.h"; sourceTree = "<group>"; };
-		0E05FA8A0FEDFD0A543A1D35578FF837 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/LyftAPI/Result.swift; sourceTree = "<group>"; };
 		0E2A59B2A24149D630581326A4DEA5AB /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
 		0E5E996626F9488A35C577B8F383E14A /* db_iter.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = db_iter.cc; path = db/db_iter.cc; sourceTree = "<group>"; };
 		0E70F886354CD713E6DD8637E710E69B /* Pods-Cheers-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cheers-resources.sh"; sourceTree = "<group>"; };
 		0E91B10EB3121418295F722E2E07DB11 /* FTupleObjects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FTupleObjects.h; path = Firebase/Database/Utilities/Tuples/FTupleObjects.h; sourceTree = "<group>"; };
 		0EC2E4A1BDA44D202E4A27A7D5C4CEB0 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		0EEC71C56D9B2911186E0945548335DB /* LyftAPIError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LyftAPIError.swift; path = Sources/LyftAPI/LyftAPIError.swift; sourceTree = "<group>"; };
 		0F848997C5A02BE2758ACDACCB53DA62 /* UIColor+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.h"; sourceTree = "<group>"; };
 		0FB1135837F9B67C25A89F9AFA480173 /* merger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = merger.h; path = table/merger.h; sourceTree = "<group>"; };
 		0FBD6D2199E43D754406E5618B9F5EC3 /* options.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = options.h; path = include/leveldb/options.h; sourceTree = "<group>"; };
 		1004F53A064225C99A2FC6A6B75523A5 /* UberCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UberCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CB28CE7DC5041A172891F3266BE0B9 /* FLLRBEmptyNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLLRBEmptyNode.m; path = Firebase/Database/third_party/FImmutableSortedDictionary/FImmutableSortedDictionary/FLLRBEmptyNode.m; sourceTree = "<group>"; };
 		110BD685A8BB5408F127829FDE9C1911 /* FChildEventRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FChildEventRegistration.m; path = Firebase/Database/Core/View/FChildEventRegistration.m; sourceTree = "<group>"; };
+		111D186422500090D6F2714F394F9656 /* LyftSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LyftSDK.xcconfig; sourceTree = "<group>"; };
 		112C9D83093F18A586A00746956F081C /* port_posix.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = port_posix.cc; path = port/port_posix.cc; sourceTree = "<group>"; };
 		1183C766B137133F0910A8DE789875BD /* testharness.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = testharness.cc; path = util/testharness.cc; sourceTree = "<group>"; };
 		123AC9398AB81532D1D9313E6A8FDA39 /* log_reader.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = log_reader.cc; path = db/log_reader.cc; sourceTree = "<group>"; };
@@ -960,12 +973,14 @@
 		131BF5A3CA857C3D29071671B272E7A8 /* UberCore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UberCore.xcconfig; sourceTree = "<group>"; };
 		13714996AA9DA24360DB103C3DE74142 /* FValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FValidation.h; path = Firebase/Database/Utilities/FValidation.h; sourceTree = "<group>"; };
 		1394CEB2735B5B80A98C812490DDAFB5 /* Placeholder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Placeholder.swift; path = Sources/Placeholder.swift; sourceTree = "<group>"; };
+		1412CF44F7FDED88140E9D3653296A27 /* Money+UI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Money+UI.swift"; path = "Sources/LyftUI/Money+UI.swift"; sourceTree = "<group>"; };
 		141CF9B5A677E4A94970A58743B0EA97 /* FirebaseDatabase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FirebaseDatabase-dummy.m"; sourceTree = "<group>"; };
 		142DEE0AFEBB18507C0A039B8F5DF884 /* FNextPushId.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FNextPushId.h; path = Firebase/Database/Utilities/FNextPushId.h; sourceTree = "<group>"; };
 		143F1C1D7EC55102A9267844EC8D31E5 /* FLLRBEmptyNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLLRBEmptyNode.h; path = Firebase/Database/third_party/FImmutableSortedDictionary/FImmutableSortedDictionary/FLLRBEmptyNode.h; sourceTree = "<group>"; };
 		14517843DDDEC3ECC94433980E6B153D /* Snapshot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Snapshot.swift; path = MapboxStatic/Snapshot.swift; sourceTree = "<group>"; };
 		145C57A3DA7FE1C97689F8B7C0A05D24 /* FRepoManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FRepoManager.h; path = Firebase/Database/Core/FRepoManager.h; sourceTree = "<group>"; };
 		14CF083708649DB7BBFDD4A7FF3A6956 /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
+		14D25B321F8EDF404FF86FF4B7B34220 /* Bundle+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Extension.swift"; path = "Sources/LyftAPI/Bundle+Extension.swift"; sourceTree = "<group>"; };
 		14EBB0BCEC5E3DFDE5FEC1BCCDC28F6D /* RideReceipt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RideReceipt.swift; path = source/UberRides/Model/RideReceipt.swift; sourceTree = "<group>"; };
 		15A75132960048D025C65CBA241E4F2F /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/RequestModifier.swift; sourceTree = "<group>"; };
 		15D00CBAD7BF45B50024A112BCDA8A88 /* FIRAppAssociationRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAppAssociationRegistration.h; path = Firebase/Core/Private/FIRAppAssociationRegistration.h; sourceTree = "<group>"; };
@@ -975,6 +990,7 @@
 		16486D611F3C6C69741FDBB8B055C4BB /* UpfrontFare.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UpfrontFare.swift; path = source/UberRides/Model/UpfrontFare.swift; sourceTree = "<group>"; };
 		16D9C36A814A9AB84BA2EF6240334D73 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		174C74C012B4576143A69A92EB78D550 /* ChameleonConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonConstants.h; path = "Pod/Classes/Objective-C/ChameleonConstants.h"; sourceTree = "<group>"; };
+		1771D7036EDB7E3A5468699500BE9A21 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = Sources/LyftUI/Resources/en.lproj; sourceTree = "<group>"; };
 		177C510A8D581B6CC355F808D917C02A /* FUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUtilities.h; path = Firebase/Database/Utilities/FUtilities.h; sourceTree = "<group>"; };
 		17E1C663A39EDB5F0F8D4EC4AD6745F2 /* write_batch_internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = write_batch_internal.h; path = db/write_batch_internal.h; sourceTree = "<group>"; };
 		1808FFBEBE1AD181C29961E5B409FCB9 /* FIRNetwork.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRNetwork.h; path = Firebase/Core/Private/FIRNetwork.h; sourceTree = "<group>"; };
@@ -992,7 +1008,6 @@
 		1B00A1EABA45DF94C78D156561C02D92 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
 		1B09B9D0641B08430DD1EA0E494BCDDE /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
 		1B213CCACB84D1B23AEB4C660FD4AD92 /* crc32c.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crc32c.h; path = util/crc32c.h; sourceTree = "<group>"; };
-		1B2B00F68978DC6EAF9E5C7C61A87420 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B3CEAE2955C9ABBF0C40B45EF42A73B /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		1C65B3B8F53735260CE5B5EC41B328B1 /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/ImageProcessor.swift; sourceTree = "<group>"; };
 		1C6EB0D8605856C1C6DC62192C995A76 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
@@ -1005,6 +1020,7 @@
 		1EBF772C8EA84DEBAFECE6A71BE4F0E3 /* FTypedefs_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FTypedefs_Private.h; path = Firebase/Database/Api/Private/FTypedefs_Private.h; sourceTree = "<group>"; };
 		1F2514C2A3259FEA17212BE71E1F15A4 /* ChameleonFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChameleonFramework-dummy.m"; sourceTree = "<group>"; };
 		1F5FC64CD04D1CA18794DA945ED9DB72 /* FIRNetworkURLSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRNetworkURLSession.m; path = Firebase/Core/FIRNetworkURLSession.m; sourceTree = "<group>"; };
+		1F6A02D36D4FE7E5660C085739D9E595 /* LyftSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LyftSDK-dummy.m"; sourceTree = "<group>"; };
 		1FD36D16FA5816802987F956FA8512CD /* UserProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = source/UberRides/Model/UserProfile.swift; sourceTree = "<group>"; };
 		20434EE73DA21E0F7F6B18DE25CF8FC7 /* merger.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = merger.cc; path = table/merger.cc; sourceTree = "<group>"; };
 		207A068D68396F3124D7ED21570A8BC3 /* DefaultCalloutView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DefaultCalloutView.xib; path = MapViewPlus/Classes/DefaultCalloutView/DefaultCalloutView.xib; sourceTree = "<group>"; };
@@ -1027,12 +1043,14 @@
 		265A7B4BB7BFC12EC5B15CE4BB74D899 /* FEventEmitter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FEventEmitter.h; path = Firebase/Database/Utilities/FEventEmitter.h; sourceTree = "<group>"; };
 		26ECCA10899807CA38E461B068BA7D4F /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image.swift; sourceTree = "<group>"; };
 		27A4EC052A4759FB833DAD9C82CFF838 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
+		2848595D8A037B50E593ED5BF9967ACC /* I18N.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = I18N.swift; path = Sources/LyftUI/I18N.swift; sourceTree = "<group>"; };
 		2892BDE9689A814CEA7BF7EFB8DB43A6 /* FSyncTree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSyncTree.h; path = Firebase/Database/Core/FSyncTree.h; sourceTree = "<group>"; };
 		28AEFC3C22988751C80D85A1C2820A0A /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ru.lproj; path = source/UberCore/Resources/ru.lproj; sourceTree = "<group>"; };
 		28D1E50E9C47EBDEA3712D42A13B5C1F /* FSnapshotUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSnapshotUtilities.m; path = Firebase/Database/Snapshot/FSnapshotUtilities.m; sourceTree = "<group>"; };
 		28E3331889557279FD07C5D34070E3C2 /* FIRMutableDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMutableDictionary.h; path = Firebase/Core/Private/FIRMutableDictionary.h; sourceTree = "<group>"; };
 		295FC3E142D2FD67BD52DE69895F4FF8 /* block_builder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = block_builder.h; path = table/block_builder.h; sourceTree = "<group>"; };
 		29795B3519763A9F474B3FBCA7D7251A /* ImplicitGrantAuthenticator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImplicitGrantAuthenticator.swift; path = source/UberCore/Authentication/Authenticators/ImplicitGrantAuthenticator.swift; sourceTree = "<group>"; };
+		29BCBD85F4FD9B839CED0B9C0E55D7E7 /* PricingDetails.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PricingDetails.swift; path = Sources/LyftModels/PricingDetails.swift; sourceTree = "<group>"; };
 		2A07C303D210BC5C9B56E3F6B67CA282 /* DateTimeInterval.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTimeInterval.swift; path = Sources/SwiftDate/DateTimeInterval.swift; sourceTree = "<group>"; };
 		2A1927F76482C65501150B9A17B4008C /* DeeplinkErrorFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeeplinkErrorFactory.swift; path = source/UberCore/Deeplinks/DeeplinkErrorFactory.swift; sourceTree = "<group>"; };
 		2ABCDF9E26F1169962F981C0D686BAE6 /* MapboxStatic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MapboxStatic.framework; path = MapboxStatic.swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1045,12 +1063,16 @@
 		2E19E510A722C13B56A00F34F69A4BC6 /* Localization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Localization.swift; path = Sources/SwiftDate/Localization.swift; sourceTree = "<group>"; };
 		2E3958CE633C14B105A35A7F3B953CA4 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MapViewPlus/Assets/Assets.xcassets; sourceTree = "<group>"; };
 		2E49FF264E1E873344ACDD5E46537728 /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Resource.swift; sourceTree = "<group>"; };
+		2E67EBA246E19172A76EA6D686AF2641 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Sources/LyftUI/Resources/Images.xcassets; sourceTree = "<group>"; };
 		2E795E73EF52A17FB97DBB6CD0367C79 /* FSnapshotHolder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSnapshotHolder.m; path = Firebase/Database/Core/FSnapshotHolder.m; sourceTree = "<group>"; };
+		2E8E086FD397E560EAF4045F398C8007 /* Money.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Money.swift; path = Sources/LyftModels/Money.swift; sourceTree = "<group>"; };
 		2F09D4D44F628B0DB469F8A37AE713DB /* Place.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Place.swift; path = source/UberRides/Model/Place.swift; sourceTree = "<group>"; };
 		2F0C850D9CD04FE542C338B6E24462CD /* APLevelDB.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = APLevelDB.mm; path = "Firebase/Database/third_party/Wrap-leveldb/APLevelDB.mm"; sourceTree = "<group>"; };
+		2F101959871421AD6D0A2CAB825BF01D /* CLLocationCoordinate2D+JSONMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CLLocationCoordinate2D+JSONMappable.swift"; path = "Sources/LyftModels/CLLocationCoordinate2D+JSONMappable.swift"; sourceTree = "<group>"; };
 		2FB83C5847510636A5969EFA7C9A04B4 /* FPersistentConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPersistentConnection.h; path = Firebase/Database/Core/FPersistentConnection.h; sourceTree = "<group>"; };
 		2FD06B03E2503D6F547A37AC45475F56 /* hash.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = hash.cc; path = util/hash.cc; sourceTree = "<group>"; };
 		2FE4BA52A1C889B0A9A69BE65985B8C4 /* FIRNetworkURLSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRNetworkURLSession.h; path = Firebase/Core/Private/FIRNetworkURLSession.h; sourceTree = "<group>"; };
+		304B879CA02F37CB58561142BCB45FBE /* LyftButtonFull.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LyftButtonFull.xib; path = Sources/LyftUI/Resources/LyftButtonFull.xib; sourceTree = "<group>"; };
 		30B9DAF676E2633F5285CE32780F8829 /* FIRAnalyticsConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRAnalyticsConfiguration.m; path = Firebase/Core/FIRAnalyticsConfiguration.m; sourceTree = "<group>"; };
 		30CD6110FD820B092C078F672B1343F3 /* FTupleObjects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FTupleObjects.m; path = Firebase/Database/Utilities/Tuples/FTupleObjects.m; sourceTree = "<group>"; };
 		30FB1B87B5AC9DB817B154B82BD20251 /* Pods-CheersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheersTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1075,6 +1097,7 @@
 		382FC3E9B254214B2B915A2F45F9387E /* iterator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iterator.h; path = include/leveldb/iterator.h; sourceTree = "<group>"; };
 		386C1EDF19660D12BE91B1B166B22E2D /* MapboxStatic.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MapboxStatic.swift.modulemap; sourceTree = "<group>"; };
 		391B386CB2CF3AB66FAFA50048D9456B /* FIRConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRConfiguration.h; path = Firebase/Core/Public/FIRConfiguration.h; sourceTree = "<group>"; };
+		3946CCB1C4886839903CE475EB52E494 /* APIRoute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIRoute.swift; path = Sources/LyftAPI/APIRoute.swift; sourceTree = "<group>"; };
 		398FE431C24157739E1992E2D4A5E3B6 /* FRepoManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FRepoManager.m; path = Firebase/Database/Core/FRepoManager.m; sourceTree = "<group>"; };
 		3A0014DFDF0FBA351CA0334488D9F97B /* FIRRetryHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRRetryHelper.h; path = Firebase/Database/Core/Utilities/FIRRetryHelper.h; sourceTree = "<group>"; };
 		3A75A61AE3B193DD460A17AC96AC35EA /* repair.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = repair.cc; path = db/repair.cc; sourceTree = "<group>"; };
@@ -1094,6 +1117,7 @@
 		3DD2E2E4428B83BEC2D006AAD6BD3610 /* FIRServerValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRServerValue.m; path = Firebase/Database/Api/FIRServerValue.m; sourceTree = "<group>"; };
 		3F4851DCEB4E93C64D160E43C2E13DAA /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
 		401713C0C6677E5A0FDEB99D27833008 /* UberCore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UberCore-prefix.pch"; sourceTree = "<group>"; };
+		401A5EF6D162ED85D9EDFEF04180B3A4 /* Cost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cost.swift; path = Sources/LyftModels/Cost.swift; sourceTree = "<group>"; };
 		402101585E7E0E36BE60C2E0CB79E915 /* fbase64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fbase64.h; path = Firebase/Database/third_party/SocketRocket/fbase64.h; sourceTree = "<group>"; };
 		41068496E45A06C2217DF8501568DB71 /* two_level_iterator.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = two_level_iterator.cc; path = table/two_level_iterator.cc; sourceTree = "<group>"; };
 		415D607B7CBFD16F79C582CE78F1546B /* DistanceEstimate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DistanceEstimate.swift; path = source/UberRides/Model/DistanceEstimate.swift; sourceTree = "<group>"; };
@@ -1150,6 +1174,7 @@
 		4DD4373AA9003BB3DBED56E9C52854DD /* FMerge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMerge.m; path = Firebase/Database/Core/Operation/FMerge.m; sourceTree = "<group>"; };
 		4E20BC28ABDB82AFD70BCA7014B6B7E4 /* testutil.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = testutil.cc; path = util/testutil.cc; sourceTree = "<group>"; };
 		4E23B530257662BF5B5456BC4F0884A7 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		4EB4A57B3AD90D520371EAE8D83B215E /* LyftSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LyftSDK-prefix.pch"; sourceTree = "<group>"; };
 		4EEF50BC42A8D4FA655A4FD5D0241DF4 /* CalendarName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarName.swift; path = Sources/SwiftDate/CalendarName.swift; sourceTree = "<group>"; };
 		4F14C56867E194AF82EB553ABB9916F1 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 		4F39EF0DB66DC497FDDCC581C6E41250 /* APLevelDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APLevelDB.h; path = "Firebase/Database/third_party/Wrap-leveldb/APLevelDB.h"; sourceTree = "<group>"; };
@@ -1161,6 +1186,7 @@
 		5189F3179E30D5B5562BD785D93197A6 /* TokenManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TokenManager.swift; path = source/UberCore/Authentication/Tokens/TokenManager.swift; sourceTree = "<group>"; };
 		528AB9A16D3AE95B332B96C5241A632E /* Pods-CheersUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CheersUITests.modulemap"; sourceTree = "<group>"; };
 		534ADE33BB5EEDE6843AF8F8A763F522 /* atomic_pointer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = atomic_pointer.h; path = port/atomic_pointer.h; sourceTree = "<group>"; };
+		53AF51D9DB78A8C1AD1985C7684B33C8 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Button.swift; path = Sources/LyftUI/Button.swift; sourceTree = "<group>"; };
 		548A9FEABF3A0B5B6C917CF6C88251CA /* FSnapshotUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSnapshotUtilities.h; path = Firebase/Database/Snapshot/FSnapshotUtilities.h; sourceTree = "<group>"; };
 		54A973C3E1F570A0576E1D998DC69B75 /* FIRDatabaseReference.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRDatabaseReference.h; path = Firebase/Database/Public/FIRDatabaseReference.h; sourceTree = "<group>"; };
 		54E02C31DD6A71B35D85C1B3049D94B2 /* NSArray+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Chameleon.m"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.m"; sourceTree = "<group>"; };
@@ -1169,6 +1195,7 @@
 		55AD72821965062CC91017AE0D432C39 /* FViewProcessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FViewProcessor.h; path = Firebase/Database/FViewProcessor.h; sourceTree = "<group>"; };
 		5629A46780485F07C63F5660F27E1F9A /* FChildrenNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FChildrenNode.h; path = Firebase/Database/Snapshot/FChildrenNode.h; sourceTree = "<group>"; };
 		5684B6DDD55A9758A77EDEB69F74F126 /* LoginManagingProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginManagingProtocol.swift; path = source/UberCore/Authentication/LoginManagingProtocol.swift; sourceTree = "<group>"; };
+		568A146F00FBE07451A55488CB0643D0 /* Safari.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Safari.swift; path = Sources/LyftUI/Safari.swift; sourceTree = "<group>"; };
 		576C33DF7290409F127DF064054830E9 /* pb_common.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_common.c; sourceTree = "<group>"; };
 		576F88473486B33E93F003910A72669D /* MapViewPlusDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapViewPlusDelegates.swift; path = MapViewPlus/Classes/Abstract/MapViewPlusDelegates.swift; sourceTree = "<group>"; };
 		57E7AC88E3B67515E6060C9030C38E63 /* FTupleObjectNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FTupleObjectNode.m; path = Firebase/Database/Utilities/Tuples/FTupleObjectNode.m; sourceTree = "<group>"; };
@@ -1182,11 +1209,11 @@
 		5B2C4A6DE1DADDDCB852102EFF310278 /* FIRErrors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRErrors.m; path = Firebase/Core/FIRErrors.m; sourceTree = "<group>"; };
 		5B4B06902F921B23970BC46A84ABA3DB /* pb.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb.h; sourceTree = "<group>"; };
 		5B9D110CDF7D36576BF62F6FABC87F01 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
+		5BEFC72A3D0E2C0DD7B97300D42D1E20 /* HTTPClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPClient.swift; path = Sources/LyftAPI/HTTPClient.swift; sourceTree = "<group>"; };
 		5CA68960A1BF7DA9F44E94AA9811A056 /* FirebaseDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseDatabase.h; path = Firebase/Database/Public/FirebaseDatabase.h; sourceTree = "<group>"; };
 		5D0FD56A4D28746F0CA86371418D04B8 /* FIRDatabaseReference.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRDatabaseReference.m; path = Firebase/Database/FIRDatabaseReference.m; sourceTree = "<group>"; };
 		5D5AC6DC4F48FA4E709F36D764941653 /* SwiftDate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftDate.xcconfig; sourceTree = "<group>"; };
 		5D6C64A182FC7DF59A89542D1B717353 /* FIRDataEventType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRDataEventType.h; path = Firebase/Database/Public/FIRDataEventType.h; sourceTree = "<group>"; };
-		5D8A47A253C043C21A230DCF7A7365BB /* LyftSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LyftSDK.xcconfig; sourceTree = "<group>"; };
 		5D8C11715E9D15CEA2DD78A8FF774550 /* FIRDataSnapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRDataSnapshot.h; path = Firebase/Database/Public/FIRDataSnapshot.h; sourceTree = "<group>"; };
 		5DFFAB9E6891694E224281B9556BCD5F /* FCancelEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FCancelEvent.h; path = Firebase/Database/Core/View/FCancelEvent.h; sourceTree = "<group>"; };
 		5E223BB7C3FCD818B20FE514A0E0BB11 /* ChameleonFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-umbrella.h"; sourceTree = "<group>"; };
@@ -1202,6 +1229,7 @@
 		63923F26578564921F438EC5A20E60C6 /* Pods_Cheers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Cheers.framework; path = "Pods-Cheers.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E4DD93F5AA8EC6E66C365C186A0D19 /* FTree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FTree.h; path = Firebase/Database/Core/Utilities/FTree.h; sourceTree = "<group>"; };
 		653E82FDBC3E83FBB6A6CC0ECC2D1640 /* ChameleonMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonMacros.h; path = "Pod/Classes/Objective-C/ChameleonMacros.h"; sourceTree = "<group>"; };
+		656E745714BCA4A45C688E6F62C4D20F /* RideKind.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RideKind.swift; path = Sources/LyftModels/RideKind.swift; sourceTree = "<group>"; };
 		65F06DEB9D5B7261DB04F56F6DF1A33C /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = source/UberRides/Resources/en.lproj; sourceTree = "<group>"; };
 		65F31C93F85B11850DBC988236277938 /* MarkerOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkerOptions.swift; path = MapboxStatic/MarkerOptions.swift; sourceTree = "<group>"; };
 		6645FCF795E4D5BC36E91A64518067BB /* Chameleon_.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon_.h; path = "Pod/Classes/Objective-C/Chameleon_.h"; sourceTree = "<group>"; };
@@ -1209,7 +1237,6 @@
 		66F6FB6D63E8563945B87BD732F31BA0 /* db_impl.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = db_impl.cc; path = db/db_impl.cc; sourceTree = "<group>"; };
 		67A1C57BBAECB1FA84DCF9907AD1CA33 /* FImmutableTree.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FImmutableTree.m; path = Firebase/Database/Core/Utilities/FImmutableTree.m; sourceTree = "<group>"; };
 		67C627D6E06D353089BF3E4262691EC0 /* env.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = env.cc; path = util/env.cc; sourceTree = "<group>"; };
-		67CFE75614320661D18DFF2584DD4FE4 /* LyftSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LyftSDK-prefix.pch"; sourceTree = "<group>"; };
 		67FAC490FE2F2B9643CDCE5E68A0B935 /* format.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = format.cc; path = table/format.cc; sourceTree = "<group>"; };
 		6836CC1856AB331D32990D3BCB7A2000 /* nanopb-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-prefix.pch"; sourceTree = "<group>"; };
 		68DE4B2AE36B9734E6CA2B8CD80637C6 /* FIRDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRDatabase.m; path = Firebase/Database/Api/FIRDatabase.m; sourceTree = "<group>"; };
@@ -1238,7 +1265,6 @@
 		6F551BBABC2CADCA4292CED8C66DD995 /* DateInRegion+Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Math.swift"; path = "Sources/SwiftDate/DateInRegion+Math.swift"; sourceTree = "<group>"; };
 		6F8110A8A629CA13FAB3389F9A76C371 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F8649968B7B604505F95183F12ECF89 /* FCachePolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FCachePolicy.h; path = Firebase/Database/Persistence/FCachePolicy.h; sourceTree = "<group>"; };
-		6F86D099A75BCB6E251E2579B13C787B /* PricingDetails.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PricingDetails.swift; path = Sources/LyftModels/PricingDetails.swift; sourceTree = "<group>"; };
 		6FC1F3ABC2DA51FCE5DEA263FD63D360 /* pb_decode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_decode.c; sourceTree = "<group>"; };
 		6FF873E79A538BFCBBBF4E9335177819 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		700BD289E6950E7208F444D692714690 /* FTrackedQueryManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FTrackedQueryManager.h; path = Firebase/Database/Persistence/FTrackedQueryManager.h; sourceTree = "<group>"; };
@@ -1274,15 +1300,15 @@
 		7911A5FADAAB667962EE84C02C7B6E4F /* DefaultCalloutViewThemeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultCalloutViewThemeManager.swift; path = MapViewPlus/Classes/DefaultCalloutView/DefaultCalloutViewThemeManager.swift; sourceTree = "<group>"; };
 		7999813D4D056A6C7D476EF8AB78C950 /* FClock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FClock.m; path = Firebase/Database/FClock.m; sourceTree = "<group>"; };
 		79A5F0440603F7DE4D490CB61FBC780C /* FLeafNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLeafNode.m; path = Firebase/Database/Snapshot/FLeafNode.m; sourceTree = "<group>"; };
-		79C9B0267196D6A5D67364EDB82EE763 /* LyftAPIURLEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LyftAPIURLEncoding.swift; path = Sources/LyftAPI/LyftAPIURLEncoding.swift; sourceTree = "<group>"; };
 		7A156612FE045F4500B0CD0D6CEE6AE8 /* FIRDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRDatabase.h; path = Firebase/Database/Public/FIRDatabase.h; sourceTree = "<group>"; };
 		7A8971A6209E358B35464FB7BCEEA53E /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Filter.swift; sourceTree = "<group>"; };
 		7C10D8FE5BB6EC7D65C1B45601808D5B /* MapboxStatic.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MapboxStatic.swift.xcconfig; sourceTree = "<group>"; };
 		7C29B9112C0A94517D4164811015891A /* FTuplePathValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FTuplePathValue.h; path = Firebase/Database/Utilities/Tuples/FTuplePathValue.h; sourceTree = "<group>"; };
 		7C541425AFBAC014AE46895D0491BBB3 /* UberCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UberCore.modulemap; sourceTree = "<group>"; };
+		7CA296EE12314625E1F5C21EA11AFDB1 /* LyftSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LyftSDK.modulemap; sourceTree = "<group>"; };
 		7D11247B0175460355E0C0338ECB3FDD /* FIRBundleUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRBundleUtil.m; path = Firebase/Core/FIRBundleUtil.m; sourceTree = "<group>"; };
 		7D357C78198C13972D105867A11504CD /* ChameleonConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChameleonConstants.m; path = "Pod/Classes/Objective-C/ChameleonConstants.m"; sourceTree = "<group>"; };
-		7E1AB504169B813ECD6BC01466116E06 /* NearbyDriver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NearbyDriver.swift; path = Sources/LyftModels/NearbyDriver.swift; sourceTree = "<group>"; };
+		7D68ACC0C413D5E7988F79578FEBE7C7 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/LyftAPI/Result.swift; sourceTree = "<group>"; };
 		7E5AA1BB35E15FC26AA75FEE1F599F9E /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Indicator.swift; sourceTree = "<group>"; };
 		7E75156F518B4B13698EF46081B19C06 /* LoginManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginManager.swift; path = source/UberCore/Authentication/LoginManager.swift; sourceTree = "<group>"; };
 		7F92BEDD55D8422D3AA8E3E7CE2836F6 /* FTupleFirebase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FTupleFirebase.m; path = Firebase/Database/Utilities/Tuples/FTupleFirebase.m; sourceTree = "<group>"; };
@@ -1295,7 +1321,6 @@
 		8304B8CF7DF1DFEF8148DB307C290D69 /* FIRAppEnvironmentUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRAppEnvironmentUtil.m; path = Firebase/Core/third_party/FIRAppEnvironmentUtil.m; sourceTree = "<group>"; };
 		8314816852DFE55BCB28D0B34B696ACA /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		831EB53F2C2EBF86552087303ADE34A6 /* FAckUserWrite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FAckUserWrite.h; path = Firebase/Database/Core/Operation/FAckUserWrite.h; sourceTree = "<group>"; };
-		832C75E7082A228D6DB641248E69C1B1 /* Bundle+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Extension.swift"; path = "Sources/LyftAPI/Bundle+Extension.swift"; sourceTree = "<group>"; };
 		8342E064C6C405F9EE3FBCB69C4A492B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		834A5741170BBBBC5A1337780F09A6B3 /* db_impl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = db_impl.h; path = db/db_impl.h; sourceTree = "<group>"; };
 		83A8B137EA1442AC8A6C85027DA5A77A /* FirebaseDatabase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FirebaseDatabase.xcconfig; sourceTree = "<group>"; };
@@ -1316,12 +1341,12 @@
 		88E02F42639EAFBFEA8B1B4A2F0BA4E5 /* filename.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = filename.h; path = db/filename.h; sourceTree = "<group>"; };
 		8900ACBF2278D9F821348061B7052E69 /* mutexlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mutexlock.h; path = util/mutexlock.h; sourceTree = "<group>"; };
 		89056A662D9D1FEB2B8A91D2BAAE7AAA /* logging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = logging.h; path = util/logging.h; sourceTree = "<group>"; };
+		8948E68D881AEE4673C99C9678B9B529 /* LyftSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LyftSDK-umbrella.h"; sourceTree = "<group>"; };
 		899A01AE8A67A117567BD3E8D4D621E6 /* FIRAppInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAppInternal.h; path = Firebase/Core/Private/FIRAppInternal.h; sourceTree = "<group>"; };
 		89E19BD46B671055E6A10FAF880BD0FB /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = source/UberCore/Configuration.swift; sourceTree = "<group>"; };
 		89F274D620FA03FF82F0A830B8230E5A /* Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Driver.swift; path = source/UberRides/Model/Driver.swift; sourceTree = "<group>"; };
 		8A108636EBA4502BE7B910641642870F /* env_posix.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = env_posix.cc; path = util/env_posix.cc; sourceTree = "<group>"; };
 		8A30F833A433EDD2FDA22BCD4D826CF9 /* FWriteTree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FWriteTree.h; path = Firebase/Database/Core/FWriteTree.h; sourceTree = "<group>"; };
-		8A3E616B9F69888599A5398DB312243C /* LyftAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LyftAPI.swift; path = Sources/LyftAPI/LyftAPI.swift; sourceTree = "<group>"; };
 		8A4710811D3DE3D5FAC32289F2AB39D5 /* Pods-CheersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheersUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8A763191066C43948C2D5BCD3B08D522 /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = leveldb.framework; path = "leveldb-library.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8FAE4B4E0A5EA5EFB8067279427578 /* ColloquialDateFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColloquialDateFormatter.swift; path = Sources/SwiftDate/ColloquialDateFormatter.swift; sourceTree = "<group>"; };
@@ -1339,9 +1364,12 @@
 		8DA37EC6352D8164D2E8E393D6FEECCF /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
 		8DF5CE4E4650E7E10B41A7858EC18E4C /* UBSDKConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UBSDKConstants.m; path = source/UberCore/UBSDKConstants.m; sourceTree = "<group>"; };
 		8E2EF9EEFAB9D785112378D69CD42E24 /* UberAppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UberAppDelegate.swift; path = source/UberCore/Authentication/UberAppDelegate.swift; sourceTree = "<group>"; };
+		8E4DB8463A968CE49B8AB1FBDFD03C4F /* LyftAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LyftAPI.swift; path = Sources/LyftAPI/LyftAPI.swift; sourceTree = "<group>"; };
 		8E59C3D080F97983701495AE710C4DD2 /* FirebaseCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FirebaseCore-umbrella.h"; sourceTree = "<group>"; };
 		8E920EFFBFDBCA1527984EE28B7BE48A /* env_posix_test_helper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = env_posix_test_helper.h; path = util/env_posix_test_helper.h; sourceTree = "<group>"; };
+		8EB505E8176D15DE617F3E65F0F15F24 /* ETA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ETA.swift; path = Sources/LyftModels/ETA.swift; sourceTree = "<group>"; };
 		8ECB2C5A824AF8283D479C72879C96AC /* FIRNetwork.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRNetwork.m; path = Firebase/Core/FIRNetwork.m; sourceTree = "<group>"; };
+		8EE02F84514BFFDF3F72FB20014506C9 /* LyftButtonNone.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LyftButtonNone.xib; path = Sources/LyftUI/Resources/LyftButtonNone.xib; sourceTree = "<group>"; };
 		8FE817501D006B74084B11545633B867 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FFBE4A42978B3D14B39241FF5E7AB74 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		90099F4BC7978C76845F73EA4F1885A0 /* log_writer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = log_writer.h; path = db/log_writer.h; sourceTree = "<group>"; };
@@ -1351,6 +1379,7 @@
 		914DB9845FAC1941B8636BD9F5E322D5 /* FIRDatabaseReference_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRDatabaseReference_Private.h; path = Firebase/Database/Api/Private/FIRDatabaseReference_Private.h; sourceTree = "<group>"; };
 		917974369CE0261B2D274C38D3CD644C /* FTransformedEnumerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FTransformedEnumerator.h; path = Firebase/Database/FTransformedEnumerator.h; sourceTree = "<group>"; };
 		91EAD5762930ED509B8C672E13E2CDC3 /* FIRDatabaseQuery_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRDatabaseQuery_Private.h; path = Firebase/Database/Api/Private/FIRDatabaseQuery_Private.h; sourceTree = "<group>"; };
+		91F05A906D15C7A91045116585247F78 /* UIColor+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "Sources/LyftUI/UIColor+Extension.swift"; sourceTree = "<group>"; };
 		9209A5CCC411D8EE25020E90430B1FFC /* status.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = status.h; path = include/leveldb/status.h; sourceTree = "<group>"; };
 		922FF9A90B0F4E3F2F6FB0644DFA39D8 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = nanopb.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92411DDBE9AAA558B764F95921AA9B38 /* FOperationSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FOperationSource.m; path = Firebase/Database/Core/Operation/FOperationSource.m; sourceTree = "<group>"; };
@@ -1361,7 +1390,6 @@
 		948007F45EC19693A21551AF76E4ACDA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94DE3E1567646544DE83854A3D97FC24 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		950E1FD67394B56E2EC1192D5C30407B /* FirebaseCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FirebaseCore-dummy.m"; sourceTree = "<group>"; };
-		95B5D3D37062D104F0BEC442979E8F55 /* APIRoute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIRoute.swift; path = Sources/LyftAPI/APIRoute.swift; sourceTree = "<group>"; };
 		96339D1F9F8DCB512504CD399163A7BA /* FQuerySpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FQuerySpec.m; path = Firebase/Database/Core/FQuerySpec.m; sourceTree = "<group>"; };
 		9648FCD9730BFEC2E5E777AA77EECD8F /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
 		96733708B25B030D8918B8589528FD95 /* FTupleTSN.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FTupleTSN.m; path = Firebase/Database/Utilities/Tuples/FTupleTSN.m; sourceTree = "<group>"; };
@@ -1370,7 +1398,6 @@
 		9845BF7C3166B6058C1F07952686866C /* FIRNetworkConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRNetworkConstants.m; path = Firebase/Core/FIRNetworkConstants.m; sourceTree = "<group>"; };
 		987185BBB5874970DA9721361D81C554 /* leveldb-library.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "leveldb-library.modulemap"; sourceTree = "<group>"; };
 		990037B9FD24AFE662F3DC5406ABA2D0 /* port_posix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = port_posix.h; path = port/port_posix.h; sourceTree = "<group>"; };
-		993DF3C0371E9196B84B7E1501E8A2F3 /* RideType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RideType.swift; path = Sources/LyftModels/RideType.swift; sourceTree = "<group>"; };
 		995E09A9E74DE1AF553071ADC3AB0192 /* SwiftPhotoGalleryCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftPhotoGalleryCell.swift; path = Pod/Classes/SwiftPhotoGalleryCell.swift; sourceTree = "<group>"; };
 		99963C40E2D56741CBC624DDFAE46C48 /* FLLRBValueNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLLRBValueNode.h; path = Firebase/Database/third_party/FImmutableSortedDictionary/FImmutableSortedDictionary/FLLRBValueNode.h; sourceTree = "<group>"; };
 		99AA03CAF5517877DFBCC92580B2CA1F /* FIRNetworkMessageCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRNetworkMessageCode.h; path = Firebase/Core/Private/FIRNetworkMessageCode.h; sourceTree = "<group>"; };
@@ -1398,10 +1425,10 @@
 		9E2F881F55050ADE930DD316EC03CE46 /* bloom.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = bloom.cc; path = util/bloom.cc; sourceTree = "<group>"; };
 		9E7339DFE259EEE861E3EF517754D537 /* FIRNetworkLoggerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRNetworkLoggerProtocol.h; path = Firebase/Core/Private/FIRNetworkLoggerProtocol.h; sourceTree = "<group>"; };
 		9E87F1E3C908920F71C452C383098317 /* histogram.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = histogram.h; path = util/histogram.h; sourceTree = "<group>"; };
+		9EA7EB6AB64C6AA04750713D9E9EE97D /* LyftAPIURLEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LyftAPIURLEncoding.swift; path = Sources/LyftAPI/LyftAPIURLEncoding.swift; sourceTree = "<group>"; };
 		9ED1029C6AF816DDA01565738633EA16 /* SwiftPhotoGallery-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftPhotoGallery-dummy.m"; sourceTree = "<group>"; };
 		9ED979F4A31FC0C44541A2B6FA0AB31A /* FPathIndex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPathIndex.h; path = Firebase/Database/FPathIndex.h; sourceTree = "<group>"; };
 		9EDE709791E88FF6E2C6536E330A156E /* FPriorityIndex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPriorityIndex.m; path = Firebase/Database/FPriorityIndex.m; sourceTree = "<group>"; };
-		9EDFA76CD04C74A8C47DAE84602A4FB2 /* LyftSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LyftSDK-umbrella.h"; sourceTree = "<group>"; };
 		9F22AC80D8D8C88B2A47921CF1822054 /* MapboxStatic.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MapboxStatic.swift-dummy.m"; sourceTree = "<group>"; };
 		9F77DD544D54B89C32F1BF81C00BC56D /* AuthenticationURLUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationURLUtility.swift; path = source/UberCore/Authentication/AuthenticationURLUtility.swift; sourceTree = "<group>"; };
 		A00175DAC7498D2C0BBF309D205A1A48 /* FAtomicNumber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FAtomicNumber.h; path = Firebase/Database/Utilities/FAtomicNumber.h; sourceTree = "<group>"; };
@@ -1413,7 +1440,6 @@
 		A2DA03F14DBAECA422FF668E9249DA4D /* nanopb.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = nanopb.modulemap; sourceTree = "<group>"; };
 		A322FB60F35AD72D5F8888E02CFB46DD /* FChildEventRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FChildEventRegistration.h; path = Firebase/Database/Core/View/FChildEventRegistration.h; sourceTree = "<group>"; };
 		A3673EC456AAEEBC10505AADC52E566A /* UberButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UberButton.swift; path = source/UberCore/UberButton.swift; sourceTree = "<group>"; };
-		A3A6AD85A35DAE61E9CC5C697DC3FD6B /* ETA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ETA.swift; path = Sources/LyftModels/ETA.swift; sourceTree = "<group>"; };
 		A3B7B46CD0257F826FA9941876BE5E76 /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Frameworks/FirebaseNanoPB.framework; sourceTree = "<group>"; };
 		A46887E79979C370F13579EF79E6B0CF /* FIRTransactionResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRTransactionResult.h; path = Firebase/Database/Public/FIRTransactionResult.h; sourceTree = "<group>"; };
 		A46B4501B81B032ADD2CE633A7BEF91B /* random.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = random.h; path = util/random.h; sourceTree = "<group>"; };
@@ -1435,7 +1461,6 @@
 		AAD6D41976EDF63DCAE8FDD3003D75B9 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = source/UberCore/Resources/en.lproj; sourceTree = "<group>"; };
 		AB001A80BC898E74859CD82C6712950E /* Product.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Product.swift; path = source/UberRides/Model/Product.swift; sourceTree = "<group>"; };
 		AB2D77E0DEC42BFBCF49E7A5E8E207EA /* FPendingPut.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPendingPut.m; path = Firebase/Database/Persistence/FPendingPut.m; sourceTree = "<group>"; };
-		ABFE3DDF76A33306C24544F3513B41B1 /* LyftConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LyftConfiguration.swift; path = Sources/LyftAPI/LyftConfiguration.swift; sourceTree = "<group>"; };
 		AC5FCD2D27F449AE7DD4A7ABAFE6DA97 /* FListenProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FListenProvider.m; path = Firebase/Database/Core/FListenProvider.m; sourceTree = "<group>"; };
 		ACF0662D1FAD17FE5357FF9ABDE76691 /* Pods-Cheers-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cheers-dummy.m"; sourceTree = "<group>"; };
 		AD2A14F8AE5D7346B447ED7375C5BBC1 /* comparator.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = comparator.cc; path = util/comparator.cc; sourceTree = "<group>"; };
@@ -1450,6 +1475,7 @@
 		B010C729CEA84729AF2E4AFB531FC876 /* KeychainWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = source/UberCore/Authentication/Tokens/KeychainWrapper.swift; sourceTree = "<group>"; };
 		B037ACEECD9D2C6B9F736CF8366112D0 /* FCompoundWrite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FCompoundWrite.h; path = Firebase/Database/Snapshot/FCompoundWrite.h; sourceTree = "<group>"; };
 		B0DBDA88CD7B94D59E3215C67A8BC82E /* Pods-CheersTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheersTests-frameworks.sh"; sourceTree = "<group>"; };
+		B19568E11E77EE56D70B8E5D0065E497 /* LyftDeepLink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LyftDeepLink.swift; path = Sources/LyftUI/LyftDeepLink.swift; sourceTree = "<group>"; };
 		B21DA76B689C1E0EE4E2537CF978D779 /* FTupleUserCallback.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FTupleUserCallback.h; path = Firebase/Database/Utilities/Tuples/FTupleUserCallback.h; sourceTree = "<group>"; };
 		B22CB6446B56A9CEAF19F032542803AE /* Pods_CheersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheersTests.framework; path = "Pods-CheersTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24D1B26F4AF3C6867CDE645034E6FBD /* FIRMutableData_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMutableData_Private.h; path = Firebase/Database/Api/Private/FIRMutableData_Private.h; sourceTree = "<group>"; };
@@ -1459,7 +1485,6 @@
 		B39DFF8580AAD8CBC893924BE9BE6D99 /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+SRB64Additions.m"; path = "Firebase/Database/third_party/SocketRocket/NSData+SRB64Additions.m"; sourceTree = "<group>"; };
 		B461433F06860DACBF8C73AEA0902DC6 /* Pods-Cheers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cheers.release.xcconfig"; sourceTree = "<group>"; };
 		B5210CC11EC1BAF96653257B0D3B5C3E /* FRepoInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FRepoInfo.h; path = Firebase/Database/Core/FRepoInfo.h; sourceTree = "<group>"; };
-		B54890018CE34F6E168386707BA7755C /* CLLocationCoordinate2D+JSONMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CLLocationCoordinate2D+JSONMappable.swift"; path = "Sources/LyftModels/CLLocationCoordinate2D+JSONMappable.swift"; sourceTree = "<group>"; };
 		B54ED9E3F416CD3889EAD31DFA2046A1 /* FKeyIndex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FKeyIndex.h; path = Firebase/Database/FKeyIndex.h; sourceTree = "<group>"; };
 		B600481C5F834B52A8345AC25FCBA170 /* FChildrenNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FChildrenNode.m; path = Firebase/Database/Snapshot/FChildrenNode.m; sourceTree = "<group>"; };
 		B64CD8560AF25CEB8AB86903BAE82942 /* FCompoundHash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FCompoundHash.h; path = Firebase/Database/Core/FCompoundHash.h; sourceTree = "<group>"; };
@@ -1470,10 +1495,12 @@
 		B9382CCB22DB89FB09E6443091584542 /* DateInRegionFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateInRegionFormatter.swift; path = Sources/SwiftDate/DateInRegionFormatter.swift; sourceTree = "<group>"; };
 		B9397B24FEB53AD936025ABA5D271FBB /* nanopb.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = nanopb.xcconfig; sourceTree = "<group>"; };
 		B96576D1D630F5DFBE3BFCDB41FBDE30 /* BaseAuthenticator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseAuthenticator.swift; path = source/UberCore/Authentication/Authenticators/BaseAuthenticator.swift; sourceTree = "<group>"; };
+		B9715271125731A52B8C3B707B2BF34F /* LyftButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LyftButton.swift; path = Sources/LyftUI/LyftButton.swift; sourceTree = "<group>"; };
 		B9EE71DCF646B4977A627D2396D56351 /* UberRides-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UberRides-prefix.pch"; sourceTree = "<group>"; };
 		BA1DF42F9A5A344E39A18E0DCF130F83 /* SwiftDate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftDate-prefix.pch"; sourceTree = "<group>"; };
 		BABB96B6A830FFFDB2CC3CBD5B6B8BCF /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		BAD12DA82E3E573DF21986B06CE02DDA /* CalloutViewPlus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalloutViewPlus.swift; path = MapViewPlus/Classes/Abstract/CalloutViewPlus.swift; sourceTree = "<group>"; };
+		BAFFF3BDB96D2130F7581FE2450A4DEE /* LyftAPIError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LyftAPIError.swift; path = Sources/LyftAPI/LyftAPIError.swift; sourceTree = "<group>"; };
 		BB127332D5926518314D7F3E79388547 /* Pods-CheersUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheersUITests-frameworks.sh"; sourceTree = "<group>"; };
 		BB7C70FC2C38EB68C2985B93E166E558 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
 		BB88B473784F5A9E1C43A5F8D04F0B29 /* FIRTransactionResult_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRTransactionResult_Private.h; path = Firebase/Database/Api/Private/FIRTransactionResult_Private.h; sourceTree = "<group>"; };
@@ -1482,6 +1509,7 @@
 		BC5A20D749C9A93DE6A3B0EA9B2C29D2 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		BCEAE0DFF584E0170501FF557F209FD1 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		BD3CAC04EFF0DC5981849E0AF5482FD2 /* FParsedUrl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FParsedUrl.h; path = Firebase/Database/Utilities/FParsedUrl.h; sourceTree = "<group>"; };
+		BD550C1785FEE8DAD19C986843BA2A96 /* RideType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RideType.swift; path = Sources/LyftModels/RideType.swift; sourceTree = "<group>"; };
 		BDD052A210B275F8518C0A6FB342CFAF /* FIndex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIndex.m; path = Firebase/Database/FIndex.m; sourceTree = "<group>"; };
 		BE5820E82F7CE557613E781FE6232E76 /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		BE8FEEF9F0FA39AD3D7BDDBAA7553D80 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1520,8 +1548,6 @@
 		C684970FCE814EFBA9BCE3EE47720A3F /* FOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FOperation.h; path = Firebase/Database/Core/Operation/FOperation.h; sourceTree = "<group>"; };
 		C6E0B1D92DC993291373FFA70CB1C938 /* SnapshotOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SnapshotOptions.swift; path = MapboxStatic/SnapshotOptions.swift; sourceTree = "<group>"; };
 		C78098EF0B234302E2C8C4B0B7990248 /* FLevelDBStorageEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLevelDBStorageEngine.h; path = Firebase/Database/Persistence/FLevelDBStorageEngine.h; sourceTree = "<group>"; };
-		C7897F6263A7676A2FBF921F32DF228F /* HTTPClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPClient.swift; path = Sources/LyftAPI/HTTPClient.swift; sourceTree = "<group>"; };
-		C7A7F707F4694B2AD95BA99DEA2621FC /* RideKind.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RideKind.swift; path = Sources/LyftModels/RideKind.swift; sourceTree = "<group>"; };
 		C7CBBB7723A3AC03ABC678253B82DC56 /* FEventRaiser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FEventRaiser.m; path = Firebase/Database/Core/View/FEventRaiser.m; sourceTree = "<group>"; };
 		C84AB64B92643093C74719E8491498DD /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.m"; sourceTree = "<group>"; };
 		C86F5F2604E2CE478A7887FAEC25DFE1 /* SwiftPhotoGallery-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftPhotoGallery-prefix.pch"; sourceTree = "<group>"; };
@@ -1556,8 +1582,10 @@
 		D2CF710C6B85508C12C17A8424B1BA44 /* pt-br.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "pt-br.lproj"; path = "source/UberCore/Resources/pt-br.lproj"; sourceTree = "<group>"; };
 		D2E60615F68BD5E7D29E9E5C2A62DE39 /* DateInRegion+Compare.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Compare.swift"; path = "Sources/SwiftDate/DateInRegion+Compare.swift"; sourceTree = "<group>"; };
 		D3C91560FBB50E48F7C15973D2EDB6F2 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/SwiftDate/Extensions.swift; sourceTree = "<group>"; };
+		D3DEB6C11B7116A0026B7F04C5A9873C /* LyftButtonRideTypeETA.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LyftButtonRideTypeETA.xib; path = Sources/LyftUI/Resources/LyftButtonRideTypeETA.xib; sourceTree = "<group>"; };
 		D4A3ABD5DABA2A1AA34BDFF97FB4B458 /* FOperationSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FOperationSource.h; path = Firebase/Database/Core/Operation/FOperationSource.h; sourceTree = "<group>"; };
 		D4D9A769CA591299F705823305C206AC /* FConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FConstants.h; path = Firebase/Database/Constants/FConstants.h; sourceTree = "<group>"; };
+		D51A0511B01BE12CCD34408AD6746A0F /* JSONMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONMappable.swift; path = Sources/LyftAPI/JSONMappable.swift; sourceTree = "<group>"; };
 		D52A6ACEF363C5952711A63C49162391 /* leveldb-library.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "leveldb-library.xcconfig"; sourceTree = "<group>"; };
 		D5457EEF63E28EE6417ADF6ED0987410 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5514A75DA8328ACCD6A2C34D5786951 /* FIRMutableData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMutableData.m; path = Firebase/Database/Api/FIRMutableData.m; sourceTree = "<group>"; };
@@ -1580,9 +1608,7 @@
 		D9E8DBFC239CFD068528258037BA1F42 /* FIndexedFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIndexedFilter.h; path = Firebase/Database/Core/View/Filter/FIndexedFilter.h; sourceTree = "<group>"; };
 		DA34B4AA73CE392AED0036D9BE6921A0 /* FValueEventRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FValueEventRegistration.h; path = Firebase/Database/Core/View/FValueEventRegistration.h; sourceTree = "<group>"; };
 		DAC92C8DCBD4E38E53C2AF70782DA593 /* write_batch.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = write_batch.cc; path = db/write_batch.cc; sourceTree = "<group>"; };
-		DBB5B52D93D05B9AE2AFD05FD502F9ED /* LyftSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LyftSDK-dummy.m"; sourceTree = "<group>"; };
 		DBF639AC9B5E624877A061778EC72D36 /* FEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FEvent.h; path = Firebase/Database/Core/View/FEvent.h; sourceTree = "<group>"; };
-		DC1D5EFC84A67128FF22DD8C26BB8E5E /* LyftSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LyftSDK.modulemap; sourceTree = "<group>"; };
 		DC422DE8A329ABD2FBD2665C7E94A907 /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/Kingfisher.swift; sourceTree = "<group>"; };
 		DC51733923A5136ED00CCC74AC3EED4B /* UberCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UberCore-umbrella.h"; sourceTree = "<group>"; };
 		DCD037B9090EF697E65138B653021899 /* filename.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = filename.cc; path = db/filename.cc; sourceTree = "<group>"; };
@@ -1611,10 +1637,12 @@
 		E7E6469C301F5A488B04B30BE7DC81D9 /* FCompoundHash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FCompoundHash.m; path = Firebase/Database/Core/FCompoundHash.m; sourceTree = "<group>"; };
 		E8C3D7770C06C71F45C499E66B04B7E4 /* UIAppearance+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAppearance+Swift.h"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.h"; sourceTree = "<group>"; };
 		E90E1EE8E771D70C85E2A64F2DABCDAE /* ImageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTransition.swift; path = Sources/ImageTransition.swift; sourceTree = "<group>"; };
+		E9262BC07205554D201B7E4E9AA79941 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E93F684209D67C211C74AC187A78D77B /* FTreeSortedDictionaryEnumerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FTreeSortedDictionaryEnumerator.h; path = Firebase/Database/third_party/FImmutableSortedDictionary/FImmutableSortedDictionary/FTreeSortedDictionaryEnumerator.h; sourceTree = "<group>"; };
 		E96BA4ABA2DC39FBACE735148768E88F /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = CoreOnly/Sources/Firebase.h; sourceTree = "<group>"; };
 		E97B9D1D894A6A8088420C2127D9467E /* crc32c.cc */ = {isa = PBXFileReference; includeInIndex = 1; name = crc32c.cc; path = util/crc32c.cc; sourceTree = "<group>"; };
 		E9AB1F36142867604307E40EA4F7347B /* FStorageEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FStorageEngine.h; path = Firebase/Database/Persistence/FStorageEngine.h; sourceTree = "<group>"; };
+		EA6AF8468F351105F1A7E65DBC7210F0 /* LyftButtonStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LyftButtonStyle.swift; path = Sources/LyftUI/LyftButtonStyle.swift; sourceTree = "<group>"; };
 		EAD95FCD181D89A17901B2787820051B /* FNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FNode.h; path = Firebase/Database/Snapshot/FNode.h; sourceTree = "<group>"; };
 		EB21EA681AC06E95069E71AA4B7022C6 /* Media.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = source/UberRides/Resources/Media.xcassets; sourceTree = "<group>"; };
 		EB58CA836713CFE7F69055C3E99EB53E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1659,10 +1687,11 @@
 		F7BEC6E1D34644B7BB599B6ACE463294 /* UIColor+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.h"; sourceTree = "<group>"; };
 		F7C89F4B2E1E7A60B909A8EE3D2D1F2A /* FWriteRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FWriteRecord.m; path = Firebase/Database/Core/FWriteRecord.m; sourceTree = "<group>"; };
 		F81246B179329D2E6BCD14B390451944 /* FQueryParams.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FQueryParams.m; path = Firebase/Database/Core/FQueryParams.m; sourceTree = "<group>"; };
+		F8C9BC262A0B685A8B786FD8619EBC86 /* NearbyDriver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NearbyDriver.swift; path = Sources/LyftModels/NearbyDriver.swift; sourceTree = "<group>"; };
 		F8E301C6F19AF1E8D20544CD8148B566 /* Overlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Overlay.swift; path = MapboxStatic/Overlay.swift; sourceTree = "<group>"; };
 		F9B048FDF6303553836A82F8DF530B41 /* Pods-Cheers.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cheers.modulemap"; sourceTree = "<group>"; };
-		F9B918601FDF327D724E072A9DFE3186 /* Money.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Money.swift; path = Sources/LyftModels/Money.swift; sourceTree = "<group>"; };
 		FA61498EC436BF6610FBB3D750077A36 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA94EC0E5DE5C73D5A5496D44655A536 /* LyftConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LyftConfiguration.swift; path = Sources/LyftAPI/LyftConfiguration.swift; sourceTree = "<group>"; };
 		FAE2A620C0E50BEC5A9211164C13C24F /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
 		FBE9E993C5D3E3793C6A3F8B3B690E4E /* RideRequestViewRequestingBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RideRequestViewRequestingBehavior.swift; path = source/UberRides/RideRequestViewRequestingBehavior.swift; sourceTree = "<group>"; };
 		FBEA8768084BC2930ED95338137368F9 /* MapViewPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MapViewPlus.framework; path = MapViewPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1679,7 +1708,6 @@
 		FDEC88C13B995231411572EB0ACD77D4 /* Pods-CheersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE29222547E1A580D84B5EA32EEA1892 /* FChange.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FChange.m; path = Firebase/Database/Core/View/FChange.m; sourceTree = "<group>"; };
 		FE33CBB9D0C9EF066C23D182A4BB38BD /* SwiftDate.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SwiftDate.bundle; path = Sources/SwiftDate/SwiftDate.bundle; sourceTree = "<group>"; };
-		FE374FFADDAAB513A4C3B34D6CC03139 /* JSONMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONMappable.swift; path = Sources/LyftAPI/JSONMappable.swift; sourceTree = "<group>"; };
 		FE62CDAEFB5CEC771B5C97EE33E0EF27 /* FImmutableSortedDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FImmutableSortedDictionary.h; path = Firebase/Database/third_party/FImmutableSortedDictionary/FImmutableSortedDictionary/FImmutableSortedDictionary.h; sourceTree = "<group>"; };
 		FE8398F07CFCD1322F6329D708EA440C /* FSyncPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSyncPoint.h; path = Firebase/Database/Core/FSyncPoint.h; sourceTree = "<group>"; };
 		FF33AD247BB4DAF9A96FFDF2FE544AC4 /* AccessTokenFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessTokenFactory.swift; path = source/UberCore/Authentication/Tokens/AccessTokenFactory.swift; sourceTree = "<group>"; };
@@ -1749,14 +1777,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72D1190C7202C8BE654DEC46B59F5B18 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B4CBEE1595E33BB489EF520A40688C9D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		85EC29C53722FC3ADA108070E20B1253 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1804,6 +1824,14 @@
 			files = (
 				84CF440A4E3CCDEE93FA2475748A9934 /* CFNetwork.framework in Frameworks */,
 				403E3E170DCF269D5CBA1C530ECA901B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A781B95DB9BDE4D35E613151288DDA79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9D7A5DE33611AB0FC3D075B45EF4E80 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1996,20 +2024,6 @@
 			path = "../Target Support Files/ChameleonFramework";
 			sourceTree = "<group>";
 		};
-		1B283A8DAE4F7411997D51348C351386 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1B2B00F68978DC6EAF9E5C7C61A87420 /* Info.plist */,
-				DC1D5EFC84A67128FF22DD8C26BB8E5E /* LyftSDK.modulemap */,
-				5D8A47A253C043C21A230DCF7A7365BB /* LyftSDK.xcconfig */,
-				DBB5B52D93D05B9AE2AFD05FD502F9ED /* LyftSDK-dummy.m */,
-				67CFE75614320661D18DFF2584DD4FE4 /* LyftSDK-prefix.pch */,
-				9EDFA76CD04C74A8C47DAE84602A4FB2 /* LyftSDK-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/LyftSDK";
-			sourceTree = "<group>";
-		};
 		1CB85D4C23D1D31EC273BF36AFAB24CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2113,7 +2127,7 @@
 				477907FB5ABAD8EEFF7C12282994BBED /* Kingfisher */,
 				EA1B534306879F4544F53C684C11C9AE /* leveldb-library */,
 				FBF23A9D60F11894A37111723D6B7912 /* Lyft */,
-				E7D2D99AAF72A68ECB65F74DB24DA133 /* LyftSDK */,
+				F0015B92E583E39E3AF2599D25284890 /* LyftSDK */,
 				87B1F8676357D986841FBDD46DF5E064 /* Mapbox-iOS-SDK */,
 				5A5FCAF367EEDD5E0836F7924593B058 /* MapboxStatic.swift */,
 				D7EF521753E9E735978DCE96918469DE /* MapViewPlus */,
@@ -2126,6 +2140,40 @@
 				4F13319BFDAFC9101C8802399118E46D /* UberRides */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3D24B3B802F0A74BEA3AE2B7CF0037F8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3946CCB1C4886839903CE475EB52E494 /* APIRoute.swift */,
+				01C983E0E9360B0A71FF665FC186239E /* Asset.swift */,
+				14D25B321F8EDF404FF86FF4B7B34220 /* Bundle+Extension.swift */,
+				53AF51D9DB78A8C1AD1985C7684B33C8 /* Button.swift */,
+				2F101959871421AD6D0A2CAB825BF01D /* CLLocationCoordinate2D+JSONMappable.swift */,
+				401A5EF6D162ED85D9EDFEF04180B3A4 /* Cost.swift */,
+				8EB505E8176D15DE617F3E65F0F15F24 /* ETA.swift */,
+				5BEFC72A3D0E2C0DD7B97300D42D1E20 /* HTTPClient.swift */,
+				2848595D8A037B50E593ED5BF9967ACC /* I18N.swift */,
+				D51A0511B01BE12CCD34408AD6746A0F /* JSONMappable.swift */,
+				8E4DB8463A968CE49B8AB1FBDFD03C4F /* LyftAPI.swift */,
+				BAFFF3BDB96D2130F7581FE2450A4DEE /* LyftAPIError.swift */,
+				9EA7EB6AB64C6AA04750713D9E9EE97D /* LyftAPIURLEncoding.swift */,
+				B9715271125731A52B8C3B707B2BF34F /* LyftButton.swift */,
+				EA6AF8468F351105F1A7E65DBC7210F0 /* LyftButtonStyle.swift */,
+				FA94EC0E5DE5C73D5A5496D44655A536 /* LyftConfiguration.swift */,
+				B19568E11E77EE56D70B8E5D0065E497 /* LyftDeepLink.swift */,
+				2E8E086FD397E560EAF4045F398C8007 /* Money.swift */,
+				1412CF44F7FDED88140E9D3653296A27 /* Money+UI.swift */,
+				F8C9BC262A0B685A8B786FD8619EBC86 /* NearbyDriver.swift */,
+				29BCBD85F4FD9B839CED0B9C0E55D7E7 /* PricingDetails.swift */,
+				7D68ACC0C413D5E7988F79578FEBE7C7 /* Result.swift */,
+				656E745714BCA4A45C688E6F62C4D20F /* RideKind.swift */,
+				BD550C1785FEE8DAD19C986843BA2A96 /* RideType.swift */,
+				568A146F00FBE07451A55488CB0643D0 /* Safari.swift */,
+				91F05A906D15C7A91045116585247F78 /* UIColor+Extension.swift */,
+				A453A626243B41034A83491E9D310418 /* Resources */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 		477907FB5ABAD8EEFF7C12282994BBED /* Kingfisher */ = {
@@ -2177,30 +2225,6 @@
 			);
 			name = "Pods-Cheers";
 			path = "Target Support Files/Pods-Cheers";
-			sourceTree = "<group>";
-		};
-		4EABC3F7EA3E7136350249C8F43BD6D3 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				95B5D3D37062D104F0BEC442979E8F55 /* APIRoute.swift */,
-				832C75E7082A228D6DB641248E69C1B1 /* Bundle+Extension.swift */,
-				B54890018CE34F6E168386707BA7755C /* CLLocationCoordinate2D+JSONMappable.swift */,
-				05B0B13FD356C19E79095A472D0B86F2 /* Cost.swift */,
-				A3A6AD85A35DAE61E9CC5C697DC3FD6B /* ETA.swift */,
-				C7897F6263A7676A2FBF921F32DF228F /* HTTPClient.swift */,
-				FE374FFADDAAB513A4C3B34D6CC03139 /* JSONMappable.swift */,
-				8A3E616B9F69888599A5398DB312243C /* LyftAPI.swift */,
-				0EEC71C56D9B2911186E0945548335DB /* LyftAPIError.swift */,
-				79C9B0267196D6A5D67364EDB82EE763 /* LyftAPIURLEncoding.swift */,
-				ABFE3DDF76A33306C24544F3513B41B1 /* LyftConfiguration.swift */,
-				F9B918601FDF327D724E072A9DFE3186 /* Money.swift */,
-				7E1AB504169B813ECD6BC01466116E06 /* NearbyDriver.swift */,
-				6F86D099A75BCB6E251E2579B13C787B /* PricingDetails.swift */,
-				0E05FA8A0FEDFD0A543A1D35578FF837 /* Result.swift */,
-				C7A7F707F4694B2AD95BA99DEA2621FC /* RideKind.swift */,
-				993DF3C0371E9196B84B7E1501E8A2F3 /* RideType.swift */,
-			);
-			name = API;
 			sourceTree = "<group>";
 		};
 		4EF79061FDB8DE41894D4CD4C3A4978F /* Support Files */ = {
@@ -2850,6 +2874,20 @@
 			path = "../Target Support Files/MapboxStatic.swift";
 			sourceTree = "<group>";
 		};
+		945D7A9DF31C25C462F13B894403970E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9262BC07205554D201B7E4E9AA79941 /* Info.plist */,
+				7CA296EE12314625E1F5C21EA11AFDB1 /* LyftSDK.modulemap */,
+				111D186422500090D6F2714F394F9656 /* LyftSDK.xcconfig */,
+				1F6A02D36D4FE7E5660C085739D9E595 /* LyftSDK-dummy.m */,
+				4EB4A57B3AD90D520371EAE8D83B215E /* LyftSDK-prefix.pch */,
+				8948E68D881AEE4673C99C9678B9B529 /* LyftSDK-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LyftSDK";
+			sourceTree = "<group>";
+		};
 		9FDE28112585BB04780F29869336076F /* ChameleonFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -2869,6 +2907,18 @@
 				0CE573E16A98A9693C43F2AAFE08EACE /* Pods-CheersUITests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A453A626243B41034A83491E9D310418 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1771D7036EDB7E3A5468699500BE9A21 /* en.lproj */,
+				2E67EBA246E19172A76EA6D686AF2641 /* Images.xcassets */,
+				304B879CA02F37CB58561142BCB45FBE /* LyftButtonFull.xib */,
+				8EE02F84514BFFDF3F72FB20014506C9 /* LyftButtonNone.xib */,
+				D3DEB6C11B7116A0026B7F04C5A9873C /* LyftButtonRideTypeETA.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		AB071A1AF56E646D153E707D16C3D779 /* CoreOnly */ = {
@@ -3021,16 +3071,6 @@
 			path = "../Target Support Files/FirebaseCore";
 			sourceTree = "<group>";
 		};
-		E7D2D99AAF72A68ECB65F74DB24DA133 /* LyftSDK */ = {
-			isa = PBXGroup;
-			children = (
-				4EABC3F7EA3E7136350249C8F43BD6D3 /* API */,
-				1B283A8DAE4F7411997D51348C351386 /* Support Files */,
-			);
-			name = LyftSDK;
-			path = LyftSDK;
-			sourceTree = "<group>";
-		};
 		EA1B534306879F4544F53C684C11C9AE /* leveldb-library */ = {
 			isa = PBXGroup;
 			children = (
@@ -3169,6 +3209,16 @@
 			name = Default;
 			sourceTree = "<group>";
 		};
+		F0015B92E583E39E3AF2599D25284890 /* LyftSDK */ = {
+			isa = PBXGroup;
+			children = (
+				3D24B3B802F0A74BEA3AE2B7CF0037F8 /* Core */,
+				945D7A9DF31C25C462F13B894403970E /* Support Files */,
+			);
+			name = LyftSDK;
+			path = LyftSDK;
+			sourceTree = "<group>";
+		};
 		F5720D734D77646710B166B40AFE1F8F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -3285,14 +3335,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8B149B8C69E7E189C41C9A61EDC8D01 /* MapViewPlus-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68EE2E2E256B741BF2AA4883BCD39E89 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8AB83F780B238ED95FD7C0EC714C568E /* LyftSDK-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3462,6 +3504,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3AB6C9753DA553BDE0051AB33F1E329 /* Pods-CheersTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9AD61C04CA31ACF7D83612E1327EFC7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CD1C33B98227BD8AFF95D7A59A95509 /* LyftSDK-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3853,6 +3903,24 @@
 			productReference = 6DDE2E690C289F8B2D79C9962B34B267 /* SVProgressHUD.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		8B2C869C1D1CC53E1F4B85F7AAEEE1A0 /* LyftSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB89FA70E39D93ED1F0F30D5201964F5 /* Build configuration list for PBXNativeTarget "LyftSDK" */;
+			buildPhases = (
+				67752F981CC9C0293CD8693CA1DF7A26 /* Sources */,
+				A781B95DB9BDE4D35E613151288DDA79 /* Frameworks */,
+				9325CD938D121581A7A9E28E275C6253 /* Resources */,
+				C9AD61C04CA31ACF7D83612E1327EFC7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LyftSDK;
+			productName = LyftSDK;
+			productReference = E2E7D6C80C2ABF0E8BA5B5E390C54B56 /* LyftSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		9938F3058E6013FAB6444C41E86DC9E9 /* leveldb-library */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40852DC42D4027883C3394DB9FAC3A55 /* Build configuration list for PBXNativeTarget "leveldb-library" */;
@@ -3976,23 +4044,6 @@
 			productReference = CE8A7B118C89D9EB24BC2AEA96353354 /* Lyft.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D2E4B61AA750B31E9B733F9D8DD99B2B /* LyftSDK */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 22406EC8DB76D7E46B7739A5E09EB0CE /* Build configuration list for PBXNativeTarget "LyftSDK" */;
-			buildPhases = (
-				42C3E2116A24F5B354B1B55D4784F5EA /* Sources */,
-				72D1190C7202C8BE654DEC46B59F5B18 /* Frameworks */,
-				68EE2E2E256B741BF2AA4883BCD39E89 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LyftSDK;
-			productName = LyftSDK;
-			productReference = E2E7D6C80C2ABF0E8BA5B5E390C54B56 /* LyftSDK.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		DA88C145D229C5376CEC7759F7002455 /* SwiftDate */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C26AD9D580F835B0B12EA09ED70FB7E9 /* Build configuration list for PBXNativeTarget "SwiftDate" */;
@@ -4074,7 +4125,7 @@
 				4F87037150ABE2C9238B54E8F6E33F36 /* Kingfisher */,
 				9938F3058E6013FAB6444C41E86DC9E9 /* leveldb-library */,
 				CCE5782944DC9A3D2E490E43C89B7706 /* Lyft */,
-				D2E4B61AA750B31E9B733F9D8DD99B2B /* LyftSDK */,
+				8B2C869C1D1CC53E1F4B85F7AAEEE1A0 /* LyftSDK */,
 				A7F4DB65C129181E8FA24F30F3543438 /* MapboxStatic.swift */,
 				CCB96F19D5C639E8119542090ED5BCCF /* MapViewPlus */,
 				A7E2AD85928D433C262CC3125CBB918D /* MapViewPlus-MapViewPlus */,
@@ -4118,6 +4169,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				42B3E9685AE6850F41A6BD5E95C2E40B /* SwiftDate.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9325CD938D121581A7A9E28E275C6253 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E2AD070F88558D8210AF02C55E7C0FA /* en.lproj in Resources */,
+				B81405BF543ED3641342B1D3F0209BA5 /* Images.xcassets in Resources */,
+				0C0F6EFD33775E76C607ABD63B22F5D3 /* LyftButtonFull.xib in Resources */,
+				8168D98313B8FF43561C4C9B531000E4 /* LyftButtonNone.xib in Resources */,
+				B2911C4432CAEB7B56483FB0A9DBBF96 /* LyftButtonRideTypeETA.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4281,31 +4344,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42C3E2116A24F5B354B1B55D4784F5EA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5F8B085583021A94BDEF465FDFF7DF0C /* APIRoute.swift in Sources */,
-				921D0A20CC8E5979C12AD757FDAA4768 /* Bundle+Extension.swift in Sources */,
-				3526788593C690C5E0373BE48AB58FF4 /* CLLocationCoordinate2D+JSONMappable.swift in Sources */,
-				9196DEEC9CD8F495F568B5410A336B5C /* Cost.swift in Sources */,
-				5C89821607BA5C73637DAEAFAC423B14 /* ETA.swift in Sources */,
-				86C049BFB3D145C4459F0D8B2C2041D2 /* HTTPClient.swift in Sources */,
-				BF1DBCFB95F5837937E12B74C6873B97 /* JSONMappable.swift in Sources */,
-				C4DCE97E2092FA4307CCEA0C37D0A3F6 /* LyftAPI.swift in Sources */,
-				4C0FA55153714F0ADCB519CAE09180C3 /* LyftAPIError.swift in Sources */,
-				4503DF92FE013C990A859B8851EFB00F /* LyftAPIURLEncoding.swift in Sources */,
-				5C909817D0C377A733491B90280B6898 /* LyftConfiguration.swift in Sources */,
-				ED05F4A3660741FA73CA7449669BAFA6 /* LyftSDK-dummy.m in Sources */,
-				C786AF4716ECB45007EB629761AF1562 /* Money.swift in Sources */,
-				806E74C3CD5A024DA5DE16048DF816FD /* NearbyDriver.swift in Sources */,
-				9571160FF1686362770BEFA630502942 /* PricingDetails.swift in Sources */,
-				948EA648474DFC56AF3F5F4F72236030 /* Result.swift in Sources */,
-				6C23152F6D2D3DB4C22D95862EDC1FDF /* RideKind.swift in Sources */,
-				85B66C130A7B776CC038ACA577E60DB7 /* RideType.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4F4980B6E6AD569AB686537898C83E77 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -4340,6 +4378,40 @@
 				ABF446EA555B343FADFF518DDE0E584B /* SwiftPhotoGallery-dummy.m in Sources */,
 				01CF3964B6B2773426F815C740E1F387 /* SwiftPhotoGallery.swift in Sources */,
 				DD0E945749F7E3D05F3C1B8AD2CFF765 /* SwiftPhotoGalleryCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67752F981CC9C0293CD8693CA1DF7A26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				613734E56EEB0E516ADC700177678ADC /* APIRoute.swift in Sources */,
+				0860A2ED06AEAAFD6D59BDC2C9C10DFE /* Asset.swift in Sources */,
+				68757C3CC0886F82B415D5910FEF2C83 /* Bundle+Extension.swift in Sources */,
+				9029C25A38302FAE983F9F2AE76598CA /* Button.swift in Sources */,
+				50A98F5CAB1387E6DAA34DBCCAF04970 /* CLLocationCoordinate2D+JSONMappable.swift in Sources */,
+				D39063F685B0CB3C3843E6D007AE9591 /* Cost.swift in Sources */,
+				D04DA550CF798A051ABC0EC61537CD79 /* ETA.swift in Sources */,
+				804001D6891DDDB3B600BDC9403E1EF5 /* HTTPClient.swift in Sources */,
+				4357B234887190D377DA51A319E1328C /* I18N.swift in Sources */,
+				9695DFC388E47C92990C75435DCE399F /* JSONMappable.swift in Sources */,
+				6556F6C84D2BE571FEE3AA8BEB3CBB5F /* LyftAPI.swift in Sources */,
+				B665C916B45382D9333952567E8E94C5 /* LyftAPIError.swift in Sources */,
+				348DB35ED6F6EE001854C222E20437F4 /* LyftAPIURLEncoding.swift in Sources */,
+				9C5AEA8B5E9A8440932C94564300F730 /* LyftButton.swift in Sources */,
+				A4B2F2862886DF14CFB84774BE55A76E /* LyftButtonStyle.swift in Sources */,
+				0F7A14A0D6DD9E443ECBFBB6211200A0 /* LyftConfiguration.swift in Sources */,
+				D86C7F8D25C835211B253F00BBB7F4CE /* LyftDeepLink.swift in Sources */,
+				FA0A8F6DF999243A8CD022C949252ED7 /* LyftSDK-dummy.m in Sources */,
+				617575B1EEB50B8A9A7E7E7E6BDE57A5 /* Money+UI.swift in Sources */,
+				67DC0A381098CAC04FD7C0E5013A77A5 /* Money.swift in Sources */,
+				5CE500521E4289A0438BA594DCBF6A66 /* NearbyDriver.swift in Sources */,
+				A2EC57E189B65E22AAF52C8989A7947D /* PricingDetails.swift in Sources */,
+				752B3251975C7390D0DB11C07F2AAE5A /* Result.swift in Sources */,
+				CCB5EEF2EBCB66957735B5884037DCA9 /* RideKind.swift in Sources */,
+				A17DF23968E39606993C5FE3903823BB /* RideType.swift in Sources */,
+				6119E60336D4DE8EBCD2377FB0B4964F /* Safari.swift in Sources */,
+				012766A93B3868A703E5708086AB8600 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4757,7 +4829,7 @@
 		545FA6F08AE46C42D5F018BD4C169FCC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LyftSDK;
-			target = D2E4B61AA750B31E9B733F9D8DD99B2B /* LyftSDK */;
+			target = 8B2C869C1D1CC53E1F4B85F7AAEEE1A0 /* LyftSDK */;
 			targetProxy = 6D7E777D7ED624162152C2154B7B62BF /* PBXContainerItemProxy */;
 		};
 		5917186CE5BA3C9985F06C2F720E98FF /* PBXTargetDependency */ = {
@@ -4968,38 +5040,6 @@
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		16E613F36E24C58FCB282C96A1469820 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D8A47A253C043C21A230DCF7A7365BB /* LyftSDK.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LyftSDK/LyftSDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LyftSDK/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LyftSDK/LyftSDK.modulemap";
-				PRODUCT_MODULE_NAME = LyftSDK;
-				PRODUCT_NAME = LyftSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -5643,6 +5683,38 @@
 			};
 			name = Release;
 		};
+		95F476120CF08F66D501630E6F65A362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 111D186422500090D6F2714F394F9656 /* LyftSDK.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LyftSDK/LyftSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LyftSDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LyftSDK/LyftSDK.modulemap";
+				PRODUCT_MODULE_NAME = LyftSDK;
+				PRODUCT_NAME = LyftSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		9E88537B08ED4D6EB44DBA7BC8D56A35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -5803,6 +5875,39 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		A96430070DEC5BBF0DD90917F5789F14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 111D186422500090D6F2714F394F9656 /* LyftSDK.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LyftSDK/LyftSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LyftSDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LyftSDK/LyftSDK.modulemap";
+				PRODUCT_MODULE_NAME = LyftSDK;
+				PRODUCT_NAME = LyftSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		ABFF127B8A698A27776ED10AE35771CB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -6113,39 +6218,6 @@
 			};
 			name = Debug;
 		};
-		D67DFCE4F5F02099B92A7BDA221764CE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D8A47A253C043C21A230DCF7A7365BB /* LyftSDK.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LyftSDK/LyftSDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LyftSDK/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LyftSDK/LyftSDK.modulemap";
-				PRODUCT_MODULE_NAME = LyftSDK;
-				PRODUCT_NAME = LyftSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		E501C7FE80275D2316B803BA114CAC25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 131BF5A3CA857C3D29071671B272E7A8 /* UberCore.xcconfig */;
@@ -6397,15 +6469,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22406EC8DB76D7E46B7739A5E09EB0CE /* Build configuration list for PBXNativeTarget "LyftSDK" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				16E613F36E24C58FCB282C96A1469820 /* Debug */,
-				D67DFCE4F5F02099B92A7BDA221764CE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		268D97E6CB4E2B25E59787CD7BF74DF7 /* Build configuration list for PBXNativeTarget "Pods-CheersUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -6582,6 +6645,15 @@
 			buildConfigurations = (
 				08DCEECB267ABEEE7E382A779F100D91 /* Debug */,
 				450F86CC2D755FAFCFAD24D9C7B2DDA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB89FA70E39D93ED1F0F30D5201964F5 /* Build configuration list for PBXNativeTarget "LyftSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F476120CF08F66D501630E6F65A362 /* Debug */,
+				A96430070DEC5BBF0DD90917F5789F14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
