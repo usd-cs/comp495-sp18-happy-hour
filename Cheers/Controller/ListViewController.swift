@@ -11,10 +11,12 @@ import Firebase
 import SVProgressHUD
 import SwiftDate
 import Foundation
+import CoreLocation
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, FilterMenuDelegate{
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, FilterMenuDelegate, CLLocationManagerDelegate {
     
     var searchBar = UISearchBar()
+    let locationManager = CLLocationManager()
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarButton: UIBarButtonItem!
     @IBOutlet weak var filterBarButton: UIBarButtonItem!
@@ -43,6 +45,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        view.backgroundColor = UIColor.gray
         
         FavoritesSingleton.shared.loadFavorites()
         
@@ -326,6 +332,55 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         
     }
-
+    
+    // function to ask for user location permission
+  /*  func enableLocationServices() {
+        locationManager.delegate = self
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            // Request when-in-use authorization initially
+            locationManager.requestWhenInUseAuthorization()
+            break
+            
+        case .restricted, .denied:
+            // Disable location features
+            disableMyLocationBasedFeatures()
+            break
+            
+        case .authorizedWhenInUse:
+            // Enable basic location features
+            enableMyWhenInUseFeatures()
+            break
+            
+        case .authorizedAlways:
+            // Enable any of your app's location features
+            enableMyAlwaysFeatures()
+            break
+        }
+    }
+    
+    func enableMyAlwaysFeatures() {
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func enableMyWhenInUseFeatures() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func disableMyLocationBasedFeatures() {
+        
+        locationManager.stopUpdatingLocation()
+    } */
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways {
+            if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+                if CLLocationManager.isRangingAvailable() {
+                    // do stuff
+                }
+            }
+        }
+    }
 }
 
