@@ -14,6 +14,7 @@ import Foundation
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, FilterMenuDelegate{
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     var searchBar = UISearchBar()
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBarButton: UIBarButtonItem!
@@ -44,6 +45,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        indicator.frame = CGRect(x: 0.0, y:0.0, width: 40.0, height: 40.0)
+        indicator.hidesWhenStopped = true
+        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+        
+        self.indicator.startAnimating()
+        
+        
         FavoritesSingleton.shared.loadFavorites()
         
         tableView.dataSource = self
@@ -58,6 +68,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         readFromDB()
         tableView.reloadData()
+        //indicator.stopAnimating()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -320,6 +331,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        indicator.center = self.view.center
         tableView.reloadData()
     }
     
