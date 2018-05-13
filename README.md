@@ -21,6 +21,29 @@ Happy Hour Finder CS Senior Project (COMP 495 @ USD)
 
 If you have any issues, please refer to [this helpful Stack Overflow post](https://stackoverflow.com/questions/20755044/how-to-install-cocoapods).
 
+
+## How to fix Lyft iOS API CocoaPod
+1. Navigate to your Pods project, it's the second blue icon in the file directory below Cheers (NOT a folder).
+2. In Pods/LyftSDK/Core, open `LyftButton.swift`
+3. Change Line 47 from:
+```
+private var pressUpAction: ((Void) -> Void)?
+```
+to:
+```
+private var pressUpAction: (() -> Void)?
+```
+4. In Pods/LyftSDK/Core, open `LyftAPIURLEncoding.swift`
+5. Replace Line 32 with:
+```
+var localVariable = urlComponents 
+urlComponents?.queryItems = (localVariable?.queryItems ?? []) + queryItems 
+```
+6. In Pods/LyftSDK/Core/Resources, open `LyftButtonNone.xib`
+7. In the view hierarchy, there are two different views. A higher level view (we'll call this View #1) contains a button and another view (we'll call this View #2). Select View #1 and in the Attribute Inspector, set the `Background` to `Default` (no color). Do the same for View #2. This step fixes the button UI and does not affect functionality.
+8. You will have to do this everytime you run a pod commmand (i.e. `pod install`, `pod update`, etc.)
+
+
 ## How to upload to the database
 Look to `BarNames.txt` for the template...
 1. Pull and checkout the branch called `database`. It will be a complete separate app for database management.
