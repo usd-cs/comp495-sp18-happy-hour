@@ -30,7 +30,6 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - Kingfisher (4.6.4)
   - leveldb-library (1.20)
-  - Lyft (0.0.8)
   - LyftSDK (1.0.6):
     - LyftSDK/Core (= 1.0.6)
   - LyftSDK/Core (1.0.6)
@@ -57,7 +56,6 @@ DEPENDENCIES:
   - Firebase
   - Firebase/Core
   - Firebase/Database
-  - Lyft
   - LyftSDK
   - Mapbox-iOS-SDK (~> 4.0)
   - MapboxStatic.swift (~> 0.9)
@@ -79,7 +77,6 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - Kingfisher
     - leveldb-library
-    - Lyft
     - LyftSDK
     - Mapbox-iOS-SDK
     - MapboxStatic.swift
@@ -112,7 +109,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  Lyft: 8eabdf5ab877bbbff78b540455bce21322f02274
   LyftSDK: 17eb5abdb12f72203b68a1eac982823bfadda743
   Mapbox-iOS-SDK: 271754e96eb4434ba1b0a8c68432e1ea26fe9841
   MapboxStatic.swift: 247d98dd6e11b8934aa5d122efcb50384f8d66f6
@@ -125,6 +121,6 @@ SPEC CHECKSUMS:
   UberCore: 512950407dadc8045a583e4a509da2750ae7dc21
   UberRides: cc6d7c5232966e45229dda1534106b33e379dfbe
 
-PODFILE CHECKSUM: 64715322fd38f67cb6f917aae047e51ff6896231
+PODFILE CHECKSUM: 14eb569d5378cdcb4f64940de45dda458c252643
 
 COCOAPODS: 1.5.0

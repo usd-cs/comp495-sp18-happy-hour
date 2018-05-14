@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import CoreLocation
 import Firebase
-import Lyft
 import LyftSDK
 
 @UIApplicationMain

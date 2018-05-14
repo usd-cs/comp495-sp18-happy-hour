@@ -12,7 +12,6 @@ import SwiftPhotoGallery
 import SpriteKit
 
 import UberRides
-import Lyft
 import LyftSDK
 
 import MapboxStatic
