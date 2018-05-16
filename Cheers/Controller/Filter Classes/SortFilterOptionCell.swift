@@ -11,7 +11,7 @@ import UIKit
 class SortFilterOptionCell: UICollectionViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Sort Bt"
+        label.text = "Sort By"
         label.textColor = UIColor.black
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
