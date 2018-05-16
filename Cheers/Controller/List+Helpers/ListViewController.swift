@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAnalytics
 import SVProgressHUD
 import SwiftDate
 import Foundation
