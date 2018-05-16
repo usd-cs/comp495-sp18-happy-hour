@@ -15,6 +15,7 @@ enum Neighborhood: String, Codable {
     case GaslampQuarter = "Gaslamp Quarter"
     case OceanBeach = "Ocean Beach"
     case PointLoma = "Point Loma"
+    case MissionBeach = "Mission Beach"
     case unknown = ""
     
     // add more neighborhoods
