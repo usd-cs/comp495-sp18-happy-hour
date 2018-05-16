@@ -470,3 +470,178 @@ Wednesday
 Thursday
 4 pm - 6:30 pm
 END OF RECORD
+Wonderland Ocean Pub
+Ocean Beach
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+Voltaire Beach House
+Ocean Beach
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+OB Surf Lodge
+Ocean Beach
+Monday
+2:30 pm - 5:30 pm
+Tuesday
+2:30 pm - 5:30 pm
+Wednesday
+2:30 pm - 5:30 pm
+Thursday
+2:30 pm - 5:30 pm
+Friday
+2:30 pm - 5:30 pm
+END OF RECORD
+OB Noodle House Bar 1502
+Ocean Beach
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+Single Fin Surf Grill
+Mission Beach
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+Sandbar Sportsbar & Grill
+Mission Beach
+Monday
+4 pm - 7 pm
+Tuesday
+4 pm - 7 pm
+Wednesday
+4 pm - 7 pm
+Thursday
+4 pm - 7 pm
+Friday
+4 pm - 7 pm
+END OF RECORD
+Guava Beach
+Mission Beach
+Sunday
+9 pm - 12 am
+Monday
+3 pm - 12 am
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 7 pm
+END OF RECORD
+Backyard Kitchen & Tap
+Pacific Beach
+Monday
+3 pm - 12 am
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 7 pm
+END OF RECORD
+Cabo Cantina
+Pacifc Beach
+Sunday
+4 pm - 8 pm
+Monday
+12 pm - 8 pm
+Tuesday
+12 pm - 8 pm
+Wednesday
+12 pm - 8 pm
+Thursday
+12 pm - 8 pm
+Friday
+12 pm - 8 pm
+Saturday
+4 pm - 8 pm
+END OF RECORD
+SD Tap Room
+Pacific Beach
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 6 pm
+END OF RECORD
+The Local Pacific Beach
+Pacific Beach
+Monday
+3 pm - 6 pm
+Tuesday
+3 pm - 6 pm
+Wednesday
+3 pm - 6 pm
+Thursday
+3 pm - 6 pm
+Friday
+3 pm - 8 pm
+END OF RECORD
+Waterbar
+Pacific Beach
+Monday
+8 pm - 10 pm
+Tuesday
+8 pm - 10 pm
+Wednesday
+8 pm - 10 pm
+Thursday
+8 pm - 10 pm
+Friday
+8 pm - 10 pm
+END OF RECORD
+710 Beach Club
+Pacific Beach
+Monday
+4 pm - 7 pm
+Tuesday
+4 pm - 7 pm
+Wednesday
+4 pm - 7 pm
+Thursday
+4 pm - 7 pm
+Friday
+4 pm - 7 pm
+END OF RECORD
